@@ -1,16 +1,11 @@
-import React from "react";
-
+import React from 'react'
+import Profileuser from '../components/components/Userprofile/ProfileUser'
 function Dashboard() {
   return (
-    <div className={`containerContentMain mx-2 mt-1 `}>
-      <h1>Dashboard</h1>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
-        animi error ab, asperiores quisquam dicta facilis natus deserunt nihil
-        voluptate enim atque magnam impedit? Quod id corrupti velit in quia?
-      </p>
+    <div className={`containerContentMain  mt-1 `}>
+      <Profileuser />
     </div>
-  );
+  )
 }
 
-export default Dashboard;
+export default Dashboard

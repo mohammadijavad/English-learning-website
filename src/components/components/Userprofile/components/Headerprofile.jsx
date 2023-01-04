@@ -1,8 +1,11 @@
 import React from 'react'
+import Wave from './Wave'
 
 function Headerprofile() {
   return (
-    <div>Headerprofile</div>
+    <div className="no">
+      <Wave />
+    </div>
   )
 }
 

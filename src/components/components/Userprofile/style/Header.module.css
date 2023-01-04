@@ -1,0 +1,17 @@
+.ContainerProfileUser {
+  transform: translateY(-38px);
+}
+.waveCss {
+  height: 100px;
+  background-color: lime;
+}
+.waveCss img {
+  width: 100%;
+  /* height: 100%; */
+}
+.roundAvatar img {
+  border-radius: 50%;
+}
+.containerinfoUser {
+  transform: translate(30px, -60px);
+}

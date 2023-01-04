@@ -1,18 +1,19 @@
-import React from 'react'
-import style from '../style/TeacherCard.module.css'
-import teacher from '../../../../assets/images/users/avatar-2.jpg'
-import { BsFillStarFill, BsLightningFill } from 'react-icons/bs'
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-import Tooltip from 'react-bootstrap/Tooltip'
-import Button from 'react-bootstrap/Button'
-import EnglishFleg from '../../../../assets/images/flags/us.svg'
-import teacher1Vedio from '../../../../teacher1.mp4'
+import React from "react";
+import style from "../style/TeacherCard.module.css";
+import teacher from "../../../../assets/images/users/avatar-2.jpg";
+import { BsFillStarFill, BsLightningFill } from "react-icons/bs";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+import Button from "react-bootstrap/Button";
+import EnglishFleg from "../../../../assets/images/flags/us.svg";
+import teacher1Vedio from "../../../../teacher1.mp4";
+import pause from "../../../../assets/cover.svg";
 function TeacherCard() {
   return (
     <div>
       <div className={`  ${style.containerCard} mx-1 curoser`}>
         <div className={`row ${style.gridContainer}`}>
-          <div className="col-12 col-md-8 h-100">
+          <div className="col-12 col-md-7 h-100">
             <div className="d-flex flex-column justify-content-between h-100">
               <div className="d-flex">
                 <div className="d-flex flex-column align-items-center justify-content-center  w-25">
@@ -74,7 +75,7 @@ function TeacherCard() {
                   >
                     <div className="mx-2">تخصص</div>
                     <div className="mx-3">
-                      <b className={`${style.bold}`}>زبان عمومی و مکالمه</b>{' '}
+                      <b className={`${style.bold}`}>زبان عمومی و مکالمه</b>{" "}
                     </div>
                   </div>
                   <div
@@ -114,13 +115,13 @@ function TeacherCard() {
               </div>
             </div>
           </div>
-          <div className="d-none d-md-flex col-md-4 ">
+          <div className="d-none d-md-flex col-md-5 ">
             <div
               className={`w-100 h-100 mx-2 d-flex justify-content-center align-items-center ${style.indexVideoWrapper}`}
             >
               <div className={`${style.vedioWrapper}`}>
                 <video
-                  controls
+                  controls={true}
                   className={`${style.vedioTeacherEl} ${
                     true ? style.zoomIn : style.zoomout
                   }`}
@@ -130,7 +131,12 @@ function TeacherCard() {
                   Sorry, your browser doesn't support videos.
                 </video>
                 <div className={`${style.shadowsVedio}`}>
-                  <div className={`${style.coverWrap}`}></div>
+                  <div className={`${style.coverWrap}`}>
+                    <img src={pause} alt="" />
+                    <span className={`${style.teacherName}`}>
+                      ویدئوی معرفی استاد فرنوش امینی
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -138,7 +144,7 @@ function TeacherCard() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default TeacherCard
+export default TeacherCard;

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Outlet } from "react-router-dom";
-import { Header, SideBarSettings } from "../index";
+import Header from "./Header";
+import SideBarSettings from "../components/SideBarSettings";
 import Setting from "../../utils/Setting";
 import Up from "../../utils/Up";
 import { contextapp } from "../../contexts/ContextProv";

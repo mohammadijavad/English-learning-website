@@ -1,5 +1,5 @@
 import React from "react";
-import Filter from "../components/filters/Filter";
+import Filter from "../components/components/filters/Filter";
 
 function Teachers() {
   return (

@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import Layout from "./components/Layout/Layout";
-import { SidebarVertical, SidebarTwoCol } from "./components/index";
+import { SidebarVertical, SidebarTwoCol } from "./screens/index";
 import { Routers } from "./constants/Routes";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { contextapp } from "./contexts/ContextProv";

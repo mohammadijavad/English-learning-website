@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { contextapp } from "../../contexts/ContextProv";
+import { contextapp } from "../contexts/ContextProv";
 
 function Home() {
   const { isDarkMode } = useContext(contextapp);
@@ -9,9 +9,7 @@ function Home() {
         isDarkMode ? "contentDarkMode" : "lightMode"
       }`}
     >
-      <h1>
-        Lorem ipsum dolor sit
-      </h1>
+      <h1>Lorem ipsum dolor sit</h1>
     </div>
   );
 }

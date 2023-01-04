@@ -1,5 +1,6 @@
+@import url('../../../../../App.css');
 .select-menu {
-  border: 1px solid red !important;
+  border: 1px solid var(--border-sidebar) !important;
   border-radius: 8px;
   background: #fff;
   width: 110px;
@@ -32,6 +33,7 @@
   -webkit-animation-duration: 0.35s;
   -webkit-animation-fill-mode: both;
   right: -10px;
+  display: none;
 }
 .option {
   display: flex;
@@ -72,9 +74,11 @@
   from {
     transform: translate3d(0, 0, 0);
     visibility: visible;
+    display: block;
   }
   to {
     transform: translate3d(0, 20px, 0);
     visibility: hidden;
+    display: none;
   }
 }

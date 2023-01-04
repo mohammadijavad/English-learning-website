@@ -14,7 +14,6 @@ function App() {
   return (
     <div
       className="containerDashboard"
-      dir="rtl"
       data-layout-mode={isDarkMode ? 'dark' : 'light'}
     >
       {isVertical && <SidebarVertical />}

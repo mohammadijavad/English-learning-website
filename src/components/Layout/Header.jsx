@@ -1,23 +1,27 @@
-import React, { useContext } from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import HeaderProfile from "./HeaderDeatils/HeaderProfile";
-import HeaderSearch from "./HeaderDeatils/HeaderSearch";
-import { contextapp } from "../../contexts/ContextProv";
-import { BsListNested } from "react-icons/bs";
+import React, { useContext } from 'react'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import HeaderProfile from './HeaderDeatils/HeaderProfile'
+import HeaderSearch from './HeaderDeatils/HeaderSearch'
+import { contextapp } from '../../contexts/ContextProv'
+import { BsListNested } from 'react-icons/bs'
 function Header() {
-  const { headerMode, fixHeader, toggleSiderbarHandler, isHorizontal } =
-    useContext(contextapp);
+  const {
+    headerMode,
+    fixHeader,
+    toggleSiderbarHandler,
+    isHorizontal,
+  } = useContext(contextapp)
   return (
     <div
       className={`containerHeader top-0  ${
-        fixHeader ? "position-sticky" : ""
+        fixHeader ? 'position-sticky' : ''
       } `}
     >
       <Row
         className={`wrapHeader align-items-center justify-content-end mx-0  position-relative ${
-          headerMode ? "lightHeader" : "darkHeader"
-        } ${isHorizontal ? "horizantalMode" : ""}`}
+          headerMode ? 'lightHeader' : 'darkHeader'
+        } ${isHorizontal ? 'horizantalMode' : ''}`}
       >
         <Col xs={4} className="d-none d-sm-flex">
           <HeaderSearch />
@@ -34,7 +38,7 @@ function Header() {
         </Col>
       </Row>
     </div>
-  );
+  )
 }
 
-export default Header;
+export default Header

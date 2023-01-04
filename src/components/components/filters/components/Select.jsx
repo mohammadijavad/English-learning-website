@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './styles/selectFilter.css'
+import '../styles/selectFilter.css'
 import { BsChevronDown, BsX } from 'react-icons/bs'
 
 function Select(props) {

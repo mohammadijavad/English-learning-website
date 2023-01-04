@@ -1,4 +1,4 @@
-@import url('../../../../../App.css');
+@import url('../../../../App.css');
 .select-menu {
   border: 1px solid var(--border-sidebar) !important;
   border-radius: 30px;

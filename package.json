@@ -12,9 +12,9 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.4.4",
     "react-scripts": "5.0.1",
-    "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",
+    "swiper": "^8.4.5",
     "use-react-router-breadcrumbs": "^4.0.1",
     "uuid": "^9.0.0"
   },

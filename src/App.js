@@ -6,9 +6,8 @@ import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { contextapp } from "./contexts/ContextProv";
-
-// import "~slick-carousel/slick/slick.css";
-// import "~slick-carousel/slick/slick-theme.css";
+// Import Swiper styles
+import "swiper/css";
 function App() {
   const { isVertical, isTwocloumn, isDarkMode } = useContext(contextapp);
 

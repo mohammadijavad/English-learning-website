@@ -5,10 +5,11 @@ import { BsFillStarFill, BsLightningFill } from 'react-icons/bs'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 import Button from 'react-bootstrap/Button'
+import EnglishFleg from '../../../../assets/images/flags/us.svg'
 function TeacherCard() {
   return (
     <div>
-      <div className={`  ${style.containerCard} mx-1`}>
+      <div className={`  ${style.containerCard} mx-1 curoser`}>
         <div className={`row ${style.gridContainer}`}>
           <div className="col-12 col-md-8 h-100">
             <div className="d-flex flex-column justify-content-between h-100">
@@ -45,33 +46,78 @@ function TeacherCard() {
                     </div>
                   </div>
                 </div>
-                <div className="d-flex flex-column border w-75">
+                <div className="d-flex flex-column  w-75">
                   <div className="m-2 mx-3"> فرنوش امینی</div>
                   <div className={`${style.animation} mt-1 mb-1 mx-3`}></div>
-                  <div className="d-flex  align-items-center m-2">
+                  <div
+                    className={`d-flex  align-items-center m-2 ${style.titleSkills}`}
+                  >
                     <div className="mx-2">تدریس</div>
-                    <div className="mx-3">انگلیسی</div>
-                  </div>
-                  <div className="d-flex  align-items-center m-2">
-                    <div className="mx-2">تخصص</div>
                     <div className="mx-3">
-                      <b>زبان عمومی و مکالمه</b>{' '}
+                      انگلیسی
+                      <img
+                        src={EnglishFleg}
+                        width="16px"
+                        height="16px"
+                        alt="us"
+                        className="rounded mx-2"
+                      />
                     </div>
                   </div>
-                  <div className="d-flex  align-items-center m-2">
+                  <div
+                    className={`d-flex  align-items-center m-2 ${style.titleSkills}`}
+                  >
+                    <div className="mx-2">تخصص</div>
+                    <div className="mx-3">
+                      <b className={`${style.bold}`}>زبان عمومی و مکالمه</b>{' '}
+                    </div>
+                  </div>
+                  <div
+                    className={`d-flex  align-items-center m-2 ${style.titleSkills}`}
+                  >
                     <div className="mx-2">سطح</div>
                     <div className="mx-3">متوسط, پیشرفته</div>
                   </div>
-                  <div className="d-flex  align-items-center m-2">
+                  <div
+                    className={`d-flex  align-items-center m-2 ${style.titleSkills}`}
+                  >
                     <div className="mx-2">مهارتها</div>
                     <div className="mx-3">آیلتس, لهجه نیتیولایک </div>
                   </div>
                 </div>
               </div>
-              <div className="d-flex flex-column border w-100 ">2</div>
+              <div className="d-flex justify-content-center align-items-center  w-100 h-25">
+                <div className={`mx-2 ${style.priceClass}`}>
+                  <span>جلسه آزمایشی</span>
+                  <span>
+                    <b className={`${style.bold}`}> 10000 </b>
+                    تومان
+                  </span>
+                </div>
+                <div className={`mx-2 ${style.priceClass}`}>
+                  <span>جلسه یک ساعتی</span>
+                  <span>
+                    <b className={`${style.bold}`}> 10000 </b>
+                    تومان
+                  </span>
+                </div>
+                <div className={`mx-2 ${style.priceClass}`}>
+                  <button className={`btn ${style.btnReservation} px-4 py-2`}>
+                    <span style={{ zIndex: 10 }}> رزرو کلاس</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="d-none d-md-flex col-md-4 border">vedio</div>
+          <div className="d-none d-md-flex col-md-4 ">
+            <div className="w-100 h-100 border">
+              <video controls width="100%" height="100%">
+                <source src="/video-example.webm" type="video/webm" />
+                <source src="/video-example.mp4" type="video/mp4" />
+                Sorry, your browser doesn't support videos.
+              </video>
+            </div>
+          </div>
         </div>
       </div>
     </div>

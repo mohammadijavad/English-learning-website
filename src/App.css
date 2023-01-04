@@ -81,6 +81,9 @@ body {
   --active-bg-btn-changeHeader: #299ddb50;
   --active-text-btn-changeHeader: #299cdb;
   --bg-project-setting: #fff;
+  /* -------------tacher card--------------------- */
+  --card-text: #717f94;
+  --bg-btnActive: #4bcffa;
 }
 [data-layout-mode='dark'] {
   --bg-siderbar-vertical: #212529;

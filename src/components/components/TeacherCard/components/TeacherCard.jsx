@@ -115,12 +115,24 @@ function TeacherCard() {
             </div>
           </div>
           <div className="d-none d-md-flex col-md-4 ">
-            <div className="w-100 h-100 d-flex justify-content-center align-items-center">
-              <video controls className={`${style.vedioTeacherEl}`}>
-                <source src={teacher1Vedio} type="video/webm" />
-                <source src={teacher1Vedio} type="video/mp4" />
-                Sorry, your browser doesn't support videos.
-              </video>
+            <div
+              className={`w-100 h-100 mx-2 d-flex justify-content-center align-items-center ${style.indexVideoWrapper}`}
+            >
+              <div className={`${style.vedioWrapper}`}>
+                <video
+                  controls
+                  className={`${style.vedioTeacherEl} ${
+                    true ? style.zoomIn : style.zoomout
+                  }`}
+                >
+                  <source src={teacher1Vedio} type="video/webm" />
+                  <source src={teacher1Vedio} type="video/mp4" />
+                  Sorry, your browser doesn't support videos.
+                </video>
+                <div className={`${style.shadowsVedio}`}>
+                  <div className={`${style.coverWrap}`}></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

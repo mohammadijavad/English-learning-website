@@ -4,7 +4,8 @@
   height: 250px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: 0.4s ease-in;
+  border: 2px solid #eee;
 }
 .gridContainer {
   height: 100%;
@@ -16,6 +17,9 @@
   background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
 
   border-radius: 5px;
+}
+.containerCard:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .containerCard:hover .animation {
   animation: animatebg 1s alternate linear infinite;
@@ -34,7 +38,7 @@
   position: relative;
 }
 .vedioWrapper {
-  width: 100%;
+  width: 90%;
   height: 80%;
   overflow: hidden;
   border-radius: 20px;
@@ -74,7 +78,7 @@
   font-size: 15px;
 }
 .btnReservation {
-  border: 1px solid var(--active-btn) !important;
+  border: 1px solid #34ace0 !important;
   color: var(--text-dark);
   position: relative;
   overflow: hidden;
@@ -112,7 +116,7 @@
   height: 100%;
   width: 100%;
   z-index: 99;
-  background: rgba(100, 100, 111, 0.6);
+  background: rgba(100, 100, 111, 0.4);
   border-radius: 20px;
   top: 0;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import style from "../style/TeacherCard.module.css";
 import teacher from "../../../../assets/images/users/avatar-2.jpg";
 import { BsFillStarFill, BsLightningFill } from "react-icons/bs";
@@ -8,10 +8,31 @@ import Button from "react-bootstrap/Button";
 import EnglishFleg from "../../../../assets/images/flags/us.svg";
 import teacher1Vedio from "../../../../teacher1.mp4";
 import pause from "../../../../assets/cover.svg";
-function TeacherCard() {
+
+function TeacherCard({ vedioKey, keyVedioDefault, setKeyVedio }) {
+  const vedioRef = useRef();
+  const [play, setPlay] = useState(false);
+  const playVedioHandler = (mode) => {
+    setPlay(mode);
+    setKeyVedio(vedioKey);
+    if (play) {
+      vedioRef.current.play();
+    } else {
+      vedioRef.current.pause();
+      setKeyVedio(0);
+    }
+  };
+  useEffect(() => {
+    if (play) {
+      vedioRef.current.play();
+    } else {
+      vedioRef.current.pause();
+      setKeyVedio(0);
+    }
+  }, [play]);
   return (
     <div>
-      <div className={`  ${style.containerCard} mx-1 curoser`}>
+      <div className={`  ${style.containerCard} mx-1 curoser mt-4`}>
         <div className={`row ${style.gridContainer}`}>
           <div className="col-12 col-md-7 h-100">
             <div className="d-flex flex-column justify-content-between h-100">
@@ -121,23 +142,30 @@ function TeacherCard() {
             >
               <div className={`${style.vedioWrapper}`}>
                 <video
-                  controls={true}
+                  onPause={() => playVedioHandler(false)}
+                  ref={vedioRef}
+                  controls={play}
                   className={`${style.vedioTeacherEl} ${
-                    true ? style.zoomIn : style.zoomout
+                    !play ? style.zoomIn : ""
                   }`}
                 >
                   <source src={teacher1Vedio} type="video/webm" />
                   <source src={teacher1Vedio} type="video/mp4" />
                   Sorry, your browser doesn't support videos.
                 </video>
-                <div className={`${style.shadowsVedio}`}>
-                  <div className={`${style.coverWrap}`}>
-                    <img src={pause} alt="" />
-                    <span className={`${style.teacherName}`}>
-                      ویدئوی معرفی استاد فرنوش امینی
-                    </span>
+                {!play && keyVedioDefault !== vedioKey && (
+                  <div
+                    className={`${style.shadowsVedio}`}
+                    onClick={() => playVedioHandler(!play)}
+                  >
+                    <div className={`${style.coverWrap}`}>
+                      <img src={pause} alt="" />
+                      <span className={`${style.teacherName}`}>
+                        ویدئوی معرفی استاد فرنوش امینی
+                      </span>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>

@@ -1,0 +1,15 @@
+.gradient1 {
+  background-image: linear-gradient(to right, #405189, #c689c6) !important;
+}
+.gradient2 {
+  background-image: linear-gradient(to right, #405189, #a555ec) !important;
+}
+.gradient3 {
+  background-image: linear-gradient(to right, #405189, #ada2ff) !important;
+}
+.gradient4 {
+  background-image: linear-gradient(to right, #405189, #7fe9de) !important;
+}
+.activeCircle {
+  border: 1px solid red;
+}

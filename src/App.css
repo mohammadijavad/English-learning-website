@@ -10,7 +10,9 @@
 html {
   scroll-behavior: smooth;
 }
-
+li {
+  list-style: none;
+}
 .scroll::-webkit-scrollbar {
   display: none;
 }
@@ -352,6 +354,9 @@ body {
 }
 .containerContent.closedSideBar {
   padding-right: 50px;
+}
+.horizantalMode {
+  padding-right: 50px !important;
 }
 /* settingIcon */
 .settingsPageIcon {

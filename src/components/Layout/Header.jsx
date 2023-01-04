@@ -6,16 +6,18 @@ import HeaderSearch from "./HeaderDeatils/HeaderSearch";
 import { contextapp } from "../../contexts/ContextProv";
 import { BsListNested } from "react-icons/bs";
 function Header() {
-  const { headerMode, fixHeader, toggleSiderbarHandler } =
+  const { headerMode, fixHeader, toggleSiderbarHandler, isHorizontal } =
     useContext(contextapp);
   return (
     <div
-      className={`containerHeader top-0  ${fixHeader ? "position-sticky" : ""}`}
+      className={`containerHeader top-0  ${
+        fixHeader ? "position-sticky" : ""
+      } `}
     >
       <Row
         className={`wrapHeader align-items-center justify-content-end mx-0  position-relative ${
           headerMode ? "lightHeader" : "darkHeader"
-        }`}
+        } ${isHorizontal ? "horizantalMode" : ""}`}
       >
         <Col xs={4} className="d-none d-sm-flex">
           <HeaderSearch />

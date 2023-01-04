@@ -1,0 +1,25 @@
+@import url("../../App.css");
+.modalContainer {
+  top: 170%;
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  display: none;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  background-color: var(--bg-project-setting);
+  transition: 0;
+  z-index: 100;
+}
+.linkItemContainer:hover .modalContainer {
+  display: block;
+  top: 110%;
+}
+.containerMenuNested {
+  font-size: var(--size-font-sm2);
+}
+.containerMenuNested li {
+  transition: 0.4s ease;
+}
+.containerMenuNested li:hover {
+  background-color: var(--bg-header-default);
+}

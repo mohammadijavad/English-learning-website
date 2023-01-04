@@ -17,13 +17,15 @@ function Layout() {
         sidebarSplit && isTwocloumn === false
           ? "splitModeSidebar"
           : "defaultModeSidebar"
-      } `}
+      }   `}
     >
       <SideBarSettings />
       <Header />
       {isHorizontal ? <MenuHorizantal /> : null}
       <Categories />
-      <Outlet />
+      <div className={`${isHorizontal ? "horizantalMode" : ""}`}>
+        <Outlet />
+      </div>
       <Setting />
       <Up />
     </div>

@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
-import Layout from "./components/Layout/Layout";
-import { SidebarVertical, SidebarTwoCol } from "./screens/index";
-import { Routers } from "./constants/Routes";
-import { Routes, Route } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import { contextapp } from "./contexts/ContextProv";
+import React, { useContext } from 'react';
+import Layout from './components/Layout/Layout';
+import { SidebarVertical, SidebarTwoCol } from './screens/index';
+import { Routers } from './constants/Routes';
+import { Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import { contextapp } from './contexts/ContextProv';
 // Import Swiper styles
-import "swiper/css";
+// import "swiper/css";
 function App() {
   const { isVertical, isTwocloumn, isDarkMode } = useContext(contextapp);
 
@@ -15,7 +15,7 @@ function App() {
     <div
       className="containerDashboard"
       dir="rtl"
-      data-layout-mode={isDarkMode ? "dark" : "light"}
+      data-layout-mode={isDarkMode ? 'dark' : 'light'}
     >
       {isVertical && <SidebarVertical />}
       <div className="d-none d-lg-block">

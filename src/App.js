@@ -7,6 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { contextapp } from "./contexts/ContextProv";
 
+// import "~slick-carousel/slick/slick.css";
+// import "~slick-carousel/slick/slick-theme.css";
 function App() {
   const { isVertical, isTwocloumn, isDarkMode } = useContext(contextapp);
 

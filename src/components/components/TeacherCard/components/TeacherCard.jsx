@@ -6,6 +6,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 import Button from 'react-bootstrap/Button'
 import EnglishFleg from '../../../../assets/images/flags/us.svg'
+import teacher1Vedio from '../../../../teacher1.mp4'
 function TeacherCard() {
   return (
     <div>
@@ -16,7 +17,11 @@ function TeacherCard() {
               <div className="d-flex">
                 <div className="d-flex flex-column align-items-center justify-content-center  w-25">
                   <div className="w-75 m-auto mx-0 mt-2">
-                    <img src={teacher} alt="" className="rounded w-100" />
+                    <img
+                      src={teacher}
+                      alt=""
+                      className={` ${style.teacherAvatar} w-100`}
+                    />
                   </div>
                   <div className="d-flex justify-content-center flex-column align-items-center mt-1">
                     <div>
@@ -110,10 +115,10 @@ function TeacherCard() {
             </div>
           </div>
           <div className="d-none d-md-flex col-md-4 ">
-            <div className="w-100 h-100 border">
-              <video controls width="100%" height="100%">
-                <source src="/video-example.webm" type="video/webm" />
-                <source src="/video-example.mp4" type="video/mp4" />
+            <div className="w-100 h-100 d-flex justify-content-center align-items-center">
+              <video controls className={`${style.vedioTeacherEl}`}>
+                <source src={teacher1Vedio} type="video/webm" />
+                <source src={teacher1Vedio} type="video/mp4" />
                 Sorry, your browser doesn't support videos.
               </video>
             </div>

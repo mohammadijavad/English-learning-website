@@ -2,8 +2,9 @@
 .containerCard {
   width: 100%;
   height: 290px;
-  border-radius: 5px;
-  border: 1px solid red;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .gridContainer {
   height: 100%;
@@ -18,6 +19,16 @@
 }
 .containerCard:hover .animation {
   animation: animatebg 1s alternate linear infinite;
+}
+.teacherAvatar {
+  border-radius: 20px;
+}
+.vedioTeacherEl {
+  width: 100%;
+  height: 90%;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 1px solid red;
 }
 @keyframes animatebg {
   0% {
@@ -52,34 +63,30 @@
   font-size: 15px;
 }
 .btnReservation {
-  border: 1px solid var(--active-btn);
+  border: 1px solid var(--active-btn) !important;
   color: var(--text-dark);
   position: relative;
   overflow: hidden;
+  color: #34ace0 !important;
+  transition: 0.4s ease;
 }
-.btnReservation::before {
-  transition: var(--time);
-  position: absolute;
-  top: 0%;
-  right: 0%;
-  height: 100%;
-  width: 0;
-  content: '';
-  background-color: var(--bg-btnActive);
-}
-.containerCard:hover .btnReservation::before {
-  width: 100%;
-}
+
 .containerCard:hover .btnReservation {
-  color: #fff;
+  background-color: var(--bg-btnActive);
+  color: #fff !important;
 }
 @media screen and (max-width: 768px) {
-  .containerCard {
+  .vedioTeacherEl {
     width: 100%;
+    height: 100%;
   }
 }
-@media screen and (min-width: 1140px) {
+@media screen and (min-width: 1200px) {
   .containerCard {
-    width: 80%;
+    width: 75%;
+  }
+  .vedioTeacherEl {
+    width: 80% !important;
+    height: 80% !important;
   }
 }

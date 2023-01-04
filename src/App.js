@@ -8,7 +8,6 @@ import "./App.css";
 import { contextapp } from "./contexts/ContextProv";
 
 function App() {
-  const navigate = useNavigate();
   const { isVertical, isTwocloumn, isDarkMode } = useContext(contextapp);
 
   return (

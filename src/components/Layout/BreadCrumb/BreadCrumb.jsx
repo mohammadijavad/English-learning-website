@@ -26,6 +26,7 @@ const Breadcrumbs = () => {
 };
 
 const Content = styled.div`
+  padding-top: 10px;
   & a:nth-child(1) {
     text-decoration: none;
     color: var(--active-btn);

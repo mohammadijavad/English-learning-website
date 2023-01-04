@@ -6,6 +6,7 @@ import SideBarSettings from "./components/SideBarSettings";
 import Dashboard from "./screens/Dashboard";
 import Lessons from "./screens/Lessons";
 import Profile from "./screens/Profile";
+import Teachers from "./screens/Teachers";
 export {
   Header,
   SidebarVertical,
@@ -15,5 +16,6 @@ export {
   Dashboard,
   Lessons,
   Profile,
+  Teachers,
 };
 // export {  };

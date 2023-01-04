@@ -2,10 +2,7 @@ import React, { useState } from 'react'
 import Select from './components/Select'
 import { BsTextRight } from 'react-icons/bs'
 function Filter() {
-  const [activeSelectEl, setActiveSelectEl] = useState(-1)
-  const handlerActive = (mode) => {
-    setActiveSelectEl(mode)
-  }
+  const [closed, setClosed] = useState(0)
   return (
     <div className="d-flex flex-wrap  align-items-center justify-content-start">
       <div
@@ -15,54 +12,30 @@ function Filter() {
         <BsTextRight size={21} />
       </div>
       <Select
-        cls="mx-2"
         title="زبان ها"
-        activeKey={0}
-        handlerActive={handlerActive}
-        activeSelectEl={activeSelectEl}
+        activeKey={1}
+        close={closed}
+        setClosed={setClosed}
       />
       <Select
         title="جنسیت"
-        cls="mx-2"
-        activeKey={1}
-        handlerActive={handlerActive}
-        activeSelectEl={activeSelectEl}
-      />
-      <Select
-        title="قیمت"
-        cls="mx-2"
         activeKey={2}
-        handlerActive={handlerActive}
-        activeSelectEl={activeSelectEl}
+        close={closed}
+        setClosed={setClosed}
       />
       <Select
-        title="روزهفته"
-        cls="mx-2"
+        title="قیمت "
         activeKey={3}
-        handlerActive={handlerActive}
-        activeSelectEl={activeSelectEl}
+        close={closed}
+        setClosed={setClosed}
       />
       <Select
-        title="ساعت"
-        cls="mx-2"
+        title="روز هفته"
         activeKey={4}
-        handlerActive={handlerActive}
-        activeSelectEl={activeSelectEl}
+        close={closed}
+        setClosed={setClosed}
       />
-      <Select
-        title="مخاطب"
-        cls="mx-2"
-        activeKey={5}
-        handlerActive={handlerActive}
-        activeSelectEl={activeSelectEl}
-      />
-      <Select
-        title="هدف"
-        cls="mx-2"
-        activeKey={6}
-        handlerActive={handlerActive}
-        activeSelectEl={activeSelectEl}
-      />
+      <Select title="ساعت" activeKey={5} close={closed} setClosed={setClosed} />
     </div>
   )
 }

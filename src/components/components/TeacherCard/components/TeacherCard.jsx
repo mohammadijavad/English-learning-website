@@ -1,15 +1,23 @@
 import React, { useRef, useEffect, useState } from "react";
 import style from "../style/TeacherCard.module.css";
-import teacher from "../../../../assets/images/users/avatar-2.jpg";
 import { BsFillStarFill, BsLightningFill } from "react-icons/bs";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import Button from "react-bootstrap/Button";
+// import teacher from "../../../../assets/images/users/avatar-2.jpg";
+// import teacher1Vedio from "../../../../teacher1.mp4";
+// import teacher2 from "../../../../assets/images/users/avatar-3.jpg";
+// import teacher2Vedio from "../../../../teacher2.mp4";
 import EnglishFleg from "../../../../assets/images/flags/us.svg";
-import teacher1Vedio from "../../../../teacher1.mp4";
 import pause from "../../../../assets/cover.svg";
 
-function TeacherCard({ vedioKey, keyVedioDefault, setKeyVedio }) {
+function TeacherCard({
+  vedioKey,
+  keyVedioDefault,
+  setKeyVedio,
+  teacherPicture,
+  teacherVedio,
+}) {
   const vedioRef = useRef();
   const [play, setPlay] = useState(false);
   const playVedioHandler = (mode) => {
@@ -40,7 +48,7 @@ function TeacherCard({ vedioKey, keyVedioDefault, setKeyVedio }) {
                 <div className="d-flex flex-column align-items-center justify-content-center  w-25">
                   <div className="w-75 m-auto mx-0 mt-2">
                     <img
-                      src={teacher}
+                      src={teacherPicture}
                       alt=""
                       className={` ${style.teacherAvatar} w-100`}
                     />
@@ -149,8 +157,8 @@ function TeacherCard({ vedioKey, keyVedioDefault, setKeyVedio }) {
                     !play ? style.zoomIn : ""
                   }`}
                 >
-                  <source src={teacher1Vedio} type="video/webm" />
-                  <source src={teacher1Vedio} type="video/mp4" />
+                  <source src={teacherVedio} type="video/webm" />
+                  <source src={teacherVedio} type="video/mp4" />
                   Sorry, your browser doesn't support videos.
                 </video>
                 {!play && keyVedioDefault !== vedioKey && (

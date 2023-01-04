@@ -5,7 +5,7 @@
 }
 @font-face {
   font-family: IranSans;
-  src: url('./assets/fonts/IRANSansWeb.woff');
+  src: url("./assets/fonts/IRANSansWeb.woff");
 }
 
 html {
@@ -85,7 +85,7 @@ body {
   --card-text: #717f94;
   --bg-btnActive: #4bcffa;
 }
-[data-layout-mode='dark'] {
+[data-layout-mode="dark"] {
   --bg-siderbar-vertical: #212529;
   --defaultColor: #7c7f90;
   --sidebar-bg-two: #30363a;
@@ -99,7 +99,7 @@ body {
 
 .containerDashboard {
   /* display: flex; */
-  height: 100%;
+  /* height: 100%; */
   color: var(--text-dark);
   background-color: var(--bg-project-setting);
 }
@@ -355,6 +355,7 @@ body {
   padding-right: 220px;
   transition: all var(--time) ease-in-out;
   /* color: var(--text-dark); */
+  min-height: 100vh;
 }
 .containerContent.closedSideBar {
   padding-right: 50px;
@@ -521,15 +522,15 @@ body {
   color: #18ffcd;
 }
 .wrapperSettings.mode4Cover {
-  background: url('./assets/images/sidebar/img-4.jpg') center center no-repeat;
+  background: url("./assets/images/sidebar/img-4.jpg") center center no-repeat;
   background-size: cover;
 }
 .wrapperSettings.mode3Cover {
-  background: url('./assets/images/sidebar/img-3.jpg') center center no-repeat;
+  background: url("./assets/images/sidebar/img-3.jpg") center center no-repeat;
   background-size: cover;
 }
 .wrapperSettings.mode2Cover {
-  background: url('./assets/images/sidebar/img-2.jpg') center center no-repeat;
+  background: url("./assets/images/sidebar/img-2.jpg") center center no-repeat;
   background-size: cover;
 }
 .wrapperSettings.mode1Cover {
@@ -542,15 +543,15 @@ body {
   background-color: var(--bg-siderbar-vertical);
 }
 .sidebarWrapper.mode2 {
-  background: url('./assets/images/sidebar/img-2.jpg') center center no-repeat;
+  background: url("./assets/images/sidebar/img-2.jpg") center center no-repeat;
   background-size: cover;
 }
 .sidebarWrapper.mode3 {
-  background: url('./assets/images/sidebar/img-3.jpg') center center no-repeat;
+  background: url("./assets/images/sidebar/img-3.jpg") center center no-repeat;
   background-size: cover;
 }
 .sidebarWrapper.mode4 {
-  background: url('./assets/images/sidebar/img-4.jpg') center center no-repeat;
+  background: url("./assets/images/sidebar/img-4.jpg") center center no-repeat;
   background-size: cover;
 }
 .containerSidebar.mode1 {
@@ -560,15 +561,15 @@ body {
   background-color: var(--bg-siderbar-vertical);
 }
 .sideTwoCol.mode2 {
-  background: url('./assets/images/sidebar/img-2.jpg') center center no-repeat;
+  background: url("./assets/images/sidebar/img-2.jpg") center center no-repeat;
   background-size: cover;
 }
 .sideTwoCol.mode3 {
-  background: url('./assets/images/sidebar/img-3.jpg') center center no-repeat;
+  background: url("./assets/images/sidebar/img-3.jpg") center center no-repeat;
   background-size: cover;
 }
 .sideTwoCol.mode4 {
-  background: url('./assets/images/sidebar/img-4.jpg') center center no-repeat;
+  background: url("./assets/images/sidebar/img-4.jpg") center center no-repeat;
   background-size: cover;
 }
 .sideTwoCol.darkSidebar {

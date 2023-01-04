@@ -2,7 +2,7 @@
   transform: translateY(-38px);
 }
 .waveCss {
-  height: 100px;
+  height: 120px;
   background-color: lime;
 }
 .waveCss img {
@@ -13,5 +13,11 @@
   border-radius: 50%;
 }
 .containerinfoUser {
-  transform: translate(30px, -60px);
+  transform: translate(0, -90px);
+}
+.containerCupUser {
+  width: 600px;
+  border: 1px solid red;
+  border-radius: 5px;
+  height: 300px;
 }

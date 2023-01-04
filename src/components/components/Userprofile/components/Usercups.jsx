@@ -1,7 +1,7 @@
 import React from 'react'
-
+import style from '../style/Header.module.css'
 function Usercups() {
-  return <div>Usercups</div>
+  return <div className={`${style.containerCupUser}`}>Usercups</div>
 }
 
 export default Usercups

@@ -15,6 +15,9 @@
 .containerinfoUser {
   transform: translate(0, -90px);
 }
+.containerAvatarUser {
+  max-height: 160px;
+}
 .containerCupUser {
   width: 600px;
   border: 1px solid red;

@@ -1,15 +1,12 @@
-import React, { useRef, useEffect, useState } from "react";
-import style from "../style/TeacherCard.module.css";
-import { BsFillStarFill, BsLightningFill } from "react-icons/bs";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
-import Button from "react-bootstrap/Button";
-// import teacher from "../../../../assets/images/users/avatar-2.jpg";
-// import teacher1Vedio from "../../../../teacher1.mp4";
-// import teacher2 from "../../../../assets/images/users/avatar-3.jpg";
-// import teacher2Vedio from "../../../../teacher2.mp4";
-import EnglishFleg from "../../../../assets/images/flags/us.svg";
-import pause from "../../../../assets/cover.svg";
+import React, { useRef, useEffect, useState } from 'react'
+import style from '../style/TeacherCard.module.css'
+import { BsFillStarFill, BsLightningFill } from 'react-icons/bs'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
+import Button from 'react-bootstrap/Button'
+
+import EnglishFleg from '../../../../../assets/images/flags/us.svg'
+import pause from '../../../../../assets/cover.svg'
 
 function TeacherCard({
   vedioKey,
@@ -18,26 +15,26 @@ function TeacherCard({
   teacherPicture,
   teacherVedio,
 }) {
-  const vedioRef = useRef();
-  const [play, setPlay] = useState(false);
+  const vedioRef = useRef()
+  const [play, setPlay] = useState(false)
   const playVedioHandler = (mode) => {
-    setPlay(mode);
-    setKeyVedio(vedioKey);
+    setPlay(mode)
+    setKeyVedio(vedioKey)
     if (play) {
-      vedioRef.current.play();
+      vedioRef.current.play()
     } else {
-      vedioRef.current.pause();
-      setKeyVedio(0);
+      vedioRef.current.pause()
+      setKeyVedio(0)
     }
-  };
+  }
   useEffect(() => {
     if (play) {
-      vedioRef.current.play();
+      vedioRef.current.play()
     } else {
-      vedioRef.current.pause();
-      setKeyVedio(0);
+      vedioRef.current.pause()
+      setKeyVedio(0)
     }
-  }, [play]);
+  }, [play])
   return (
     <div>
       <div className={`  ${style.containerCard} mx-1 curoser mt-4`}>
@@ -104,7 +101,7 @@ function TeacherCard({
                   >
                     <div className="mx-2">تخصص</div>
                     <div className="mx-3">
-                      <b className={`${style.bold}`}>زبان عمومی و مکالمه</b>{" "}
+                      <b className={`${style.bold}`}>زبان عمومی و مکالمه</b>{' '}
                     </div>
                   </div>
                   <div
@@ -154,7 +151,7 @@ function TeacherCard({
                   ref={vedioRef}
                   controls={play}
                   className={`${style.vedioTeacherEl} ${
-                    !play ? style.zoomIn : ""
+                    !play ? style.zoomIn : ''
                   }`}
                 >
                   <source src={teacherVedio} type="video/webm" />
@@ -180,7 +177,7 @@ function TeacherCard({
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default TeacherCard;
+export default TeacherCard

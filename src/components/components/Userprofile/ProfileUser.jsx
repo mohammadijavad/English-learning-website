@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Headerprofile,
   Useravatr,
@@ -14,6 +14,14 @@ import {
 
 import style from './style/Header.module.css'
 function ProfileUser() {
+  const [giftCard, setGiftCard] = useState({
+    firstName: 'Jennifer',
+    lastName: 'Smith',
+    text: 'Free dinner for 4 guests',
+    valid: true,
+    instructions: 'To use your coupon, click the button below.',
+  })
+
   return (
     <div className={`${style.ContainerProfileUser}`}>
       <Headerprofile />

@@ -5,7 +5,7 @@
 }
 @font-face {
   font-family: IranSans;
-  src: url("./assets/fonts/IRANSansWeb.woff");
+  src: url('./assets/fonts/IRANSansWeb.woff');
 }
 
 html {
@@ -84,8 +84,10 @@ body {
   /* -------------tacher card--------------------- */
   --card-text: #717f94;
   --bg-btnActive: #4bcffa;
+  /* user profile page */
+  --text-color-userInfo: #212529;
 }
-[data-layout-mode="dark"] {
+[data-layout-mode='dark'] {
   --bg-siderbar-vertical: #212529;
   --defaultColor: #7c7f90;
   --sidebar-bg-two: #30363a;
@@ -95,6 +97,7 @@ body {
   --text-dark: #fff;
   --sidebar-twocol-bg-small: #212529;
   --bg-header-default-dark: #1a20289c;
+  --text-color-userInfo: rgba(255, 255, 255, 0.788);
 }
 
 .containerDashboard {
@@ -522,15 +525,15 @@ body {
   color: #18ffcd;
 }
 .wrapperSettings.mode4Cover {
-  background: url("./assets/images/sidebar/img-4.jpg") center center no-repeat;
+  background: url('./assets/images/sidebar/img-4.jpg') center center no-repeat;
   background-size: cover;
 }
 .wrapperSettings.mode3Cover {
-  background: url("./assets/images/sidebar/img-3.jpg") center center no-repeat;
+  background: url('./assets/images/sidebar/img-3.jpg') center center no-repeat;
   background-size: cover;
 }
 .wrapperSettings.mode2Cover {
-  background: url("./assets/images/sidebar/img-2.jpg") center center no-repeat;
+  background: url('./assets/images/sidebar/img-2.jpg') center center no-repeat;
   background-size: cover;
 }
 .wrapperSettings.mode1Cover {
@@ -543,15 +546,15 @@ body {
   background-color: var(--bg-siderbar-vertical);
 }
 .sidebarWrapper.mode2 {
-  background: url("./assets/images/sidebar/img-2.jpg") center center no-repeat;
+  background: url('./assets/images/sidebar/img-2.jpg') center center no-repeat;
   background-size: cover;
 }
 .sidebarWrapper.mode3 {
-  background: url("./assets/images/sidebar/img-3.jpg") center center no-repeat;
+  background: url('./assets/images/sidebar/img-3.jpg') center center no-repeat;
   background-size: cover;
 }
 .sidebarWrapper.mode4 {
-  background: url("./assets/images/sidebar/img-4.jpg") center center no-repeat;
+  background: url('./assets/images/sidebar/img-4.jpg') center center no-repeat;
   background-size: cover;
 }
 .containerSidebar.mode1 {
@@ -561,15 +564,15 @@ body {
   background-color: var(--bg-siderbar-vertical);
 }
 .sideTwoCol.mode2 {
-  background: url("./assets/images/sidebar/img-2.jpg") center center no-repeat;
+  background: url('./assets/images/sidebar/img-2.jpg') center center no-repeat;
   background-size: cover;
 }
 .sideTwoCol.mode3 {
-  background: url("./assets/images/sidebar/img-3.jpg") center center no-repeat;
+  background: url('./assets/images/sidebar/img-3.jpg') center center no-repeat;
   background-size: cover;
 }
 .sideTwoCol.mode4 {
-  background: url("./assets/images/sidebar/img-4.jpg") center center no-repeat;
+  background: url('./assets/images/sidebar/img-4.jpg') center center no-repeat;
   background-size: cover;
 }
 .sideTwoCol.darkSidebar {

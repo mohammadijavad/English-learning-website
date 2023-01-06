@@ -8,6 +8,7 @@ import FavoriteProduct from './components/FavoriteProduct';
 import FavoriteTeacher from './components/FavoriteTeacher';
 import Wallet from './components/Wallet';
 import ChartUser from './components/ChartUser';
+import UserClassList from './components/UserClassList';
 
 export {
   Headerprofile,
@@ -20,4 +21,5 @@ export {
   FavoriteTeacher,
   Wallet,
   ChartUser,
+  UserClassList,
 };

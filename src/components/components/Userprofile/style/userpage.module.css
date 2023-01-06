@@ -1,0 +1,7 @@
+@import url('../../../../App.css');
+.userInfo {
+  color: var(--text-color-userInfo);
+}
+.cupContaienr img {
+  width: 100px;
+}

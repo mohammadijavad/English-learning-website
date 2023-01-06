@@ -35,7 +35,7 @@ function ProfileUser() {
           <div className="col-12 col-lg-6">
             <Usercups />
           </div>
-          <div className="col-12 ">
+          <div className="col-12 mt-2">
             <UserClassList />
           </div>
           <div className="col-12 ">

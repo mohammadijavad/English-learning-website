@@ -86,6 +86,7 @@ body {
   --bg-btnActive: #4bcffa;
   /* user profile page */
   --text-color-userInfo: #212529;
+  --text-colorCardClass: rgb(113, 127, 148);
 }
 [data-layout-mode='dark'] {
   --bg-siderbar-vertical: #212529;
@@ -136,6 +137,7 @@ body {
   background-color: var(--header-bg);
   color: var(--text-dark);
   border-bottom: 1px solid rgba(29, 27, 27, 0.13);
+  z-index: 10;
 }
 .headerSearchForm input {
   border: none;

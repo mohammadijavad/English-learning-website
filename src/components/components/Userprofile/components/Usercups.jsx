@@ -4,7 +4,7 @@ import testCup from '../../../../cuptest.png'
 function Usercups() {
   return (
     <div
-      className={`d-flex align-items-center justify-content-evenly flex-column`}
+      className={`d-flex align-items-center justify-content-evenly flex-column mb-4`}
     >
       <div className="d-flex align-items-center justify-content-around w-100">
         <div className={`${style.cupContaienr} curoser`}>
@@ -20,7 +20,7 @@ function Usercups() {
           <img src={testCup} alt="sing ing cup" />
         </div>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 w-100 text-center shadow-sm">
         <p>دستاورد های دانش آموز</p>
       </div>
     </div>

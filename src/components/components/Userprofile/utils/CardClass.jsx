@@ -1,7 +1,50 @@
 import React from 'react'
-
+import style from '../style/userpage.module.css'
+import TitleClass from './TitleClass'
+import teacherTestPhoto from '../../../../assets/images/users/avatar-6.jpg'
+import { FiMoreVertical } from 'react-icons/fi'
 function CardClass() {
-  return <div>CardClass</div>
+  return (
+    <div>
+      <TitleClass />
+      <div className={`${style.classListContainerRow} mt-2 row`}>
+        <div className="col-12 col-lg-6">
+          <div className="d-flex align-items-center justify-content-start ">
+            <div className={`${style.teacherCardPhoto} mx-2`}>
+              <img src={teacherTestPhoto} alt="teacher name" />
+            </div>
+            <div className="d-flex flex-column justify-content-around align-items-center">
+              <div className={`${style.containerClassInfo} my-2`}>
+                <span> کلاس خصوصی راشین احمدی </span>
+                <span className={`${style.flagClass} mx-2`}>کلاس خصوصی</span>
+              </div>
+              <div className={`${style.containerClassInfo} my-2`}>
+                <span>
+                  تعدا کل جلسات <b>1</b>
+                </span>
+                <span className={`mx-3`}>
+                  تعداد جلسات زمانبندی نشده<b>9</b>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-12 col-lg-6 d-flex align-items-center justify-content-end">
+          <div className={`mx-2 ${style.btnActionCardClass}`}>
+            <button className="border-0 p-2 px-3 rounded-2">چت با استاد</button>
+          </div>
+          <div className={`mx-2 ${style.btnActionCardClass}`}>
+            <button className="border-0 p-2 px-3 rounded-2">
+              زمانبندی کلاس
+            </button>
+          </div>
+          <div className={`mx-2 curoser`}>
+            <FiMoreVertical size={20} />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default CardClass

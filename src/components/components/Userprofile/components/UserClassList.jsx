@@ -1,7 +1,8 @@
 import React from 'react'
 
+import CardClass from '../utils/CardClass'
 function UserClassList() {
-  return <div>UserClassList</div>
+  return <CardClass />
 }
 
 export default UserClassList

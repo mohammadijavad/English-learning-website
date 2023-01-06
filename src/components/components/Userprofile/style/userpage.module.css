@@ -5,3 +5,35 @@
 .cupContaienr img {
   width: 100px;
 }
+.titleClass {
+  font-size: var(--size-font-sm2);
+}
+.titleClassShow {
+  color: var(--bg-btnActive);
+}
+.teacherCardPhoto img {
+  width: 100px;
+  border-radius: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.containerClassInfo {
+  font-size: 13px;
+  color: var(--text-colorCardClass);
+}
+.flagClass {
+  background-color: rgb(232, 249, 244);
+  color: rgb(0, 184, 126);
+  font-size: 12px;
+  padding: 0.3rem;
+  border-radius: 3px;
+}
+.btnActionCardClass button {
+  background-color: transparent;
+  border: 1px solid var(--bg-btnActive) !important;
+  font-size: 14px !important;
+  transition: var(--time);
+}
+.btnActionCardClass button:hover {
+  background-color: var(--bg-btnActive);
+  color: #fff;
+}

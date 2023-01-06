@@ -1,4 +1,4 @@
-@import url("../../../../App.css");
+@import url('../../../../App.css');
 
 .defaultmode {
   width: 90%;
@@ -182,7 +182,7 @@
 }
 /* header dark */
 .headerMode.headerdarkS {
-  background-color: var(--bg-header-darkmove) !important;
+  background-color: var(--bg-header-darkmode) !important;
 }
 /* sidebar mode */
 .sidebarMode {

@@ -46,11 +46,11 @@ body {
 :root {
   --bg-siderbar-vertical: #1770ba;
   --bg-header-darkmode: #1770ba;
-  --bg-header-default: #def5e5;
+  --bg-header-default: #caf0f8;
   --sidebar-bg-default: #1770ba;
   --sidebar-bg-two: #1770ba;
   --border-sidebar: #2d033b;
-  --sidebar-twocol-bg-small: #533483;
+  --sidebar-twocol-bg-small: #03045e;
   --bg-projectSetting-template: #1770ba;
   --text-white: #fff;
   --input-bg: #f3f3f9;

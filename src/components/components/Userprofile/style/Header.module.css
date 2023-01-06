@@ -2,8 +2,15 @@
   transform: translateY(-38px);
 }
 .waveCss {
-  height: 120px;
-  background-color: lime;
+  height: 150px;
+  background: url('../../../../bgStatic.png') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  width: 100%;
+}
+.darkmode {
+  background: url('../../../../darkbgStatic.png') no-repeat center center;
+  background-size: cover;
 }
 .waveCss img {
   width: 100%;

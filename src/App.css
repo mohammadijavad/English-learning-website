@@ -44,14 +44,14 @@ body {
   overflow-x: hidden;
 }
 :root {
-  --bg-siderbar-vertical: #3f3b6c;
-  --bg-header-darkmove: #453c67;
+  --bg-siderbar-vertical: #1770ba;
+  --bg-header-darkmode: #1770ba;
   --bg-header-default: #def5e5;
-  --sidebar-bg-default: #3f3b6c;
-  --sidebar-bg-two: #3f3b6c;
+  --sidebar-bg-default: #1770ba;
+  --sidebar-bg-two: #1770ba;
   --border-sidebar: #2d033b;
   --sidebar-twocol-bg-small: #533483;
-  --bg-projectSetting-template: #3f3b6c;
+  --bg-projectSetting-template: #1770ba;
   --text-white: #fff;
   --input-bg: #f3f3f9;
   --text-dark: #212529;
@@ -60,7 +60,7 @@ body {
   --bg-userProfile: #f3f3f9;
   --bg-light-mode: #fff;
   --profile-textLight: #212529bb;
-  --active-btn: #3577f1;
+  --active-btn: #fff;
   --bg-btn: #371b58;
   --defaultColor: #abb9e8;
   --time: 0.4s;
@@ -74,13 +74,13 @@ body {
   --setting-dark: 239, 242, 247;
   --setting-content-dark: #222;
   --border-setting: #9aa2a9a1;
-  --item-accordion: #7c7f90;
-  --header-bg-dark: #405189;
+  --item-accordion: #aeb1c1;
   --content-text-color: #495057;
   --bg-btnHeaderChange: #99c7e04a;
   --active-bg-btn-changeHeader: #299ddb50;
   --active-text-btn-changeHeader: #299cdb;
   --bg-project-setting: #fff;
+  --color-showRoute:#299cdb
   /* -------------tacher card--------------------- */
   --card-text: #717f94;
   --bg-btnActive: #4bcffa;
@@ -92,13 +92,13 @@ body {
   --bg-siderbar-vertical: #212529;
   --defaultColor: #7c7f90;
   --sidebar-bg-two: #30363a;
-  --header-bg-dark: #292e32;
   --rgbSetting: #666b7018;
   --bg-project-setting: #212529;
   --text-dark: #fff;
   --sidebar-twocol-bg-small: #212529;
   --bg-header-default-dark: #1a20289c;
   --text-color-userInfo: rgba(255, 255, 255, 0.788);
+  --bg-header-darkmode: #292e32;
 }
 
 .containerDashboard {
@@ -112,7 +112,7 @@ body {
   background-color: var(--bg-header-default);
 }
 .wrapHeader.darkHeader {
-  background-color: var(--bg-header-darkmove);
+  background-color: var(--bg-header-darkmode);
 }
 .wrapHeader.lightHeader {
   background-color: var(--bg-header-default);
@@ -134,7 +134,6 @@ body {
 .containerHeader {
   width: 100%;
   height: 60px;
-  background-color: var(--header-bg);
   color: var(--text-dark);
   border-bottom: 1px solid rgba(29, 27, 27, 0.13);
   z-index: 10;
@@ -219,12 +218,12 @@ body {
 }
 .activem .iconContainer {
   color: var(--active-btn) !important;
-  background-color: rgba(53, 119, 241, 0.1) !important;
+  background-color: rgb(215 220 231 / 48%) !important;
   border-color: transparent !important;
 }
 .flagactive {
   color: var(--active-btn) !important;
-  background-color: rgba(53, 119, 241, 0.1) !important;
+  background-color: rgb(215 220 231 / 48%) !important;
   border-color: transparent !important;
 }
 .unactivem + .containerModal {
@@ -351,7 +350,8 @@ body {
   color: var(--item-accordion);
 }
 .contentBodyAccordion:hover {
-  background-color: #dfe6e913;
+  background-color: #dfe6e94d;
+  color: var(--text-dark);
 }
 
 /* containerContent */

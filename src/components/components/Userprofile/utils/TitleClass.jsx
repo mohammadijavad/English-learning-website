@@ -5,11 +5,11 @@ function TitleClass() {
     <div
       className={`${style.titleClass} d-flex justify-content-between align-items-center border-bottom border-gray`}
     >
-      <div>
-        <p className="mb-0 mb-1">کلاس های پیش رو</p>
+      <div className="mb-3">
+        <b>کلاس های پیش رو</b>
       </div>
       <div>
-        <p className={`${style.titleClassShow} curoser mb-0`}>مشاهده همه</p>
+        <b className={`${style.titleClassShow} curoser mb-0`}>مشاهده همه</b>
       </div>
     </div>
   )

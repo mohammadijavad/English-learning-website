@@ -9,8 +9,8 @@ function CardClass() {
       <TitleClass />
       <div className={`${style.classListContainerRow} mt-2 row`}>
         <div className="col-12 col-lg-6">
-          <div className="d-flex align-items-center justify-content-start ">
-            <div className={`${style.teacherCardPhoto} mx-2`}>
+          <div className="d-flex align-items-center justify-content-center justify-content-lg-start ">
+            <div className={`${style.teacherCardPhoto} mx-2 `}>
               <img src={teacherTestPhoto} alt="teacher name" />
             </div>
             <div className="d-flex flex-column justify-content-around align-items-center">
@@ -20,16 +20,17 @@ function CardClass() {
               </div>
               <div className={`${style.containerClassInfo} my-2`}>
                 <span>
-                  تعدا کل جلسات <b>1</b>
+                  تعدا کل جلسات : <b className={style.numberClass}> 1 </b>
                 </span>
                 <span className={`mx-3`}>
-                  تعداد جلسات زمانبندی نشده<b>9</b>
+                  تعداد جلسات زمانبندی نشده :
+                  <b className={style.numberClass}> 9 </b>
                 </span>
               </div>
             </div>
           </div>
         </div>
-        <div className="col-12 col-lg-6 d-flex align-items-center justify-content-end">
+        <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center justify-content-lg-end mt-3">
           <div className={`mx-2 ${style.btnActionCardClass}`}>
             <button className="border-0 p-2 px-3 rounded-2">چت با استاد</button>
           </div>

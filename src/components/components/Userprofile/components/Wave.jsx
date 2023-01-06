@@ -1,9 +1,12 @@
-import React from 'react'
-import wavecss from '../../../../assets/images/svg/wave.svg'
+import React, { useContext } from 'react'
+import { contextapp } from '../../../../contexts/ContextProv'
 import style from '../style/Header.module.css'
 function Wave() {
+  const { isDarkMode } = useContext(contextapp)
   return (
-    <div className={style.waveCss}>{/* <img src={wavecss} alt="" /> */}</div>
+    <div
+      className={`${style.waveCss} ${isDarkMode ? `${style.darkmode}` : ''}`}
+    ></div>
   )
 }
 

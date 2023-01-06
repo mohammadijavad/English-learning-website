@@ -37,3 +37,6 @@
   background-color: var(--bg-btnActive);
   color: #fff;
 }
+.numberClass {
+  color: var(--text-dark);
+}

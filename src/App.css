@@ -772,3 +772,11 @@ body {
 .splitSidebar .dot3Setting {
   top: 55% !important;
 }
+.accordion-button .BsChevronDown {
+  transform: rotate(-180deg) !important;
+  transition: var(--time);
+}
+.accordion-button.collapsed .BsChevronDown {
+  transform: rotate(0deg) !important;
+  transition: var(--time);
+}

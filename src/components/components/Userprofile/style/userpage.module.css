@@ -1,4 +1,4 @@
-@import url('../../../../App.css');
+@import url("../../../../App.css");
 .userInfo {
   color: var(--text-color-userInfo);
 }
@@ -7,9 +7,10 @@
 }
 .titleClass {
   font-size: var(--size-font-sm2);
+  color: var(--text-dark);
 }
 .titleClassShow {
-  color: var(--bg-btnActive);
+  color: var(--bg-btnActive) !important;
 }
 .teacherCardPhoto img {
   width: 100px;

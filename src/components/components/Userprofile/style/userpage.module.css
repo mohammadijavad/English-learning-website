@@ -41,3 +41,36 @@
 .numberClass {
   color: var(--text-dark);
 }
+/* favorite products */
+.size1 {
+  font-size: 13px;
+}
+.size2 {
+  font-size: 14px;
+}
+.size3 {
+  font-size: 15px;
+}
+.iconFavorite {
+  background-color: var(--favorite-products-bg);
+  color: var(--favorite-products-color);
+}
+.iconFavoriteTeacher {
+  background-color: var(--favorite-teachers-bg);
+  color: var(--favorite-teachers-color);
+}
+/* user wallet */
+.walletContainer {
+  width: 100%;
+  height: 100%;
+}
+.walletContainerInfo {
+  background: url("../../../../assets/card-background.png") no-repeat center
+    center;
+  background-size: cover;
+  position: relative;
+  min-height: 210px;
+  max-width: 80%;
+  border-radius: 5px;
+  color: var(--text-white);
+}

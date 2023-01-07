@@ -87,6 +87,10 @@ body {
   /* user profile page */
   --text-color-userInfo: #212529;
   --text-colorCardClass: rgb(113, 127, 148);
+  --favorite-products-bg:#FDA7DF;
+  --favorite-products-color:#6f1e51;
+  --favorite-teachers-bg:#32ff7d50;
+  --favorite-teachers-color:#00ff5e;
 }
 [data-layout-mode='dark'] {
   --bg-siderbar-vertical: #212529;

@@ -1,10 +1,15 @@
-import React from "react";
-import style from "../style/userpage.module.css";
-import TitleClass from "./TitleClass";
-import teacherTestPhoto from "../../../../assets/images/users/avatar-6.jpg";
-import { FiMoreVertical } from "react-icons/fi";
-import Accordion from "react-bootstrap/Accordion";
-function CardClass() {
+import React from 'react'
+import style from '../style/userpage.module.css'
+import TitleClass from './TitleClass'
+import teacherTestPhoto from '../../../../assets/images/users/avatar-6.jpg'
+import { FiMoreVertical } from 'react-icons/fi'
+import Accordion from 'react-bootstrap/Accordion'
+function CardClass({
+  teacherName,
+  classCount,
+  UnreservedClasses,
+  teacherPhoto,
+}) {
   return (
     <div>
       <Accordion defaultActiveKey="1">
@@ -17,22 +22,26 @@ function CardClass() {
               <div className="col-12 col-lg-6">
                 <div className="d-flex align-items-center justify-content-center justify-content-lg-start ">
                   <div className={`${style.teacherCardPhoto} mx-2 `}>
-                    <img src={teacherTestPhoto} alt="teacher name" />
+                    <img src={teacherPhoto} alt="teacher name" />
                   </div>
                   <div className="d-flex flex-column justify-content-around align-items-center">
                     <div className={`${style.containerClassInfo} my-2`}>
-                      <span> کلاس خصوصی راشین احمدی </span>
+                      <span> {teacherName}</span>
                       <span className={`${style.flagClass} mx-2`}>
                         کلاس خصوصی
                       </span>
                     </div>
                     <div className={`${style.containerClassInfo} my-2`}>
                       <span>
-                        تعدا کل جلسات : <b className={style.numberClass}> 1 </b>
+                        تعدا کل جلسات :{' '}
+                        <b className={style.numberClass}> {classCount} </b>
                       </span>
                       <span className={`mx-3`}>
                         تعداد جلسات زمانبندی نشده :
-                        <b className={style.numberClass}> 9 </b>
+                        <b className={style.numberClass}>
+                          {' '}
+                          {UnreservedClasses}{' '}
+                        </b>
                       </span>
                     </div>
                   </div>
@@ -58,7 +67,7 @@ function CardClass() {
         </Accordion.Item>
       </Accordion>
     </div>
-  );
+  )
 }
 
-export default CardClass;
+export default CardClass

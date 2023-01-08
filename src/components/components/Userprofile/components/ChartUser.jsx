@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react'
 import {
   ComposedChart,
   Line,
@@ -10,46 +10,46 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-} from "recharts";
+} from 'recharts'
 
 const data = [
   {
-    name: "Page A",
+    name: 'فروردین',
     uv: 590,
     pv: 800,
-    amt: 1400,
+    amt: 1,
   },
   {
-    name: "Page B",
-    uv: 868,
-    pv: 967,
-    amt: 1506,
+    name: 'اردیبهشت',
+    uv: 2,
+    pv: 2,
+    amt: 2,
   },
   {
-    name: "Page C",
-    uv: 1397,
-    pv: 1098,
-    amt: 989,
+    name: 'خرداد',
+    uv: 3,
+    pv: 3,
+    amt: 3,
   },
   {
-    name: "Page D",
-    uv: 1480,
-    pv: 1200,
-    amt: 1228,
+    name: 'تیر',
+    uv: 4,
+    pv: 4,
+    amt: 4,
   },
   {
-    name: "Page E",
-    uv: 1520,
-    pv: 1108,
-    amt: 1100,
+    name: 'مرداد',
+    uv: 5,
+    pv: 5,
+    amt: 5,
   },
   {
-    name: "Page F",
-    uv: 1400,
-    pv: 680,
-    amt: 1700,
+    name: 'شهریور',
+    uv: 6,
+    pv: 6,
+    amt: 6,
   },
-];
+]
 
 export default class Example extends PureComponent {
   render() {
@@ -76,6 +76,6 @@ export default class Example extends PureComponent {
           <Line type="monotone" dataKey="uv" stroke="#f79256" />
         </ComposedChart>
       </ResponsiveContainer>
-    );
+    )
   }
 }

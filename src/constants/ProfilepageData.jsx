@@ -25,19 +25,85 @@ const Teachers = [
     testSession: 'آزمایشی',
     onehourPriceSession: 100000,
   },
+  {
+    id: uuidv4(),
+    name: 'name1 fammily1',
+    photo: teacher2,
+    language: 'us',
+    level: 'متوسط',
+    ثxpertise: 'IELTS',
+    Skills: 'زبان عمومی ,IELTS,اسپیکینگ',
+    testSession: 'آزمایشی',
+    onehourPriceSession: 100000,
+  },
+  {
+    id: uuidv4(),
+    name: 'name1 fammily1',
+    photo: teacher3,
+    language: 'us',
+    level: 'متوسط',
+    ثxpertise: 'IELTS',
+    Skills: 'زبان عمومی ,IELTS,اسپیکینگ',
+    testSession: 'آزمایشی',
+    onehourPriceSession: 100000,
+  },
+  {
+    id: uuidv4(),
+    name: 'name1 fammily1',
+    photo: teacher4,
+    language: 'us',
+    level: 'متوسط',
+    ثxpertise: 'IELTS',
+    Skills: 'زبان عمومی ,IELTS,اسپیکینگ',
+    testSession: 'آزمایشی',
+    onehourPriceSession: 100000,
+  },
 ]
-const reservedClass = []
-const reservedClasses = []
-const ComplatedClasses = []
+const reservedClasses = [
+  {
+    id: uuidv4(),
+    name: ' نازنین امیری ',
+    photo: teacher1,
+    reserved: 1,
+    unreserved: 10,
+  },
+]
+const ComplatedClasses = [
+  {
+    id: uuidv4(),
+    name: ' نام تستی',
+    photo: teacher2,
+    reserved: 1,
+    unreserved: 10,
+  },
+]
+const canceledClasses = [
+  {
+    id: uuidv4(),
+    name: 'نام تستی',
+    photo: teacher4,
+    reserved: 1,
+    unreserved: 10,
+  },
+]
 const userAchievements = []
-const favoriteProducts = []
-const favoriteTeachers = []
+const favoriteProducts = [{ productName: '', id: uuidv4(), price: '' }]
+const favoriteTeachers = [
+  {
+    id: uuidv4(),
+    name: 'نام تستی',
+    photo: teacher3,
+    onehourPriceSession: 100000,
+    reserved: 1,
+    unreserved: 10,
+  },
+]
 const rechargeWallet = []
 const userProgressBar = []
 export {
   userInfo,
   Teachers,
-  reservedClass,
+  canceledClasses,
   reservedClasses,
   ComplatedClasses,
   userAchievements,

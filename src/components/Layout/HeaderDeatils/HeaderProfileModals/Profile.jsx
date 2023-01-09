@@ -10,7 +10,7 @@ import {
   BsBoxArrowRight,
 } from 'react-icons/bs'
 import { AiOutlineSetting } from 'react-icons/ai'
-import flag from '../../../../assets/images/flags/us.svg'
+import flag from '../../../../assets/images/users/avatar-5.jpg'
 function Profile({ index }) {
   const { showmodal, showModalHandler } = useContext(contextapp)
   return (

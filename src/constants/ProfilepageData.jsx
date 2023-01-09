@@ -3,6 +3,11 @@ import teacher1 from "../assets/images/users/avatar-1.jpg";
 import teacher2 from "../assets/images/users/avatar-2.jpg";
 import teacher3 from "../assets/images/users/avatar-3.jpg";
 import teacher4 from "../assets/images/users/avatar-4.jpg";
+
+import teacher1Vedio from "../assets/images/just static data/teacher1.mp4";
+import teacher2Vedio from "../assets/images/just static data/teacher2.mp4";
+import teacher3Vedio from "../assets/images/just static data/teacher3.mp4";
+import teacher4Vedio from "../assets/images/just static data/teacher4.mp4";
 const date = new Date();
 const userInfo = {
   userId: uuidv4(),
@@ -17,12 +22,15 @@ const Teachers = [
     id: uuidv4(),
     name: "name1 fammily1",
     photo: teacher1,
-    language: "us",
+    language: "انگلیسی",
+    lang: "use",
     level: "متوسط",
-    ثxpertise: "IELTS",
+    xpertise: "IELTS",
     Skills: "زبان عمومی ,IELTS,اسپیکینگ",
     testSession: "آزمایشی",
     onehourPriceSession: 100000,
+    src: teacher1Vedio,
+    priceLevel: "رایگان",
   },
   {
     id: uuidv4(),
@@ -30,10 +38,12 @@ const Teachers = [
     photo: teacher2,
     language: "us",
     level: "متوسط",
-    ثxpertise: "IELTS",
+    xpertise: "IELTS",
     Skills: "زبان عمومی ,IELTS,اسپیکینگ",
     testSession: "آزمایشی",
     onehourPriceSession: 100000,
+    src: teacher2Vedio,
+    priceLevel: "رایگان",
   },
   {
     id: uuidv4(),
@@ -41,10 +51,12 @@ const Teachers = [
     photo: teacher3,
     language: "us",
     level: "متوسط",
-    ثxpertise: "IELTS",
+    xpertise: "IELTS",
     Skills: "زبان عمومی ,IELTS,اسپیکینگ",
     testSession: "آزمایشی",
     onehourPriceSession: 100000,
+    src: teacher3Vedio,
+    priceLevel: "رایگان",
   },
   {
     id: uuidv4(),
@@ -52,10 +64,12 @@ const Teachers = [
     photo: teacher4,
     language: "us",
     level: "متوسط",
-    ثxpertise: "IELTS",
+    xpertise: "IELTS",
     Skills: "زبان عمومی ,IELTS,اسپیکینگ",
     testSession: "آزمایشی",
     onehourPriceSession: 100000,
+    src: teacher4Vedio,
+    priceLevel: "رایگان",
   },
 ];
 const reservedClasses = [

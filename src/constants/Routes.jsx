@@ -9,6 +9,7 @@ import {
   FavoriteProducts,
   Ecommer,
   Movies,
+  TeacherInfo,
 } from "../screens/index";
 export const Routers = [
   {
@@ -34,6 +35,12 @@ export const Routers = [
     id: uuidv4(),
     componet: <Teachers />,
     breadcrumb: " / استادزبان آنلاین  ",
+  },
+  {
+    path: "/teachers/:id",
+    id: uuidv4(),
+    componet: <TeacherInfo />,
+    breadcrumb: " / جزئیات ",
   },
   {
     path: "/favorite-teachers",

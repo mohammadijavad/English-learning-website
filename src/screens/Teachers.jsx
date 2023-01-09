@@ -1,7 +1,7 @@
-import React from 'react'
-import Categories from '../components/components/filters/components/filtersCategories/Categories'
-import TeachersNameFilter from '../components/components/filters/components/filterNamesTeacher/TeachersNameFilter'
-import ContainerCardTeacher from '../components/components/Teacher/index'
+import React from "react";
+import Categories from "../components/components/filters/components/filtersCategories/Categories";
+import TeachersNameFilter from "../components/components/filters/components/filterNamesTeacher/TeachersNameFilter";
+import ContainerCardTeacher from "../components/components/Teacher/index";
 
 function Teachers() {
   return (
@@ -10,7 +10,7 @@ function Teachers() {
       <TeachersNameFilter />
       <ContainerCardTeacher />
     </div>
-  )
+  );
 }
 
-export default Teachers
+export default Teachers;

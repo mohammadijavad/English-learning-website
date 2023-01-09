@@ -11,6 +11,7 @@ import FavoriteTeachers from "../screens/FavoriteTeachers";
 import FavoriteProducts from "../screens/FavoriteProducts";
 import Ecommer from "../screens/Ecommer";
 import Movies from "../screens/Movies";
+import TeacherInfo from "../screens/TeacherInfo";
 export {
   Header,
   SidebarVertical,
@@ -25,5 +26,6 @@ export {
   FavoriteProducts,
   Ecommer,
   Movies,
+  TeacherInfo,
 };
 // export {  };

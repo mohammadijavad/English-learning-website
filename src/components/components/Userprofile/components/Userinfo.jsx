@@ -1,18 +1,43 @@
-import React from 'react'
-import style from '../style/userpage.module.css'
+import React from "react";
+import style from "../style/userpage.module.css";
+import { userInfo } from "../../../../constants/ProfilepageData";
+import US from "../../../../assets/images/flags/us.svg";
+import Germany from "../../../../assets/images/flags/germany.svg";
 function Userinfo() {
+  console.log(userInfo);
+  const { name, languages, golas, siningTime } = userInfo;
+  let flag = "";
+  let lang = "";
+  if (languages === "US") {
+    flag = US;
+    lang = "زبان انگلیسی";
+  } else {
+    flag = Germany;
+    lang = "زبان آلمانی";
+  }
   return (
     <div className={`${style.userInfo}`}>
-      <p>جواد محمدی</p>
-      <p>زبان انگلیسی ✅</p>
-      <p>
-        هدف <b>IELTS</b>
-      </p>
-      <p>
-        زمان ثبت نام <b>12 مهر 14101</b>
-      </p>
+      <div className="mb-2"> {name}</div>
+      <div className="my-3">
+        <span>{lang}</span>
+        <span>
+          <img
+            width="20px"
+            height="15px"
+            className="rounded shadow-sm mx-2"
+            src={flag}
+            alt=""
+          />
+        </span>
+      </div>
+      <div className="my-2">
+        هدف :<b>{golas}</b>
+      </div>
+      <div className="my-2">
+        زمان ثبت نام :<b> {siningTime} </b>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Userinfo
+export default Userinfo;

@@ -8,6 +8,7 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import Button from "react-bootstrap/Button";
 function Usercups() {
+  const bg = { bacground: "red" };
   return (
     <div
       className={`d-flex align-items-center justify-content-evenly flex-column mb-4`}
@@ -20,8 +21,8 @@ function Usercups() {
             overlay={(props) => <Tooltip {...props}>اولین کلاس خصوصی</Tooltip>}
             placement="top"
           >
-            <Button variant="" className={`m-0 p-0 bg-none ${style.rateStart}`}>
-              <img src={testCup1} alt="sing ing cup" />
+            <Button variant="" className={`m-0 p-0 bg-none `}>
+              <img src={testCup1} className={style.cupimg} alt="sing ing cup" />
             </Button>
           </OverlayTrigger>
         </div>
@@ -34,11 +35,11 @@ function Usercups() {
             )}
             placement="top"
           >
-            <Button variant="" className={`m-0 p-0 bg-none ${style.rateStart}`}>
+            <Button variant="" className={`m-0 p-0 bg-none `}>
               <img
                 src={testCup2}
                 alt="sing ing cup"
-                className="blackWhiteImage"
+                className={`blackWhiteImage ${style.cupimg} `}
               />
             </Button>
           </OverlayTrigger>
@@ -56,7 +57,7 @@ function Usercups() {
               <img
                 src={testCup3}
                 alt="sing ing cup"
-                className="blackWhiteImage"
+                className={`blackWhiteImage ${style.cupimg} `}
               />
             </Button>
           </OverlayTrigger>
@@ -74,7 +75,7 @@ function Usercups() {
               <img
                 src={testCup4}
                 alt="sing ing cup"
-                className="blackWhiteImage"
+                className={`blackWhiteImage ${style.cupimg} `}
               />
             </Button>
           </OverlayTrigger>

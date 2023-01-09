@@ -4,15 +4,14 @@ import teacher2 from "../assets/images/users/avatar-2.jpg";
 import teacher3 from "../assets/images/users/avatar-3.jpg";
 import teacher4 from "../assets/images/users/avatar-4.jpg";
 const date = new Date();
-const userInfo = [
-  {
-    userId: uuidv4(),
-    name: "جواد محمدی ",
-    languages: "us",
-    golas: "IELTS",
-    siningTime: date,
-  },
-];
+const userInfo = {
+  userId: uuidv4(),
+  name: " الهام امیری کیا ",
+  languages: "US",
+  golas: "IELTS",
+  siningTime: "12 فروردین 1401",
+};
+
 const Teachers = [
   {
     id: uuidv4(),

@@ -1,14 +1,15 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import "./accordion.css";
 import { lists } from "../datalist";
 import { BsChevronDown, BsCoin, BsDash } from "react-icons/bs";
+import { Link } from "react-router-dom";
 function BasicExample() {
-  const [select,setSelected]=useState(null)
-  const setSelectHandler=(id)=>{
-    setSelected(id)
-    console.log(select)
-  }
+  const [select, setSelected] = useState(null);
+  const setSelectHandler = (id) => {
+    setSelected(id);
+    console.log(select);
+  };
   return (
     <Accordion className="containerAccordionp mt-3" flush>
       {lists.map((list) => {
@@ -27,12 +28,18 @@ function BasicExample() {
               <div className="bodyAccordion d-flex align-items-center justify-content-start flex-column ">
                 {list.children?.map((child) => {
                   return (
-                    <div key={child.id} 
-                    className={`contentBodyAccordion p-1 rounded-1 d-flex justify-content-start w-100 mt-1 curoser ${select===child.id?'activeAccordion':''}`}
-                     onClick={()=>setSelectHandler(child.id)}>
-                      <BsDash  className="mt-1" />
-                      <div className="fontSizesm">{child.title}</div>
-                    </div>
+                    <Link className="w-100" to={child.to}>
+                      <div
+                        key={child.id}
+                        className={`contentBodyAccordion p-1 rounded-1 d-flex justify-content-start w-100 mt-1 curoser ${
+                          select === child.id ? "activeAccordion" : ""
+                        }`}
+                        onClick={() => setSelectHandler(child.id)}
+                      >
+                        <BsDash className="mt-1" />
+                        <div className="fontSizesm">{child.title}</div>
+                      </div>
+                    </Link>
                   );
                 })}
               </div>

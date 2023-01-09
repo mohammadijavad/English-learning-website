@@ -1,145 +1,138 @@
-import {BsPieChart,BsAppIndicator,BsReverseLayoutSidebarReverse} from "react-icons/bs"
-import { v4 as uuidv4 } from 'uuid';
+import {
+  BsPieChart,
+  BsAppIndicator,
+  BsReverseLayoutSidebarReverse,
+} from "react-icons/bs";
+import { v4 as uuidv4 } from "uuid";
 export const lists = [
   {
-    index:0,
+    index: 0,
     id: uuidv4(),
-    title: 'داشبورد',
+    title: "داشبورد",
     icon: <BsPieChart className="iconSidebarTab" />,
     children: [
       {
         id: uuidv4(),
-        title: 'آنالیز',
-        to: '/analytics',
+        title: "داشبورد دانش آموز",
+        to: "/",
       },
       {
         id: uuidv4(),
-        title: 'مدیریت ارتباط مشتری',
-        to: '/crm',
+        title: "انتخاب استاد",
+        to: "/teachers",
       },
       {
         id: uuidv4(),
-        title: 'فروشگاه',
-        to: '/ecommerce',
+        title: "اساتید مورد علاقه",
+        to: "/favorite-teachers",
       },
       {
         id: uuidv4(),
-        title: 'ارز دیجیتال',
-        to: '/vrypto',
+        title: "محصولات مورد علاقه",
+        to: "/favorite-products",
       },
-      {
-        id: uuidv4(),
-        title: 'پروژه ها',
-        to: '/projects',
-      },
-      {
-        id: uuidv4(),
-        title: 'NFT',
-        to: '/nft',
-      },
-     
     ],
   },
   {
-    index:1,
-    id:uuidv4(),
-    title: 'برنامه ها',
-    icon: <BsAppIndicator className="iconSidebarTab"  />,
+    index: 1,
+    id: uuidv4(),
+    title: "برنامه ها",
+    icon: <BsAppIndicator className="iconSidebarTab" />,
     children: [
       {
-        id:uuidv4(),
-        title: 'تاریخ',
-        to: '/calendar',
+        id: uuidv4(),
+        title: "تاریخ",
+        to: "/calendar",
       },
     ],
   },
   {
-    index:2,
+    index: 2,
     id: 2,
-    title: 'نمایش',
+    title: "نمایش",
     icon: <BsReverseLayoutSidebarReverse className="iconSidebarTab" />,
     children: [
       {
-        id:uuidv4(),
-        title: 'افقی',
-        event: 'horizontal',
+        id: uuidv4(),
+        title: "افقی",
+        event: "horizontal",
       },
     ],
   },
-]
-export const pages=[
+];
+export const pages = [
   {
     id: 1,
-    title: 'داشبورد',
-    icon: <BsPieChart/>,
+    title: "داشبورد",
+    icon: <BsPieChart />,
     children: [
       {
         id: 1,
-        title: '',
-        to: '',
+        title: "",
+        to: "",
       },
     ],
   },
   {
     id: 2,
-    title: 'برنامه ها',
-    icon: <BsAppIndicator/>,
+    title: "برنامه ها",
+    icon: <BsAppIndicator />,
     children: [
       {
         id: 1,
-        title: '',
-        to: '',
+        title: "",
+        to: "",
       },
     ],
   },
   {
     id: 3,
-    title: 'نمایش',
-    icon: <BsReverseLayoutSidebarReverse/>,
+    title: "نمایش",
+    icon: <BsReverseLayoutSidebarReverse />,
     children: [
       {
         id: 1,
-        title: '',
-        to: '',
+        title: "",
+        to: "",
       },
     ],
   },
-]
-export const components=[
+];
+export const components = [
   {
     id: 1,
-    title: 'داشبورد',
-    icon: <BsPieChart/>,
+    title: "داشبورد",
+    icon: <BsPieChart />,
     children: [
       {
         id: 1,
-        title: '',
-        to: '',
+        title: "",
+        to: "",
       },
     ],
   },
   {
     id: 2,
-    title: 'برنامه ها',
-    icon: <BsAppIndicator/>,
+    title: "برنامه ها",
+    icon: <BsAppIndicator />,
     children: [
       {
         id: 1,
-        title: '',
-        to: '',
+        title: "",
+        to: "",
       },
     ],
   },
   {
     id: 3,
-    title: 'نمایش',
-    icon: <BsReverseLayoutSidebarReverse/>,
+    title: "نمایش",
+    icon: <BsReverseLayoutSidebarReverse />,
     children: [
       {
         id: 1,
-        title: '',
-        to: '',
+        title: "",
+        to: "",
       },
     ],
   },
-]
+];

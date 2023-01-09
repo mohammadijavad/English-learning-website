@@ -7,6 +7,8 @@ import Dashboard from "./Dashboard";
 import Lessons from "./Lessons";
 import Profile from "./Profile";
 import Teachers from "./Teachers";
+import FavoriteTeachers from "../screens/FavoriteTeachers";
+import FavoriteProducts from "../screens/FavoriteProducts";
 export {
   Header,
   SidebarVertical,
@@ -17,5 +19,7 @@ export {
   Lessons,
   Profile,
   Teachers,
+  FavoriteTeachers,
+  FavoriteProducts,
 };
 // export {  };

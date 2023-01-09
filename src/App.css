@@ -43,6 +43,12 @@ body {
   font-family: IranSans !important;
   overflow-x: hidden;
 }
+a{
+  text-decoration: none !important;
+}
+a:hover{
+  text-decoration: none !important;
+}
 :root {
   --bg-siderbar-vertical: #1770ba;
   --bg-header-darkmode: #1770ba;

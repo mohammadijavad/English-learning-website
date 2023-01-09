@@ -113,13 +113,13 @@ export {
   userProgressBar,
 };
 const sidebarLinks = [
-  { id: uuidv4(), line: "/", content: "پروفایل" },
-  { id: uuidv4(), line: "/teachers", content: "اساتید" },
-  { id: uuidv4(), line: "/favorite-teachers", content: "اساتید مورد علاقه" },
-  { id: uuidv4(), line: "/favorite-products", content: "محصولات مورد علاقه" },
+  { id: uuidv4(), link: "/", content: "پروفایل" },
+  { id: uuidv4(), link: "/teachers", content: "اساتید" },
+  { id: uuidv4(), link: "/favorite-teachers", content: "اساتید مورد علاقه" },
+  { id: uuidv4(), link: "/favorite-products", content: "محصولات مورد علاقه" },
   {
     id: uuidv4(),
-    line: "/comparison-others",
+    link: "/comparison-others",
     content: "مقایسه با دیگران",
   },
 ];

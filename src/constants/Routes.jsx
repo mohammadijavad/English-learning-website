@@ -1,28 +1,48 @@
-import { v4 as uuidv4 } from 'uuid'
-import { Dashboard, Profile, Lessons, Teachers } from '../screens/index'
+import { v4 as uuidv4 } from "uuid";
+
+import {
+  Dashboard,
+  Profile,
+  Lessons,
+  Teachers,
+  FavoriteTeachers,
+  FavoriteProducts,
+} from "../screens/index";
 export const Routers = [
   {
-    path: '/',
+    path: "/",
     id: uuidv4(),
     componet: <Dashboard />,
-    breadcrumb: ' داشبورد   ',
+    breadcrumb: " داشبورد   ",
   },
   {
-    path: '/information',
+    path: "/information",
     id: uuidv4(),
     componet: <Profile />,
-    breadcrumb: '/ حساب کاربری ',
+    breadcrumb: "/ حساب کاربری ",
   },
   {
-    path: '/lessons',
+    path: "/lessons",
     id: uuidv4(),
     componet: <Lessons />,
-    breadcrumb: '/ کلاس ها',
+    breadcrumb: "/ کلاس ها",
   },
   {
-    path: '/teachers',
+    path: "/teachers",
     id: uuidv4(),
     componet: <Teachers />,
-    breadcrumb: ' / استادزبان آنلاین  ',
+    breadcrumb: " / استادزبان آنلاین  ",
   },
-]
+  {
+    path: "/favorite-teachers",
+    id: uuidv4(),
+    componet: <FavoriteTeachers />,
+    breadcrumb: " / اساتید مورد علاقه ",
+  },
+  {
+    path: "/favorite-products",
+    id: uuidv4(),
+    componet: <FavoriteProducts />,
+    breadcrumb: " / محصولات مورد علاقه ",
+  },
+];

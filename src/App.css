@@ -49,6 +49,9 @@ a{
 a:hover{
   text-decoration: none !important;
 }
+.blackWhiteImage{
+  filter: grayscale(100%);
+}
 :root {
   --bg-siderbar-vertical: #1770ba;
   --bg-header-darkmode: #1770ba;

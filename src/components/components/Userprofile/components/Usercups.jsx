@@ -1,23 +1,83 @@
 import React from "react";
 import style from "../style/userpage.module.css";
-import testCup from "../../../../assets/images/just static data/cuptest.png";
+import testCup1 from "../../../../assets/images/just static data/1.png";
+import testCup2 from "../../../../assets/images/just static data/2.png";
+import testCup3 from "../../../../assets/images/just static data/3.png";
+import testCup4 from "../../../../assets/images/just static data/4.png";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+import Button from "react-bootstrap/Button";
 function Usercups() {
   return (
     <div
       className={`d-flex align-items-center justify-content-evenly flex-column mb-4`}
     >
-      <div className="d-flex align-items-center justify-content-around w-100">
+      <div className="d-flex align-items-center justify-content-around w-100 flex-row-reverse">
         <div className={`${style.cupContaienr} curoser`}>
-          <img src={testCup} alt="sing ing cup" />
+          <OverlayTrigger
+            delay={{ hide: 200, show: 100 }}
+            animation={true}
+            overlay={(props) => <Tooltip {...props}>اولین کلاس خصوصی</Tooltip>}
+            placement="top"
+          >
+            <Button variant="" className={`m-0 p-0 bg-none ${style.rateStart}`}>
+              <img src={testCup1} alt="sing ing cup" />
+            </Button>
+          </OverlayTrigger>
         </div>
         <div className={`${style.cupContaienr} curoser`}>
-          <img src={testCup} alt="sing ing cup" />
+          <OverlayTrigger
+            delay={{ hide: 200, show: 100 }}
+            animation={true}
+            overlay={(props) => (
+              <Tooltip {...props}> فعالیت بیشتر از 50 ساعت</Tooltip>
+            )}
+            placement="top"
+          >
+            <Button variant="" className={`m-0 p-0 bg-none ${style.rateStart}`}>
+              <img
+                src={testCup2}
+                alt="sing ing cup"
+                className="blackWhiteImage"
+              />
+            </Button>
+          </OverlayTrigger>
         </div>
         <div className={`${style.cupContaienr} curoser`}>
-          <img src={testCup} alt="sing ing cup" />
+          <OverlayTrigger
+            delay={{ hide: 200, show: 100 }}
+            animation={true}
+            overlay={(props) => (
+              <Tooltip {...props}> تمام کردن 20 جلسه خصوصی موفق</Tooltip>
+            )}
+            placement="top"
+          >
+            <Button variant="" className={`m-0 p-0 bg-none ${style.rateStart}`}>
+              <img
+                src={testCup3}
+                alt="sing ing cup"
+                className="blackWhiteImage"
+              />
+            </Button>
+          </OverlayTrigger>
         </div>
         <div className={`${style.cupContaienr} curoser`}>
-          <img src={testCup} alt="sing ing cup" />
+          <OverlayTrigger
+            delay={{ hide: 200, show: 100 }}
+            animation={true}
+            overlay={(props) => (
+              <Tooltip {...props}> نمره قبولی آزمون سایت</Tooltip>
+            )}
+            placement="top"
+          >
+            <Button variant="" className={`m-0 p-0 bg-none ${style.rateStart}`}>
+              <img
+                src={testCup4}
+                alt="sing ing cup"
+                className="blackWhiteImage"
+              />
+            </Button>
+          </OverlayTrigger>
         </div>
       </div>
       <div className="mt-4 w-100 text-center shadow-sm">

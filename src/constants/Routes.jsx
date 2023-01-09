@@ -7,6 +7,8 @@ import {
   Teachers,
   FavoriteTeachers,
   FavoriteProducts,
+  Ecommer,
+  Movies,
 } from "../screens/index";
 export const Routers = [
   {
@@ -44,5 +46,17 @@ export const Routers = [
     id: uuidv4(),
     componet: <FavoriteProducts />,
     breadcrumb: " / محصولات مورد علاقه ",
+  },
+  {
+    path: "/e-commer",
+    id: uuidv4(),
+    componet: <Ecommer />,
+    breadcrumb: " /فروشگاه",
+  },
+  {
+    path: "/movies",
+    id: uuidv4(),
+    componet: <Movies />,
+    breadcrumb: " / تماشای ویدیو",
   },
 ];

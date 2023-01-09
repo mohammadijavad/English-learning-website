@@ -41,8 +41,13 @@ export const lists = [
     children: [
       {
         id: uuidv4(),
-        title: "تاریخ",
-        to: "/calendar",
+        title: "فیلم ها ",
+        to: "/movies",
+      },
+      {
+        id: uuidv4(),
+        title: "فروشگاه",
+        to: "/e-commer",
       },
     ],
   },

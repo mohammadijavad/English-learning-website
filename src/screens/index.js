@@ -9,6 +9,8 @@ import Profile from "./Profile";
 import Teachers from "./Teachers";
 import FavoriteTeachers from "../screens/FavoriteTeachers";
 import FavoriteProducts from "../screens/FavoriteProducts";
+import Ecommer from "../screens/Ecommer";
+import Movies from "../screens/Movies";
 export {
   Header,
   SidebarVertical,
@@ -21,5 +23,7 @@ export {
   Teachers,
   FavoriteTeachers,
   FavoriteProducts,
+  Ecommer,
+  Movies,
 };
 // export {  };

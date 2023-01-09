@@ -5,6 +5,7 @@ import logoCompanylg from "../../assets/images/fanavaran-header-logo-color.png";
 import { lists } from "./sidebarLists/datalist";
 import { BsDash } from "react-icons/bs";
 import { contextapp } from "../../contexts/ContextProv";
+import { Link } from "react-router-dom";
 function SidebarTwoCol() {
   const [active, setActive] = useState(0);
   const [activeItem, setActiveItem] = useState(0);
@@ -57,17 +58,19 @@ function SidebarTwoCol() {
           <div className="mt-2">
             {lists[active].children?.map((list, index) => {
               return (
-                <div
-                  className={`${
-                    style.itemLinkSidebarT
-                  } curoser mt-3 d-flex align-items-center  ${
-                    activeItem === index ? style.activeLink : ""
-                  }`}
-                  onClick={() => setActiveItem(index)}
-                >
-                  <BsDash className="mt-1" />
-                  <span className="fontSizesm">{list.title}</span>
-                </div>
+                <Link to={list.to}>
+                  <div
+                    className={`${
+                      style.itemLinkSidebarT
+                    } curoser mt-3 d-flex align-items-center  ${
+                      activeItem === index ? style.activeLink : ""
+                    }`}
+                    onClick={() => setActiveItem(index)}
+                  >
+                    <BsDash className="mt-1" />
+                    <span className="fontSizesm">{list.title}</span>
+                  </div>
+                </Link>
               );
             })}
           </div>

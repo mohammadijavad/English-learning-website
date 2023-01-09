@@ -1,6 +1,6 @@
-import React from 'react'
-import style from '../style/userpage.module.css'
-import testCup from '../../../../cuptest.png'
+import React from "react";
+import style from "../style/userpage.module.css";
+import testCup from "../../../../assets/images/just static data/cuptest.png";
 function Usercups() {
   return (
     <div
@@ -24,7 +24,7 @@ function Usercups() {
         <p>دستاورد های دانش آموز</p>
       </div>
     </div>
-  )
+  );
 }
 
-export default Usercups
+export default Usercups;

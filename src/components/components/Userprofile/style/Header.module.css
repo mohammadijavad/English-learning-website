@@ -3,13 +3,15 @@
 }
 .waveCss {
   height: 150px;
-  background: url('../../../../bgStatic.png') no-repeat center center;
+  background: url("../../../../assets/images/just static data/bgStatic.png")
+    no-repeat center center;
   background-size: cover;
   overflow: hidden;
   width: 100%;
 }
 .darkmode {
-  background: url('../../../../darkbgStatic.png') no-repeat center center;
+  background: url("../../../../assets/images/just static data/darkbgStatic.png")
+    no-repeat center center;
   background-size: cover;
 }
 .waveCss img {

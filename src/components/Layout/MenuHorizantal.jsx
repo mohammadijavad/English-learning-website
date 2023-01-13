@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
-import { contextapp } from "../../contexts/ContextProv";
-import { BsChevronDown } from "react-icons/bs";
-import "./menuHorizantal.css";
+import React, { useContext } from 'react'
+import { contextapp } from '../../contexts/ContextProv'
+import { BsChevronDown } from 'react-icons/bs'
+import './menuHorizantal.css'
 function MenuHorizantal() {
-  const { isHorizontal } = useContext(contextapp);
+  const { isHorizontal } = useContext(contextapp)
   return (
-    <div className={`${isHorizontal ? "horizantalMode" : ""}`}>
-      <ul className="w-100 d-flex align-items-center mx-2 mt-2">
+    <div className={`  ${isHorizontal ? 'horizantalMode' : ''} mb-0 m-0 `}>
+      <ul className="w-100 d-flex align-items-center m-0 p-2 ">
         <li className="d-flex align-items-center curoser position-relative linkItemContainer p-1">
           داشبورد <BsChevronDown className="mt-1 mx-1" size={14} />
           <div className="modalContainer position-absolute ">
@@ -45,7 +45,7 @@ function MenuHorizantal() {
         </li>
       </ul>
     </div>
-  );
+  )
 }
 
-export default MenuHorizantal;
+export default MenuHorizantal

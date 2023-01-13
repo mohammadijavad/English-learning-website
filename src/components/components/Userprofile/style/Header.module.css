@@ -3,16 +3,18 @@
 }
 .waveCss {
   height: 150px;
-  background: url("../../../../assets/images/just static data/bgStatic.png")
+  background: url('../../../../assets/images/just static data/bgStatic.png')
     no-repeat center center;
   background-size: cover;
   overflow: hidden;
   width: 100%;
+  transition: all 0.1s ease-in-out;
 }
 .darkmode {
-  background: url("../../../../assets/images/just static data/darkbgStatic.png")
+  background: url('../../../../assets/images/just static data/darkbgStatic.png')
     no-repeat center center;
   background-size: cover;
+  transition: all 0.1s ease-in-out;
 }
 .waveCss img {
   width: 100%;

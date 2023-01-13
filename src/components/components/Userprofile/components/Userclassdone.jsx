@@ -7,6 +7,7 @@ function Userclassdone() {
       <CardClass
         titleClass="کلاس های به اتمام رسیده"
         listClass={ComplatedClasses}
+        key={2}
       />
     </div>
   )

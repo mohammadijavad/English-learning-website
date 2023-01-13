@@ -17,7 +17,7 @@ import {
 import style from './style/Header.module.css'
 function ProfileUser() {
   return (
-    <div className={`${style.ContainerProfileUser}`}>
+    <div className={`${style.ContainerProfileUser} `}>
       <Headerprofile />
       <Useravatr />
       <div className="container">

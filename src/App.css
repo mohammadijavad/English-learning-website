@@ -380,9 +380,7 @@ a:hover{
 .containerContent.closedSideBar {
   padding-right: 50px;
 }
-.horizantalMode {
-  padding-right: 50px !important;
-}
+
 /* settingIcon */
 .settingsPageIcon {
   top: 81%;
@@ -728,6 +726,14 @@ a:hover{
 }
 .splitModeSidebar .containerContentMain {
   padding-right: 250px;
+  transition: all var(--time);
+}
+.splitModeSidebar .containerContentDashboardSplitMode{
+  padding-right: 250px;
+  transition: all var(--time);
+}
+.closedSideBar.splitModeSidebar .containerContentDashboardSplitMode{
+  padding-right: 80px;
   transition: all var(--time);
 }
 /* two col mode */

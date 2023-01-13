@@ -1,18 +1,18 @@
-import React from "react";
-import style from "../style/userpage.module.css";
-import TitleClass from "./TitleClass";
-import { FiMoreVertical } from "react-icons/fi";
-import Accordion from "react-bootstrap/Accordion";
-function CardClass({ titleClass, listClass }) {
+import React from 'react'
+import style from '../style/userpage.module.css'
+import TitleClass from './TitleClass'
+import { FiMoreVertical } from 'react-icons/fi'
+import Accordion from 'react-bootstrap/Accordion'
+function CardClass({ titleClass, listClass, key }) {
   return (
     <div>
-      <Accordion defaultActiveKey="1">
-        <Accordion.Item eventKey="0">
+      <Accordion defaultActiveKey={[key]} alwaysOpen>
+        <Accordion.Item eventKey={1}>
           <Accordion.Header>
             <TitleClass title={titleClass} />
           </Accordion.Header>
           {listClass?.map((list) => {
-            const { photo, name, reserved, unreserved } = list;
+            const { photo, name, reserved, unreserved } = list
             return (
               <Accordion.Body key={list.id}>
                 <div className={`${style.classListContainerRow} mt-2 row`}>
@@ -25,8 +25,8 @@ function CardClass({ titleClass, listClass }) {
                         <div className={`${style.containerClassInfo} my-2`}>
                           کلاس خصوصی با استاد
                           <span>
-                            {" "}
-                            {"  "} {name}{" "}
+                            {' '}
+                            {'  '} {name}{' '}
                           </span>
                           <span className={`${style.flagClass} mx-2`}>
                             کلاس خصوصی
@@ -62,12 +62,12 @@ function CardClass({ titleClass, listClass }) {
                   </div>
                 </div>
               </Accordion.Body>
-            );
+            )
           })}
         </Accordion.Item>
       </Accordion>
     </div>
-  );
+  )
 }
 
-export default CardClass;
+export default CardClass

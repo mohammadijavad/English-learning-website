@@ -9,6 +9,7 @@ import FavoriteTeacher from './components/FavoriteTeacher';
 import Wallet from './components/Wallet';
 import ChartUser from './components/ChartUser';
 import UserClassList from './components/UserClassList';
+import FavoriteWord from './components/FavoriteWords';
 
 export {
   Headerprofile,
@@ -22,4 +23,5 @@ export {
   Wallet,
   ChartUser,
   UserClassList,
+  FavoriteWord,
 };

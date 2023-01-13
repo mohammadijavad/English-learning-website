@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import {
   Headerprofile,
   Useravatr,
@@ -11,9 +11,10 @@ import {
   Wallet,
   ChartUser,
   UserClassList,
-} from "./index";
+  FavoriteWord,
+} from './index'
 
-import style from "./style/Header.module.css";
+import style from './style/Header.module.css'
 function ProfileUser() {
   return (
     <div className={`${style.ContainerProfileUser}`}>
@@ -36,11 +37,14 @@ function ProfileUser() {
           <div className="col-12 ">
             <Userclasscancled />
           </div>
-          <div className="col-12 col-lg-6">
+          <div className="col-12 col-lg-4">
             <FavoriteProduct />
           </div>
-          <div className="col-12 col-lg-6">
+          <div className="col-12 col-lg-4">
             <FavoriteTeacher />
+          </div>
+          <div className="col-12 col-lg-4">
+            <FavoriteWord />
           </div>
           <div className="col-12 col-lg-6">
             <Wallet />
@@ -51,7 +55,7 @@ function ProfileUser() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default ProfileUser;
+export default ProfileUser

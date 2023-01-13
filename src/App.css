@@ -96,10 +96,12 @@ a:hover{
   /* user profile page */
   --text-color-userInfo: #212529;
   --text-colorCardClass: rgb(113, 127, 148);
-  --favorite-products-bg:#FDA7DF;
-  --favorite-products-color:#6f1e51;
+  --favorite-products-bg:#fc4fbf60;
+  --favorite-products-color:#8b085b;
   --favorite-teachers-bg:#32ff7d50;
   --favorite-teachers-color:#00ff5e;
+  --favorite-words-bg:#ff181821;
+  --favorite-words-color:#ff6b6b;
 }
 [data-layout-mode='dark'] {
   --bg-siderbar-vertical: #212529;

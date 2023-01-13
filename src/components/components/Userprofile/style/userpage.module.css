@@ -1,4 +1,4 @@
-@import url("../../../../App.css");
+@import url('../../../../App.css');
 .userInfo {
   color: var(--text-color-userInfo);
 }
@@ -59,13 +59,18 @@
   background-color: var(--favorite-teachers-bg);
   color: var(--favorite-teachers-color);
 }
+/* linter box */
+.iconLinterBox {
+  background-color: var(--favorite-words-bg);
+  color: var(--favorite-words-color);
+}
 /* user wallet */
 .walletContainer {
   width: 100%;
   height: 100%;
 }
 .walletContainerInfo {
-  background: url("../../../../assets/card-background1.png") no-repeat center
+  background: url('../../../../assets/card-background1.png') no-repeat center
     center;
   background-size: cover;
   position: relative;

@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid'
 
 import {
   Dashboard,
@@ -10,60 +10,60 @@ import {
   Ecommer,
   Movies,
   TeacherInfo,
-} from "../screens/index";
+} from '../screens/index'
 export const Routers = [
   {
-    path: "/",
+    path: '/profile',
     id: uuidv4(),
     componet: <Dashboard />,
-    breadcrumb: " داشبورد   ",
+    breadcrumb: ' داشبورد   ',
   },
   {
-    path: "/information",
+    path: '/profile/information',
     id: uuidv4(),
     componet: <Profile />,
-    breadcrumb: "/ حساب کاربری ",
+    breadcrumb: '/ حساب کاربری ',
   },
   {
-    path: "/lessons",
+    path: '/profile/lessons',
     id: uuidv4(),
     componet: <Lessons />,
-    breadcrumb: "/ کلاس ها",
+    breadcrumb: '/ کلاس ها',
   },
   {
-    path: "/teachers",
+    path: '/profile/teachers',
     id: uuidv4(),
     componet: <Teachers />,
-    breadcrumb: " / استادزبان آنلاین  ",
+    breadcrumb: ' / استادزبان آنلاین  ',
   },
   {
-    path: "/teachers/:id",
+    path: '/profile/teachers/:id',
     id: uuidv4(),
     componet: <TeacherInfo />,
-    breadcrumb: " / جزئیات ",
+    breadcrumb: ' / جزئیات ',
   },
   {
-    path: "/favorite-teachers",
+    path: '/profile/favorite-teachers',
     id: uuidv4(),
     componet: <FavoriteTeachers />,
-    breadcrumb: " / اساتید مورد علاقه ",
+    breadcrumb: ' / اساتید مورد علاقه ',
   },
   {
-    path: "/favorite-products",
+    path: '/profile/favorite-products',
     id: uuidv4(),
     componet: <FavoriteProducts />,
-    breadcrumb: " / محصولات مورد علاقه ",
+    breadcrumb: ' / محصولات مورد علاقه ',
   },
   {
-    path: "/e-commer",
+    path: '/profile/e-commer',
     id: uuidv4(),
     componet: <Ecommer />,
-    breadcrumb: " /فروشگاه",
+    breadcrumb: ' /فروشگاه',
   },
   {
-    path: "/movies",
+    path: '/profile/movies',
     id: uuidv4(),
     componet: <Movies />,
-    breadcrumb: " / تماشای ویدیو",
+    breadcrumb: ' / تماشای ویدیو',
   },
-];
+]

@@ -1,4 +1,4 @@
-@import url("../../App.css");
+@import url('../../App.css');
 .containerSidebarCol {
   width: 220px;
   height: 100vh;
@@ -8,6 +8,7 @@
   transition: all var(--time) ease-in-out;
   z-index: 99;
   display: flex;
+  right: 0;
 }
 .containerLogos {
   width: 75px;

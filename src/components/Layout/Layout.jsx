@@ -7,12 +7,14 @@ import Up from '../../utils/Up'
 import { contextapp } from '../../contexts/ContextProv'
 import MenuHorizantal from './MenuHorizantal'
 import Categories from './BreadCrumb/BreadCrumb'
+import { SidebarVertical, SidebarTwoCol } from '../../screens/index'
 function Layout() {
   const {
     closedSiderbar,
     isHorizontal,
     sidebarSplit,
     isTwocloumn,
+    isVertical,
   } = useContext(contextapp)
   return (
     <div
@@ -27,6 +29,10 @@ function Layout() {
       <SideBarSettings />
       <Header />
       {isHorizontal ? <MenuHorizantal /> : null}
+      {isVertical && <SidebarVertical />}
+      <div className="d-none d-lg-block">
+        {isTwocloumn && <SidebarTwoCol />}
+      </div>
       <div className={`wrapAllContent`}>
         {' '}
         <Categories />

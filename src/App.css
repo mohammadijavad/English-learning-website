@@ -720,22 +720,15 @@ a:hover{
   padding-right: 0;
   transition: all var(--time);
 }
-.splitModeSidebar.containerContent.closedSideBar .containerContentMain {
+.splitModeSidebar.containerContent.closedSideBar .wrapAllContent {
   padding-right: 80px;
   transition: all var(--time);
 }
-.splitModeSidebar .containerContentMain {
+.splitModeSidebar .wrapAllContent {
   padding-right: 250px;
   transition: all var(--time);
 }
-.splitModeSidebar .containerContentDashboardSplitMode{
-  padding-right: 250px;
-  transition: all var(--time);
-}
-.closedSideBar.splitModeSidebar .containerContentDashboardSplitMode{
-  padding-right: 80px;
-  transition: all var(--time);
-}
+
 /* two col mode */
 .sidebarTwocolModeDetailsParent {
   width: 50px;

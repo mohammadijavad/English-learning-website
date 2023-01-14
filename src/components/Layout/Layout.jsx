@@ -27,13 +27,12 @@ function Layout() {
       <SideBarSettings />
       <Header />
       {isHorizontal ? <MenuHorizantal /> : null}
-      <Categories />
-      <div
-        className={`${
-          isHorizontal ? 'horizantalMode' : 'containerContentDashboardSplitMode'
-        }`}
-      >
-        <Outlet />
+      <div className={`wrapAllContent`}>
+        {' '}
+        <Categories />
+        <div className={`${isHorizontal ? 'horizantalMode' : ''}`}>
+          <Outlet />
+        </div>
       </div>
       <Setting />
       <Up />

@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { Routers } from '../../../constants/Routes'
 import useBreadcrumbs from 'use-react-router-breadcrumbs'
 import styled from 'styled-components'
 import { useContext } from 'react'
 import { contextapp } from '../../../contexts/ContextProv'
 const Breadcrumbs = () => {
-  const breadcrumbs = useBreadcrumbs(Routers, { disableDefaults: false })
+  const breadcrumbs = useBreadcrumbs(Routers, { disableDefaults: true })
   const { isHorizontal } = useContext(contextapp)
   return (
     <>

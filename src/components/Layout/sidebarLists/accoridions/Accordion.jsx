@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Accordion from 'react-bootstrap/Accordion'
 import './accordion.css'
 import { lists } from '../datalist'
-import { BsChevronDown, BsCoin, BsDash } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import { BsChevronDown, BsDash } from 'react-icons/bs'
+import { Link, useLocation } from 'react-router-dom'
 function BasicExample() {
   const [select, setSelected] = useState(null)
+  const location = useLocation()
   const setSelectHandler = (id) => {
     setSelected(id)
   }
+  useEffect(() => {
+    const pathnameUrl = location.pathname
+  }, [select])
   return (
     <Accordion className="containerAccordionp mt-3" flush>
       {lists.map((list) => {
@@ -31,7 +35,9 @@ function BasicExample() {
                       <div
                         key={child.id}
                         className={`contentBodyAccordion p-1 rounded-1 d-flex justify-content-start w-100 mt-1 curoser ${
-                          select === child.id ? 'activeAccordion' : ''
+                          location.pathname === child.to
+                            ? 'activeAccordion'
+                            : ''
                         }`}
                         onClick={() => setSelectHandler(child.id)}
                       >

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
-function HomeLayout() {
-  return <div>HomeLayout</div>
+function HomeLayout(props) {
+  return <div>HomeLayosut</div>
 }
 
 export default HomeLayout

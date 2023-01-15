@@ -11,8 +11,14 @@ import {
 } from 'react-icons/bs'
 import { AiOutlineSetting } from 'react-icons/ai'
 import flag from '../../../../assets/images/users/avatar-5.jpg'
+import { useAuth } from '../../../../contexts/AuthContext'
 function Profile({ index }) {
   const { showmodal, showModalHandler } = useContext(contextapp)
+  const value = useAuth()
+  const logout = () => {
+    value.logout()
+    showModalHandler(false)
+  }
   return (
     <>
       <div
@@ -128,7 +134,7 @@ function Profile({ index }) {
             <div
               className="mt-2 d-flex align-items-center p-1 px-2 flagName curoser"
               onClick={() => {
-                showModalHandler(false)
+                logout()
               }}
             >
               <span>

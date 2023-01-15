@@ -249,6 +249,7 @@ a:hover{
   transition: var(--time) ease;
   visibility: visible;
   top: 105%;
+  z-index: 10;
 }
 .containerProfileLink span {
   color: var(--profile-textLight) !important;

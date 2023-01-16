@@ -5,17 +5,19 @@ import { useNavigate } from 'react-router-dom'
 const AuthContext = createContext()
 
 export const AuthProvider = ({ children, userData }) => {
-  const [user, setUser] = useState('')
+  const [user, setUser] = useState(localStorage.getItem('user'))
   const navigate = useNavigate()
 
   const login = async (data) => {
     setUser(data)
-    navigate('/profile', { replace: true })
+    localStorage.setItem('user', JSON.stringify(data))
+    navigate('/profile', { replace: false })
   }
 
   const logout = () => {
+    localStorage.removeItem('user')
     setUser(null)
-    navigate('/login', { replace: true })
+    navigate('/login', { replace: false })
   }
 
   const value = useMemo(

@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import './login.css'
 function Login() {
+  const refInpId = useRef()
   const value = useAuth()
   const authUser = () => {
-    value.login('user1')
+    const lengthId = refInpId.current.value
+    if (lengthId.length === 10) {
+      value.login(refInpId.current.value)
+    } else {
+      alert('کد ملی صحیح نیست')
+    }
   }
   return (
     <div className="login-Container">
@@ -35,6 +41,7 @@ function Login() {
                   type="number"
                   className="input"
                   data-type="password"
+                  ref={refInpId}
                 />
               </div>
               <div className="group">

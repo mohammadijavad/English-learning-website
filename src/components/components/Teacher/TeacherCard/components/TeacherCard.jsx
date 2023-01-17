@@ -8,21 +8,18 @@ import { Link } from "react-router-dom";
 
 import EnglishFleg from "../../../../../assets/images/flags/us.svg";
 import pause from "../../../../../assets/cover.svg";
+import pausse from "../../../../../assets/Teacher/image/teacher-image/teacher-1.jpg";
 
 function TeacherCard({
+  setKeyVedio,
+  keyVedioDefault,
   id,
   name,
-  photo,
   language,
-  lang,
   level,
   xpertise,
   Skills,
-  testSession,
   onehourPriceSession,
-  src,
-  keyVedioDefault,
-  setKeyVedio,
   priceLevel,
 }) {
   const vedioRef = useRef();
@@ -45,6 +42,9 @@ function TeacherCard({
       setKeyVedio(0);
     }
   }, [play]);
+  const photo =
+    "../../../../../assets/Teacher/image/teacher-image/teacher-1.jpg";
+  const srcVedio = `../../../../../assets/Teacher/image/teacher-image/teacher-1.jpg`;
   return (
     <>
       <div>
@@ -177,8 +177,8 @@ function TeacherCard({
                       !play ? style.zoomIn : ""
                     }`}
                   >
-                    <source src={src} type="video/webm" />
-                    <source src={src} type="video/mp4" />
+                    <source src={srcVedio} type="video/webm" />
+                    <source src={srcVedio} type="video/mp4" />
                     Sorry, your browser doesn't support videos.
                   </video>
                   {!play && keyVedioDefault !== id && (

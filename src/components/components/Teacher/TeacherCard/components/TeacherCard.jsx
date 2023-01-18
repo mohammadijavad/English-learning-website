@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 import EnglishFleg from "../../../../../assets/images/flags/us.svg";
 import pause from "../../../../../assets/cover.svg";
-import pausse from "../../../../../assets/Teacher/image/teacher-image/teacher-1.jpg";
 
 function TeacherCard({
   setKeyVedio,
@@ -21,6 +20,8 @@ function TeacherCard({
   Skills,
   onehourPriceSession,
   priceLevel,
+  srcVedio,
+  srcPhoto,
 }) {
   const vedioRef = useRef();
   const [play, setPlay] = useState(false);
@@ -42,9 +43,6 @@ function TeacherCard({
       setKeyVedio(0);
     }
   }, [play]);
-  const photo =
-    "../../../../../assets/Teacher/image/teacher-image/teacher-1.jpg";
-  const srcVedio = `../../../../../assets/Teacher/image/teacher-image/teacher-1.jpg`;
   return (
     <>
       <div>
@@ -57,7 +55,7 @@ function TeacherCard({
                     <div className="d-flex flex-column align-items-center justify-content-center  w-25">
                       <div className="w-75 m-auto mx-0 mt-2">
                         <img
-                          src={photo}
+                          src={srcPhoto}
                           alt=""
                           className={` ${style.teacherAvatar} w-100`}
                         />

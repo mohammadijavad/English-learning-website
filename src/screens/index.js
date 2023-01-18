@@ -12,6 +12,8 @@ import FavoriteProducts from "../screens/FavoriteProducts";
 import Ecommer from "../screens/Ecommer";
 import Movies from "../screens/Movies";
 import TeacherInfo from "../screens/TeacherInfo";
+import SettingProfile from "../screens/SettingProfile";
+import Notfind from "../screens/404";
 export {
   Header,
   SidebarVertical,
@@ -27,5 +29,7 @@ export {
   Ecommer,
   Movies,
   TeacherInfo,
+  SettingProfile,
+  Notfind,
 };
 // export {  };

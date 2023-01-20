@@ -1,13 +1,13 @@
-import React, { useRef, useEffect, useState } from "react";
-import style from "../style/TeacherCard.module.css";
-import { BsFillStarFill, BsLightningFill } from "react-icons/bs";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
-import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import React, { useRef, useEffect, useState } from 'react'
+import style from '../style/TeacherCard.module.css'
+import { BsFillStarFill, BsLightningFill } from 'react-icons/bs'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
+import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom'
 
-import EnglishFleg from "../../../../../assets/images/flags/us.svg";
-import pause from "../../../../../assets/cover.svg";
+import EnglishFleg from '../../../../../assets/images/flags/us.svg'
+import pause from '../../../../../assets/cover.svg'
 
 function TeacherCard({
   setKeyVedio,
@@ -23,34 +23,34 @@ function TeacherCard({
   srcVedio,
   srcPhoto,
 }) {
-  const vedioRef = useRef();
-  const [play, setPlay] = useState(false);
+  const vedioRef = useRef()
+  const [play, setPlay] = useState(false)
   const playVedioHandler = (mode) => {
-    setPlay(mode);
-    setKeyVedio(id);
+    setPlay(mode)
+    setKeyVedio(id)
     if (play) {
-      vedioRef.current.play();
+      vedioRef.current.play()
     } else {
-      vedioRef.current.pause();
-      setKeyVedio(0);
+      vedioRef.current.pause()
+      setKeyVedio(0)
     }
-  };
+  }
   useEffect(() => {
     if (play) {
-      vedioRef.current.play();
+      vedioRef.current.play()
     } else {
-      vedioRef.current.pause();
-      setKeyVedio(0);
+      vedioRef.current.pause()
+      setKeyVedio(0)
     }
-  }, [play]);
+  }, [play])
   return (
     <>
       <div>
         <div className={`  ${style.containerCard} mx-1 curoser mt-4`}>
           <div className={`row ${style.gridContainer}`}>
             <div className="col-12 col-md-7 h-100">
-              <Link to={`/teachers/${id}`}>
-                <div className="d-flex flex-column justify-content-between h-100">
+              <div className="d-flex flex-column justify-content-between h-100">
+                <Link to={`/teachers/${id}`}>
                   <div className="d-flex">
                     <div className="d-flex flex-column align-items-center justify-content-center  w-25">
                       <div className="w-75 m-auto mx-0 mt-2">
@@ -115,7 +115,7 @@ function TeacherCard({
                       >
                         <div className="mx-2">تخصص</div>
                         <div className="mx-3">
-                          <b className={`${style.bold}`}> {xpertise}</b>{" "}
+                          <b className={`${style.bold}`}> {xpertise}</b>{' '}
                         </div>
                       </div>
                       <div
@@ -132,35 +132,30 @@ function TeacherCard({
                       </div>
                     </div>
                   </div>
-                  <div className="d-flex justify-content-center align-items-center  w-100 h-25">
-                    <div className={`mx-2 ${style.priceClass}`}>
-                      <span>جلسه آزمایشی</span>
-                      <span>
-                        <b className={`${style.bold}`}> {priceLevel} </b>
-                        {"    "}
-                      </span>
-                      {"     "}
-                    </div>
-                    <div className={`mx-2 ${style.priceClass}`}>
-                      <span>جلسه یک ساعتی</span>
-                      <span>
-                        <b className={`${style.bold}`}>
-                          {" "}
-                          {onehourPriceSession}{" "}
-                        </b>
-                        تومان
-                      </span>
-                    </div>
-                    <div className={`mx-2 ${style.priceClass}`}>
-                      <button
-                        className={`btn ${style.btnReservation} px-4 py-2`}
-                      >
-                        <span style={{ zIndex: 10 }}> رزرو کلاس</span>
-                      </button>
-                    </div>
+                </Link>
+                <div className="d-flex justify-content-center align-items-center  w-100 h-25">
+                  <div className={`mx-2 ${style.priceClass}`}>
+                    <span>جلسه آزمایشی</span>
+                    <span>
+                      <b className={`${style.bold}`}> {priceLevel} </b>
+                      {'    '}
+                    </span>
+                    {'     '}
+                  </div>
+                  <div className={`mx-2 ${style.priceClass}`}>
+                    <span>جلسه یک ساعتی</span>
+                    <span>
+                      <b className={`${style.bold}`}> {onehourPriceSession} </b>
+                      تومان
+                    </span>
+                  </div>
+                  <div className={`mx-2 ${style.priceClass}`}>
+                    <button className={`btn ${style.btnReservation} px-4 py-2`}>
+                      <span style={{ zIndex: 10 }}> رزرو کلاس</span>
+                    </button>
                   </div>
                 </div>
-              </Link>
+              </div>
             </div>
             <div className="d-none d-md-flex col-md-5 ">
               <div
@@ -172,7 +167,7 @@ function TeacherCard({
                     ref={vedioRef}
                     controls={play}
                     className={`${style.vedioTeacherEl} ${
-                      !play ? style.zoomIn : ""
+                      !play ? style.zoomIn : ''
                     }`}
                   >
                     <source src={srcVedio} type="video/webm" />
@@ -199,7 +194,7 @@ function TeacherCard({
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default TeacherCard;
+export default TeacherCard

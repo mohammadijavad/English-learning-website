@@ -1,7 +1,11 @@
 import React from 'react'
-
+import { BsFillHeartFill } from 'react-icon/bs'
 function Favorite() {
-  return <div>Favorite</div>
+  return (
+    <div>
+      <BsFillHeartFill />
+    </div>
+  )
 }
 
 export default Favorite

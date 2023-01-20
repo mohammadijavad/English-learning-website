@@ -50,18 +50,11 @@ function App() {
   };
   return (
     <div
-      onClick={handelClick}
       className="containerDashboard"
       data-layout-mode={isDarkMode ? 'dark' : 'light'}
     >
       {stateData?.loading && <Loading />}
-      <div
-        className="d-flex justify-content-center overflow-hidden"
-        style={{ height: '100px' }}
-      >
-        <img src={stateData.data[0].picture} alt="" />
-        <video src={stateData.data[0].vedioAddress} controls />
-      </div>
+
       <Routes>
         <Route path="/login" element={<Loginpage />} />
         <Route path="/profile" element={<Layout />}>

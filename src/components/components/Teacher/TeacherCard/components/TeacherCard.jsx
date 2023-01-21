@@ -24,7 +24,7 @@ function TeacherCard({
   discriptionTeacher,
   studentsTeacher,
   isFavorite,
-  comments,
+  favoriteTeacher,
   setKeyVedio,
   keyVedioDefault,
   languageExperts,
@@ -57,7 +57,11 @@ function TeacherCard({
           <div className={`row ${style.gridContainer}`}>
             <div className="col-12 col-md-7 h-100">
               <div className="d-flex flex-column justify-content-between h-100 position-relative">
-                <Favorite />
+                <Favorite
+                  id={id}
+                  favoriteTeacher={favoriteTeacher}
+                  isFavorite={isFavorite}
+                />
                 <Link to={`/teachers/${id}`}>
                   <div className="d-flex">
                     <div className="d-flex flex-column align-items-center justify-content-center  w-25">

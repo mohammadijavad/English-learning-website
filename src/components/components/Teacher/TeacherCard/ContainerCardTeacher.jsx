@@ -15,7 +15,7 @@ function ContainerCardTeacher() {
   const [keyVedioDefault, setKeyVedio] = useState(0)
   const dispatch = useDispatch()
   const stateData = useSelector((state) => state)
-  const fetchProducts = async () => {
+  const getTeachers = async () => {
     dispatch(fetchProductsRequest())
     axios
       .get('http://localhost:3100/Teachers')
@@ -28,23 +28,39 @@ function ContainerCardTeacher() {
       })
     console.log(stateData?.data)
   }
+  const favoriteTeacher = (id, isFavorite) => {
+    axios
+      .patch(`http://localhost:3100/Teachers/${id}`, {
+        isFavorite: !isFavorite,
+      })
+      .then(() => {
+        // getTeachers()
+      })
+  }
+
   useEffect(() => {
-    fetchProducts()
+    getTeachers()
   }, [])
+
+  if (stateData?.loading) {
+    return <LoadingCom />
+  }
   return (
     <>
-      {stateData.loading && <LoadingCom />}
-      <div className="mt-3 ">
-        {stateData?.data.map((teacher) => {
-          return (
-            <TeacherCard
-              keyVedioDefault={keyVedioDefault}
-              setKeyVedio={setKeyVedio}
-              {...teacher}
-            />
-          )
-        })}
-      </div>
+      {stateData?.data && (
+        <div className="mt-3 ">
+          {stateData?.data.map((teacher) => {
+            return (
+              <TeacherCard
+                keyVedioDefault={keyVedioDefault}
+                setKeyVedio={setKeyVedio}
+                favoriteTeacher={favoriteTeacher}
+                {...teacher}
+              />
+            )
+          })}
+        </div>
+      )}
     </>
   )
 }

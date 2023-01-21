@@ -2,11 +2,12 @@ import {
   FETCH_PRODUCTS_GET,
   FETCH_PRODUCTS_SUCCESS,
   FETCH_PRODUCTS_FAILED,
-} from "./ActionTypes";
+} from './ActionTypes';
 export const intialState = {
   loading: true,
-  data: [],
-  error: "",
+  products: [],
+  teachers: [],
+  error: '',
 };
 
 export const fetchProductsRequest = () => {

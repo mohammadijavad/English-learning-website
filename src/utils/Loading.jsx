@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import Loading from "../assets/images/loading.gif";
+import React from 'react'
+import styled from 'styled-components'
+import Loading from '../assets/images/771.gif'
 function LoadingCom() {
   return (
     <ContainerData>
       <img src={Loading} alt="" />
     </ContainerData>
-  );
+  )
 }
 
 const ContainerData = styled.div`
@@ -20,5 +20,5 @@ const ContainerData = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-export default LoadingCom;
+`
+export default LoadingCom

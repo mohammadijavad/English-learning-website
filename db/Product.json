@@ -19,103 +19,40 @@
         "timeComment": ""
       },
       "discriptionProduct": "decription test"
-    },
-    {
-      "id": 2,
-      "name": "second prodeuct",
-      "price": "1000",
-      "countBuy": "0",
-      "count": "10",
-      "picture": "",
-      "isFavorite": "false",
-      "otherConder": {
-        "firstCover": "",
-        "secondCover": ""
-      },
-      "comments": {
-        "authorName": "test1",
-        "commentContent": "",
-        "timeComment": ""
-      },
-      "discriptionProduct": "decription test"
-    },
-    {
-      "id": 3,
-      "name": "third prodeuct",
-      "price": "1000",
-      "countBuy": "0",
-      "count": "10",
-      "picture": "",
-      "isFavorite": "false",
-      "otherConder": {
-        "firstCover": "",
-        "secondCover": ""
-      },
-      "comments": {
-        "authorName": "test1",
-        "commentContent": "",
-        "timeComment": ""
-      },
-      "discriptionProduct": "decription test"
     }
   ],
   "Teachers": [
     {
-      "id": 1,
-      "name": "first teacher",
-      "price": "1000",
-      "countBuy": "0",
-      "count": "10",
-      "picture": "",
-      "isFavorite": "false",
-      "otherConder": {
-        "firstCover": "",
-        "secondCover": ""
-      },
-      "comments": {
-        "authorName": "test1",
-        "commentContent": "",
-        "timeComment": ""
-      },
-      "discriptionProduct": "decription test"
-    },
-    {
-      "id": 2,
-      "name": "second prodeuct",
-      "price": "1000",
-      "countBuy": "0",
-      "count": "10",
-      "picture": "",
-      "isFavorite": "false",
-      "otherConder": {
-        "firstCover": "",
-        "secondCover": ""
-      },
-      "comments": {
-        "authorName": "test1",
-        "commentContent": "",
-        "timeComment": ""
-      },
-      "discriptionProduct": "decription test"
-    },
-    {
-      "id": 3,
-      "name": "third prodeuct",
-      "price": "1000",
-      "countBuy": "0",
-      "count": "10",
-      "picture": "",
-      "isFavorite": "false",
-      "otherConder": {
-        "firstCover": "",
-        "secondCover": ""
-      },
-      "comments": {
-        "authorName": "test1",
-        "commentContent": "",
-        "timeComment": ""
-      },
-      "discriptionProduct": "decription test"
+      "id": "T1",
+      "nameTeacher": " پریسا میرزایی ",
+      "photoTeacher": "https://cdn.oteacher.org/images/202204/dPaw1CTr8IK66CeSZmgp0GZpskywnkNGb0mF_thumb.jpeg",
+      "introVedio": "https://cdn.oteacher.org/videos/202203/rbIVxdVCJP9GYHAL6et2MDQHz9KK6DFtBWQXsVwq.mp4#t=0.1",
+      "Experts": "EN",
+      "languageExperts": "انگلیسی",
+      "level": [" مبتدی ", "پیشرفته"],
+      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
+      "mainSkils": "IELTS",
+      "priceTest": "0",
+      "priceClass": "1500000",
+      "rate": "4.9",
+      "allCommentCount": "189",
+      "discriptionTeacher": [
+        "تجربه بیش از6 سال سابقه تدریس در آیلتس و زبان عمومی در تنها مرکز تخصصی آیلتس (آیلتس سنتر نسل فردا اصقهان)",
+        "دانشجوی آنلاین Phd زبان انگلیسی دانشگاه TRU کانادا/دارنده آیلتس 8/GRE/MSRT/و مدرک ILI",
+        "کلاس های مکالمه و هم چنین انگلیسی عمومی برای تمام سنین",
+        " مشاوره تخصصی مهاجرت و اپلای شامل جست و جو در سایت دانشگاه ها و ایمیل به اساتید  با نرخ مناسب و کیفیت بالا",
+        "در کلاس های من با توجه به نیاز زبان آموز و هدفی که در رابطه با یادگیری زبان دارد ، برنامه ریزی ها انجام می شود .",
+        "هدف من در درجه اول کیفیت بالای آموزش است"
+      ],
+      "studentsTeacher": "369",
+      "isFavorite": false,
+      "comments": [
+        {
+          "sudentPicture": "https://cdn.oteacher.org/images/202209/BDRA6DgNyBBXvHG8Z9A6lPVkwDzXsgnDtD2S_original.jpeg",
+          "rateStudent": "4",
+          "commentBody": "استاد خوبی هستن من از اینکه ایشون حین حرف زدن شما ایرادتونم سریع میگه بسیار خوشحالم"
+        }
+      ]
     }
   ]
 }

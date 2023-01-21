@@ -4,24 +4,31 @@ import { BsFillStarFill, BsLightningFill } from 'react-icons/bs'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom'
-
+import { json, Link } from 'react-router-dom'
+import Favorite from '../../../../../utils/Favorite'
 import EnglishFleg from '../../../../../assets/images/flags/us.svg'
 import pause from '../../../../../assets/cover.svg'
 
 function TeacherCard({
+  id,
+  nameTeacher,
+  photoTeacher,
+  introVedio,
+  Experts,
+  level,
+  skils,
+  priceTest,
+  priceClass,
+  rate,
+  allCommentCount,
+  discriptionTeacher,
+  studentsTeacher,
+  isFavorite,
+  comments,
   setKeyVedio,
   keyVedioDefault,
-  id,
-  name,
-  language,
-  level,
-  xpertise,
-  Skills,
-  onehourPriceSession,
-  priceLevel,
-  srcVedio,
-  srcPhoto,
+  languageExperts,
+  mainSkils,
 }) {
   const vedioRef = useRef()
   const [play, setPlay] = useState(false)
@@ -49,24 +56,28 @@ function TeacherCard({
         <div className={`  ${style.containerCard} mx-1 curoser mt-4`}>
           <div className={`row ${style.gridContainer}`}>
             <div className="col-12 col-md-7 h-100">
-              <div className="d-flex flex-column justify-content-between h-100">
+              <div className="d-flex flex-column justify-content-between h-100 position-relative">
+                <Favorite />
                 <Link to={`/teachers/${id}`}>
                   <div className="d-flex">
                     <div className="d-flex flex-column align-items-center justify-content-center  w-25">
                       <div className="w-75 m-auto mx-0 mt-2">
                         <img
-                          src={srcPhoto}
-                          alt=""
+                          src={photoTeacher}
+                          alt={`${photoTeacher} `}
                           className={` ${style.teacherAvatar} w-100`}
                         />
                       </div>
                       <div className="d-flex justify-content-center flex-column align-items-center mt-1">
                         <div>
                           <span className={`${style.rateStart}`}>
-                            <BsFillStarFill /> <span> 5.0 </span>
+                            <BsFillStarFill /> <span> {rate} </span>
                           </span>
                           از
-                          <span className={`${style.rateStart}`}> 75 </span>
+                          <span className={`${style.rateStart}`}>
+                            {' '}
+                            {allCommentCount}
+                          </span>
                           نظر
                         </div>
                         <div className={`${style.rateStart} mt-1`}>
@@ -91,7 +102,7 @@ function TeacherCard({
                       </div>
                     </div>
                     <div className="d-flex flex-column  w-75">
-                      <div className="m-2 mx-3">{name}</div>
+                      <div className="m-2 mx-3">{nameTeacher}</div>
                       <div
                         className={`${style.animation} mt-1 mb-1 mx-3`}
                       ></div>
@@ -100,7 +111,7 @@ function TeacherCard({
                       >
                         <div className="mx-2">تدریس</div>
                         <div className="mx-3">
-                          {language}
+                          {languageExperts}
                           <img
                             src={EnglishFleg}
                             width="16px"
@@ -115,7 +126,7 @@ function TeacherCard({
                       >
                         <div className="mx-2">تخصص</div>
                         <div className="mx-3">
-                          <b className={`${style.bold}`}> {xpertise}</b>{' '}
+                          <b className={`${style.bold}`}>{skils}</b>{' '}
                         </div>
                       </div>
                       <div
@@ -128,7 +139,7 @@ function TeacherCard({
                         className={`d-flex  align-items-center m-2 ${style.titleSkills}`}
                       >
                         <div className="mx-2">مهارتها</div>
-                        <div className="mx-3">{Skills}</div>
+                        <div className="mx-3">{mainSkils}</div>
                       </div>
                     </div>
                   </div>
@@ -137,15 +148,15 @@ function TeacherCard({
                   <div className={`mx-2 ${style.priceClass}`}>
                     <span>جلسه آزمایشی</span>
                     <span>
-                      <b className={`${style.bold}`}> {priceLevel} </b>
-                      {'    '}
+                      <b className={`${style.bold}`}> {priceTest} </b>
+                      {'    تومان'}
                     </span>
                     {'     '}
                   </div>
                   <div className={`mx-2 ${style.priceClass}`}>
                     <span>جلسه یک ساعتی</span>
                     <span>
-                      <b className={`${style.bold}`}> {onehourPriceSession} </b>
+                      <b className={`${style.bold}`}> {priceClass} </b>
                       تومان
                     </span>
                   </div>
@@ -170,8 +181,8 @@ function TeacherCard({
                       !play ? style.zoomIn : ''
                     }`}
                   >
-                    <source src={srcVedio} type="video/webm" />
-                    <source src={srcVedio} type="video/mp4" />
+                    <source src={introVedio} type="video/webm" />
+                    <source src={introVedio} type="video/mp4" />
                     Sorry, your browser doesn't support videos.
                   </video>
                   {!play && keyVedioDefault !== id && (

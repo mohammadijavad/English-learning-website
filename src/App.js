@@ -32,6 +32,22 @@ function App() {
     }
   }, []);
 
+  const getTeachers = async () => {
+    dispatch(fetchProductsRequest());
+    axios
+      .get("http://localhost:3100/Teachers")
+      .then((response) => {
+        const datas = response.data;
+        dispatch(fetchProductsSuccess(datas));
+      })
+      .catch((error) => {
+        dispatch(fetchProductsError("error "));
+      });
+  };
+
+  useEffect(() => {
+    getTeachers();
+  }, []);
   return (
     <div
       className="containerDashboard"

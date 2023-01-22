@@ -4,11 +4,19 @@ import styled from "styled-components";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import Button from "react-bootstrap/Button";
-function Favorite({ isFavorite, favoriteTeacher, id }) {
+import axios from "axios";
+function Favorite({ isFavorite, id }) {
   const [isfavoriteState, setIsfavorite] = useState(isFavorite);
   const favoriteHandler = () => {
     setIsfavorite(!isfavoriteState);
-    favoriteTeacher(id, isfavoriteState);
+    favoriteTeacher(id);
+  };
+  const favoriteTeacher = (id) => {
+    axios
+      .patch(`http://localhost:3100/Teachers/${id}`, {
+        isFavorite: !isFavorite,
+      })
+      .then(() => {});
   };
   return (
     <Container>

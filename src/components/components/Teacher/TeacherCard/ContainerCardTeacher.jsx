@@ -27,15 +27,6 @@ function ContainerCardTeacher() {
         dispatch(fetchProductsError("error "));
       });
   };
-  const favoriteTeacher = (id, isFavorite) => {
-    axios
-      .patch(`http://localhost:3100/Teachers/${id}`, {
-        isFavorite: !isFavorite,
-      })
-      .then(() => {
-        // getTeachers()
-      });
-  };
 
   useEffect(() => {
     getTeachers();
@@ -49,15 +40,7 @@ function ContainerCardTeacher() {
       {stateData?.data && (
         <div className="mt-3 ">
           {stateData?.data.map((teacher, index) => {
-            return (
-              <TeacherCard
-                key={index}
-                keyVedioDefault={keyVedioDefault}
-                setKeyVedio={setKeyVedio}
-                favoriteTeacher={favoriteTeacher}
-                {...teacher}
-              />
-            );
+            return <TeacherCard key={index} {...teacher} />;
           })}
         </div>
       )}

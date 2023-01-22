@@ -1,20 +1,20 @@
-import React from 'react'
-import style from '../style/userpage.module.css'
-import TitleClass from './TitleClass'
-import { FiMoreVertical } from 'react-icons/fi'
-import Accordion from 'react-bootstrap/Accordion'
-function CardClass({ titleClass, listClass, key }) {
+import React from "react";
+import style from "../style/userpage.module.css";
+import TitleClass from "./TitleClass";
+import { FiMoreVertical } from "react-icons/fi";
+import Accordion from "react-bootstrap/Accordion";
+function CardClass({ titleClass, listClass, keyAccordion }) {
   return (
     <div>
-      <Accordion defaultActiveKey={[key]} alwaysOpen>
+      <Accordion defaultActiveKey={[keyAccordion]} alwaysOpen>
         <Accordion.Item eventKey={1}>
           <Accordion.Header>
             <TitleClass title={titleClass} />
           </Accordion.Header>
-          {listClass?.map((list) => {
-            const { photo, name, reserved, unreserved } = list
+          {listClass?.map((list, index) => {
+            const { photo, name, reserved, unreserved } = list;
             return (
-              <Accordion.Body key={list.id}>
+              <Accordion.Body key={index}>
                 <div className={`${style.classListContainerRow} mt-2 row`}>
                   <div className="col-12 col-lg-6">
                     <div className="d-flex align-items-center justify-content-center justify-content-lg-start ">
@@ -25,8 +25,8 @@ function CardClass({ titleClass, listClass, key }) {
                         <div className={`${style.containerClassInfo} my-2`}>
                           کلاس خصوصی با استاد
                           <span>
-                            {' '}
-                            {'  '} {name}{' '}
+                            {" "}
+                            {"  "} {name}{" "}
                           </span>
                           <span className={`${style.flagClass} mx-2`}>
                             کلاس خصوصی
@@ -62,12 +62,12 @@ function CardClass({ titleClass, listClass, key }) {
                   </div>
                 </div>
               </Accordion.Body>
-            )
+            );
           })}
         </Accordion.Item>
       </Accordion>
     </div>
-  )
+  );
 }
 
-export default CardClass
+export default CardClass;

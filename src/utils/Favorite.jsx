@@ -1,10 +1,15 @@
-import React from 'react'
-import { BsFillHeartFill } from 'react-icons/bs'
-import styled from 'styled-components'
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-import Tooltip from 'react-bootstrap/Tooltip'
-import Button from 'react-bootstrap/Button'
+import React, { useState } from "react";
+import { BsFillHeartFill } from "react-icons/bs";
+import styled from "styled-components";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+import Button from "react-bootstrap/Button";
 function Favorite({ isFavorite, favoriteTeacher, id }) {
+  const [isfavoriteState, setIsfavorite] = useState(isFavorite);
+  const favoriteHandler = () => {
+    setIsfavorite(!isfavoriteState);
+    favoriteTeacher(id, isfavoriteState);
+  };
   return (
     <Container>
       <OverlayTrigger
@@ -12,7 +17,7 @@ function Favorite({ isFavorite, favoriteTeacher, id }) {
         animation={true}
         overlay={(props) => (
           <Tooltip {...props}>
-            {isFavorite ? ' حذف از ' : ' افزودن به  '} علاقمندی ها
+            {isfavoriteState ? " حذف از " : " افزودن به  "} علاقمندی ها
           </Tooltip>
         )}
         placement="top"
@@ -20,15 +25,15 @@ function Favorite({ isFavorite, favoriteTeacher, id }) {
         <Button variant="" className={`m-0 p-0 bg-none `}>
           <span>
             <BsFillHeartFill
-              onClick={() => favoriteTeacher(id, isFavorite)}
-              color={isFavorite ? '#ff4757' : 'inherit'}
+              onClick={() => favoriteHandler()}
+              color={isfavoriteState ? "#ff4757" : "inherit"}
               size={22}
             />
           </span>
         </Button>
       </OverlayTrigger>
     </Container>
-  )
+  );
 }
 const Container = styled.div`
   position: absolute;
@@ -40,5 +45,5 @@ const Container = styled.div`
   & button:active {
     border: none;
   }
-`
-export default Favorite
+`;
+export default Favorite;

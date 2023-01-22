@@ -1,12 +1,12 @@
-import React from 'react'
-import style from '../style/userpage.module.css'
-import Accordion from 'react-bootstrap/Accordion'
-import { FiMoreVertical } from 'react-icons/fi'
+import React from "react";
+import style from "../style/userpage.module.css";
+import Accordion from "react-bootstrap/Accordion";
+import { FiMoreVertical } from "react-icons/fi";
 function Cardbody({ listsClass }) {
-  const TemplateBody = listsClass.map((list) => {
-    const { photo, name, reserved, unreserved } = list
+  const TemplateBody = listsClass.map((list, index) => {
+    const { photo, name, reserved, unreserved } = list;
     return (
-      <Accordion.Body>
+      <Accordion.Body key={index}>
         <div className={`${style.classListContainerRow} mt-2 row`}>
           <div className="col-12 col-lg-6">
             <div className="d-flex align-items-center justify-content-center justify-content-lg-start ">
@@ -20,7 +20,7 @@ function Cardbody({ listsClass }) {
                 </div>
                 <div className={`${style.containerClassInfo} my-2`}>
                   <span>
-                    تعدا کل جلسات :{' '}
+                    تعدا کل جلسات :{" "}
                     <b className={style.numberClass}> {reserved} </b>
                   </span>
                   <span className={`mx-3`}>
@@ -48,12 +48,12 @@ function Cardbody({ listsClass }) {
           </div>
         </div>
       </Accordion.Body>
-    )
-  })
+    );
+  });
   if (listsClass.length < 1) {
-    return <p>loading ...</p>
+    return <p>loading ...</p>;
   }
-  return { TemplateBody }
+  return { TemplateBody };
 }
 
-export default Cardbody
+export default Cardbody;

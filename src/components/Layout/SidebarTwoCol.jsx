@@ -26,6 +26,7 @@ function SidebarTwoCol() {
             {lists.map((list, index) => {
               return (
                 <div
+                  key={index}
                   onClick={() => setActive(index)}
                   className={`curoser mt-2   rounded ${style.sideIcont} ${
                     active === list.index ? style.activeIconside : ""
@@ -58,7 +59,7 @@ function SidebarTwoCol() {
           <div className="mt-2">
             {lists[active].children?.map((list, index) => {
               return (
-                <Link to={list.to}>
+                <Link to={list.to} key={index}>
                   <div
                     className={`${
                       style.itemLinkSidebarT

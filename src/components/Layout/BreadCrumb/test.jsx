@@ -29,12 +29,8 @@ const App = () => (
                     : path,
                   ...rest,
                 }));
-
-              console.log(`Generated crumbs for ${props.match.path}`);
-              crumbs.map(({ name, path }) => console.log({ name, path }));
-
               return (
-                <div className="p-8">
+                <div className="p-8" key={path}>
                   <Breadcrumbs crumbs={crumbs} />
                   <Component {...props} />
                 </div>

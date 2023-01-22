@@ -63,7 +63,7 @@ export const lists = [
   },
   {
     index: 2,
-    id: 2,
+    id: uuidv4(),
     title: "نمایش",
     icon: <BsReverseLayoutSidebarReverse className="iconSidebarTab" />,
     children: [

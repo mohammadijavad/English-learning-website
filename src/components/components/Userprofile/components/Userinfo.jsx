@@ -4,7 +4,6 @@ import { userInfo } from "../../../../constants/ProfilepageData";
 import US from "../../../../assets/images/flags/us.svg";
 import Germany from "../../../../assets/images/flags/germany.svg";
 function Userinfo() {
-  console.log(userInfo);
   const { name, languages, golas, siningTime } = userInfo;
   let flag = "";
   let lang = "";

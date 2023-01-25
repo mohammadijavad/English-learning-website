@@ -1,51 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import TeacherCard from "./components/TeacherCard";
 import LoadingCom from "../../../../utils/Loading";
-import axios from "axios";
-import {
-  fetchProductsError,
-  fetchProductsRequest,
-  fetchProductsSuccess,
-} from "../../../../store/apiActions";
+import { useSelector } from "react-redux";
 import { Teachers } from "../../../../constants/Teachers"; // clear after
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import {
+  selectAllTeacher,
+  getTeacherStatus,
+  getTeacherError,
+  fetchTeachers,
+} from "../../../../app/store/Teacher store/Teacher";
 
 function ContainerCardTeacher() {
-  const [keyVedioDefault, setKeyVedio] = useState(0);
   const dispatch = useDispatch();
-  const stateData = useSelector((state) => state);
-  const getTeachers = async () => {
-    dispatch(fetchProductsRequest());
-    axios
-      .get("http://localhost:3100/Teachers")
-      .then((response) => {
-        const datas = response.data;
-        dispatch(fetchProductsSuccess(datas));
-      })
-      .catch((error) => {
-        dispatch(fetchProductsError("error "));
-      });
-  };
-
+  const teachers = useSelector(selectAllTeacher);
+  const teacherStatus = useSelector(getTeacherStatus);
+  const error = useSelector(getTeacherError);
+  let content;
   useEffect(() => {
-    getTeachers();
-  }, []);
+    if (teacherStatus === "idle") {
+      dispatch(fetchTeachers());
+    }
+    console.log(teachers, 222222);
+  }, [teacherStatus, dispatch]);
 
-  if (stateData?.loading) {
-    return <LoadingCom />;
+  if (teacherStatus === "loading") {
+    content = <LoadingCom />;
+  } else if (teacherStatus === "succeeded") {
+    content = (
+      <div className="mt-3 ">
+        {teachers?.map((teacher, index) => {
+          return <TeacherCard key={index} {...teacher} />;
+        })}
+      </div>
+    );
+  } else if (teacherStatus === "failed") {
+    content = <p>{error}</p>;
   }
-  return (
-    <>
-      {stateData?.data && (
-        <div className="mt-3 ">
-          {stateData?.data.map((teacher, index) => {
-            return <TeacherCard key={index} {...teacher} />;
-          })}
-        </div>
-      )}
-    </>
-  );
+  return <>{content}</>;
 }
 
 export default ContainerCardTeacher;

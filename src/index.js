@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import ContextProv from "./contexts/ContextProv";
 import { AuthProvider } from "./contexts/AuthContext";
 import { Provider } from "react-redux";
-import { store } from "./store/index";
+import { store } from "./app/store/store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(

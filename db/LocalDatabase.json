@@ -29,8 +29,15 @@
       "introVedio": "https://cdn.oteacher.org/videos/202203/rbIVxdVCJP9GYHAL6et2MDQHz9KK6DFtBWQXsVwq.mp4#t=0.1",
       "Experts": "EN",
       "languageExperts": "انگلیسی",
-      "level": [" مبتدی ", "پیشرفته"],
-      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
+      "level": [
+        " مبتدی ",
+        "پیشرفته"
+      ],
+      "skils": [
+        " مهاجرت و اپلای ",
+        " زبان عمومی ,",
+        " آیلتس "
+      ],
       "mainSkils": "IELTS",
       "priceTest": "0",
       "priceClass": "1500000",

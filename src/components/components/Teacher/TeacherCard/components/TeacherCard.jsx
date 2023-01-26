@@ -1,13 +1,13 @@
-import React, { useRef, useEffect, useState } from "react";
-import style from "../style/TeacherCard.module.css";
-import { BsFillStarFill, BsLightningFill } from "react-icons/bs";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
-import Button from "react-bootstrap/Button";
-import { json, Link } from "react-router-dom";
-import Favorite from "../../../../../utils/Favorite";
-import EnglishFleg from "../../../../../assets/images/flags/us.svg";
-import pause from "../../../../../assets/cover.svg";
+import React, { useRef, useEffect, useState } from 'react'
+import style from '../style/TeacherCard.module.css'
+import { BsFillStarFill, BsLightningFill } from 'react-icons/bs'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
+import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom'
+import Favorite from '../../../../../utils/Favorite'
+import EnglishFleg from '../../../../../assets/images/flags/us.svg'
+import pause from '../../../../../assets/cover.svg'
 
 function TeacherCard({
   id,
@@ -28,27 +28,30 @@ function TeacherCard({
   languageExperts,
   mainSkils,
 }) {
-  const [keyVedioDefault, setKeyVedio] = useState(0);
-  const vedioRef = useRef();
-  const [play, setPlay] = useState(false);
+  const [keyVedioDefault, setKeyVedio] = useState(0)
+  const vedioRef = useRef()
+  const [play, setPlay] = useState(false)
   const playVedioHandler = (mode) => {
-    setPlay(mode);
-    setKeyVedio(id);
+    setPlay(mode)
+    setKeyVedio(id)
     if (play) {
-      vedioRef.current.play();
+      vedioRef.current.play()
     } else {
-      vedioRef.current.pause();
-      setKeyVedio(0);
+      vedioRef.current.pause()
+      setKeyVedio(0)
     }
-  };
+  }
+  // const favoriteTeacher=()=>{
+
+  // }
   useEffect(() => {
     if (play) {
-      vedioRef.current.play();
+      vedioRef.current.play()
     } else {
-      vedioRef.current.pause();
-      setKeyVedio(0);
+      vedioRef.current.pause()
+      setKeyVedio(0)
     }
-  }, [play]);
+  }, [play])
   return (
     <>
       <div>
@@ -56,11 +59,7 @@ function TeacherCard({
           <div className={`row ${style.gridContainer}`}>
             <div className="col-12 col-md-7 h-100">
               <div className="d-flex flex-column justify-content-between h-100 position-relative">
-                <Favorite
-                  id={id}
-                  favoriteTeacher={favoriteTeacher}
-                  isFavorite={isFavorite}
-                />
+                <Favorite id={id} isFavorite={isFavorite} />
                 <Link to={`/teachers/${id}`}>
                   <div className="d-flex">
                     <div className="d-flex flex-column align-items-center justify-content-center  w-25">
@@ -78,7 +77,7 @@ function TeacherCard({
                           </span>
                           از
                           <span className={`${style.rateStart}`}>
-                            {" "}
+                            {' '}
                             {allCommentCount}
                           </span>
                           نظر
@@ -129,7 +128,7 @@ function TeacherCard({
                       >
                         <div className="mx-2">تخصص</div>
                         <div className="mx-3">
-                          <b className={`${style.bold}`}>{skils}</b>{" "}
+                          <b className={`${style.bold}`}>{skils}</b>{' '}
                         </div>
                       </div>
                       <div
@@ -152,9 +151,9 @@ function TeacherCard({
                     <span>جلسه آزمایشی</span>
                     <span>
                       <b className={`${style.bold}`}> {priceTest} </b>
-                      {"    تومان"}
+                      {'    تومان'}
                     </span>
-                    {"     "}
+                    {'     '}
                   </div>
                   <div className={`mx-2 ${style.priceClass}`}>
                     <span>جلسه یک ساعتی</span>
@@ -181,7 +180,7 @@ function TeacherCard({
                     ref={vedioRef}
                     controls={play}
                     className={`${style.vedioTeacherEl} ${
-                      !play ? style.zoomIn : ""
+                      !play ? style.zoomIn : ''
                     }`}
                   >
                     <source src={introVedio} type="video/webm" />
@@ -208,7 +207,7 @@ function TeacherCard({
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default TeacherCard;
+export default TeacherCard

@@ -14,13 +14,14 @@ export const fetchTeachers = createAsyncThunk(
   }
 );
 
-// First, create the thunk
-export const fetchUserById = createAsyncThunk(
-  'users/fetchByIdStatus',
-  async (userId) => {
-    // const response = await userAPI.fetchById(userId)
-    // return response.data
-    console.log(userId, 222222);
+export const addTofavoriteTeacher = createAsyncThunk(
+  'teacher/addTofavoriteTeacher',
+  async (intial) => {
+    const { id, isFavorite } = intial;
+    const response = await axios.patch(`${TEACHER_URL}/${id}`, {
+      isFavorite: isFavorite,
+    });
+    return response.data;
   }
 );
 const teachersSlice = createSlice({
@@ -28,8 +29,12 @@ const teachersSlice = createSlice({
   initialState,
   reducers: {
     favoriteTeacher(state, action) {
-      console.log(state);
-      console.log(action.payload);
+      const teachers = state.teachers;
+      const findTeacher = teachers.findIndex(
+        (teacher) => teacher.id === action.payload.id
+      );
+      state.teachers[findTeacher].isFavorite = !action.payload.isFavorite;
+      console.log(findTeacher);
     },
   },
   extraReducers(builder) {
@@ -45,6 +50,17 @@ const teachersSlice = createSlice({
       .addCase(fetchTeachers.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
+      })
+      .addCase(addTofavoriteTeacher.fulfilled, (state, action) => {
+        if (!action.payload?.id) {
+          console.log('Update could not complete');
+          console.log(action.payload);
+          return;
+        }
+        const { id } = action.payload;
+        const teachers = state.teachers;
+        const findTeacher = teachers.findIndex((teacher) => teacher.id === id);
+        state.teachers[findTeacher].isFavorite = !action.payload.isFavorite;
       });
   },
 });

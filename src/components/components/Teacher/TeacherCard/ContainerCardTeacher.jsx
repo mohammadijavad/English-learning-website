@@ -1,44 +1,43 @@
-import React, { useEffect } from "react";
-import TeacherCard from "./components/TeacherCard";
-import LoadingCom from "../../../../utils/Loading";
-import { useSelector } from "react-redux";
-import { Teachers } from "../../../../constants/Teachers"; // clear after
+import React, { useEffect } from 'react'
+import TeacherCard from './components/TeacherCard'
+import LoadingCom from '../../../../utils/Loading'
+import { useSelector } from 'react-redux'
+import { Teachers } from '../../../../constants/Teachers' // clear after
 
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux'
 import {
   selectAllTeacher,
   getTeacherStatus,
   getTeacherError,
   fetchTeachers,
-} from "../../../../app/store/Teacher store/Teacher";
+} from '../../../../app/store/Teacher store/Teacher'
 
 function ContainerCardTeacher() {
-  const dispatch = useDispatch();
-  const teachers = useSelector(selectAllTeacher);
-  const teacherStatus = useSelector(getTeacherStatus);
-  const error = useSelector(getTeacherError);
-  let content;
+  const dispatch = useDispatch()
+  const teachers = useSelector(selectAllTeacher)
+  const teacherStatus = useSelector(getTeacherStatus)
+  const error = useSelector(getTeacherError)
+  let content
   useEffect(() => {
-    if (teacherStatus === "idle") {
-      dispatch(fetchTeachers());
+    if (teacherStatus === 'idle') {
+      dispatch(fetchTeachers())
     }
-    console.log(teachers, 222222);
-  }, [teacherStatus, dispatch]);
+  }, [teacherStatus, dispatch])
 
-  if (teacherStatus === "loading") {
-    content = <LoadingCom />;
-  } else if (teacherStatus === "succeeded") {
+  if (teacherStatus === 'loading') {
+    content = <LoadingCom />
+  } else if (teacherStatus === 'succeeded') {
     content = (
       <div className="mt-3 ">
         {teachers?.map((teacher, index) => {
-          return <TeacherCard key={index} {...teacher} />;
+          return <TeacherCard key={index} {...teacher} />
         })}
       </div>
-    );
-  } else if (teacherStatus === "failed") {
-    content = <p>{error}</p>;
+    )
+  } else if (teacherStatus === 'failed') {
+    content = <p>{error}</p>
   }
-  return <>{content}</>;
+  return <>{content}</>
 }
 
-export default ContainerCardTeacher;
+export default ContainerCardTeacher

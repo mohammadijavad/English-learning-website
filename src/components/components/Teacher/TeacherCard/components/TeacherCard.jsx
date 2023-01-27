@@ -14,17 +14,13 @@ function TeacherCard({
   nameTeacher,
   photoTeacher,
   introVedio,
-  Experts,
   level,
   skils,
   priceTest,
   priceClass,
   rate,
   allCommentCount,
-  discriptionTeacher,
-  studentsTeacher,
   isFavorite,
-  favoriteTeacher,
   languageExperts,
   mainSkils,
 }) {
@@ -51,7 +47,9 @@ function TeacherCard({
       vedioRef.current.pause()
       setKeyVedio(0)
     }
+    console.log(isFavorite)
   }, [play])
+
   return (
     <>
       <div>
@@ -60,7 +58,7 @@ function TeacherCard({
             <div className="col-12 col-md-7 h-100">
               <div className="d-flex flex-column justify-content-between h-100 position-relative">
                 <Favorite id={id} isFavorite={isFavorite} />
-                <Link to={`/teachers/${id}`}>
+                <Link to={`/profile/teachers/${id}`}>
                   <div className="d-flex">
                     <div className="d-flex flex-column align-items-center justify-content-center  w-25">
                       <div className="w-75 m-auto mx-0 mt-2">

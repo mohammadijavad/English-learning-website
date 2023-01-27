@@ -1,14 +1,19 @@
-import React from "react";
-import style from "../style/userpage.module.css";
-import testCup1 from "../../../../assets/images/just static data/1.png";
-import testCup2 from "../../../../assets/images/just static data/2.png";
-import testCup3 from "../../../../assets/images/just static data/3.png";
-import testCup4 from "../../../../assets/images/just static data/4.png";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
-import Button from "react-bootstrap/Button";
-function Usercups() {
-  const bg = { bacground: "red" };
+import React from 'react'
+import style from '../style/userpage.module.css'
+import testCup1 from '../../../../assets/images/just static data/1.png'
+import testCup2 from '../../../../assets/images/just static data/2.png'
+import testCup3 from '../../../../assets/images/just static data/3.png'
+import testCup4 from '../../../../assets/images/just static data/4.png'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
+import Button from 'react-bootstrap/Button'
+function Usercups({ userInformation }) {
+  console.log(userInformation)
+  const [firstCup, secondCup, thirdCup, fourthCup] = userInformation.userAchive
+  const { onHourClass } = firstCup
+  const { activityMoreThan50 } = secondCup
+  const { completeClassTweny } = thirdCup
+  const { takeExamSite } = fourthCup
   return (
     <div
       className={`d-flex align-items-center justify-content-evenly flex-column mb-4`}
@@ -22,7 +27,13 @@ function Usercups() {
             placement="top"
           >
             <Button variant="" className={`m-0 p-0 bg-none `}>
-              <img src={testCup1} className={style.cupimg} alt="sing ing cup" />
+              <img
+                src={testCup1}
+                className={` ${
+                  onHourClass ? style.cupimg : 'blackWhiteImage'
+                } `}
+                alt="sing ing cup"
+              />
             </Button>
           </OverlayTrigger>
         </div>
@@ -39,7 +50,9 @@ function Usercups() {
               <img
                 src={testCup2}
                 alt="sing ing cup"
-                className={`blackWhiteImage ${style.cupimg} `}
+                className={` ${
+                  activityMoreThan50 ? style.cupimg : 'blackWhiteImage'
+                } `}
               />
             </Button>
           </OverlayTrigger>
@@ -57,7 +70,9 @@ function Usercups() {
               <img
                 src={testCup3}
                 alt="sing ing cup"
-                className={`blackWhiteImage ${style.cupimg} `}
+                className={` ${
+                  completeClassTweny ? style.cupimg : 'blackWhiteImage'
+                } `}
               />
             </Button>
           </OverlayTrigger>
@@ -75,7 +90,9 @@ function Usercups() {
               <img
                 src={testCup4}
                 alt="sing ing cup"
-                className={`blackWhiteImage ${style.cupimg} `}
+                className={` ${
+                  takeExamSite ? style.cupimg : 'blackWhiteImage'
+                } `}
               />
             </Button>
           </OverlayTrigger>
@@ -85,7 +102,7 @@ function Usercups() {
         <p>دستاورد های دانش آموز</p>
       </div>
     </div>
-  );
+  )
 }
 
-export default Usercups;
+export default Usercups

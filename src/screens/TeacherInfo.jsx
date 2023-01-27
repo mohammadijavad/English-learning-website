@@ -1,7 +1,8 @@
 import React from 'react'
+import TeacherDetailInfo from '../components/components/Teacher/TeacherDetail/TeacherDetailInfo'
 
 function TeacherInfo() {
-  return <div>TeacherInfo</div>
+  return <TeacherDetailInfo />
 }
 
 export default TeacherInfo

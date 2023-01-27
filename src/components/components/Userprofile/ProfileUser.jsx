@@ -1,61 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
+import ProfileDetal from './ProfileDetal'
 import {
-  Headerprofile,
-  Useravatr,
-  Usercups,
-  Userinfo,
-  Userclassdone,
-  Userclasscancled,
-  FavoriteProduct,
-  FavoriteTeacher,
-  Wallet,
-  ChartUser,
-  UserClassList,
-  FavoriteWord,
-} from './index'
-
-import style from './style/Header.module.css'
+  getUserError,
+  getUserStatus,
+  fetchUser,
+} from '../../../app/store/User store/user'
+import { useDispatch, useSelector } from 'react-redux'
+import LoadingCom from '../../../utils/Loading'
 function ProfileUser() {
-  return (
-    <div className={`${style.ContainerProfileUser} `}>
-      <Headerprofile />
-      <Useravatr />
-      <div className="container">
-        <div className="row">
-          <div className="col-12 col-lg-6">
-            <Userinfo />
-          </div>
-          <div className="col-12 col-lg-6">
-            <Usercups />
-          </div>
-          <div className="col-12 mt-2">
-            <UserClassList />
-          </div>
-          <div className="col-12 ">
-            <Userclassdone />
-          </div>
-          <div className="col-12 ">
-            <Userclasscancled />
-          </div>
-          <div className="col-12 col-lg-4">
-            <FavoriteProduct />
-          </div>
-          <div className="col-12 col-lg-4">
-            <FavoriteTeacher />
-          </div>
-          <div className="col-12 col-lg-4">
-            <FavoriteWord />
-          </div>
-          <div className="col-12 col-lg-6">
-            <Wallet />
-          </div>
-          <div className="col-12 col-lg-6 mt-3">
-            <ChartUser />
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+  let content
+  const dispatch = useDispatch()
+  const status = useSelector(getUserStatus)
+  const error = useSelector(getUserError)
+  useEffect(() => {
+    if (status === 'idle') {
+      dispatch(fetchUser())
+    }
+  }, [status, dispatch])
+  if (status === 'loading') {
+    content = <LoadingCom />
+  } else if (status === 'succeeded') {
+    content = <ProfileDetal />
+  } else if (status === 'failed') {
+    content = <p>{error}</p>
+  }
+  return <>{content}</>
 }
 
 export default ProfileUser

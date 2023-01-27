@@ -160,7 +160,7 @@ function TeacherCard({
                       تومان
                     </span>
                   </div>
-                  <div className={`mx-2 ${style.priceClass}`}>
+                  <div className={`mx-2 d-none d-md-flex ${style.priceClass}`}>
                     <button className={`btn ${style.btnReservation} px-4 py-2`}>
                       <span style={{ zIndex: 10 }}> رزرو کلاس</span>
                     </button>
@@ -168,9 +168,9 @@ function TeacherCard({
                 </div>
               </div>
             </div>
-            <div className="d-md-flex justify-content-center align-items-center col-12 col-md-5 ">
+            <div className="d-none d-md-flex justify-content-around align-items-center col-12 col-md-5 ">
               <div
-                className={` w-50 w-lg-100  m-auto mt-3 mb-3  d-flex justify-content-center align-items-center ${style.indexVideoWrapper}`}
+                className={` w-75  m-auto mt-3 mb-3  d-flex justify-content-center align-items-center ${style.indexVideoWrapper}`}
               >
                 <div className={`${style.vedioWrapper}`}>
                   <video
@@ -199,6 +199,28 @@ function TeacherCard({
                     </div>
                   )}
                 </div>
+              </div>
+            </div>
+            <div className="d-md-none w-100 m-3  d-flex flex-column flex-sm-row align-items-center justify-content-around">
+              <div className="d-flex w-100 justify-content-center mx-3">
+                <div className="w-100 mx-2">
+                  <button className="btn bg-info text-white mx-2 w-100">
+                    پخش ویدیو
+                  </button>
+                </div>
+                <div className="w-100 mx-2">
+                  <button className="btn bg-info text-white mx-2 w-100">
+                    مشاهده پروفایل
+                  </button>
+                </div>
+              </div>
+
+              <div className="w-100 d-flex justify-content-center  my-2">
+                <button
+                  className={`${style.btnReservation} w-100  btn btn-outline-info text-info mx-3`}
+                >
+                  رزرو آزمایشی کلاس
+                </button>
               </div>
             </div>
           </div>

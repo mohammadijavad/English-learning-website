@@ -1,8 +1,10 @@
 import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 const TEACHER_URL = ' http://localhost:3100/Teachers';
+const USER_URL = ' http://localhost:3100/user';
 const initialState = {
   teachers: [],
+  user: [],
   status: 'idle', // 'idle' | 'loading' | 'sucess' | 'faild'
   error: null,
 };
@@ -24,6 +26,7 @@ export const addTofavoriteTeacher = createAsyncThunk(
     return response.data;
   }
 );
+
 const teachersSlice = createSlice({
   name: 'teacher',
   initialState,
@@ -67,5 +70,6 @@ const teachersSlice = createSlice({
 export const selectAllTeacher = (state) => state.teacher.teachers;
 export const getTeacherStatus = (state) => state.teacher.status;
 export const getTeacherError = (state) => state.teacher.error;
+
 export const { favoriteTeacher } = teachersSlice.actions;
 export default teachersSlice.reducer;

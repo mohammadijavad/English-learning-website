@@ -54,7 +54,7 @@ function TeacherCard({
     <>
       <div>
         <div className={`  ${style.containerCard} mx-1 curoser mt-4`}>
-          <div className={`row ${style.gridContainer}`}>
+          <div className={`row  ${style.gridContainer}`}>
             <div className="col-12 col-md-7 h-100">
               <div className="d-flex flex-column justify-content-between h-100 position-relative">
                 <Favorite id={id} isFavorite={isFavorite} />
@@ -168,9 +168,9 @@ function TeacherCard({
                 </div>
               </div>
             </div>
-            <div className="d-none d-md-flex col-md-5 ">
+            <div className="d-md-flex justify-content-center align-items-center col-12 col-md-5 ">
               <div
-                className={`w-100 h-100 mx-2 d-flex justify-content-center align-items-center ${style.indexVideoWrapper}`}
+                className={` w-50 w-lg-100  m-auto mt-3 mb-3  d-flex justify-content-center align-items-center ${style.indexVideoWrapper}`}
               >
                 <div className={`${style.vedioWrapper}`}>
                   <video

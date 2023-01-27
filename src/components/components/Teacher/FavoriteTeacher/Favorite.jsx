@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectAllTeacher } from '../../../../app/store/Teacher store/Teacher'
+import Nodata from '../../../../utils/Nodata'
 import TeacherCard from '../TeacherCard/components/TeacherCard'
 function Favorite() {
   const favoriteTeachers = useSelector(selectAllTeacher)
@@ -9,7 +10,7 @@ function Favorite() {
   )
   let content
   if (teacher.length === 0) {
-    content = <h1>موردی یافت نشد</h1>
+    content = <Nodata />
   } else {
     content = teacher.map((t) => <TeacherCard {...t} key={t.id} />)
   }

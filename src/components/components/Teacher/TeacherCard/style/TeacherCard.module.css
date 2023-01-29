@@ -147,3 +147,10 @@
   top: 60%;
   right: 20%;
 }
+.justDetailInfoPage .indexVideoWrapper {
+  width: 100% !important;
+}
+.justDetailInfoPage .coverWrap img {
+  width: 20%;
+  padding-bottom: 20px;
+}

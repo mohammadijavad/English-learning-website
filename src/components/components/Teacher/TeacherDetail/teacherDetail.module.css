@@ -10,3 +10,22 @@
 
   border-radius: 10px;
 }
+.teacherImgContaienr {
+  width: 150px;
+  margin: 0 0 0 10px;
+}
+.teacherImg {
+  transform: translateY(-90px);
+  border-radius: 20px;
+  border: 6px solid #fff;
+  width: 100%;
+}
+.containerVedioFixed {
+  width: 350px;
+  height: 500px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.containerVedioFixed img {
+  width: 100%;
+}

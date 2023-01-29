@@ -4,27 +4,100 @@ import { selectAllTeacher } from '../../../../app/store/Teacher store/Teacher'
 import { useParams } from 'react-router-dom'
 import style from './teacherDetail.module.css'
 import cover1 from '../../../../assets/images/teachers/cover1.jpg'
+import teacher from '../../../../assets/Teacher/image/teacher-image/teacher-1.jpg'
+import us from '../../../../assets/images/flags/us.svg'
+import { AiFillStar, AiFillEuroCircle } from 'react-icons/ai'
+import Vedio from '../TeacherCard/components/Vedio'
+
 function TeacherDetailInfo() {
   const params = useParams()
   const { id } = params
   const teachers = useSelector(selectAllTeacher)
   const findteacher = teachers.find((teacher) => teacher.id === id)
+  const { photoTeacher, nameTeacher } = findteacher
   useEffect(() => {
     console.log(findteacher, 111)
   }, [])
   return (
-    <div className="container">
+    <div className="container" style={{ height: '200vh' }}>
       <div className={style.bgCoverTeacher}>
         <img src={cover1} alt="" />
       </div>
-      <div className={style.teacherPersonalInfo}>
+      <div className={` w-100 d-flex justify-content-between`}>
+        <div className="d-flex">
+          <div className={style.teacherImgContaienr}>
+            <img
+              className={`  ${style.teacherImg}`}
+              src={photoTeacher}
+              alt=""
+            />
+          </div>
+          <div className={`m-2`}>
+            <div className="d-flex align-items-center my-2 mt-0">
+              <p className="m-0 mx-2"> {nameTeacher} </p>
+              <img width="22" className="rounded-1" src={us} alt="" />
+            </div>
+            <div className={`d-flex`}>
+              <div className={`mx-1 d-flex`}>
+                <AiFillStar size={19} className={``} />
+                <AiFillStar size={19} className={`mx-1`} />
+                <AiFillStar size={19} className={`mx-1`} />
+                <AiFillStar size={19} className={`mx-1`} />
+                <AiFillStar size={19} className={`mx-1`} />
+              </div>
+              <span>
+                <span className="mx-1">4.9</span>
+                <span>
+                  ( از
+                  <span className="">177</span>
+                  نظر)
+                </span>
+              </span>
+            </div>
+            <div className="mt-2">
+              <AiFillEuroCircle size={20} />
+              <span className="mx-2">زبان انگلیسی استاد</span>
+            </div>
+            <div className="mt-2">
+              <AiFillEuroCircle size={20} />
+              <span className="mx-2">زبان انگلیسی استاد</span>
+            </div>
+            <div className="mt-2">
+              <AiFillEuroCircle size={20} />
+              <span className="mx-2">زبان انگلیسی استاد</span>
+            </div>
+          </div>
+        </div>
+        <section
+          className={`${style.containerVedioFixed} shadow d-none d-md-flex`}
+        >
+          <div className={style.fixed}>
+            <Vedio
+              id={findteacher?.id}
+              introVedio={findteacher?.introVedio}
+              classDetailsInfo={true}
+            />
+            <div>
+              <p>قیمت هر جلسه 340000</p>
+              <p>جلسه آزمایشی رایگان</p>
+            </div>
+            <div className="mx-3 ">
+              <button className=" mt-3 shadow shadow-info btn btn-info text-white  w-100 ">
+                رزرو کلاس با استاد
+              </button>
+            </div>
+            <div className="mt-3 text-center">
+              <span>رزرو آنی</span>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div>
         <div></div>
         <div></div>
         <div></div>
         <div></div>
         <div></div>
-        <div></div>
-        <div className="d-md-block position-fixed"></div>
       </div>
     </div>
   )

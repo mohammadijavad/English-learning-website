@@ -47,7 +47,6 @@ function TeacherCard({
       vedioRef.current.pause()
       setKeyVedio(0)
     }
-    console.log(isFavorite)
   }, [play])
 
   return (

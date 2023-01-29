@@ -19,7 +19,6 @@ function ContainerCardTeacher() {
   const error = useSelector(getTeacherError)
   let content
   useEffect(() => {
-    console.log(teacherStatus)
     if (teacherStatus === 'idle') {
       dispatch(fetchTeachers())
     }

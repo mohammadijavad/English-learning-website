@@ -3,7 +3,7 @@ import '../styles/selectFilter.css'
 import { BsChevronDown, BsX } from 'react-icons/bs'
 
 function Select(props) {
-  const { title, activeKey, setClosed, close } = props
+  const { title, activeKey, setClosed, close, data } = props
   const [activeSelectEl, setActiveSelectEl] = useState(0)
   const [textActive, setTextActive] = useState(title)
   const [isOpen, setIsopen] = useState(false)
@@ -44,7 +44,7 @@ function Select(props) {
             }`}
             onClick={() => openSelecHandler()}
           >
-            <div className="d-flex align-items-center justify-content-between">
+            <div className="d-flex align-items-center justify-content-between px-2">
               <span
                 className={`${activeSelectEl !== activeKey ? '' : 'd-none'}`}
               >
@@ -65,34 +65,16 @@ function Select(props) {
             activeKey === close ? 'd-block' : 'd-none'
           } p-0`}
         >
-          <li
-            className="option"
-            onClick={() => setTextSelectHandler('Instagram')}
-          >
-            <i className="bx bxl-instagram-alt"></i>
-            <span className="option-text">Instagram</span>
-          </li>
-          <li
-            className="option"
-            onClick={() => setTextSelectHandler('Linkedin')}
-          >
-            <i className="bx bxl-linkedin-square"></i>
-            <span className="option-text">Linkedin</span>
-          </li>
-          <li
-            className="option"
-            onClick={() => setTextSelectHandler('Facebook')}
-          >
-            <i className="bx bxl-facebook-circle"></i>
-            <span className="option-text">Facebook</span>
-          </li>
-          <li
-            className="option"
-            onClick={() => setTextSelectHandler('Twitter')}
-          >
-            <i className="bx bxl-twitter"></i>
-            <span className="option-text">Twitter</span>
-          </li>
+          {data.map((item) => (
+            <li
+              key={item.type}
+              className="option"
+              onClick={() => setTextSelectHandler(item.text)}
+            >
+              <i className="bx bxl-twitter"></i>
+              <span className="option-text">{item.text}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </>

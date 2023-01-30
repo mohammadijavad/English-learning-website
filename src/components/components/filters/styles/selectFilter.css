@@ -3,17 +3,18 @@
   border: 1px solid var(--border-sidebar) !important;
   border-radius: 30px;
   background: #fff;
-  width: 120px;
+  width: 150px;
   position: relative;
-  box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+  box-shadow: 0 0 5px rgb(0 0 0 / 15%);
   transition: 0.4s ease;
 }
 .select-menu:hover {
-  width: 135px;
+  box-shadow: none;
+  width: 148px;
 }
 .select-btn {
   display: flex;
-
+  z-index: 12;
   align-items: center;
   cursor: pointer;
   justify-content: center;
@@ -63,6 +64,9 @@
   font-size: 19px;
   color: #fff;
   margin: 4px;
+  position: absolute;
+  right: 1%;
+  top: 14%;
 }
 .angleActive {
   transform: rotate(-180deg);

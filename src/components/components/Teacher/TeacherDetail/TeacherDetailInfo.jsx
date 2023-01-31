@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectAllTeacher } from '../../../../app/store/Teacher store/Teacher'
 import { useParams } from 'react-router-dom'
 import style from './teacherDetail.module.css'
 import cover1 from '../../../../assets/images/teachers/cover1.jpg'
-import teacher from '../../../../assets/Teacher/image/teacher-image/teacher-1.jpg'
 import us from '../../../../assets/images/flags/us.svg'
 import { AiFillStar, AiFillEuroCircle } from 'react-icons/ai'
 import Vedio from '../TeacherCard/components/Vedio'
-
+import { BsChevronDown } from 'react-icons/bs'
 function TeacherDetailInfo() {
+  const [show, setShow] = useState(false)
   const params = useParams()
   const { id } = params
   const teachers = useSelector(selectAllTeacher)
@@ -76,25 +76,47 @@ function TeacherDetailInfo() {
               </div>
             </div>
           </div>
-          <div>
-            <p className="text">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Doloribus voluptatibus assumenda ut, consequuntur earum itaque
-              perspiciatis rem fuga necessitatibus a quaerat voluptatem laborum
-              tempora facere culpa nostrum voluptate magnam non.
-            </p>
-            <p className="text-right">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga
-              ipsa quod aliquam laborum repellat! Iure amet magni eos eaque,
-              odit vel ratione. Aliquid animi ducimus facilis, tempore molestiae
-              blanditiis culpa.
-            </p>
+          <div
+            className={`${style.containerTextIntro} ${
+              show ? style.showAllcontent : ''
+            }`}
+          >
+            <div>
+              {discriptionTeacher?.map((text, index) => (
+                <p
+                  key={index}
+                  className={`m-0 ${index === 0 ? 'mt-2' : 'mt-1'}`}
+                >
+                  {text}
+                </p>
+              ))}
+            </div>
+            <div>
+              {discriptionTeacherEnglish?.map((text, index) => (
+                <p
+                  className={`m-0 ${index === 0 ? 'mt-2' : 'mt-1'} ${
+                    style.textIntro
+                  }`}
+                  key={index}
+                >
+                  {text}
+                </p>
+              ))}
+            </div>
           </div>
+          <div
+            className={` ${style.arrowShow} ${show ? 'd-none' : ''}`}
+            onClick={() => setShow(true)}
+          >
+            <p className="m-0 mx-1">مشاهده بیشتر</p>
+            <BsChevronDown className="mt-1" />
+          </div>
+          <hr className="mt-1" />
         </div>
         <section
-          className={`${style.containerVedioFixed} shadow d-none d-md-flex col-5 col-lg-3 position-sticky top-0 mt-3 mx-3`}
+          className={`${style.containerVedioFixed}  d-none d-md-block col-5 col-lg-4  top-0 mt-3 `}
         >
-          <div className={style.fixed}>
+          <div className={`${style.fixed}  p-2 `}>
             <Vedio
               id={findteacher?.id}
               introVedio={findteacher?.introVedio}
@@ -120,4 +142,3 @@ function TeacherDetailInfo() {
 }
 
 export default TeacherDetailInfo
-//linear-gradient(0deg,hsla(0,0%,100%,.61961),transparent)

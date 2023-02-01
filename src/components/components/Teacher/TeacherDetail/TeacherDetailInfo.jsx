@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectAllTeacher } from '../../../../app/store/Teacher store/Teacher'
 import { useParams } from 'react-router-dom'
@@ -7,6 +7,7 @@ import Cover from './components/Cover'
 import PersonalInfo from './components/PersonalInfo'
 import Description from './components/Description'
 import VedioIntro from './components/VedioIntro'
+import ContainerDatepicker from './components/DateTime/ContainerDatepicker'
 function TeacherDetailInfo() {
   const params = useParams()
   const { id } = params
@@ -18,10 +19,7 @@ function TeacherDetailInfo() {
     discriptionTeacher,
     discriptionTeacherEnglish,
   } = findteacher
-  useEffect(() => {
-    var d = new persianDate().toCalendar('persian').date()
-    console.log(d)
-  }, [])
+
   return (
     <div className="container" style={{ height: '200vh' }}>
       <Cover />
@@ -35,18 +33,8 @@ function TeacherDetailInfo() {
 
           <hr className="mt-1" />
           {/* date time for book Classes with your favorite teacher */}
-          <div>
-            <h2>
-              <div>
-                <p>{new persianDate().toLocale('fa').format(' DD MMMM')}</p>
-
-                <p>
-                  {new persianDate([1401, 11, 18])
-                    .toCalendar('persian')
-                    .format(' DD MMMM YYYY ')}
-                </p>
-              </div>
-            </h2>
+          <div className="w-100">
+            <ContainerDatepicker />
           </div>
         </div>
         <VedioIntro findteacher={findteacher} />

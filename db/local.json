@@ -1,0 +1,161 @@
+{
+  "Products": [
+    {
+      "id": 1,
+      "name": "first prodeuct",
+      "price": "1000",
+      "countBuy": "0",
+      "count": "10",
+      "picture": "https://cdn.oteacher.org/images/202301/kLwgRlePJiLU8TDm6Kg5rmmWiiZh8jdkV1DF_thumb.jpeg",
+      "vedioAddress": "https://cdn.oteacher.org/videos/202107/LaYuweuk9Qq4hJvOcguh1xkp1ewnuT8HUYacLvkR.mp4#t=0.1",
+      "isFavorite": "false",
+      "otherConder": {
+        "firstCover": "",
+        "secondCover": ""
+      },
+      "comments": {
+        "authorName": "test1",
+        "commentContent": "",
+        "timeComment": ""
+      },
+      "discriptionProduct": "decription test"
+    }
+  ],
+  "Teachers": [
+    {
+      "id": "T1",
+      "nameTeacher": "  پریسا میرزایی ",
+      "photoTeacher": "https://cdn.oteacher.org/images/202204/dPaw1CTr8IK66CeSZmgp0GZpskywnkNGb0mF_thumb.jpeg",
+      "introVedio": "https://cdn.oteacher.org/videos/202203/rbIVxdVCJP9GYHAL6et2MDQHz9KK6DFtBWQXsVwq.mp4#t=0.1",
+      "Experts": "EN",
+      "languageExperts": "انگلیسی",
+      "level": [" مبتدی ", "پیشرفته"],
+      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
+      "mainSkils": "IELTS",
+      "priceTest": "0",
+      "priceClass": "1500000",
+      "rate": "4.9",
+      "allCommentCount": "189",
+      "discriptionTeacher": [
+        "من كارشناس ارشد آموزش زبان انگليسي از دانشگاه علوم و تحقيقات و دانشجوي دكترا در كشور هلند هستم. با هفده سال سابقه ي تدريس در آموزشگاه و مدارس، در سطوح و سنين مختلف با استفاده از كتابهاي مختلف.",
+        ". كتاب با توجه به سطح و بعضا علاقه و سليقه ي زبان آموز عزيز، پس از مشورت با ايشان، معرفي مي گردد  ",
+        "أساس و تمركز كلاسها، پيشرفت درمكالمه و دقت و روان بودن همزمان در كوتاهترين زمان، توسط تدريس غير مستقيم گرامر، با استفاده از كتاب، فايل هاي صوتي و حتي جلسات فيلم و موزيك ميباشد.",
+        "هدف من در درجه اول کیفیت بالای آموزش است"
+      ],
+      "discriptionTeacherEnglish": [
+        "I’ve got a master’s in English teaching from Science and Research University, currently a PhD student in the",
+        "Netherlands.I have a seventeen -year-old teaching experience in schools as well as language institutes, in different levels and ages via various textbooks",
+        "The textbook will be collected and introduced based on dear student’s English level and even his/her interests after discussion",
+        "The class basis and focus is a progress in conversation as well as a simultaneous accuracy and fluency in the shortest time through inductive grammar teaching, using textbooks, audio files and even songs and movies sessions"
+      ],
+      "studentsTeacher": "369",
+      "isFavorite": false,
+      "comments": [
+        {
+          "sudentPicture": "https://cdn.oteacher.org/images/202209/BDRA6DgNyBBXvHG8Z9A6lPVkwDzXsgnDtD2S_original.jpeg",
+          "rateStudent": "4",
+          "commentBody": "استاد خوبی هستن من از اینکه ایشون حین حرف زدن شما ایرادتونم سریع میگه بسیار خوشحالم"
+        }
+      ]
+    },
+    {
+      "id": "T2",
+      "nameTeacher": " پریسا میرزایی ",
+      "photoTeacher": "https://cdn.oteacher.org/images/202301/daewbbYPRrGiE99PzKhuR008rJSJ53935g9A_thumb.jpeg",
+      "introVedio": "https://cdn.oteacher.org/videos/202208/5841Cbi9Sw4Hh7Yt2nleYfsykLL4lNuZSw7pZ1mm.mp4#t=0.1",
+      "Experts": "EN",
+      "languageExperts": "انگلیسی",
+      "level": [" مبتدی ", "پیشرفته"],
+      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
+      "mainSkils": "IELTS",
+      "priceTest": "0",
+      "priceClass": "1500000",
+      "rate": "4.9",
+      "allCommentCount": "189",
+      "discriptionTeacher": [
+        "تجربه بیش از6 سال سابقه تدریس در آیلتس و زبان عمومی در تنها مرکز تخصصی آیلتس (آیلتس سنتر نسل فردا اصقهان)",
+        "دانشجوی آنلاین Phd زبان انگلیسی دانشگاه TRU کانادا/دارنده آیلتس 8/GRE/MSRT/و مدرک ILI",
+        "کلاس های مکالمه و هم چنین انگلیسی عمومی برای تمام سنین",
+        " مشاوره تخصصی مهاجرت و اپلای شامل جست و جو در سایت دانشگاه ها و ایمیل به اساتید  با نرخ مناسب و کیفیت بالا",
+        "در کلاس های من با توجه به نیاز زبان آموز و هدفی که در رابطه با یادگیری زبان دارد ، برنامه ریزی ها انجام می شود .",
+        "هدف من در درجه اول کیفیت بالای آموزش است"
+      ],
+      "studentsTeacher": "369",
+      "isFavorite": false,
+      "comments": [
+        {
+          "sudentPicture": "https://cdn.oteacher.org/images/202209/BDRA6DgNyBBXvHG8Z9A6lPVkwDzXsgnDtD2S_original.jpeg",
+          "rateStudent": "4",
+          "commentBody": "استاد خوبی هستن من از اینکه ایشون حین حرف زدن شما ایرادتونم سریع میگه بسیار خوشحالم"
+        }
+      ]
+    },
+    {
+      "id": "T3",
+      "nameTeacher": " پریسا میرزایی ",
+      "photoTeacher": "https://cdn.oteacher.org/images/202104/ILxCkXIn74MAXWKj7C73bjk724c9SC73u0Wv_thumb.jpg",
+      "introVedio": "https://cdn.oteacher.org/videos/202106/beJbDjMKh4X6T1I7s4OspsSWXnfXpy0Y5KQgVHO7.3gp#t=0.1",
+      "Experts": "EN",
+      "languageExperts": "انگلیسی",
+      "level": [" مبتدی ", "پیشرفته"],
+      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
+      "mainSkils": "IELTS",
+      "priceTest": "0",
+      "priceClass": "1500000",
+      "rate": "4.9",
+      "allCommentCount": "189",
+      "discriptionTeacher": [
+        "تجربه بیش از6 سال سابقه تدریس در آیلتس و زبان عمومی در تنها مرکز تخصصی آیلتس (آیلتس سنتر نسل فردا اصقهان)",
+        "دانشجوی آنلاین Phd زبان انگلیسی دانشگاه TRU کانادا/دارنده آیلتس 8/GRE/MSRT/و مدرک ILI",
+        "کلاس های مکالمه و هم چنین انگلیسی عمومی برای تمام سنین",
+        " مشاوره تخصصی مهاجرت و اپلای شامل جست و جو در سایت دانشگاه ها و ایمیل به اساتید  با نرخ مناسب و کیفیت بالا",
+        "در کلاس های من با توجه به نیاز زبان آموز و هدفی که در رابطه با یادگیری زبان دارد ، برنامه ریزی ها انجام می شود .",
+        "هدف من در درجه اول کیفیت بالای آموزش است"
+      ],
+      "studentsTeacher": "369",
+      "isFavorite": true,
+      "comments": [
+        {
+          "sudentPicture": "https://cdn.oteacher.org/images/202209/BDRA6DgNyBBXvHG8Z9A6lPVkwDzXsgnDtD2S_original.jpeg",
+          "rateStudent": "4",
+          "commentBody": "استاد خوبی هستن من از اینکه ایشون حین حرف زدن شما ایرادتونم سریع میگه بسیار خوشحالم"
+        }
+      ]
+    }
+  ],
+  "user": [
+    {
+      "name": "آرزو امیری",
+      "idCode": "123456",
+      "userPhoto": "",
+      "languages": "US",
+      "userGol": "مهاجرت و IELTS",
+      "siningTime": "10 فروردین 1401",
+      "userProgress": [
+        {
+          "month1": "20"
+        }
+      ],
+      "userAchive": [
+        {
+          "onHourClass": true
+        },
+        {
+          "activityMoreThan50": false
+        },
+        {
+          "completeClassTweny": false
+        },
+        {
+          "takeExamSite": false
+        }
+      ],
+      "userFavoriteTeachers": [],
+      "userFavoriteProduct": [],
+      "userDidClasses": [],
+      "userCanceledClasses": [],
+      "userClassesList": [],
+      "userListBuyProduct": []
+    }
+  ]
+}

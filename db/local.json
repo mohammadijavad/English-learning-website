@@ -24,7 +24,7 @@
   "Teachers": [
     {
       "id": "T1",
-      "nameTeacher": "  پریسا میرزایی ",
+      "nameTeacher": "  پریسا میرزایی d",
       "photoTeacher": "https://cdn.oteacher.org/images/202204/dPaw1CTr8IK66CeSZmgp0GZpskywnkNGb0mF_thumb.jpeg",
       "introVedio": "https://cdn.oteacher.org/videos/202203/rbIVxdVCJP9GYHAL6et2MDQHz9KK6DFtBWQXsVwq.mp4#t=0.1",
       "Experts": "EN",
@@ -50,6 +50,203 @@
       ],
       "studentsTeacher": "369",
       "isFavorite": false,
+      "timeClassForBook": [
+        {
+          "id": 0,
+          "times": [
+            {
+              "id": "f1n",
+              "alltime": [
+                {
+                  "time": "10:30",
+                  "isBooked": false
+                }
+              ],
+              "bookedTime": []
+            },
+            {
+              "id": "f1n",
+              "alltime": [
+                {
+                  "time": "10:30",
+                  "isBooked": false
+                },
+                {
+                  "time": "11:00",
+                  "isBooked": true
+                },
+                {
+                  "time": "11:30",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:00",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:30",
+                  "isBooked": true
+                },
+                {
+                  "time": "13:00",
+                  "isBooked": false
+                }
+              ],
+              "bookedTime": []
+            },
+            {
+              "id": "f1n",
+              "alltime": [
+                {
+                  "time": "10:30",
+                  "isBooked": false
+                },
+                {
+                  "time": "11:00",
+                  "isBooked": true
+                },
+                {
+                  "time": "11:30",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:00",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:30",
+                  "isBooked": true
+                },
+                {
+                  "time": "13:00",
+                  "isBooked": false
+                }
+              ],
+              "bookedTime": []
+            },
+            {
+              "id": "f1n",
+              "alltime": [
+                {
+                  "time": "10:30",
+                  "isBooked": false
+                },
+                {
+                  "time": "11:00",
+                  "isBooked": true
+                },
+                {
+                  "time": "11:30",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:00",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:30",
+                  "isBooked": true
+                },
+                {
+                  "time": "13:00",
+                  "isBooked": false
+                }
+              ],
+              "bookedTime": []
+            },
+            {
+              "id": "f1n",
+              "alltime": [
+                {
+                  "time": "10:30",
+                  "isBooked": false
+                },
+                {
+                  "time": "11:00",
+                  "isBooked": true
+                },
+                {
+                  "time": "11:30",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:00",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:30",
+                  "isBooked": true
+                },
+                {
+                  "time": "13:00",
+                  "isBooked": false
+                }
+              ],
+              "bookedTime": []
+            },
+            {
+              "id": "f1n",
+              "alltime": [
+                {
+                  "time": "10:30",
+                  "isBooked": false
+                },
+                {
+                  "time": "11:00",
+                  "isBooked": true
+                },
+                {
+                  "time": "11:30",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:00",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:30",
+                  "isBooked": true
+                },
+                {
+                  "time": "13:00",
+                  "isBooked": false
+                }
+              ],
+              "bookedTime": []
+            },
+            {
+              "id": "f1n",
+              "alltime": [
+                {
+                  "time": "10:30",
+                  "isBooked": false
+                },
+                {
+                  "time": "11:00",
+                  "isBooked": true
+                },
+                {
+                  "time": "11:30",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:00",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:30",
+                  "isBooked": true
+                },
+                {
+                  "time": "13:00",
+                  "isBooked": false
+                }
+              ],
+              "bookedTime": []
+            }
+          ]
+        }
+      ],
       "comments": [
         {
           "sudentPicture": "https://cdn.oteacher.org/images/202209/BDRA6DgNyBBXvHG8Z9A6lPVkwDzXsgnDtD2S_original.jpeg",

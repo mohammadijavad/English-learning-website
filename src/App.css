@@ -106,6 +106,7 @@ a:hover{
   /* teacher Deteails */
   --text-color-day:#4bcffa;
   --text-color-day-disable:rgb(207, 207, 207);
+  --bg-currentDate:#f0f5ff
 }
 [data-layout-mode='dark'] {
   --bg-siderbar-vertical: #212529;

@@ -10,3 +10,13 @@
   cursor: not-allowed;
   color: var(--text-color-day-disable);
 }
+.activeCureentDate {
+  background-color: var(--bg-currentDate);
+}
+.currentDateBolet {
+  border-radius: 14px;
+  color: #fff;
+  background-color: #ff4370;
+  padding: 2px 18px;
+  font-size: 14px;
+}

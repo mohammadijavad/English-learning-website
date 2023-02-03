@@ -1,10 +1,13 @@
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 
-function TriggerExample({ text, align, children }) {
+function TriggerExample({ text, align, children, timeCovert }) {
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      {text}
+      <div className="d-flex justify-content-center align-content-center flex-column">
+        <span>{text}</span>
+        <span>{timeCovert}</span>
+      </div>
     </Tooltip>
   )
 

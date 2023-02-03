@@ -34,7 +34,7 @@ function TeacherDetailInfo() {
           <hr className="mt-1" />
           {/* date time for book Classes with your favorite teacher */}
           <div className="w-100">
-            <ContainerDatepicker />
+            <ContainerDatepicker findteacher={findteacher} />
           </div>
         </div>
         <VedioIntro findteacher={findteacher} />

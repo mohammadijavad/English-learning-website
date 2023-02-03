@@ -1,3 +1,12 @@
+@import url('../../../../../../../App.css');
 .seprator {
   transform: translateY(-3px);
+}
+/* Day style component */
+.notreserved {
+  color: var(--text-color-day);
+}
+.bookedTime {
+  cursor: not-allowed;
+  color: var(--text-color-day-disable);
 }

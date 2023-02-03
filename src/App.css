@@ -103,6 +103,9 @@ a:hover{
   --favorite-teachers-color:#00ff5e;
   --favorite-words-bg:#ff181821;
   --favorite-words-color:#ff6b6b;
+  /* teacher Deteails */
+  --text-color-day:#4bcffa;
+  --text-color-day-disable:rgb(207, 207, 207);
 }
 [data-layout-mode='dark'] {
   --bg-siderbar-vertical: #212529;

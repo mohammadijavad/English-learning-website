@@ -27,3 +27,12 @@ export let filters = {
     { text: ' شب - 20-24', type: '4', time: 'شب' },
   ],
 }
+export const weekDays = [
+  { text: 'شنبه', type: '1' },
+  { text: 'یک شنبه', type: '2' },
+  { text: 'دوشنبه', type: '3' },
+  { text: 'سه شنبه', type: '4' },
+  { text: 'چهارشنبه', type: '5' },
+  { text: 'پنج شنبه', type: '6' },
+  { text: 'جمعه', type: '7' },
+]

@@ -26,6 +26,7 @@ function TeacherDetailInfo() {
     nameTeacher,
     discriptionTeacher,
     discriptionTeacherEnglish,
+    comments,
   } = findteacher
 
   return (
@@ -67,7 +68,7 @@ function TeacherDetailInfo() {
             />
           </div>
           <div className="mt-4">
-            <Comments />
+            <Comments comments={comments} />
           </div>
         </div>
         <VedioIntro findteacher={findteacher} />

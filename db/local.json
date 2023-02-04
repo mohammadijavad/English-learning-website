@@ -251,7 +251,10 @@
         {
           "sudentPicture": "https://cdn.oteacher.org/images/202209/BDRA6DgNyBBXvHG8Z9A6lPVkwDzXsgnDtD2S_original.jpeg",
           "rateStudent": "4",
-          "commentBody": "استاد خوبی هستن من از اینکه ایشون حین حرف زدن شما ایرادتونم سریع میگه بسیار خوشحالم"
+          "commentBody": "استاد خوبی هستن من از اینکه ایشون حین حرف زدن شما ایرادتونم سریع میگه بسیار خوشحالم",
+          "commentTime": "چهارشنبه 17 فروردین 1401",
+          "commentID": "1",
+          "commentCreatorName": "مهسا امینی"
         }
       ]
     },

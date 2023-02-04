@@ -2,12 +2,20 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectAllTeacher } from '../../../../app/store/Teacher store/Teacher'
 import { useParams } from 'react-router-dom'
-import persianDate from 'persian-date'
+import style from './teacherDetail.module.css'
 import Cover from './components/Cover'
 import PersonalInfo from './components/PersonalInfo'
 import Description from './components/Description'
 import VedioIntro from './components/VedioIntro'
 import ContainerDatepicker from './components/DateTime/ContainerDatepicker'
+import ClassServices from './components/services/ClassServices'
+
+import backmony from '../../../../assets/Teacher/services/service_back_mony.png'
+import canceledClass from '../../../../assets/Teacher/services/service_canceled_class.png'
+import changeTeacher from '../../../../assets/Teacher/services/service_change_teacher.png'
+import changeTime from '../../../../assets/Teacher/services/service_change_time.png'
+import Comments from './components/comments/Comments'
+
 function TeacherDetailInfo() {
   const params = useParams()
   const { id } = params
@@ -33,8 +41,33 @@ function TeacherDetailInfo() {
 
           <hr className="mt-1" />
           {/* date time for book Classes with your favorite teacher */}
-          <div className="w-100">
+          <div className={style.reserveClassDateTime}>
             <ContainerDatepicker findteacher={findteacher} />
+          </div>
+          <div className="mt-5 d-flex justify-content-between align-items-center">
+            <ClassServices
+              img={backmony}
+              textHead="بازگشت هزینه"
+              text="در صورت انصراف از برگزاری ادامه کلاس‌"
+            />
+            <ClassServices
+              img={canceledClass}
+              textHead="لغو کلاس"
+              text="حتی چند ساعت مانده به شروع کلاس‌"
+            />
+            <ClassServices
+              img={changeTeacher}
+              textHead="تغییر استاد"
+              text="در صورت نارضایتی"
+            />
+            <ClassServices
+              img={changeTime}
+              textHead="تغییر زمان برگزاری"
+              text="به زمان مناسب دیگر"
+            />
+          </div>
+          <div className="mt-4">
+            <Comments />
           </div>
         </div>
         <VedioIntro findteacher={findteacher} />

@@ -4,6 +4,9 @@
   height: 230px;
   overflow: hidden;
 }
+.reserveClassDateTime {
+  min-height: 460px;
+}
 .bgCoverTeacher img {
   height: 100%;
   width: 100%;

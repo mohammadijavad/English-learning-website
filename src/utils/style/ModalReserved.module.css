@@ -1,0 +1,41 @@
+@import url("../../App.css");
+.ModalReserved {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  top: 0;
+  right: 0;
+}
+.content {
+  width: 400px;
+  height: 200px;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 10px;
+}
+.close {
+  cursor: pointer;
+  color: gray;
+  transition: 0.4s ease;
+}
+.close:hover {
+  color: #222;
+}
+.containerButton {
+  margin-top: 40px;
+}
+.containerButton button:nth-child(1):hover {
+  background-color: var(--bg-btnActive);
+  color: #fff !important;
+}
+.containerButton button:nth-child(2) {
+  color: var(--defaultColor);
+}
+.containerButton button:nth-child(2):hover {
+  color: #222;
+}

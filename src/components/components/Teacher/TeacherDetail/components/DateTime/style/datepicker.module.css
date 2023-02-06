@@ -1,14 +1,21 @@
-@import url('../../../../../../../App.css');
+@import url("../../../../../../../App.css");
 .seprator {
   transform: translateY(-3px);
 }
 /* Day style component */
 .notreserved {
   color: var(--text-color-day);
+  border: 2px solid transparent;
+}
+.notreserved:hover {
+  border: 2px solid var(--bg-btnActive);
+  border-radius: 5px;
 }
 .bookedTime {
   cursor: not-allowed;
   color: var(--text-color-day-disable);
+  padding: 5px 10px;
+  border: 2px solid transparent;
 }
 .activeCureentDate {
   background-color: var(--bg-currentDate);

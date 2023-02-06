@@ -1,12 +1,19 @@
 import React from "react";
 import style from "./style/ModalReserved.module.css";
 import { AiOutlineClose } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { showReservedModal } from "../app/store/Teacher store/Teacher";
 function ModalReserved() {
+  const dispatch = useDispatch();
   return (
     <div className={`${style.ModalReserved} }`}>
       <div className={style.content}>
         <div className="d-flex p-2 justify-content-end">
-          <AiOutlineClose size={18} className={style.close} />
+          <AiOutlineClose
+            size={18}
+            className={style.close}
+            onClick={() => dispatch(showReservedModal())}
+          />
         </div>
         <div className="mt-3">
           برای انتخاب زمان و رزروکلاس دکمه رزرو کلاس را کلیک کنید
@@ -15,7 +22,12 @@ function ModalReserved() {
           <button className="btn btn-outline border-info text-info">
             رزرو کلاس
           </button>
-          <button className="btn mx-2">انصراف</button>
+          <button
+            className="btn mx-2"
+            onClick={() => dispatch(showReservedModal())}
+          >
+            انصراف
+          </button>
         </div>
       </div>
     </div>

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import style from "../../style/datepicker.module.css";
 import TriggerExample from "../../../../../../../../utils/Tooltip";
 import persianDate from "persian-date";
-
+import { showReservedModal } from "../../../../../../../../app/store/Teacher store/Teacher";
+import { useDispatch } from "react-redux";
 function Day({
   type,
   text,
@@ -20,7 +21,7 @@ function Day({
   const month = new persianDate().month(); //month
   const dayofmonth = new persianDate().date(); //Date of Month
   const year = new persianDate().year(); //year
-
+  const dispatch = useDispatch();
   const weekName = new persianDate([
     year,
     month,
@@ -66,6 +67,7 @@ function Day({
             >
               <div
                 className={`${style.notreserved} curoser position-relative p-2 px-3`}
+                onClick={() => dispatch(showReservedModal())}
               >
                 <span className="p-1 mx-1">{time.time}</span>
               </div>

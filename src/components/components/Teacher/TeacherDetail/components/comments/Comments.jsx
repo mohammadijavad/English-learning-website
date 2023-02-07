@@ -7,8 +7,8 @@ function Comments({ comments }) {
       <div>
         <h3>نظرات زبان آموزان</h3>
       </div>
-      {comments?.map((comment) => (
-        <Comment key={comment.commentID} {...comment} />
+      {comments?.map((comment, index) => (
+        <Comment key={index} {...comment} />
       ))}
     </div>
   )

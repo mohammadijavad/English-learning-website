@@ -1,16 +1,17 @@
-import { createSlice, nanoid, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-const TEACHER_URL = " http://localhost:3100/Teachers";
-const USER_URL = " http://localhost:3100/user";
+import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+const TEACHER_URL = ' http://localhost:3100/Teachers';
+const USER_URL = ' http://localhost:3100/user';
 const initialState = {
   teachers: [],
   showModal: false,
+  stateShowModalSetTime: false,
   user: [],
-  status: "idle", // 'idle' | 'loading' | 'sucess' | 'faild'
+  status: 'idle', // 'idle' | 'loading' | 'sucess' | 'faild'
   error: null,
 };
 export const fetchTeachers = createAsyncThunk(
-  "teachers/fetchTeachers",
+  'teachers/fetchTeachers',
   async () => {
     const response = await axios.get(TEACHER_URL);
     return response.data;
@@ -18,7 +19,7 @@ export const fetchTeachers = createAsyncThunk(
 );
 
 export const addTofavoriteTeacher = createAsyncThunk(
-  "teacher/addTofavoriteTeacher",
+  'teacher/addTofavoriteTeacher',
   async (intial) => {
     const { id, isFavorite } = intial;
     const response = await axios.patch(`${TEACHER_URL}/${id}`, {
@@ -29,7 +30,7 @@ export const addTofavoriteTeacher = createAsyncThunk(
 );
 
 const teachersSlice = createSlice({
-  name: "teacher",
+  name: 'teacher',
   initialState,
   reducers: {
     favoriteTeacher(state, action) {
@@ -42,24 +43,27 @@ const teachersSlice = createSlice({
     showReservedModal(state, action) {
       state.showModal = !state.showModal;
     },
+    showModalSetClassTimeHandler(state, action) {
+      state.stateShowModalSetTime = action.payload;
+    },
   },
   extraReducers(builder) {
     builder
       .addCase(fetchTeachers.pending, (state, action) => {
-        state.status = "loading";
+        state.status = 'loading';
       })
 
       .addCase(fetchTeachers.fulfilled, (state, action) => {
-        state.status = "succeeded";
+        state.status = 'succeeded';
         state.teachers = action.payload;
       })
       .addCase(fetchTeachers.rejected, (state, action) => {
-        state.status = "failed";
+        state.status = 'failed';
         state.error = action.error.message;
       })
       .addCase(addTofavoriteTeacher.fulfilled, (state, action) => {
         if (!action.payload?.id) {
-          console.log("Update could not complete");
+          console.log('Update could not complete');
           console.log(action.payload);
           return;
         }
@@ -74,6 +78,12 @@ export const selectAllTeacher = (state) => state.teacher.teachers;
 export const getTeacherStatus = (state) => state.teacher.status;
 export const getTeacherError = (state) => state.teacher.error;
 export const getModalShow = (state) => state.teacher.showModal;
+export const showModalSetClassTime = (state) =>
+  state.teacher.stateShowModalSetTime;
 
-export const { favoriteTeacher, showReservedModal } = teachersSlice.actions;
+export const {
+  favoriteTeacher,
+  showReservedModal,
+  showModalSetClassTimeHandler,
+} = teachersSlice.actions;
 export default teachersSlice.reducer;

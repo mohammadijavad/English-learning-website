@@ -1,13 +1,13 @@
-import React from "react";
-import { weekDays } from "../../../../../../../constants/Data";
-import Day from "./weekDay/Day";
-import styled from "styled-components";
+import React from 'react'
+import { weekDays } from '../../../../../../../constants/Data'
+import Day from './weekDay/Day'
+import styled from 'styled-components'
 function WeekDays({ findteacher, nextWekkCount, currentWeekDay }) {
   return (
     <Container className="mt-4 d-flex justify-content-between align-items-start h-100  scrollMode">
       {weekDays.map((day, index) => (
         <Day
-          key={day.type}
+          key={index}
           index={index}
           findteacher={findteacher}
           {...day}
@@ -16,7 +16,7 @@ function WeekDays({ findteacher, nextWekkCount, currentWeekDay }) {
         />
       ))}
     </Container>
-  );
+  )
 }
 const Container = styled.div`
   @media screen and (max-width: 900px) {
@@ -36,5 +36,5 @@ const Container = styled.div`
     background-color: var(--bg-btnActive) !important;
     outline: 1px solid slategrey !important;
   }
-`;
-export default WeekDays;
+`
+export default WeekDays

@@ -14,7 +14,7 @@ function TriggerExample({ text, align, children, timeCovert }) {
   return (
     <OverlayTrigger
       placement={align}
-      delay={{ show: 250, hide: 400 }}
+      delay={{ show: 250, hide: 0 }}
       overlay={renderTooltip}
     >
       {children}

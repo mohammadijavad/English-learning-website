@@ -106,7 +106,8 @@ a:hover{
   /* teacher Deteails */
   --text-color-day:#4bcffa;
   --text-color-day-disable:rgb(207, 207, 207);
-  --bg-currentDate:#f0f5ff
+  --bg-currentDate:#f0f5ff;
+  --active-Select-time:rgb(255, 123, 24);
 }
 [data-layout-mode='dark'] {
   --bg-siderbar-vertical: #212529;
@@ -800,4 +801,13 @@ a:hover{
 .accordion-button.collapsed .BsChevronDown {
   transform: rotate(0deg) !important;
   transition: var(--time);
+}
+/* time in teacher details */
+.activeTime{
+background-color: var(--active-Select-time);
+color: var(--text-white);
+border-radius: 5px;
+}
+.activeTime:hover {
+  border: none !important;
 }

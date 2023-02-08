@@ -1,4 +1,4 @@
-@import url("../../../../../../../App.css");
+@import url('../../../../../../../App.css');
 .seprator {
   transform: translateY(-3px);
 }
@@ -7,7 +7,7 @@
   color: var(--text-color-day);
   border: 2px solid transparent;
 }
-.notreserved:hover {
+.notreserved:hover span {
   border: 2px solid var(--bg-btnActive);
   border-radius: 5px;
 }

@@ -18,7 +18,8 @@ function Day({
   const { timeClassForBook } = findteacher
   const { times } = timeClassForBook[0]
   const { alltime } = times[index]
-  const dayofweek = new persianDate().day() //day of Week
+
+  const dayofweek = new persianDate().format('MMMM') //day of Week
   const month = new persianDate().month() //month
   const dayofmonth = new persianDate().date() //Date of Month
   const year = new persianDate().year() //year
@@ -38,6 +39,13 @@ function Day({
     month,
     dayofmonth + index + currentWeekDay,
   ]).date()
+
+  const selectDate = (event) => {
+    dispatch(showReservedModal(mode))
+    if (!mode) {
+      event.target.classList.add('activeTime')
+    }
+  }
   const isCurrentDate = currentDate === dayofmonth
   return (
     <div
@@ -55,31 +63,25 @@ function Day({
         {alltime?.map((time, index) =>
           time.isBooked ? (
             <TriggerExample
-              key={index}
-              text={time.time}
-              align="right"
-              timeCovert={new persianDate([
-                year,
-                month,
-                dayofmonth + index + currentWeekDay,
-              ])
-                .toLocale('fa')
-                .format(' dddd DD MMMM')}
+              text={' زمان توسط شخص دیگری رزرو شده است '}
+              align="top"
             >
-              <div
-                className={`${style.notreserved} curoser position-relative p-2 px-3`}
-                onClick={() => dispatch(showReservedModal(mode))}
-              >
-                <span className="p-1 mx-1">{time.time}</span>
+              <div className={`${style.bookedTime}`}>
+                <span className="p-2 px-3 mx-1">{time.time}</span>
               </div>
             </TriggerExample>
           ) : (
             <TriggerExample
-              text={' زمان توسط شخص دیگری رزرو شده است '}
-              align="top"
+              key={index}
+              text={time.time}
+              align="right"
+              timeCovert={weekName + ' ' + todayDate + '  ' + dayofweek}
             >
-              <div className={`${style.bookedTime} p-2 px-3`}>
-                <span className="p-1 mx-1">{time.time}</span>
+              <div
+                className={`${style.notreserved} curoser position-relative my-1 `}
+                onClick={(event) => selectDate(event)}
+              >
+                <span className="p-2 px-3 mx-1">{time.time}</span>
               </div>
             </TriggerExample>
           ),

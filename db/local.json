@@ -98,12 +98,42 @@
               "id": "f1n",
               "alltime": [
                 {
+                  "time": "10:30d",
+                  "isBooked": false
+                },
+                {
+                  "time": "11:00d",
+                  "isBooked": false
+                },
+                {
+                  "time": "11:30d",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:00d",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:30d",
+                  "isBooked": false
+                },
+                {
+                  "time": "13:00d",
+                  "isBooked": false
+                }
+              ],
+              "bookedTime": []
+            },
+            {
+              "id": "f1n",
+              "alltime": [
+                {
                   "time": "10:30",
                   "isBooked": false
                 },
                 {
                   "time": "11:00",
-                  "isBooked": true
+                  "isBooked": false
                 },
                 {
                   "time": "11:30",
@@ -115,7 +145,11 @@
                 },
                 {
                   "time": "12:30",
-                  "isBooked": true
+                  "isBooked": false
+                },
+                {
+                  "time": "13:00",
+                  "isBooked": false
                 },
                 {
                   "time": "13:00",
@@ -133,7 +167,7 @@
                 },
                 {
                   "time": "11:00",
-                  "isBooked": true
+                  "isBooked": false
                 },
                 {
                   "time": "11:30",
@@ -145,7 +179,7 @@
                 },
                 {
                   "time": "12:30",
-                  "isBooked": true
+                  "isBooked": false
                 },
                 {
                   "time": "13:00",
@@ -163,7 +197,7 @@
                 },
                 {
                   "time": "11:00",
-                  "isBooked": true
+                  "isBooked": false
                 },
                 {
                   "time": "11:30",
@@ -175,7 +209,7 @@
                 },
                 {
                   "time": "12:30",
-                  "isBooked": true
+                  "isBooked": false
                 },
                 {
                   "time": "13:00",
@@ -193,7 +227,7 @@
                 },
                 {
                   "time": "11:00",
-                  "isBooked": true
+                  "isBooked": false
                 },
                 {
                   "time": "11:30",
@@ -205,7 +239,7 @@
                 },
                 {
                   "time": "12:30",
-                  "isBooked": true
+                  "isBooked": false
                 },
                 {
                   "time": "13:00",
@@ -223,7 +257,7 @@
                 },
                 {
                   "time": "11:00",
-                  "isBooked": true
+                  "isBooked": false
                 },
                 {
                   "time": "11:30",
@@ -235,37 +269,7 @@
                 },
                 {
                   "time": "12:30",
-                  "isBooked": true
-                },
-                {
-                  "time": "13:00",
                   "isBooked": false
-                }
-              ],
-              "bookedTime": []
-            },
-            {
-              "id": "f1n",
-              "alltime": [
-                {
-                  "time": "10:30",
-                  "isBooked": false
-                },
-                {
-                  "time": "11:00",
-                  "isBooked": true
-                },
-                {
-                  "time": "11:30",
-                  "isBooked": false
-                },
-                {
-                  "time": "12:00",
-                  "isBooked": false
-                },
-                {
-                  "time": "12:30",
-                  "isBooked": true
                 },
                 {
                   "time": "13:00",

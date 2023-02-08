@@ -1,7 +1,11 @@
 import React from 'react'
 import style from '../../styles/ReservedModal.module.css'
+import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { showModalSetClassTimeHandler } from '../../../../../../../../app/store/Teacher store/Teacher'
 function Footer({ findteacher, classType, step, setStep }) {
-  const { photoTeacher, nameTeacher, priceClasses } = findteacher
+  const dispatch = useDispatch()
+  const { photoTeacher, nameTeacher, priceClasses, id } = findteacher
   let content = ''
   if (classType > 0) {
     const findClassType = priceClasses?.find((cls) => cls.id === classType)
@@ -54,22 +58,41 @@ function Footer({ findteacher, classType, step, setStep }) {
       </div>
     )
   }
+  const closeModalHandler = () => {
+    setStep(step - 1)
+    dispatch(showModalSetClassTimeHandler(false))
+  }
   return (
     <div
       className={`d-flex justify-content-between align-items-center w-100 position-absolute bottom-0 mb-2`}
     >
       {content}
       <div className="mx-3">
-        <button
-          className={`${
-            classType > 0
-              ? 'btn mx-2 shadow shadow-info bg-info text-white'
-              : `btn mx-2 shadow shadow-info  text-white ${style.disabledBtn}`
-          }`}
-          onClick={() => setStep(step + 1)}
-        >
-          ادامه
-        </button>
+        {step <= 1 ? (
+          <button
+            className={`${
+              classType > 0
+                ? 'btn mx-2 shadow shadow-info bg-info text-white'
+                : `btn mx-2 shadow shadow-info  text-white ${style.disabledBtn}`
+            }`}
+            onClick={() => setStep(step + 1)}
+          >
+            ادامه
+          </button>
+        ) : (
+          <Link to={`/profile/checkout/${id}`}>
+            <button
+              className={`${
+                classType > 0
+                  ? 'btn mx-2 shadow shadow-info bg-info text-white'
+                  : `btn mx-2 shadow shadow-info  text-white ${style.disabledBtn}`
+              }`}
+              onClick={() => closeModalHandler()}
+            >
+              ادامه
+            </button>
+          </Link>
+        )}
         {step > 1 ? (
           <button
             className="btn mx-2 shadow shadow-info bg-info text-white"

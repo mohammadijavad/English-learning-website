@@ -19,7 +19,7 @@ function Day({
   const { times } = timeClassForBook[0]
   const { alltime } = times[index]
 
-  const dayofweek = new persianDate().format('MMMM') //day of Week
+  const monthName = new persianDate().format('MMMM') //day of Week
   const month = new persianDate().month() //month
   const dayofmonth = new persianDate().date() //Date of Month
   const year = new persianDate().year() //year
@@ -75,10 +75,10 @@ function Day({
               key={index}
               text={time.time}
               align="right"
-              timeCovert={weekName + ' ' + todayDate + '  ' + dayofweek}
+              timeCovert={weekName + ' ' + todayDate + '  ' + monthName}
             >
               <div
-                className={`${style.notreserved} curoser position-relative my-1 `}
+                className={`${style.notreserved} curoser position-relative my-2 `}
                 onClick={(event) => selectDate(event)}
               >
                 <span className="p-2 px-3 mx-1">{time.time}</span>

@@ -39,6 +39,7 @@ function ReservedModal({ findteacher }) {
               currentWeekDay={0}
               nextWekkCount={6}
               mode={false}
+              typeClass={false}
             />
           )}
         </div>

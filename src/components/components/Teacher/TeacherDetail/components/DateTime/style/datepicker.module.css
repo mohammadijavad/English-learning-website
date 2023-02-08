@@ -27,3 +27,8 @@
   padding: 2px 18px;
   font-size: 14px;
 }
+.notreserved:hover + div span {
+  border: 2px solid var(--bg-btnActive);
+  border-radius: 5px;
+  border-top: none;
+}

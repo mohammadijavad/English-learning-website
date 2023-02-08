@@ -61,7 +61,23 @@ function Day({
       </div>
       <div className="mt-3 w-100 d-flex justify-content-center align-items-center flex-column">
         {alltime?.map((time, index) =>
-          time.isBooked ? (
+          !mode ? (
+            time.type === 'half' ? null : (
+              <TriggerExample
+                key={index}
+                text={time.time}
+                align="right"
+                timeCovert={weekName + ' ' + todayDate + '  ' + monthName}
+              >
+                <div
+                  className={`${style.notreserved} curoser position-relative my-2 `}
+                  onClick={(event) => selectDate(event)}
+                >
+                  <span className="p-2 px-3 mx-1">{time.time}</span>
+                </div>
+              </TriggerExample>
+            )
+          ) : time.isBooked ? (
             <TriggerExample
               text={' زمان توسط شخص دیگری رزرو شده است '}
               align="top"

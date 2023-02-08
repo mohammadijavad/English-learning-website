@@ -89,7 +89,8 @@
               "alltime": [
                 {
                   "time": "10:30",
-                  "isBooked": false
+                  "isBooked": false,
+                  "type": "half"
                 }
               ],
               "bookedTime": []
@@ -98,27 +99,30 @@
               "id": "f1n",
               "alltime": [
                 {
-                  "time": "10:30d",
+                  "time": "10:30",
+                  "isBooked": false,
+                  "type": "half"
+                },
+                {
+                  "time": "11:00",
                   "isBooked": false
                 },
                 {
-                  "time": "11:00d",
+                  "time": "11:30",
+                  "isBooked": false,
+                  "type": "half"
+                },
+                {
+                  "time": "12:00",
                   "isBooked": false
                 },
                 {
-                  "time": "11:30d",
-                  "isBooked": false
+                  "time": "12:30",
+                  "isBooked": false,
+                  "type": "half"
                 },
                 {
-                  "time": "12:00d",
-                  "isBooked": false
-                },
-                {
-                  "time": "12:30d",
-                  "isBooked": false
-                },
-                {
-                  "time": "13:00d",
+                  "time": "13:00",
                   "isBooked": false
                 }
               ],
@@ -137,7 +141,8 @@
                 },
                 {
                   "time": "11:30",
-                  "isBooked": false
+                  "isBooked": false,
+                  "type": "half"
                 },
                 {
                   "time": "12:00",
@@ -145,15 +150,17 @@
                 },
                 {
                   "time": "12:30",
-                  "isBooked": false
+                  "isBooked": false,
+                  "type": "half"
                 },
                 {
                   "time": "13:00",
                   "isBooked": false
                 },
                 {
-                  "time": "13:00",
-                  "isBooked": false
+                  "time": "13:30",
+                  "isBooked": false,
+                  "type": "half"
                 }
               ],
               "bookedTime": []

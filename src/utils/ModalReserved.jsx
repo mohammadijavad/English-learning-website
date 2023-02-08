@@ -11,7 +11,7 @@ function ModalReserved() {
   const dispatch = useDispatch()
   const setModaLState = () => {
     dispatch(showModalSetClassTimeHandler(true))
-    dispatch(showReservedModal())
+    dispatch(showReservedModal(false))
   }
   return (
     <div className={`${style.ModalReserved} }`}>
@@ -20,7 +20,7 @@ function ModalReserved() {
           <AiOutlineClose
             size={18}
             className={style.close}
-            onClick={() => dispatch(showReservedModal())}
+            onClick={() => dispatch(showReservedModal(false))}
           />
         </div>
         <div className="mt-3">

@@ -41,7 +41,7 @@ const teachersSlice = createSlice({
       state.teachers[findTeacher].isFavorite = !action.payload.isFavorite;
     },
     showReservedModal(state, action) {
-      state.showModal = !state.showModal;
+      state.showModal = action.payload;
     },
     showModalSetClassTimeHandler(state, action) {
       state.stateShowModalSetTime = action.payload;

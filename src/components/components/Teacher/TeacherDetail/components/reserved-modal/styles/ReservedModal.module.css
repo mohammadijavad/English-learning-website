@@ -1,3 +1,4 @@
+@import url('../../../../../../../App.css');
 .containerModal {
   position: fixed;
   width: 100%;
@@ -15,7 +16,7 @@
   background-color: #fff;
   border-radius: 10px;
 }
-
+/* header modal */
 .circle {
   width: 18px;
   height: 18px;
@@ -25,21 +26,83 @@
 .borderLeft::before {
   content: '';
   position: absolute;
-  left: -10%;
+  left: -13%;
   width: 100%;
   height: 2px;
   top: -70%;
   background-color: #eee;
 }
-.secondBorderLeft {
-  transform: translateX(40px);
-}
+
 .secondBorderLeft::before {
-  width: 110%;
-  right: 18%;
+  content: '';
+  position: absolute;
+  right: 20%;
+  width: 100%;
+  height: 2px;
+  top: -70%;
+  background-color: #eee;
+}
+.secondCircle {
+  transform: translateX(-30px);
+}
+.activeHeader {
+  color: var(--bg-btnActive);
+}
+.activeHeader .circle {
+  animation: animateCircle 4s infinite linear;
+  box-shadow: 0 0 6px rgb(25 159 249 / 40%);
+}
+@keyframes animateCircle {
+  0% {
+    background: linear-gradient(-85deg, #ff9fe7, #83ff3b, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+  }
+  25% {
+    background: linear-gradient(-50deg, #ff9fe7, #ffb13b, #23a6d5, #2352d5);
+    background-size: 400% 400%;
+  }
+  50% {
+    background: linear-gradient(-20deg, #ff9fe7, #3bff5c, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+  }
+  75% {
+    background: linear-gradient(-45deg, #ffb29f, #ffb13b, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+  }
+  100% {
+    background: linear-gradient(-95deg, #9fc5ff, #179292, #55d523, #23d5ab);
+    background-size: 400% 400%;
+  }
+}
+.activeHeaderDone .borderLeft::before {
+  background-color: #eee;
+}
+.activeHeaderDone .borderLeft::before,
+.activeHeaderDone .circle {
+  background-color: var(--bg-btnActive) !important;
+  color: var(--bg-btnActive);
+}
+.activeHeaderDone {
+  color: var(--bg-btnActive);
+}
+/* step 1 style */
+.containerStep1 {
+  transition: 0.4s ease-in;
+}
+.containerStep1:hover {
+  border-color: var(--bg-btnActive) !important;
+}
+.active {
+  background-color: #f0f6ff;
 }
 @media screen and (max-width: 968px) {
   .borderLeft::before {
     display: none;
   }
+}
+/* countinuo step */
+.disabledBtn {
+  cursor: not-allowed !important;
+  background-color: #22222257 !important;
+  pointer-events: none;
 }

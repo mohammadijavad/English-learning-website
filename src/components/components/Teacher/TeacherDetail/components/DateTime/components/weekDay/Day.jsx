@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import style from "../../style/datepicker.module.css";
-import TriggerExample from "../../../../../../../../utils/Tooltip";
-import persianDate from "persian-date";
-import { showReservedModal } from "../../../../../../../../app/store/Teacher store/Teacher";
-import { useDispatch } from "react-redux";
+import React, { useState } from 'react'
+import style from '../../style/datepicker.module.css'
+import TriggerExample from '../../../../../../../../utils/Tooltip'
+import persianDate from 'persian-date'
+import { showReservedModal } from '../../../../../../../../app/store/Teacher store/Teacher'
+import { useDispatch } from 'react-redux'
 function Day({
   type,
   text,
@@ -11,39 +11,40 @@ function Day({
   index,
   nextWekkCount,
   currentWeekDay,
+  mode,
 }) {
-  const [weekCount, setweekCount] = useState(0);
-  const [firstWeek, setFirstWeek] = useState(1);
-  const { timeClassForBook } = findteacher;
-  const { times } = timeClassForBook[0];
-  const { alltime } = times[index];
-  const dayofweek = new persianDate().day(); //day of Week
-  const month = new persianDate().month(); //month
-  const dayofmonth = new persianDate().date(); //Date of Month
-  const year = new persianDate().year(); //year
-  const dispatch = useDispatch();
+  const [weekCount, setweekCount] = useState(0)
+  const [firstWeek, setFirstWeek] = useState(1)
+  const { timeClassForBook } = findteacher
+  const { times } = timeClassForBook[0]
+  const { alltime } = times[index]
+  const dayofweek = new persianDate().day() //day of Week
+  const month = new persianDate().month() //month
+  const dayofmonth = new persianDate().date() //Date of Month
+  const year = new persianDate().year() //year
+  const dispatch = useDispatch()
   const weekName = new persianDate([
     year,
     month,
     dayofmonth + index + currentWeekDay,
-  ]).format("dddd");
+  ]).format('dddd')
   const todayDate = new persianDate([
     year,
     month,
     dayofmonth + index + currentWeekDay,
-  ]).format("D");
+  ]).format('D')
   const currentDate = new persianDate([
     year,
     month,
     dayofmonth + index + currentWeekDay,
-  ]).date();
-  const isCurrentDate = currentDate === dayofmonth;
+  ]).date()
+  const isCurrentDate = currentDate === dayofmonth
   return (
     <div
       className={`${
-        isCurrentDate ? style.activeCureentDate : ""
+        isCurrentDate ? style.activeCureentDate : ''
       } h-100 rounded`}
-      style={{ flex: 1, justifyContent: "center", height: "500px" }}
+      style={{ flex: 1, justifyContent: 'center', height: '500px' }}
     >
       <div className=" border-4 border-top border-info mx-1 text-center d-flex justify-content-center align-items-center flex-column">
         <span className="mt-2">{weekName}</span>
@@ -62,30 +63,30 @@ function Day({
                 month,
                 dayofmonth + index + currentWeekDay,
               ])
-                .toLocale("fa")
-                .format(" dddd DD MMMM")}
+                .toLocale('fa')
+                .format(' dddd DD MMMM')}
             >
               <div
                 className={`${style.notreserved} curoser position-relative p-2 px-3`}
-                onClick={() => dispatch(showReservedModal())}
+                onClick={() => dispatch(showReservedModal(mode))}
               >
                 <span className="p-1 mx-1">{time.time}</span>
               </div>
             </TriggerExample>
           ) : (
             <TriggerExample
-              text={" زمان توسط شخص دیگری رزرو شده است "}
+              text={' زمان توسط شخص دیگری رزرو شده است '}
               align="top"
             >
               <div className={`${style.bookedTime} p-2 px-3`}>
                 <span className="p-1 mx-1">{time.time}</span>
               </div>
             </TriggerExample>
-          )
+          ),
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default Day;
+export default Day

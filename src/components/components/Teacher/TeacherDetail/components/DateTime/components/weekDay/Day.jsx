@@ -7,6 +7,7 @@ import {
   setSelectTimeForClassesHandler,
 } from '../../../../../../../../app/store/Teacher store/Teacher'
 import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
 
 function Day({
   type,
@@ -49,20 +50,27 @@ function Day({
     }
     const time = timeSelect.time + ' ' + date
     const timeSet = { id: id++, time }
-    dispatch(setSelectTimeForClassesHandler('javad'))
+    dispatch(setSelectTimeForClassesHandler(timeSet))
+    handler(timeSelect)
   }
 
   // this time for set final time class in modal time
   const spltTime = text.split(':')
   const [hour, minutes] = spltTime
   // ['year', 'month', 'day', 'hour', 'minute', 'second', 'millisecond']
-  // const hourrTime = new persianDate([, , , hour, minutes, ,])
-  //   .toLocale('en')
-  //   .format('H:mm')
-  // const addOnhour = new persianDate([, , , hour, minutes, ,])
-  //   .add('minutes', 60)
-  //   .toLocale('en')
-  //   .format('H:mm')
+  const handler = (time) => {
+    const { time: t } = time
+    const spltTime = t.split(':')
+    const [hour, minutes] = spltTime
+    const hourrTime = new persianDate([, , , hour, minutes, ,])
+      .toLocale('fa')
+      .format('H:mm')
+    const addOnhour = new persianDate([, , , hour, minutes, ,])
+      .add('minutes', 60)
+      .toLocale('fa')
+      .format('H:mm')
+    console.log(hourrTime, addOnhour)
+  }
   const timeForTooltip = 2 - 3
   const timeCovert = weekName + ' ' + todayDate + '  ' + monthName
   const steTimeHandler = (time) => {}
@@ -97,6 +105,7 @@ function Day({
               align="right"
               timeCovert={timeCovert}
               timeForTooltip={timeForTooltip}
+              mode={false}
             >
               <div
                 ref={reff}

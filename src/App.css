@@ -807,7 +807,13 @@ a:hover{
 background-color: var(--active-Select-time);
 color: var(--text-white);
 border-radius: 5px;
+/* pointer-events: none; */
+cursor:not-allowed;
 }
-.activeTime:hover {
-  border: none !important;
+.activeTime + div{
+  background-color: var(--active-Select-time);
+color: var(--text-white);
+border-radius: 5px;
+/* pointer-events: none; */
+cursor:not-allowed;
 }

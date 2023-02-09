@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
 import style from '../../style/datepicker.module.css'
 import TriggerExample from '../../../../../../../../utils/Tooltip'
 import persianDate from 'persian-date'
@@ -13,12 +13,10 @@ function Day({
   currentWeekDay,
   mode,
 }) {
-  const [weekCount, setweekCount] = useState(0)
-  const [firstWeek, setFirstWeek] = useState(1)
   const { timeClassForBook } = findteacher
   const { times } = timeClassForBook[0]
-  const { alltime } = times[index]
-
+  let { alltime } = times[index]
+  const reff = useRef()
   const monthName = new persianDate().format('MMMM') //day of Week
   const month = new persianDate().month() //month
   const dayofmonth = new persianDate().date() //Date of Month
@@ -43,7 +41,7 @@ function Day({
   const selectDate = (event) => {
     dispatch(showReservedModal(mode))
     if (!mode) {
-      event.target.classList.add('activeTime')
+      reff.current.classList.add('activeTime')
     }
   }
   const isCurrentDate = currentDate === dayofmonth
@@ -61,23 +59,7 @@ function Day({
       </div>
       <div className="mt-3 w-100 d-flex justify-content-center align-items-center flex-column">
         {alltime?.map((time, index) =>
-          !mode ? (
-            time.type === 'half' ? null : (
-              <TriggerExample
-                key={index}
-                text={time.time}
-                align="right"
-                timeCovert={weekName + ' ' + todayDate + '  ' + monthName}
-              >
-                <div
-                  className={`${style.notreserved} curoser position-relative my-2 `}
-                  onClick={(event) => selectDate(event)}
-                >
-                  <span className="p-2 px-3 mx-1">{time.time}</span>
-                </div>
-              </TriggerExample>
-            )
-          ) : time.isBooked ? (
+          time.isBooked ? (
             <TriggerExample
               text={' زمان توسط شخص دیگری رزرو شده است '}
               align="top"
@@ -92,12 +74,16 @@ function Day({
               text={time.time}
               align="right"
               timeCovert={weekName + ' ' + todayDate + '  ' + monthName}
+              weekName={weekName}
+              todayDate={todayDate}
+              monthName={monthName}
             >
               <div
-                className={`${style.notreserved} curoser position-relative my-2 `}
+                ref={reff}
+                className={`${style.notreserved} curoser position-relative p-2 px-3  `}
                 onClick={(event) => selectDate(event)}
               >
-                <span className="p-2 px-3 mx-1">{time.time}</span>
+                <span className="">{time.time}</span>
               </div>
             </TriggerExample>
           ),

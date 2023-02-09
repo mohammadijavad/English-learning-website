@@ -29,8 +29,15 @@
       "introVedio": "https://cdn.oteacher.org/videos/202203/rbIVxdVCJP9GYHAL6et2MDQHz9KK6DFtBWQXsVwq.mp4#t=0.1",
       "Experts": "EN",
       "languageExperts": "انگلیسی",
-      "level": [" مبتدی ", "پیشرفته"],
-      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
+      "level": [
+        " مبتدی ",
+        "پیشرفته"
+      ],
+      "skils": [
+        " مهاجرت و اپلای ",
+        " زبان عمومی ,",
+        " آیلتس "
+      ],
       "mainSkils": "IELTS",
       "priceTest": "0",
       "priceClass": "1500000",
@@ -79,7 +86,7 @@
         "The class basis and focus is a progress in conversation as well as a simultaneous accuracy and fluency in the shortest time through inductive grammar teaching, using textbooks, audio files and even songs and movies sessions"
       ],
       "studentsTeacher": "369",
-      "isFavorite": true,
+      "isFavorite": false,
       "timeClassForBook": [
         {
           "id": 0,
@@ -330,8 +337,15 @@
       "introVedio": "https://cdn.oteacher.org/videos/202208/5841Cbi9Sw4Hh7Yt2nleYfsykLL4lNuZSw7pZ1mm.mp4#t=0.1",
       "Experts": "EN",
       "languageExperts": "انگلیسی",
-      "level": [" مبتدی ", "پیشرفته"],
-      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
+      "level": [
+        " مبتدی ",
+        "پیشرفته"
+      ],
+      "skils": [
+        " مهاجرت و اپلای ",
+        " زبان عمومی ,",
+        " آیلتس "
+      ],
       "mainSkils": "IELTS",
       "priceTest": "0",
       "priceClass": "1500000",
@@ -362,8 +376,15 @@
       "introVedio": "https://cdn.oteacher.org/videos/202106/beJbDjMKh4X6T1I7s4OspsSWXnfXpy0Y5KQgVHO7.3gp#t=0.1",
       "Experts": "EN",
       "languageExperts": "انگلیسی",
-      "level": [" مبتدی ", "پیشرفته"],
-      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
+      "level": [
+        " مبتدی ",
+        "پیشرفته"
+      ],
+      "skils": [
+        " مهاجرت و اپلای ",
+        " زبان عمومی ,",
+        " آیلتس "
+      ],
       "mainSkils": "IELTS",
       "priceTest": "0",
       "priceClass": "1500000",

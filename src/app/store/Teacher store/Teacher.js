@@ -9,6 +9,7 @@ const initialState = {
   user: [],
   status: 'idle', // 'idle' | 'loading' | 'sucess' | 'faild'
   error: null,
+  selectTime: ['javad'],
 };
 export const fetchTeachers = createAsyncThunk(
   'teachers/fetchTeachers',
@@ -46,6 +47,10 @@ const teachersSlice = createSlice({
     showModalSetClassTimeHandler(state, action) {
       state.stateShowModalSetTime = action.payload;
     },
+    setSelectTimeForClassesHandler(state, action) {
+      const classTimelist = state.selectTime;
+      state.selectTime = [...classTimelist, action.payload];
+    },
   },
   extraReducers(builder) {
     builder
@@ -64,7 +69,7 @@ const teachersSlice = createSlice({
       .addCase(addTofavoriteTeacher.fulfilled, (state, action) => {
         if (!action.payload?.id) {
           console.log('Update could not complete');
-          console.log(action.payload);
+
           return;
         }
         const { id } = action.payload;
@@ -78,6 +83,7 @@ export const selectAllTeacher = (state) => state.teacher.teachers;
 export const getTeacherStatus = (state) => state.teacher.status;
 export const getTeacherError = (state) => state.teacher.error;
 export const getModalShow = (state) => state.teacher.showModal;
+export const selectTimeClasessSelect = (state) => state.teacher.selectTime;
 export const showModalSetClassTime = (state) =>
   state.teacher.stateShowModalSetTime;
 
@@ -85,5 +91,6 @@ export const {
   favoriteTeacher,
   showReservedModal,
   showModalSetClassTimeHandler,
+  setSelectTimeForClassesHandler,
 } = teachersSlice.actions;
 export default teachersSlice.reducer;

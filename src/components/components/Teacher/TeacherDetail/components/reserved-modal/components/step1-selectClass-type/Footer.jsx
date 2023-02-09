@@ -1,12 +1,15 @@
 import React from 'react'
 import style from '../../styles/ReservedModal.module.css'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { showModalSetClassTimeHandler } from '../../../../../../../../app/store/Teacher store/Teacher'
+import { selectTimeClasessSelect } from '../../../../../../../../app/store/Teacher store/Teacher'
 import TemplateSelectTime from './TemplateSelectTime'
 function Footer({ findteacher, classType, step, setStep }) {
   const dispatch = useDispatch()
+  const selectAllTimeSelectTime = useSelector(selectTimeClasessSelect)
   const { photoTeacher, nameTeacher, priceClasses, id } = findteacher
+  console.log(selectAllTimeSelectTime)
   let content = ''
   if (classType > 0) {
     const findClassType = priceClasses?.find((cls) => cls.id === classType)
@@ -39,8 +42,12 @@ function Footer({ findteacher, classType, step, setStep }) {
             </div>
           </div>
         </div>
-        <div className="">
-          <TemplateSelectTime />
+        <div className="w-100 d-flex flex-wrap">
+          {selectAllTimeSelectTime?.map((time, index) => (
+            <div className="mx-1">
+              <TemplateSelectTime key={index} />
+            </div>
+          ))}
         </div>
       </div>
     )

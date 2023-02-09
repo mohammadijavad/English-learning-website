@@ -2,8 +2,12 @@ import React, { useRef } from 'react'
 import style from '../../style/datepicker.module.css'
 import TriggerExample from '../../../../../../../../utils/Tooltip'
 import persianDate from 'persian-date'
-import { showReservedModal } from '../../../../../../../../app/store/Teacher store/Teacher'
+import {
+  showReservedModal,
+  setSelectTimeForClassesHandler,
+} from '../../../../../../../../app/store/Teacher store/Teacher'
 import { useDispatch } from 'react-redux'
+
 function Day({
   type,
   text,
@@ -37,13 +41,31 @@ function Day({
     month,
     dayofmonth + index + currentWeekDay,
   ]).date()
-
-  const selectDate = (event) => {
+  let id = 1
+  const selectDate = (timeSelect, date) => {
     dispatch(showReservedModal(mode))
     if (!mode) {
       reff.current.classList.add('activeTime')
     }
+    const time = timeSelect.time + ' ' + date
+    const timeSet = { id: id++, time }
+    dispatch(setSelectTimeForClassesHandler('javad'))
   }
+
+  // this time for set final time class in modal time
+  const spltTime = text.split(':')
+  const [hour, minutes] = spltTime
+  // ['year', 'month', 'day', 'hour', 'minute', 'second', 'millisecond']
+  // const hourrTime = new persianDate([, , , hour, minutes, ,])
+  //   .toLocale('en')
+  //   .format('H:mm')
+  // const addOnhour = new persianDate([, , , hour, minutes, ,])
+  //   .add('minutes', 60)
+  //   .toLocale('en')
+  //   .format('H:mm')
+  const timeForTooltip = 2 - 3
+  const timeCovert = weekName + ' ' + todayDate + '  ' + monthName
+  const steTimeHandler = (time) => {}
   const isCurrentDate = currentDate === dayofmonth
   return (
     <div
@@ -73,15 +95,13 @@ function Day({
               key={index}
               text={time.time}
               align="right"
-              timeCovert={weekName + ' ' + todayDate + '  ' + monthName}
-              weekName={weekName}
-              todayDate={todayDate}
-              monthName={monthName}
+              timeCovert={timeCovert}
+              timeForTooltip={timeForTooltip}
             >
               <div
                 ref={reff}
                 className={`${style.notreserved} curoser position-relative p-2 px-3  `}
-                onClick={(event) => selectDate(event)}
+                onClick={(event) => selectDate(time, timeCovert)}
               >
                 <span className="">{time.time}</span>
               </div>

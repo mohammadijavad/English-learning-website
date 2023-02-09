@@ -16,20 +16,14 @@ function TriggerExample({
   const hourrTime = new persianDate([, , , hour, minutes, ,])
     .toLocale('en')
     .format('H:mm')
-  const addOnhour = new persianDate([, , , hour, minutes, ,])
-    .add('minutes', 60)
-    .toLocale('en')
-    .format('H:mm')
-  console.log(addOnhour)
-  // const minutesTime = new persianDate().minutes(minutes)
-  // console.log(hourrTime, minutesTime)
+  // const addOnhour = new persianDate([, , , hour, minutes, ,])
+  //   .add('minutes', 60)
+  //   .toLocale('en')
+  //   .format('H:mm')
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       <div className="d-flex justify-content-center align-content-center flex-column">
-        <span>
-          {' '}
-          {addOnhour}- {hourrTime}
-        </span>
+        <span> {hourrTime}</span>
         <span>{timeCovert}</span>
       </div>
     </Tooltip>

@@ -3,6 +3,7 @@ import style from '../../styles/ReservedModal.module.css'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { showModalSetClassTimeHandler } from '../../../../../../../../app/store/Teacher store/Teacher'
+import TemplateSelectTime from './TemplateSelectTime'
 function Footer({ findteacher, classType, step, setStep }) {
   const dispatch = useDispatch()
   const { photoTeacher, nameTeacher, priceClasses, id } = findteacher
@@ -12,29 +13,34 @@ function Footer({ findteacher, classType, step, setStep }) {
     const { typeClass, price, count } = findClassType
     const priceCls = price * count
     content = (
-      <div className="d-flex align-items-center">
-        <div className="mx-2">
-          <img
-            src={photoTeacher}
-            className="rounded border border-2 border-info"
-            width={70}
-            alt=""
-          />
+      <div className="d-flex">
+        <div className="d-flex align-items-center">
+          <div className="mx-2">
+            <img
+              src={photoTeacher}
+              className="rounded border border-2 border-info"
+              width={70}
+              alt=""
+            />
+          </div>
+          <div className="mx-2 d-flex flex-column">
+            <div className="fontSize">
+              <span> رزرو کلاس با</span>
+              <span>{nameTeacher}</span>
+            </div>
+            <div className="fontSize mt-1">
+              <span>{typeClass}</span>
+              <span> - </span>
+              {priceCls > 0 ? (
+                <span>{priceCls} تومان </span>
+              ) : (
+                <span>رایگان</span>
+              )}
+            </div>
+          </div>
         </div>
-        <div className="mx-2 d-flex flex-column">
-          <div className="fontSize">
-            <span> رزرو کلاس با</span>
-            <span>{nameTeacher}</span>
-          </div>
-          <div className="fontSize mt-1">
-            <span>{typeClass}</span>
-            <span> - </span>
-            {priceCls > 0 ? (
-              <span>{priceCls} تومان </span>
-            ) : (
-              <span>رایگان</span>
-            )}
-          </div>
+        <div className="">
+          <TemplateSelectTime />
         </div>
       </div>
     )

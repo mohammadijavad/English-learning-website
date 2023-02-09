@@ -1,12 +1,25 @@
 import React from 'react'
 import style from '../../styles/ReservedModal.module.css'
-function ClassType({ id, typeClass, time, price, setClassType, classType }) {
+function ClassType({
+  id,
+  typeClass,
+  time,
+  price,
+  setClassType,
+  classType,
+  count,
+  setCountClass,
+}) {
+  const setClassInfoHandler = () => {
+    setClassType(id)
+    setCountClass(count)
+  }
   return (
     <div
       className={`w-100 border rounded p-2 mt-3 curoser ${
         style.containerStep1
       } ${id === classType ? style.active : ''}`}
-      onClick={() => setClassType(id)}
+      onClick={() => setClassInfoHandler(id)}
     >
       <div className="w-100 h-100 d-flex justify-content-between align-items-center">
         <div className="d-flex flex-column">

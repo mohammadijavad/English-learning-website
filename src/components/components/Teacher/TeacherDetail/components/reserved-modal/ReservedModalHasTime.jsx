@@ -11,6 +11,7 @@ function ReservedModal({ findteacher }) {
   const dispatch = useDispatch()
   const [classType, setClassType] = useState(0)
   const [step, setStep] = useState(1)
+  const [countClass, setCountClass] = useState(1)
   return (
     <div className={`${style.containerModal} `}>
       <div className={`${style.content} container position-relative`}>
@@ -29,6 +30,7 @@ function ReservedModal({ findteacher }) {
           {step === 1 && (
             <Step1
               setClassType={setClassType}
+              setCountClass={setCountClass}
               classType={classType}
               findteacher={findteacher}
             />

@@ -10,7 +10,8 @@ const initialState = {
   status: 'idle', // 'idle' | 'loading' | 'sucess' | 'faild'
   error: null,
   selectTime: [],
-  step: 1,
+  step: 0,
+  modeDatepicker: false,
 };
 export const fetchTeachers = createAsyncThunk(
   'teachers/fetchTeachers',
@@ -50,10 +51,25 @@ const teachersSlice = createSlice({
     },
     setSelectTimeForClassesHandler(state, action) {
       const classTimelist = state.selectTime;
-      state.selectTime = [...classTimelist, action.payload];
+      if (action.payload !== false) {
+        state.selectTime = [...classTimelist, action.payload];
+      } else {
+        state.selectTime = [];
+      }
+    },
+    removeSelectTimeForClassesHandler(state, action) {
+      const selectTimeId = action.payload;
+
+      const removeTime = state.selectTime.filter(
+        (time) => time.id !== selectTimeId
+      );
+      state.selectTime = removeTime;
     },
     stepModalToSelectTime(state, action) {
       state.step = action.payload;
+    },
+    modeDatepickerHandler(state, action) {
+      state.modeDatepicker = action.payload;
     },
   },
   extraReducers(builder) {
@@ -85,6 +101,7 @@ const teachersSlice = createSlice({
 });
 export const selectAllTeacher = (state) => state.teacher.teachers;
 export const selectSteps = (state) => state.teacher.step;
+export const selectmodeDatepicker = (state) => state.teacher.modeDatepicker;
 export const getTeacherStatus = (state) => state.teacher.status;
 export const getTeacherError = (state) => state.teacher.error;
 export const getModalShow = (state) => state.teacher.showModal;
@@ -98,5 +115,7 @@ export const {
   showModalSetClassTimeHandler,
   setSelectTimeForClassesHandler,
   stepModalToSelectTime,
+  modeDatepickerHandler,
+  removeSelectTimeForClassesHandler,
 } = teachersSlice.actions;
 export default teachersSlice.reducer;

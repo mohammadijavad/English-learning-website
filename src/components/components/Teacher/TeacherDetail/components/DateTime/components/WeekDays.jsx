@@ -2,13 +2,12 @@ import React from 'react'
 import { weekDays } from '../../../../../../../constants/Data'
 import Day from './weekDay/Day'
 import styled from 'styled-components'
-function WeekDays({ findteacher, nextWekkCount, currentWeekDay, mode, step }) {
+function WeekDays({ findteacher, nextWekkCount, currentWeekDay, step }) {
   return (
     <Container className="mt-4 d-flex justify-content-between align-items-start h-100  scrollMode">
       {weekDays.map((day, index) => (
         <Day
           step={step}
-          mode={mode}
           key={index}
           index={index}
           findteacher={findteacher}

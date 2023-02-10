@@ -4,10 +4,11 @@ import persianDate from 'persian-date'
 import ReservedTime from './ReservedTime'
 import NotReservedTime from './NotReservedTime'
 import TodayFlag from './TodayFlag'
-function Day({ findteacher, index, currentWeekDay, mode, step }) {
+function Day({ findteacher, index, currentWeekDay, step }) {
   const { timeClassForBook } = findteacher
   const { times } = timeClassForBook[0]
   let { alltime } = times[index]
+
   const monthName = new persianDate().format('MMMM') //day of Week
   const month = new persianDate().month() //month
   const dayofmonth = new persianDate().date() //Date of Month
@@ -55,7 +56,6 @@ function Day({ findteacher, index, currentWeekDay, mode, step }) {
               key={index}
               time={time}
               timeCovert={timeCovert}
-              mode={mode}
               step={step}
             />
           ),

@@ -809,6 +809,7 @@ color: var(--text-white);
 border-radius: 5px;
 /* pointer-events: none; */
 cursor:not-allowed;
+pointer-events: none;
 }
 .activeTimeTest{
 background-color: var(--active-Select-time);
@@ -816,6 +817,7 @@ color: var(--text-white);
 border-radius: 5px;
 /* pointer-events: none; */
 cursor:not-allowed;
+pointer-events: none;
 }
 .activeTime + div{
   background-color: var(--active-Select-time);
@@ -823,4 +825,5 @@ color: var(--text-white);
 border-radius: 5px;
 /* pointer-events: none; */
 cursor:not-allowed;
+pointer-events: none;
 }

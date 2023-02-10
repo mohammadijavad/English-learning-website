@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import {
   showReservedModal,
   showModalSetClassTimeHandler,
+  stepModalToSelectTime,
 } from '../app/store/Teacher store/Teacher'
 
 function ModalReserved() {
@@ -12,6 +13,7 @@ function ModalReserved() {
   const setModaLState = () => {
     dispatch(showModalSetClassTimeHandler(true))
     dispatch(showReservedModal(false))
+    dispatch(stepModalToSelectTime(1))
   }
   return (
     <div className={`${style.ModalReserved} }`}>

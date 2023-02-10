@@ -43,28 +43,31 @@
           "time": "30",
           "price": 0,
           "count": 1,
-          "test": true
+          "test": false
         },
         {
           "id": 2,
           "typeClass": "1 جلسه خصوصی",
           "time": "60",
           "price": 75000,
-          "count": 1
+          "count": 1,
+          "test": true
         },
         {
           "id": 3,
           "typeClass": "5 جلسه خصوصی",
           "time": "300",
           "price": 70000,
-          "count": 5
+          "count": 5,
+          "test": true
         },
         {
           "id": 4,
           "typeClass": "10 جلسه خصوصی",
           "time": "600",
           "price": 65000,
-          "count": 10
+          "count": 10,
+          "test": true
         }
       ],
       "discriptionTeacher": [

@@ -4,6 +4,9 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   showModalSetClassTimeHandler,
+  setSelectTimeForClassesHandler,
+  modeDatepickerHandler,
+  stepModalToSelectTime,
   selectSteps,
 } from '../../../../../../app/store/Teacher store/Teacher'
 import HeaderModal from './components/HeaderModal'
@@ -14,8 +17,12 @@ function ReservedModal({ findteacher }) {
   const dispatch = useDispatch()
   const [classType, setClassType] = useState(0)
   const [countClass, setCountClass] = useState(1)
-  const [mode, setMode] = useState(false)
   const step = useSelector(selectSteps)
+  const clearSelectTimeHandler = () => {
+    dispatch(setSelectTimeForClassesHandler(false))
+    dispatch(modeDatepickerHandler(false))
+    dispatch(stepModalToSelectTime(0))
+  }
   return (
     <div className={`${style.containerModal} `}>
       <div className={`${style.content} container position-relative`}>
@@ -24,7 +31,10 @@ function ReservedModal({ findteacher }) {
             className="p-1 curoser"
             onClick={() => dispatch(showModalSetClassTimeHandler(false))}
           >
-            <AiOutlineClose size={18} />
+            <AiOutlineClose
+              size={18}
+              onClick={() => clearSelectTimeHandler()}
+            />
           </span>
         </div>
         <div className="mt-3 px-4">
@@ -37,7 +47,6 @@ function ReservedModal({ findteacher }) {
               setCountClass={setCountClass}
               classType={classType}
               findteacher={findteacher}
-              setMode={setMode}
             />
           )}
           {step === 2 && (
@@ -45,7 +54,6 @@ function ReservedModal({ findteacher }) {
               findteacher={findteacher}
               currentWeekDay={0}
               nextWekkCount={6}
-              mode={mode}
               typeClass={false}
               step={step}
             />

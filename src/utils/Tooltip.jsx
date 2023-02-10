@@ -1,19 +1,21 @@
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
-function TriggerExample({
-  timeMode1,
-  timeMode2,
-  align,
-  children,
-  timeCovert,
-  mode,
-}) {
+import { useSelector } from 'react-redux'
+import {
+  selectmodeDatepicker,
+  selectSteps,
+} from '../app/store/Teacher store/Teacher'
+function TriggerExample({ timeMode1, timeMode2, align, children, timeCovert }) {
   //['year', 'month', 'day', 'hour', 'minute', 'second', 'millisecond']
+  const mode = useSelector(selectmodeDatepicker)
+  const step = useSelector(selectSteps)
+  let modeTest = mode === false && step === 2
+  let content = mode ? timeMode2 : modeTest ? timeMode2 : timeMode1
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       <div className="d-flex justify-content-center align-content-center flex-column">
-        <span> {mode ? timeMode1 : timeMode2}</span>
+        <span> {content}</span>
         <span>{timeCovert}</span>
       </div>
     </Tooltip>

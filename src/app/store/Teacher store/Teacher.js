@@ -9,7 +9,7 @@ const initialState = {
   user: [],
   status: 'idle', // 'idle' | 'loading' | 'sucess' | 'faild'
   error: null,
-  selectTime: ['javad'],
+  selectTime: [],
 };
 export const fetchTeachers = createAsyncThunk(
   'teachers/fetchTeachers',

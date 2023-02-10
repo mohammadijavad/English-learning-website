@@ -4,8 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 function TemplateSelectTime({ time }) {
   return (
     <Container>
-      <AiOutlineClose size={17} className="curoser" />{' '}
-      <span>سه شنبه 25 بهمن 11:00 - 12:00</span>
+      <AiOutlineClose size={17} className="curoser" /> <span>{time.time}</span>
     </Container>
   )
 }
@@ -14,5 +13,6 @@ const Container = styled.div`
   background: #e2e8f0;
   padding: 4px;
   font-size: 14px;
+  display: block;
 `
 export default TemplateSelectTime

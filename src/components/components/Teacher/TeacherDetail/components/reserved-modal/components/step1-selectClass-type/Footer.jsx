@@ -9,47 +9,51 @@ function Footer({ findteacher, classType, step, setStep }) {
   const dispatch = useDispatch()
   const selectAllTimeSelectTime = useSelector(selectTimeClasessSelect)
   const { photoTeacher, nameTeacher, priceClasses, id } = findteacher
-  console.log(selectAllTimeSelectTime)
+
   let content = ''
   if (classType > 0) {
     const findClassType = priceClasses?.find((cls) => cls.id === classType)
     const { typeClass, price, count } = findClassType
     const priceCls = price * count
     content = (
-      <div className="d-flex">
-        <div className="d-flex align-items-center">
-          <div className="mx-2">
-            <img
-              src={photoTeacher}
-              className="rounded border border-2 border-info"
-              width={70}
-              alt=""
-            />
-          </div>
-          <div className="mx-2 d-flex flex-column">
-            <div className="fontSize">
-              <span> رزرو کلاس با</span>
-              <span>{nameTeacher}</span>
+      <>
+        <div className="d-flex">
+          <div className="d-flex align-items-center">
+            <div className="mx-2">
+              <img
+                src={photoTeacher}
+                className="rounded border border-2 border-info"
+                width={70}
+                alt=""
+              />
             </div>
-            <div className="fontSize mt-1">
-              <span>{typeClass}</span>
-              <span> - </span>
-              {priceCls > 0 ? (
-                <span>{priceCls} تومان </span>
-              ) : (
-                <span>رایگان</span>
-              )}
+            <div className="mx-2 d-flex flex-column">
+              <div className="fontSize">
+                <span> رزرو کلاس با</span>
+                <span>{nameTeacher}</span>
+              </div>
+              <div className="fontSize mt-1">
+                <span>{typeClass}</span>
+                <span> - </span>
+                {priceCls > 0 ? (
+                  <span>{priceCls} تومان </span>
+                ) : (
+                  <span>رایگان</span>
+                )}
+              </div>
             </div>
           </div>
         </div>
-        <div className="w-100 d-flex flex-wrap">
-          {selectAllTimeSelectTime?.map((time, index) => (
-            <div className="mx-1">
-              <TemplateSelectTime key={index} />
-            </div>
-          ))}
-        </div>
-      </div>
+        {step > 1 && (
+          <div className={style.containerTimeSelect}>
+            {selectAllTimeSelectTime?.map((time, index) => (
+              <div className="mx-1 ">
+                <TemplateSelectTime time={time} key={index} />
+              </div>
+            ))}
+          </div>
+        )}
+      </>
     )
   } else {
     content = (

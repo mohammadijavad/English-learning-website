@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import style from '../../style/datepicker.module.css'
 import TriggerExample from '../../../../../../../../utils/Tooltip'
 import persianDate from 'persian-date'
@@ -7,17 +7,9 @@ import {
   setSelectTimeForClassesHandler,
 } from '../../../../../../../../app/store/Teacher store/Teacher'
 import { useDispatch } from 'react-redux'
-import { useEffect } from 'react'
 
-function Day({
-  type,
-  text,
-  findteacher,
-  index,
-  nextWekkCount,
-  currentWeekDay,
-  mode,
-}) {
+function Day({ text, findteacher, index, currentWeekDay, mode }) {
+  const [getDate, setGetDate] = useState('')
   const { timeClassForBook } = findteacher
   const { times } = timeClassForBook[0]
   let { alltime } = times[index]
@@ -50,17 +42,14 @@ function Day({
     }
     const time = timeSelect.time + ' ' + date
     const timeSet = { id: id++, time }
-    dispatch(setSelectTimeForClassesHandler(timeSet))
+
     handler(timeSelect)
   }
 
   // this time for set final time class in modal time
-  const spltTime = text.split(':')
-  const [hour, minutes] = spltTime
   // ['year', 'month', 'day', 'hour', 'minute', 'second', 'millisecond']
-  const handler = (time) => {
-    const { time: t } = time
-    const spltTime = t.split(':')
+  const handler = (selectTime) => {
+    const spltTime = selectTime.time.split(':')
     const [hour, minutes] = spltTime
     const hourrTime = new persianDate([, , , hour, minutes, ,])
       .toLocale('fa')
@@ -69,11 +58,14 @@ function Day({
       .add('minutes', 60)
       .toLocale('fa')
       .format('H:mm')
-    console.log(hourrTime, addOnhour)
+    let currentTime = addOnhour + ' - ' + hourrTime + ' ' + timeCovert
+    let timeSelect = { id: Math.random(), time: currentTime }
+    dispatch(setSelectTimeForClassesHandler(timeSelect))
   }
+
   const timeForTooltip = 2 - 3
   const timeCovert = weekName + ' ' + todayDate + '  ' + monthName
-  const steTimeHandler = (time) => {}
+
   const isCurrentDate = currentDate === dayofmonth
   return (
     <div

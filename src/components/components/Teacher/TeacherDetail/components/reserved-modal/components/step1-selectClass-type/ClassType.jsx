@@ -9,17 +9,20 @@ function ClassType({
   classType,
   count,
   setCountClass,
+  test,
+  setMode,
 }) {
   const setClassInfoHandler = () => {
     setClassType(id)
     setCountClass(count)
+    setMode(test)
   }
   return (
     <div
       className={`w-100 border rounded p-2 mt-3 curoser ${
         style.containerStep1
       } ${id === classType ? style.active : ''}`}
-      onClick={() => setClassInfoHandler(id)}
+      onClick={() => setClassInfoHandler()}
     >
       <div className="w-100 h-100 d-flex justify-content-between align-items-center">
         <div className="d-flex flex-column">

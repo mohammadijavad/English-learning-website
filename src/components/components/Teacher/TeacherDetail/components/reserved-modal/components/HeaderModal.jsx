@@ -1,6 +1,9 @@
 import React from 'react'
 import style from '../styles/ReservedModal.module.css'
-function HeaderModal({ step }) {
+import { selectSteps } from '../../../../../../../app/store/Teacher store/Teacher'
+import { useSelector } from 'react-redux'
+function HeaderModal() {
+  const step = useSelector(selectSteps)
   return (
     <div className="d-flex w-100 justify-content-between  align-items-center row">
       <div

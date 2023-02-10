@@ -2,11 +2,16 @@ import React from 'react'
 import style from '../../styles/ReservedModal.module.css'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { showModalSetClassTimeHandler } from '../../../../../../../../app/store/Teacher store/Teacher'
-import { selectTimeClasessSelect } from '../../../../../../../../app/store/Teacher store/Teacher'
+import {
+  showModalSetClassTimeHandler,
+  selectTimeClasessSelect,
+  stepModalToSelectTime,
+  selectSteps,
+} from '../../../../../../../../app/store/Teacher store/Teacher'
 import TemplateSelectTime from './TemplateSelectTime'
-function Footer({ findteacher, classType, step, setStep }) {
+function Footer({ findteacher, classType }) {
   const dispatch = useDispatch()
+  const step = useSelector(selectSteps)
   const selectAllTimeSelectTime = useSelector(selectTimeClasessSelect)
   const { photoTeacher, nameTeacher, priceClasses, id } = findteacher
 
@@ -76,7 +81,7 @@ function Footer({ findteacher, classType, step, setStep }) {
     )
   }
   const closeModalHandler = () => {
-    setStep(step - 1)
+    dispatch(stepModalToSelectTime(step + 1))
     dispatch(showModalSetClassTimeHandler(false))
   }
   return (
@@ -92,7 +97,7 @@ function Footer({ findteacher, classType, step, setStep }) {
                 ? 'btn mx-2 shadow shadow-info bg-info text-white'
                 : `btn mx-2 shadow shadow-info  text-white ${style.disabledBtn}`
             }`}
-            onClick={() => setStep(step + 1)}
+            onClick={() => dispatch(stepModalToSelectTime(step + 1))}
           >
             ادامه
           </button>
@@ -113,7 +118,7 @@ function Footer({ findteacher, classType, step, setStep }) {
         {step > 1 ? (
           <button
             className="btn mx-2 shadow shadow-info bg-info text-white"
-            onClick={() => setStep(step - 1)}
+            onClick={() => dispatch(stepModalToSelectTime(step - 1))}
           >
             بازگشت
           </button>

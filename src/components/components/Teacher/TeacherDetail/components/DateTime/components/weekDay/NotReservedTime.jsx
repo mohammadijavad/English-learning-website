@@ -1,18 +1,27 @@
 import React, { useRef, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import persianDate from 'persian-date'
 import TriggerExample from '../../../../../../../../utils/Tooltip'
 import style from '../../style/datepicker.module.css'
 import {
   showReservedModal,
   setSelectTimeForClassesHandler,
+  selectSteps,
 } from '../../../../../../../../app/store/Teacher store/Teacher'
 function NotReservedTime({ time, timeCovert, mode }) {
-  let mode2Modal = ''
   const dispatch = useDispatch()
+
   const reff = useRef()
+
+  const stepSlectClass = useSelector(selectSteps)
+  let mode2Modal = ''
   const selectDateFirstDatePicker = () => {
-    dispatch(showReservedModal(mode))
+    if (stepSlectClass === 1) {
+      dispatch(showReservedModal(mode))
+    }
+    if (stepSlectClass > 1) {
+      reff.current.classList.add('activeTimeTest')
+    }
   }
   const selectDate = (timeSelect, date) => {
     if (!mode) {
@@ -50,6 +59,7 @@ function NotReservedTime({ time, timeCovert, mode }) {
     >
       {mode ? (
         <div
+          ref={reff}
           className={`${style.notreserved} curoser position-relative p-2 px-3  `}
           onClick={(event) => selectDateFirstDatePicker()}
         >

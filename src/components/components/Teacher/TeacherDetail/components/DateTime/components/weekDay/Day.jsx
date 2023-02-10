@@ -4,8 +4,7 @@ import persianDate from 'persian-date'
 import ReservedTime from './ReservedTime'
 import NotReservedTime from './NotReservedTime'
 import TodayFlag from './TodayFlag'
-
-function Day({ findteacher, index, currentWeekDay, mode }) {
+function Day({ findteacher, index, currentWeekDay, mode, step }) {
   const { timeClassForBook } = findteacher
   const { times } = timeClassForBook[0]
   let { alltime } = times[index]
@@ -57,6 +56,7 @@ function Day({ findteacher, index, currentWeekDay, mode }) {
               time={time}
               timeCovert={timeCovert}
               mode={mode}
+              step={step}
             />
           ),
         )}

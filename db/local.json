@@ -42,7 +42,8 @@
           "typeClass": "یک جلسه آزمایشی",
           "time": "30",
           "price": 0,
-          "count": 1
+          "count": 1,
+          "test": true
         },
         {
           "id": 2,

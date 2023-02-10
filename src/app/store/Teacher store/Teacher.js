@@ -10,6 +10,7 @@ const initialState = {
   status: 'idle', // 'idle' | 'loading' | 'sucess' | 'faild'
   error: null,
   selectTime: [],
+  step: 1,
 };
 export const fetchTeachers = createAsyncThunk(
   'teachers/fetchTeachers',
@@ -51,6 +52,9 @@ const teachersSlice = createSlice({
       const classTimelist = state.selectTime;
       state.selectTime = [...classTimelist, action.payload];
     },
+    stepModalToSelectTime(state, action) {
+      state.step = action.payload;
+    },
   },
   extraReducers(builder) {
     builder
@@ -80,6 +84,7 @@ const teachersSlice = createSlice({
   },
 });
 export const selectAllTeacher = (state) => state.teacher.teachers;
+export const selectSteps = (state) => state.teacher.step;
 export const getTeacherStatus = (state) => state.teacher.status;
 export const getTeacherError = (state) => state.teacher.error;
 export const getModalShow = (state) => state.teacher.showModal;
@@ -92,5 +97,6 @@ export const {
   showReservedModal,
   showModalSetClassTimeHandler,
   setSelectTimeForClassesHandler,
+  stepModalToSelectTime,
 } = teachersSlice.actions;
 export default teachersSlice.reducer;

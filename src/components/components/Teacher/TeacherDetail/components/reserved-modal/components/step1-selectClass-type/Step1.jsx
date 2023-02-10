@@ -1,7 +1,13 @@
 import React from 'react'
 import ClassType from './ClassType'
 
-function Step1({ classType, setClassType, findteacher, setCountClass }) {
+function Step1({
+  classType,
+  setClassType,
+  findteacher,
+  setCountClass,
+  setMode,
+}) {
   const { priceClasses } = findteacher
   return (
     <div className="mt-4">
@@ -11,6 +17,7 @@ function Step1({ classType, setClassType, findteacher, setCountClass }) {
       <div>
         {priceClasses?.map((teacher) => (
           <ClassType
+            setMode={setMode}
             key={teacher.id}
             classType={classType}
             setClassType={setClassType}

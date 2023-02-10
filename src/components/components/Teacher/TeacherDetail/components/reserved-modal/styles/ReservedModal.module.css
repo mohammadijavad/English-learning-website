@@ -111,6 +111,5 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 600px;
-  overflow-x: scroll;
+  overflow-x: auto;
 }

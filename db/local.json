@@ -89,8 +89,9 @@
               "alltime": [
                 {
                   "time": "10:30",
-                  "isBooked": false,
-                  "type": "half"
+                  "isBooked": true,
+                  "type": "half",
+                  "id": "g1"
                 }
               ],
               "bookedTime": []
@@ -101,16 +102,19 @@
                 {
                   "time": "10:30",
                   "isBooked": false,
-                  "type": "half"
+                  "type": "half",
+                  "id": "g2"
                 },
                 {
                   "time": "11:00",
-                  "isBooked": false
+                  "isBooked": false,
+                  "id": "g3"
                 },
                 {
                   "time": "11:30",
                   "isBooked": false,
-                  "type": "half"
+                  "type": "half",
+                  "id": "g4"
                 },
                 {
                   "time": "12:00",

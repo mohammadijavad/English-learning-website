@@ -10,7 +10,12 @@ import {
   selectSteps,
   selectmodeDatepicker,
 } from '../../../../../../../../app/store/Teacher store/Teacher'
-function NotReservedTime({ time, timeCovert }) {
+function NotReservedTime({
+  time,
+  timeCovert,
+  changeTimeSelectHandler,
+  indexDate,
+}) {
   const dispatch = useDispatch()
   const reff = useRef()
   const stepSlectClass = useSelector(selectSteps)
@@ -28,9 +33,10 @@ function NotReservedTime({ time, timeCovert }) {
     }
   }
   const selectDate = (timeSelect, date) => {
-    if (datepickerMode) {
-      reff.current.classList.add('activeTime')
-    }
+    changeTimeSelectHandler(timeSelect, indexDate, true)
+    // if (datepickerMode) {
+    //   reff.current.classList.add('activeTime')
+    // }
     const time = timeSelect.time + ' ' + date
     // const timeSet = { id: id++, time }
 
@@ -53,9 +59,8 @@ function NotReservedTime({ time, timeCovert }) {
 
   mode2Modal = currentTime
   const handler = (selectDateStr, dateOnDB) => {
-    let timeSelect = { id: dateOnDB.id, time: selectDateStr }
+    let timeSelect = { id: dateOnDB.id, time: selectDateStr, indexDate }
     dispatch(setSelectTimeForClassesHandler(timeSelect))
-    console.log(timeSelect)
   }
 
   return (
@@ -68,8 +73,11 @@ function NotReservedTime({ time, timeCovert }) {
     >
       {datepickerMode ? (
         <div
-          ref={reff}
-          className={`${style.notreserved} curoser position-relative p-2 px-3  `}
+          className={`${
+            style.notreserved
+          } curoser position-relative p-2 px-3  ${
+            time.selectedUser ? 'activeTime' : ''
+          }`}
           onClick={(event) => selectDate(time, selectDateUser)}
         >
           <span className="">{time.time}</span>

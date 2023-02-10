@@ -83,7 +83,7 @@
         "The class basis and focus is a progress in conversation as well as a simultaneous accuracy and fluency in the shortest time through inductive grammar teaching, using textbooks, audio files and even songs and movies sessions"
       ],
       "studentsTeacher": "369",
-      "isFavorite": false,
+      "isFavorite": true,
       "timeClassForBook": [
         {
           "id": 0,
@@ -102,12 +102,14 @@
             },
             {
               "id": "f1n",
+              "index": "1",
               "alltime": [
                 {
                   "time": "10:30",
                   "isBooked": false,
                   "type": "half",
-                  "id": "g2"
+                  "id": "g2",
+                  "selectedUser": false
                 },
                 {
                   "time": "11:00",

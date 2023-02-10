@@ -1,19 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { weekDays } from '../../../../../../../constants/Data'
 import Day from './weekDay/Day'
 import styled from 'styled-components'
-function WeekDays({ findteacher, nextWekkCount, currentWeekDay, step }) {
+function WeekDays({
+  findteacher,
+  nextWekkCount,
+  currentWeekDay,
+  step,
+  times,
+  changeTimeSelectHandler,
+}) {
   return (
     <Container className="mt-4 d-flex justify-content-between align-items-start h-100  scrollMode">
       {weekDays.map((day, index) => (
         <Day
           step={step}
           key={index}
-          index={index}
+          indexTime={index}
           findteacher={findteacher}
           {...day}
           currentWeekDay={currentWeekDay}
           nextWekkCount={nextWekkCount}
+          times={times}
+          changeTimeSelectHandler={changeTimeSelectHandler}
         />
       ))}
     </Container>

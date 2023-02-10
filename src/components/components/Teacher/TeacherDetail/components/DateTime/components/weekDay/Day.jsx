@@ -4,10 +4,14 @@ import persianDate from 'persian-date'
 import ReservedTime from './ReservedTime'
 import NotReservedTime from './NotReservedTime'
 import TodayFlag from './TodayFlag'
-function Day({ findteacher, index, currentWeekDay, step }) {
-  const { timeClassForBook } = findteacher
-  const { times } = timeClassForBook[0]
-  let { alltime } = times[index]
+function Day({
+  indexTime,
+  currentWeekDay,
+  step,
+  times,
+  changeTimeSelectHandler,
+}) {
+  let { alltime } = times[indexTime]
 
   const monthName = new persianDate().format('MMMM') //day of Week
   const month = new persianDate().month() //month
@@ -16,17 +20,17 @@ function Day({ findteacher, index, currentWeekDay, step }) {
   const weekName = new persianDate([
     year,
     month,
-    dayofmonth + index + currentWeekDay,
+    dayofmonth + indexTime + currentWeekDay,
   ]).format('dddd')
   const todayDate = new persianDate([
     year,
     month,
-    dayofmonth + index + currentWeekDay,
+    dayofmonth + indexTime + currentWeekDay,
   ]).format('D')
   const currentDate = new persianDate([
     year,
     month,
-    dayofmonth + index + currentWeekDay,
+    dayofmonth + indexTime + currentWeekDay,
   ]).date()
 
   // this time for set final time class in modal time
@@ -53,10 +57,12 @@ function Day({ findteacher, index, currentWeekDay, step }) {
             <ReservedTime time={time} key={index} />
           ) : (
             <NotReservedTime
+              indexDate={indexTime}
               key={index}
               time={time}
               timeCovert={timeCovert}
               step={step}
+              changeTimeSelectHandler={changeTimeSelectHandler}
             />
           ),
         )}

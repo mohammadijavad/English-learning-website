@@ -23,6 +23,19 @@ function ReservedModal({ findteacher }) {
     dispatch(modeDatepickerHandler(false))
     dispatch(stepModalToSelectTime(0))
   }
+  const { timeClassForBook } = findteacher
+  const { times } = timeClassForBook[0]
+  const [alltimeTeacher, setAlltimeTeacher] = useState(times)
+
+  const changeTimeSelectHandler = (selectTime, index, mode) => {
+    const m = JSON.stringify(alltimeTeacher)
+    let h = JSON.parse(m)
+    let selectedTime = Object.freeze(h[index].alltime).findIndex(
+      (time) => time.id === selectTime.id,
+    )
+    h[index].alltime[selectedTime].selectedUser = mode
+    setAlltimeTeacher(h)
+  }
   return (
     <div className={`${style.containerModal} `}>
       <div className={`${style.content} container position-relative`}>
@@ -51,16 +64,21 @@ function ReservedModal({ findteacher }) {
           )}
           {step === 2 && (
             <WeekDays
-              findteacher={findteacher}
+              times={alltimeTeacher}
               currentWeekDay={0}
               nextWekkCount={6}
               typeClass={false}
               step={step}
+              changeTimeSelectHandler={changeTimeSelectHandler}
             />
           )}
         </div>
         <div className="mt-3">
-          <Footer findteacher={findteacher} classType={classType} />
+          <Footer
+            findteacher={findteacher}
+            classType={classType}
+            changeTimeSelectHandler={changeTimeSelectHandler}
+          />
         </div>
       </div>
     </div>

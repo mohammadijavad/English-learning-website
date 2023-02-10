@@ -51,6 +51,7 @@ const teachersSlice = createSlice({
     },
     setSelectTimeForClassesHandler(state, action) {
       const classTimelist = state.selectTime;
+      console.log(classTimelist);
       if (action.payload !== false) {
         state.selectTime = [...classTimelist, action.payload];
       } else {
@@ -61,7 +62,7 @@ const teachersSlice = createSlice({
       const selectTimeId = action.payload;
 
       const removeTime = state.selectTime.filter(
-        (time) => time.id !== selectTimeId
+        (time) => time.id !== selectTimeId.id
       );
       state.selectTime = removeTime;
     },

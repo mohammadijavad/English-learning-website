@@ -9,7 +9,7 @@ import {
   selectSteps,
 } from '../../../../../../../../app/store/Teacher store/Teacher'
 import TemplateSelectTime from './TemplateSelectTime'
-function Footer({ findteacher, classType }) {
+function Footer({ findteacher, classType, changeTimeSelectHandler }) {
   const dispatch = useDispatch()
   const step = useSelector(selectSteps)
   const selectAllTimeSelectTime = useSelector(selectTimeClasessSelect)
@@ -53,7 +53,11 @@ function Footer({ findteacher, classType }) {
           <div className={style.containerTimeSelect}>
             {selectAllTimeSelectTime?.map((time, index) => (
               <div className="mx-1 ">
-                <TemplateSelectTime time={time} key={index} />
+                <TemplateSelectTime
+                  time={time}
+                  key={index}
+                  changeTimeSelectHandler={changeTimeSelectHandler}
+                />
               </div>
             ))}
           </div>

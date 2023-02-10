@@ -3,15 +3,20 @@ import styled from 'styled-components'
 import { AiOutlineClose } from 'react-icons/ai'
 import { removeSelectTimeForClassesHandler } from '../../../../../../../../app/store/Teacher store/Teacher'
 import { useDispatch } from 'react-redux'
-function TemplateSelectTime({ time }) {
+function TemplateSelectTime({ time, changeTimeSelectHandler }) {
   const dispatch = useDispatch()
+  const handler = () => {
+    changeTimeSelectHandler(time, time.indexDate, false)
+    dispatch(
+      removeSelectTimeForClassesHandler({
+        id: time.id,
+        indexDate: time.indexDate,
+      }),
+    )
+  }
   return (
     <Container>
-      <AiOutlineClose
-        size={17}
-        className="curoser"
-        onClick={() => dispatch(removeSelectTimeForClassesHandler(time.id))}
-      />{' '}
+      <AiOutlineClose size={17} className="curoser" onClick={() => handler()} />{' '}
       <span>{time.time}</span>
     </Container>
   )

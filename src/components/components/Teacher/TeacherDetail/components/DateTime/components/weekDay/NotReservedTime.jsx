@@ -22,24 +22,20 @@ function NotReservedTime({
   const datepickerMode = useSelector(selectmodeDatepicker)
   let mode2Modal = ''
   let minutesVar = 30
-  const selectDateFirstDatePicker = () => {
-    console.log(datepickerMode)
+  const selectDateFirstDatePicker = (timeSelect, date) => {
     if (stepSlectClass === 0) {
       dispatch(showReservedModal(true))
     }
-
+    // if (stepSlectClass === 2) {
+    // }
     if (!datepickerMode && stepSlectClass === 2) {
-      reff.current.classList.add('activeTimeTest')
+      changeTimeSelectHandler(timeSelect, indexDate, true)
+      // reff.current.classList.add('activeTimeTest')
+      handler(date, timeSelect)
     }
   }
   const selectDate = (timeSelect, date) => {
     changeTimeSelectHandler(timeSelect, indexDate, true)
-    // if (datepickerMode) {
-    //   reff.current.classList.add('activeTime')
-    // }
-    const time = timeSelect.time + ' ' + date
-    // const timeSet = { id: id++, time }
-
     handler(date, timeSelect)
   }
 
@@ -85,8 +81,12 @@ function NotReservedTime({
       ) : (
         <div
           ref={reff}
-          className={`${style.notreserved} curoser position-relative p-2 px-3  `}
-          onClick={(event) => selectDateFirstDatePicker()}
+          className={`${
+            style.notreserved
+          } curoser position-relative p-2 px-3  ${
+            time.selectedUser ? 'activeTimeTest' : ''
+          }`}
+          onClick={(event) => selectDateFirstDatePicker(time, selectDateUser)}
         >
           <span className="">{time.time}</span>
         </div>

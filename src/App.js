@@ -12,7 +12,7 @@ import Loginpage from './screens/Auth/Login';
 import { Notfind } from './screens';
 
 function App() {
-  const { isDarkMode, showAlertHandler } = useContext(contextapp);
+  const { isDarkMode } = useContext(contextapp);
   const value = useAuth();
   const navigator = useNavigate();
   useEffect(() => {
@@ -28,12 +28,6 @@ function App() {
       className="containerDashboard"
       data-layout-mode={isDarkMode ? 'dark' : 'light'}
     >
-      <div className="text-center">
-        <button onClick={() => showAlertHandler('text', 'success')}>
-          {' '}
-          click
-        </button>
-      </div>
       <ToastContainer />
       <Routes>
         <Route path="/login" element={<Loginpage />} />

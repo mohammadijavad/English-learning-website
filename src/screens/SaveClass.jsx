@@ -8,7 +8,7 @@ function SaveClass() {
     <Container className="container mt-4 ">
       <HeaderModal step={3} />
       <div className="d-flex justify-content-between align-items-start row mt-4 h-100">
-        <div className=" rounded col-12  col-lg-7 text-white h-100 ">
+        <div className=" rounded col-12  col-lg-7 text-white h-100 mt-1">
           <OptionPayment />
         </div>
         <div className=" col-12 col-lg-4 text-white  shadow rounded p-3">

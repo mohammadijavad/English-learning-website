@@ -35,6 +35,9 @@ li {
 .fontsize14{
   font-size: var(--size-font-sm2);
 }
+.fontsize13{
+  font-size: var(--size-font-sm1);
+}
 
 /* --size-font-sm: 12px;
 --size-font-sm1: 13px;
@@ -833,4 +836,9 @@ border-radius: 5px;
 /* pointer-events: none; */
 cursor:not-allowed;
 pointer-events: none;
+}
+/* payment page */
+.form-check-input{
+ box-shadow: rgba(29, 27, 27, 0.13);
+ padding: 0.3rem;
 }

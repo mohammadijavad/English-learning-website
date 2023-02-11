@@ -5,7 +5,7 @@ import wallet from '../../../../../assets/Teacher/payment/wallet.svg'
 import cart from '../../../../../assets/Teacher/payment/payment-carts.svg'
 function TypePayment() {
   return (
-    <div className={`${style.teacherInfo}  `}>
+    <div className={`${style.teacherInfo}  p-2`}>
       <p>لطفعا نحوه پرداخت را انتخاب کنید</p>
       <div>
         <Form>
@@ -24,6 +24,7 @@ function TypePayment() {
               <img src={cart} alt="" width={40} />
             </div>
             <Form.Check
+              className={style.radio}
               inline
               name="group1"
               type={'radio'}

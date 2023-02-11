@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useContext } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import persianDate from 'persian-date'
 import TriggerExample from '../../../../../../../../utils/Tooltip'
 import style from '../../style/datepicker.module.css'
+import 'react-toastify/dist/ReactToastify.css'
 import {
   showReservedModal,
   setSelectTimeForClassesHandler,
@@ -11,12 +12,14 @@ import {
   selectSteps,
   selectmodeDatepicker,
 } from '../../../../../../../../app/store/Teacher store/Teacher'
+import { contextapp } from '../../../../../../../../contexts/ContextProv'
 function NotReservedTime({
   time,
   timeCovert,
   changeTimeSelectHandler,
   indexDate,
 }) {
+  const { showAlertHandler } = useContext(contextapp)
   const dispatch = useDispatch()
   const reff = useRef()
   const stepSlectClass = useSelector(selectSteps)
@@ -30,17 +33,18 @@ function NotReservedTime({
       dispatch(showReservedModal(true))
     }
     if (!datepickerMode && stepSlectClass === 2) {
-      changeTimeSelectHandler(timeSelect, indexDate, true)
-      // handler(date, timeSelect)
+      // changeTimeSelectHandler(timeSelect, indexDate, true)
+      selectDate(timeSelect, date)
     }
   }
   const selectDate = (timeSelect, date) => {
     let timeSelected = { id: timeSelect.id, time: date, indexDate }
     if (counterSelectTimeUser === allCountUserAllowToSelect) {
-      alert('done boy')
+      showAlertHandler('بیشتر از تعداد جلسات نمی توانید انتخاب کنید')
     } else {
       changeTimeSelectHandler(timeSelect, indexDate, true)
       dispatch(setSelectTimeForClassesHandler(timeSelected))
+      console.log(12)
     }
   }
 
@@ -64,38 +68,40 @@ function NotReservedTime({
   }
 
   return (
-    <TriggerExample
-      timeMode1={time.time}
-      timeMode2={mode2Modal}
-      align="right"
-      timeCovert={timeCovert}
-      datepickerMode={datepickerMode}
-    >
-      {datepickerMode ? (
-        <div
-          className={`${
-            style.notreserved
-          } curoser position-relative p-2 px-3  ${
-            time.selectedUser ? 'activeTime' : ''
-          }`}
-          onClick={(event) => selectDate(time, selectDateUser)}
-        >
-          <span className="">{time.time}</span>
-        </div>
-      ) : (
-        <div
-          ref={reff}
-          className={`${
-            style.notreserved
-          } curoser position-relative p-2 px-3  ${
-            time.selectedUser ? 'activeTimeTest' : ''
-          }`}
-          onClick={(event) => selectDateFirstDatePicker(time, selectDateUser)}
-        >
-          <span className="">{time.time}</span>
-        </div>
-      )}
-    </TriggerExample>
+    <>
+      <TriggerExample
+        timeMode1={time.time}
+        timeMode2={mode2Modal}
+        align="right"
+        timeCovert={timeCovert}
+        datepickerMode={datepickerMode}
+      >
+        {datepickerMode ? (
+          <div
+            className={`${
+              style.notreserved
+            } curoser position-relative p-2 px-3  ${
+              time.selectedUser ? 'activeTime' : ''
+            }`}
+            onClick={(event) => selectDate(time, selectDateUser)}
+          >
+            <span className="">{time.time}</span>
+          </div>
+        ) : (
+          <div
+            ref={reff}
+            className={`${
+              style.notreserved
+            } curoser position-relative p-2 px-3  ${
+              time.selectedUser ? 'activeTimeTest' : ''
+            }`}
+            onClick={(event) => selectDateFirstDatePicker(time, selectDateUser)}
+          >
+            <span className="">{time.time}</span>
+          </div>
+        )}
+      </TriggerExample>
+    </>
   )
 }
 

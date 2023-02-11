@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HeaderModal from '../components/components/Teacher/TeacherDetail/components/reserved-modal/components/HeaderModal'
 import styled from 'styled-components'
 import Payment from '../components/components/paymentOfClasses-Reserved/Payment'
 import OptionPayment from '../components/components/paymentOfClasses-Reserved/OptionPayment'
+import { modeDatepickerHandler } from '../app/store/Teacher store/Teacher'
+import { useDispatch } from 'react-redux'
 function SaveClass() {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(modeDatepickerHandler(false))
+  }, [])
+
   return (
     <Container className="container mt-4 ">
       <HeaderModal step={3} />

@@ -16,7 +16,7 @@ import WeekDays from '../DateTime/components/WeekDays'
 function ReservedModal({ findteacher }) {
   const dispatch = useDispatch()
   const [classType, setClassType] = useState(0)
-  const [countClass, setCountClass] = useState(1)
+  const [countClass, setCountClass] = useState(0)
   const step = useSelector(selectSteps)
   const clearSelectTimeHandler = () => {
     dispatch(setSelectTimeForClassesHandler(false))

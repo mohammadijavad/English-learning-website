@@ -12,6 +12,8 @@ const initialState = {
   selectTime: [],
   step: 0,
   modeDatepicker: false,
+  countSelectUserAllow: 0,
+  counter: 0,
 };
 export const fetchTeachers = createAsyncThunk(
   'teachers/fetchTeachers',
@@ -50,8 +52,8 @@ const teachersSlice = createSlice({
       state.stateShowModalSetTime = action.payload;
     },
     setSelectTimeForClassesHandler(state, action) {
+      state.counter = state.counter + 1;
       const classTimelist = state.selectTime;
-      console.log(classTimelist);
       if (action.payload !== false) {
         state.selectTime = [...classTimelist, action.payload];
       } else {
@@ -59,8 +61,8 @@ const teachersSlice = createSlice({
       }
     },
     removeSelectTimeForClassesHandler(state, action) {
+      state.counter = state.counter - 1;
       const selectTimeId = action.payload;
-
       const removeTime = state.selectTime.filter(
         (time) => time.id !== selectTimeId.id
       );
@@ -71,6 +73,9 @@ const teachersSlice = createSlice({
     },
     modeDatepickerHandler(state, action) {
       state.modeDatepicker = action.payload;
+    },
+    typeClassedSelectedCountSelectTime(state, action) {
+      state.countSelectUserAllow = action.payload;
     },
   },
   extraReducers(builder) {
@@ -107,6 +112,9 @@ export const getTeacherStatus = (state) => state.teacher.status;
 export const getTeacherError = (state) => state.teacher.error;
 export const getModalShow = (state) => state.teacher.showModal;
 export const selectTimeClasessSelect = (state) => state.teacher.selectTime;
+export const countSelectedClassType = (state) =>
+  state.teacher.countSelectUserAllow;
+export const counterSelectTime = (state) => state.teacher.counter;
 export const showModalSetClassTime = (state) =>
   state.teacher.stateShowModalSetTime;
 
@@ -118,5 +126,6 @@ export const {
   stepModalToSelectTime,
   modeDatepickerHandler,
   removeSelectTimeForClassesHandler,
+  typeClassedSelectedCountSelectTime,
 } = teachersSlice.actions;
 export default teachersSlice.reducer;

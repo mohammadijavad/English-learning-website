@@ -1,6 +1,9 @@
 import React from 'react'
 import style from '../../styles/ReservedModal.module.css'
-import { modeDatepickerHandler } from '../../../../../../../../app/store/Teacher store/Teacher'
+import {
+  modeDatepickerHandler,
+  typeClassedSelectedCountSelectTime,
+} from '../../../../../../../../app/store/Teacher store/Teacher'
 import { useDispatch } from 'react-redux'
 function ClassType({
   id,
@@ -16,7 +19,8 @@ function ClassType({
   const dispatch = useDispatch()
   const setClassInfoHandler = () => {
     setClassType(id)
-    setCountClass(count)
+    //  setCountClass(count)
+    dispatch(typeClassedSelectedCountSelectTime(count))
     dispatch(modeDatepickerHandler(test))
   }
   return (

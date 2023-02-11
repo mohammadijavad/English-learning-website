@@ -6,7 +6,8 @@ import style from '../../style/datepicker.module.css'
 import {
   showReservedModal,
   setSelectTimeForClassesHandler,
-  modeDatepickerHandler,
+  counterSelectTime,
+  countSelectedClassType,
   selectSteps,
   selectmodeDatepicker,
 } from '../../../../../../../../app/store/Teacher store/Teacher'
@@ -20,23 +21,27 @@ function NotReservedTime({
   const reff = useRef()
   const stepSlectClass = useSelector(selectSteps)
   const datepickerMode = useSelector(selectmodeDatepicker)
+  const counterSelectTimeUser = useSelector(counterSelectTime)
+  const allCountUserAllowToSelect = useSelector(countSelectedClassType)
   let mode2Modal = ''
   let minutesVar = 30
   const selectDateFirstDatePicker = (timeSelect, date) => {
     if (stepSlectClass === 0) {
       dispatch(showReservedModal(true))
     }
-    // if (stepSlectClass === 2) {
-    // }
     if (!datepickerMode && stepSlectClass === 2) {
       changeTimeSelectHandler(timeSelect, indexDate, true)
-      // reff.current.classList.add('activeTimeTest')
-      handler(date, timeSelect)
+      // handler(date, timeSelect)
     }
   }
   const selectDate = (timeSelect, date) => {
-    changeTimeSelectHandler(timeSelect, indexDate, true)
-    handler(date, timeSelect)
+    let timeSelected = { id: timeSelect.id, time: date, indexDate }
+    if (counterSelectTimeUser === allCountUserAllowToSelect) {
+      alert('done boy')
+    } else {
+      changeTimeSelectHandler(timeSelect, indexDate, true)
+      dispatch(setSelectTimeForClassesHandler(timeSelected))
+    }
   }
 
   datepickerMode ? (minutesVar = 60) : (minutesVar = 30)
@@ -52,11 +57,10 @@ function NotReservedTime({
     .format('H:mm')
   let currentTime = addOnhour + ' - ' + hourrTime + ' '
   let selectDateUser = addOnhour + ' - ' + hourrTime + ' ' + timeCovert
-
   mode2Modal = currentTime
+
   const handler = (selectDateStr, dateOnDB) => {
     let timeSelect = { id: dateOnDB.id, time: selectDateStr, indexDate }
-    dispatch(setSelectTimeForClassesHandler(timeSelect))
   }
 
   return (

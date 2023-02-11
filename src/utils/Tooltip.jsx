@@ -5,7 +5,14 @@ import {
   selectmodeDatepicker,
   selectSteps,
 } from '../app/store/Teacher store/Teacher'
-function TriggerExample({ timeMode1, timeMode2, align, children, timeCovert }) {
+function TriggerExample({
+  timeMode1,
+  timeMode2,
+  align,
+  children,
+  timeCovert,
+  text,
+}) {
   //['year', 'month', 'day', 'hour', 'minute', 'second', 'millisecond']
   const mode = useSelector(selectmodeDatepicker)
   const step = useSelector(selectSteps)
@@ -17,6 +24,7 @@ function TriggerExample({ timeMode1, timeMode2, align, children, timeCovert }) {
       <div className="d-flex justify-content-center align-content-center flex-column">
         <span> {content}</span>
         <span>{timeCovert}</span>
+        <span>{text}</span>
       </div>
     </Tooltip>
   )

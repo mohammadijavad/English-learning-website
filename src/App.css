@@ -32,6 +32,13 @@ li {
 .fontSizesm {
   font-size: var(--size-font-sm);
 }
+.fontsize14{
+  font-size: var(--size-font-sm2);
+}
+
+/* --size-font-sm: 12px;
+--size-font-sm1: 13px;
+--size-font-sm2: 14px; */
 .hover:hover {
   color: var(--text-white) !important;
 }

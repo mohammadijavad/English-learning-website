@@ -1,33 +1,24 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import HeaderModal from '../components/components/Teacher/TeacherDetail/components/reserved-modal/components/HeaderModal'
-import { useSelector, useDispatch } from 'react-redux'
-import {
-  selectAllTeacher,
-  selectTimeClasessSelect,
-} from '../app/store/Teacher store/Teacher'
-import { useParams } from 'react-router-dom'
+import styled from 'styled-components'
+import Payment from '../components/components/paymentOfClasses-Reserved/Payment'
+import OptionPayment from '../components/components/paymentOfClasses-Reserved/OptionPayment'
 function SaveClass() {
-  const params = useParams()
-  const allTeachers = useSelector(selectAllTeacher)
-  const allTimeSelected = useSelector(selectTimeClasessSelect)
-  const { id } = params
-  const teachers = useSelector(selectAllTeacher)
-  const findteacher = teachers.find((teacher) => teacher.id === id)
-  const {
-    photoTeacher,
-    nameTeacher,
-    discriptionTeacher,
-    discriptionTeacherEnglish,
-    comments,
-  } = findteacher
-  useEffect(() => {
-    console.log(allTimeSelected)
-  }, [])
   return (
-    <div className="container mt-4">
+    <Container className="container mt-4 ">
       <HeaderModal step={3} />
-    </div>
+      <div className="d-flex justify-content-between align-items-start row mt-4 h-100">
+        <div className=" rounded col-12  col-lg-7 text-white h-100 ">
+          <OptionPayment />
+        </div>
+        <div className=" col-12 col-lg-4 text-white  shadow rounded p-3">
+          <Payment />
+        </div>
+      </div>
+    </Container>
   )
 }
-
+const Container = styled.div`
+  height: 100vh;
+`
 export default SaveClass

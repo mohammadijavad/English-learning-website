@@ -14,6 +14,7 @@ const initialState = {
   modeDatepicker: false,
   countSelectUserAllow: 0,
   counter: 0,
+  totalCount: 0,
 };
 export const fetchTeachers = createAsyncThunk(
   "teachers/fetchTeachers",
@@ -53,6 +54,7 @@ const teachersSlice = createSlice({
     },
     setSelectTimeForClassesHandler(state, action) {
       state.counter = state.counter + 1;
+      state.totalCount = state.counter * state.totalCount;
       const classTimelist = state.selectTime;
       if (action.payload !== false) {
         state.selectTime = [...classTimelist, action.payload];
@@ -62,6 +64,7 @@ const teachersSlice = createSlice({
     },
     removeSelectTimeForClassesHandler(state, action) {
       state.counter = state.counter - 1;
+      state.totalCount = state.counter * state.totalCount;
       const selectTimeId = action.payload;
       const removeTime = state.selectTime.filter(
         (time) => time.id !== selectTimeId.id
@@ -75,10 +78,15 @@ const teachersSlice = createSlice({
       state.modeDatepicker = action.payload;
     },
     typeClassedSelectedCountSelectTime(state, action) {
-      state.countSelectUserAllow = action.payload;
+      state.countSelectUserAllow = action.payload.count;
+      state.totalCount = action.payload.price;
     },
     setCounterHandler(state, action) {
       state.counter = action.payload;
+      state.totalCount = action.payload;
+    },
+    setDiscountHandler(state, action) {
+      state.totalCount = action.payload;
     },
   },
   extraReducers(builder) {
@@ -115,6 +123,7 @@ export const getTeacherStatus = (state) => state.teacher.status;
 export const getTeacherError = (state) => state.teacher.error;
 export const getModalShow = (state) => state.teacher.showModal;
 export const selectTimeClasessSelect = (state) => state.teacher.selectTime;
+export const selectTotalCount = (state) => state.teacher.totalCount;
 export const countSelectedClassType = (state) =>
   state.teacher.countSelectUserAllow;
 export const counterSelectTime = (state) => state.teacher.counter;
@@ -131,5 +140,6 @@ export const {
   removeSelectTimeForClassesHandler,
   typeClassedSelectedCountSelectTime,
   setCounterHandler,
+  setDiscountHandler,
 } = teachersSlice.actions;
 export default teachersSlice.reducer;

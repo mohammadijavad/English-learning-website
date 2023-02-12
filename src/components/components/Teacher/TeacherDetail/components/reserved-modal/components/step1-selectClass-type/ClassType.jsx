@@ -18,7 +18,7 @@ function ClassType({
   const dispatch = useDispatch();
   const setClassInfoHandler = () => {
     setClassType(id);
-    dispatch(typeClassedSelectedCountSelectTime(count));
+    dispatch(typeClassedSelectedCountSelectTime({ count, price }));
     dispatch(modeDatepickerHandler(test));
   };
   return (

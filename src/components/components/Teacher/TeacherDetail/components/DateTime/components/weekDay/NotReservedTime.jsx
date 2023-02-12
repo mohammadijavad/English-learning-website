@@ -62,13 +62,11 @@ function NotReservedTime({
       timeHourSelected,
       dateSelected,
     };
-    console.log(timeSelected);
     if (counterSelectTimeUser === allCountUserAllowToSelect) {
       showAlertHandler("بیشتر از تعداد جلسات نمی توانید انتخاب کنید");
     } else {
       changeTimeSelectHandler(timeSelect, indexDate, true);
       dispatch(setSelectTimeForClassesHandler(timeSelected));
-      console.log(12);
     }
   };
 

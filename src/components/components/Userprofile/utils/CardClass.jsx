@@ -21,7 +21,7 @@ function CardClass({ titleClass, listClass, keyAccordion, classList }) {
                 <div className={`${style.teacherCardPhoto} mx-2 `}>
                   <img src={list.photoTeacher} alt="teacher name" />
                 </div>
-                <div className="d-flex flex-column justify-content-around align-items-center">
+                <div className="d-flex flex-column justify-content-around align-items-start">
                   <div className={`${style.containerClassInfo} my-2`}>
                     کلاس خصوصی با استاد
                     <span>
@@ -53,6 +53,11 @@ function CardClass({ titleClass, listClass, keyAccordion, classList }) {
                     <span className={`mx-3`}>
                       تعداد جلسات زمانبندی نشده :
                       <b className={style.numberClass}>0 </b>
+                    </span>
+                    <span className={`mx-3`}>
+                      <b className={style.numberClass}>
+                        {list.selectTimeArray[0].time}{' '}
+                      </b>
                     </span>
                   </div>
                 </div>

@@ -40,8 +40,8 @@ function NotReservedTime({
     .toLocale('fa')
     .format('H:mm')
   let currentTime = addOnhour + ' - ' + hourrTime + ' '
-  let selectDateUser = hourrTime + '-' + addOnhour + '' + timeCovert
-  let timeHourSelected = hourrTime + '-' + addOnhour
+  let selectDateUser = addOnhour + '- ' + hourrTime + '  ' + timeCovert
+  let timeHourSelected = hourrTime + '- ' + addOnhour
   let dateSelected = timeCovert
   mode2Modal = currentTime
 

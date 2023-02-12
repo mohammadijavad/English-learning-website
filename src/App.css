@@ -4,10 +4,19 @@
   box-sizing: border-box;
 }
 @font-face {
-  font-family: IranSans;
-  src: url('./assets/fonts/IRANSansWeb.woff');
+  font-family: 'IRANSans';
+  src: url('./assets/fonts/IRANSansWeb.eot');
+  src: url('./assets/fonts/IRANSansWeb.eot?#iefix') format('FontName-opentype'),
+       url('./assets/fonts/IRANSansWeb.woff') format('woff'),
+       url('./assets/fonts/IRANSansWeb.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
+
+.fontfamilyNumber{
+  font-family: 'IRANSans' !important;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -50,7 +59,7 @@ input:focus {
   outline: none;
 }
 body {
-  font-family: IranSans !important;
+  font-family: IRANSans !important;
   overflow-x: hidden;
 }
 a{

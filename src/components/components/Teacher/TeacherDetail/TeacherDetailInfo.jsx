@@ -1,40 +1,52 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { selectAllTeacher } from '../../../../app/store/Teacher store/Teacher'
-import { useParams } from 'react-router-dom'
-import style from './teacherDetail.module.css'
-import Cover from './components/Cover'
-import PersonalInfo from './components/PersonalInfo'
-import Description from './components/Description'
-import VedioIntro from './components/VedioIntro'
-import ContainerDatepicker from './components/DateTime/ContainerDatepicker'
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectAllTeacher } from "../../../../app/store/Teacher store/Teacher";
+import { useParams } from "react-router-dom";
+import style from "./teacherDetail.module.css";
+import Cover from "./components/Cover";
+import PersonalInfo from "./components/PersonalInfo";
+import Description from "./components/Description";
+import VedioIntro from "./components/VedioIntro";
+import ContainerDatepicker from "./components/DateTime/ContainerDatepicker";
 
 import {
   getModalShow,
   showModalSetClassTime,
-} from '../../../../app/store/Teacher store/Teacher'
+  setSelectTimeForClassesHandler,
+  modeDatepickerHandler,
+  stepModalToSelectTime,
+  setCounterHandler,
+} from "../../../../app/store/Teacher store/Teacher";
 
-import Comments from './components/comments/Comments'
+import Comments from "./components/comments/Comments";
 
-import ModalReserved from '../../../../utils/ModalReserved'
-import ModalReservedDatepiTime from '../TeacherDetail/components/reserved-modal/ReservedModalHasTime'
-import ContainerServices from './components/services/ContainerServices'
+import ModalReserved from "../../../../utils/ModalReserved";
+import ModalReservedDatepiTime from "../TeacherDetail/components/reserved-modal/ReservedModalHasTime";
+import ContainerServices from "./components/services/ContainerServices";
 function TeacherDetailInfo() {
-  const params = useParams()
-  const { id } = params
-  const teachers = useSelector(selectAllTeacher)
-  const findteacher = teachers.find((teacher) => teacher.id === id)
+  const dispatch = useDispatch();
+  const params = useParams();
+  const { id } = params;
+  const teachers = useSelector(selectAllTeacher);
+  const findteacher = teachers.find((teacher) => teacher.id === id);
   const {
     photoTeacher,
     nameTeacher,
     discriptionTeacher,
     discriptionTeacherEnglish,
     comments,
-  } = findteacher
-  const isShowModal = useSelector(getModalShow)
-  const stateShowModalSetTime = useSelector(showModalSetClassTime)
+  } = findteacher;
+  const isShowModal = useSelector(getModalShow);
+  const stateShowModalSetTime = useSelector(showModalSetClassTime);
+
+  useEffect(() => {
+    dispatch(setSelectTimeForClassesHandler(false));
+    dispatch(modeDatepickerHandler(false));
+    dispatch(stepModalToSelectTime(0));
+    dispatch(setCounterHandler(0));
+  }, []);
   return (
-    <div className="container" style={{ height: '200vh' }}>
+    <div className="container" style={{ height: "200vh" }}>
       <Cover />
       {isShowModal && <ModalReserved />}
       {stateShowModalSetTime && (
@@ -61,7 +73,7 @@ function TeacherDetailInfo() {
         <VedioIntro findteacher={findteacher} />
       </div>
     </div>
-  )
+  );
 }
 
-export default TeacherDetailInfo
+export default TeacherDetailInfo;

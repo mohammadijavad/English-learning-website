@@ -1,8 +1,8 @@
-import React from 'react'
-import ClassType from './ClassType'
+import React from "react";
+import ClassType from "./ClassType";
 
-function Step1({ classType, setClassType, findteacher, setCountClass }) {
-  const { priceClasses } = findteacher
+function Step1({ classType, setClassType, findteacher }) {
+  const { priceClasses } = findteacher;
   return (
     <div className="mt-4">
       <div className="text-center">
@@ -14,13 +14,12 @@ function Step1({ classType, setClassType, findteacher, setCountClass }) {
             key={teacher.id}
             classType={classType}
             setClassType={setClassType}
-            setCountClass={setCountClass}
             {...teacher}
           />
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default Step1
+export default Step1;

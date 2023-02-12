@@ -1,50 +1,27 @@
-import React from 'react'
-import style from '../style/payment.module.css'
+import React from "react";
+import style from "../style/payment.module.css";
+import { selectTimeClasessSelect } from "../../../../app/store/Teacher store/Teacher";
+import { useSelector } from "react-redux";
 function TimeList() {
+  const selectedTimeList = useSelector(selectTimeClasessSelect);
+  console.log(selectedTimeList);
+
   return (
     <div>
-      <div className={`${style.teacherInfo} border-top mt-3`}>
-        <div className="d-flex justify-content-between mt-2 fontsize14">
-          <span>تاریخ برگزاری:</span>
-          <span>چهارشنبه 26 بهمن</span>
+      {selectedTimeList.map((time, index) => (
+        <div className={`${style.teacherInfo} border-top mt-3`} key={index}>
+          <div className="d-flex justify-content-between mt-2 fontsize14">
+            <span>تاریخ برگزاری:</span>
+            <span>{time.dateSelected}</span>
+          </div>
+          <div className="d-flex justify-content-between mt-2 fontsize14">
+            <span>ساعت:</span>
+            <span>{time.timeHourSelected}</span>
+          </div>
         </div>
-        <div className="d-flex justify-content-between mt-2 fontsize14">
-          <span>ساعت:</span>
-          <span>11:30-10:30</span>
-        </div>
-      </div>
-      <div className={`${style.teacherInfo} border-top mt-3`}>
-        <div className="d-flex justify-content-between mt-2 fontsize14">
-          <span>تاریخ برگزاری:</span>
-          <span>چهارشنبه 26 بهمن</span>
-        </div>
-        <div className="d-flex justify-content-between mt-2 fontsize14">
-          <span>ساعت:</span>
-          <span>11:30-10:30</span>
-        </div>
-      </div>
-      <div className={`${style.teacherInfo} border-top mt-3`}>
-        <div className="d-flex justify-content-between mt-2 fontsize14">
-          <span>تاریخ برگزاری:</span>
-          <span>چهارشنبه 26 بهمن</span>
-        </div>
-        <div className="d-flex justify-content-between mt-2 fontsize14">
-          <span>ساعت:</span>
-          <span>11:30-10:30</span>
-        </div>
-      </div>
-      <div className={`${style.teacherInfo} border-top mt-3`}>
-        <div className="d-flex justify-content-between mt-2 fontsize14">
-          <span>تاریخ برگزاری:</span>
-          <span>چهارشنبه 26 بهمن</span>
-        </div>
-        <div className="d-flex justify-content-between mt-2 fontsize14">
-          <span>ساعت:</span>
-          <span>11:30-10:30</span>
-        </div>
-      </div>
+      ))}
     </div>
-  )
+  );
 }
 
-export default TimeList
+export default TimeList;

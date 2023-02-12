@@ -1,41 +1,43 @@
-import React, { useState } from 'react'
-import style from './styles/ReservedModal.module.css'
-import { AiOutlineClose } from 'react-icons/ai'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState, useEffect } from "react";
+import style from "./styles/ReservedModal.module.css";
+import { AiOutlineClose } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
 import {
   showModalSetClassTimeHandler,
   setSelectTimeForClassesHandler,
   modeDatepickerHandler,
   stepModalToSelectTime,
   selectSteps,
-} from '../../../../../../app/store/Teacher store/Teacher'
-import HeaderModal from './components/HeaderModal'
-import Step1 from './components/step1-selectClass-type/Step1'
-import Footer from './components/step1-selectClass-type/Footer'
-import WeekDays from '../DateTime/components/WeekDays'
+  setCounterHandler,
+} from "../../../../../../app/store/Teacher store/Teacher";
+import HeaderModal from "./components/HeaderModal";
+import Step1 from "./components/step1-selectClass-type/Step1";
+import Footer from "./components/step1-selectClass-type/Footer";
+import WeekDays from "../DateTime/components/WeekDays";
 function ReservedModal({ findteacher }) {
-  const dispatch = useDispatch()
-  const [classType, setClassType] = useState(0)
-  const [countClass, setCountClass] = useState(0)
-  const step = useSelector(selectSteps)
+  const dispatch = useDispatch();
+  const [classType, setClassType] = useState(0);
+  const step = useSelector(selectSteps);
   const clearSelectTimeHandler = () => {
-    dispatch(setSelectTimeForClassesHandler(false))
-    dispatch(modeDatepickerHandler(false))
-    dispatch(stepModalToSelectTime(0))
-  }
-  const { timeClassForBook } = findteacher
-  const { times } = timeClassForBook[0]
-  const [alltimeTeacher, setAlltimeTeacher] = useState(times)
+    dispatch(setSelectTimeForClassesHandler(false));
+    dispatch(modeDatepickerHandler(false));
+    dispatch(stepModalToSelectTime(0));
+    dispatch(setCounterHandler(0));
+  };
+  const { timeClassForBook } = findteacher;
+  const { times } = timeClassForBook[0];
+  const [alltimeTeacher, setAlltimeTeacher] = useState(times);
 
   const changeTimeSelectHandler = (selectTime, index, mode) => {
-    const m = JSON.stringify(alltimeTeacher)
-    let h = JSON.parse(m)
+    const m = JSON.stringify(alltimeTeacher);
+    let h = JSON.parse(m);
     let selectedTime = Object.freeze(h[index].alltime).findIndex(
-      (time) => time.id === selectTime.id,
-    )
-    h[index].alltime[selectedTime].selectedUser = mode
-    setAlltimeTeacher(h)
-  }
+      (time) => time.id === selectTime.id
+    );
+    h[index].alltime[selectedTime].selectedUser = mode;
+    setAlltimeTeacher(h);
+  };
+
   return (
     <div className={`${style.containerModal} `}>
       <div className={`${style.content} container position-relative`}>
@@ -57,7 +59,6 @@ function ReservedModal({ findteacher }) {
           {step === 1 && (
             <Step1
               setClassType={setClassType}
-              setCountClass={setCountClass}
               classType={classType}
               findteacher={findteacher}
             />
@@ -82,7 +83,7 @@ function ReservedModal({ findteacher }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default ReservedModal
+export default ReservedModal;

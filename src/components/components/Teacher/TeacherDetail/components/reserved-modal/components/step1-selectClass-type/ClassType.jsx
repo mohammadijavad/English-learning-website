@@ -1,10 +1,10 @@
-import React from 'react'
-import style from '../../styles/ReservedModal.module.css'
+import React from "react";
+import style from "../../styles/ReservedModal.module.css";
 import {
   modeDatepickerHandler,
   typeClassedSelectedCountSelectTime,
-} from '../../../../../../../../app/store/Teacher store/Teacher'
-import { useDispatch } from 'react-redux'
+} from "../../../../../../../../app/store/Teacher store/Teacher";
+import { useDispatch } from "react-redux";
 function ClassType({
   id,
   typeClass,
@@ -13,21 +13,19 @@ function ClassType({
   setClassType,
   classType,
   count,
-  setCountClass,
   test,
 }) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const setClassInfoHandler = () => {
-    setClassType(id)
-    //  setCountClass(count)
-    dispatch(typeClassedSelectedCountSelectTime(count))
-    dispatch(modeDatepickerHandler(test))
-  }
+    setClassType(id);
+    dispatch(typeClassedSelectedCountSelectTime(count));
+    dispatch(modeDatepickerHandler(test));
+  };
   return (
     <div
       className={`w-100 border rounded p-2 mt-3 curoser ${
         style.containerStep1
-      } ${id === classType ? style.active : ''}`}
+      } ${id === classType ? style.active : ""}`}
       onClick={() => setClassInfoHandler()}
     >
       <div className="w-100 h-100 d-flex justify-content-between align-items-center">
@@ -43,12 +41,12 @@ function ClassType({
               <div>
                 <span> {price} تومان </span> / <span> یک جلسه </span>
               </div>
-            )}{' '}
-          </span>{' '}
+            )}{" "}
+          </span>{" "}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default ClassType
+export default ClassType;

@@ -50,7 +50,6 @@ function NotReservedTime({
       dispatch(showReservedModal(true));
     }
     if (!datepickerMode && stepSlectClass === 2) {
-      // changeTimeSelectHandler(timeSelect, indexDate, true)
       selectDate(timeSelect, date);
     }
   };
@@ -83,7 +82,7 @@ function NotReservedTime({
           <div
             className={`${
               style.notreserved
-            } curoser position-relative p-2 px-3  ${
+            } curoser position-relative p-2 px-3   ${
               time.selectedUser ? "activeTime" : ""
             }`}
             onClick={(event) => selectDate(time, selectDateUser)}

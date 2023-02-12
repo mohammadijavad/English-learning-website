@@ -1,10 +1,10 @@
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-import Tooltip from 'react-bootstrap/Tooltip'
-import { useSelector } from 'react-redux'
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+import { useSelector } from "react-redux";
 import {
   selectmodeDatepicker,
   selectSteps,
-} from '../app/store/Teacher store/Teacher'
+} from "../app/store/Teacher store/Teacher";
 function TriggerExample({
   timeMode1,
   timeMode2,
@@ -14,10 +14,10 @@ function TriggerExample({
   text,
 }) {
   //['year', 'month', 'day', 'hour', 'minute', 'second', 'millisecond']
-  const mode = useSelector(selectmodeDatepicker)
-  const step = useSelector(selectSteps)
-  let modeTest = mode === false && step === 2
-  let content = mode ? timeMode2 : modeTest ? timeMode2 : timeMode1
+  const mode = useSelector(selectmodeDatepicker);
+  const step = useSelector(selectSteps);
+  let modeTest = mode === false && step === 2;
+  let content = mode ? timeMode2 : modeTest ? timeMode2 : timeMode1;
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
@@ -27,7 +27,7 @@ function TriggerExample({
         <span>{text}</span>
       </div>
     </Tooltip>
-  )
+  );
 
   return (
     <OverlayTrigger
@@ -37,7 +37,7 @@ function TriggerExample({
     >
       {children}
     </OverlayTrigger>
-  )
+  );
 }
 
-export default TriggerExample
+export default TriggerExample;

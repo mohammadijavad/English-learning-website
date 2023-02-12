@@ -1,3 +1,4 @@
+@import url("./assets/fonts/css/fontiran.css");
 * {
   padding: 0;
   margin: 0;
@@ -5,7 +6,7 @@
 }
 @font-face {
   font-family: 'IRANSans';
-  src: url('./assets/fonts/IRANSansWeb.eot');
+  src: url('./assets/fonts/IRANSansWeb.eot') format('eot');
   src: url('./assets/fonts/IRANSansWeb.eot?#iefix') format('FontName-opentype'),
        url('./assets/fonts/IRANSansWeb.woff') format('woff'),
        url('./assets/fonts/IRANSansWeb.ttf') format('truetype');
@@ -15,10 +16,12 @@
 
 
 .fontfamilyNumber{
-  font-family: 'IRANSans' !important;
+  font-family: inherit !important;
+
 }
 html {
   scroll-behavior: smooth;
+  font-family: 'IRANSans' !important;
 }
 li {
   list-style: none;

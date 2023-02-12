@@ -14,11 +14,15 @@ import {
   UserClassList,
   FavoriteWord,
 } from './index'
-import { selectUser } from '../../../app/store/User store/user'
+import {
+  selectUser,
+  getUserClassList,
+} from '../../../app/store/User store/user'
 import style from './style/Header.module.css'
 import { useSelector } from 'react-redux'
 function ProfileUser() {
   const user = useSelector(selectUser)
+  const classList = useSelector(getUserClassList)
   const userProfileData = user[0]
   return (
     <div className={`${style.ContainerProfileUser} `}>
@@ -33,7 +37,7 @@ function ProfileUser() {
             <Usercups userInformation={userProfileData} />
           </div>
           <div className="col-12 mt-2">
-            <UserClassList />
+            <UserClassList classList={classList} />
           </div>
           <div className="col-12 ">
             <Userclassdone />

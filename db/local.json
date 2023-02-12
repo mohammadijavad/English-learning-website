@@ -29,8 +29,15 @@
       "introVedio": "https://cdn.oteacher.org/videos/202203/rbIVxdVCJP9GYHAL6et2MDQHz9KK6DFtBWQXsVwq.mp4#t=0.1",
       "Experts": "EN",
       "languageExperts": "انگلیسی",
-      "level": [" مبتدی ", "پیشرفته"],
-      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
+      "level": [
+        " مبتدی ",
+        "پیشرفته"
+      ],
+      "skils": [
+        " مهاجرت و اپلای ",
+        " زبان عمومی ,",
+        " آیلتس "
+      ],
       "mainSkils": "IELTS",
       "priceTest": "0",
       "priceClass": "1500000",
@@ -340,8 +347,15 @@
       "introVedio": "https://cdn.oteacher.org/videos/202208/5841Cbi9Sw4Hh7Yt2nleYfsykLL4lNuZSw7pZ1mm.mp4#t=0.1",
       "Experts": "EN",
       "languageExperts": "انگلیسی",
-      "level": [" مبتدی ", "پیشرفته"],
-      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
+      "level": [
+        " مبتدی ",
+        "پیشرفته"
+      ],
+      "skils": [
+        " مهاجرت و اپلای ",
+        " زبان عمومی ,",
+        " آیلتس "
+      ],
       "mainSkils": "IELTS",
       "priceTest": "0",
       "priceClass": "1500000",
@@ -372,8 +386,15 @@
       "introVedio": "https://cdn.oteacher.org/videos/202106/beJbDjMKh4X6T1I7s4OspsSWXnfXpy0Y5KQgVHO7.3gp#t=0.1",
       "Experts": "EN",
       "languageExperts": "انگلیسی",
-      "level": [" مبتدی ", "پیشرفته"],
-      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
+      "level": [
+        " مبتدی ",
+        "پیشرفته"
+      ],
+      "skils": [
+        " مهاجرت و اپلای ",
+        " زبان عمومی ,",
+        " آیلتس "
+      ],
       "mainSkils": "IELTS",
       "priceTest": "0",
       "priceClass": "1500000",
@@ -424,13 +445,27 @@
         {
           "takeExamSite": false
         }
+      ]
+    }
+  ],
+  "userDidClasses": [],
+  "userCanceledClasses": [],
+  "userClassesList": [
+    {
+      "idTeacher": "T1",
+      "nameTeacher": "  پریسا میرزایی ",
+      "photoTeacher": "https://cdn.oteacher.org/images/202204/dPaw1CTr8IK66CeSZmgp0GZpskywnkNGb0mF_thumb.jpeg",
+      "selectTimeArray": [
+        {
+          "id": "g2",
+          "time": "۱۰:۳۰-۱۱:۳۰دوشنبه ۲۴  بهمن",
+          "indexDate": 1,
+          "timeHourSelected": "۱۰:۳۰-۱۱:۳۰",
+          "dateSelected": "دوشنبه ۲۴  بهمن",
+          "teacher": []
+        }
       ],
-      "userFavoriteTeachers": [],
-      "userFavoriteProduct": [],
-      "userDidClasses": [],
-      "userCanceledClasses": [],
-      "userClassesList": [],
-      "userListBuyProduct": []
+      "id": 1
     }
   ]
 }

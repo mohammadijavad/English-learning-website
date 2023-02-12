@@ -3,7 +3,6 @@ import { weekDays } from '../../../../../../../constants/Data'
 import Day from './weekDay/Day'
 import styled from 'styled-components'
 function WeekDays({
-  findteacher,
   nextWekkCount,
   currentWeekDay,
   step,
@@ -17,7 +16,6 @@ function WeekDays({
           step={step}
           key={index}
           indexTime={index}
-          findteacher={findteacher}
           {...day}
           currentWeekDay={currentWeekDay}
           nextWekkCount={nextWekkCount}

@@ -1,25 +1,39 @@
-import React from "react";
-import style from "../style/payment.module.css";
+import React from 'react'
+import style from '../style/payment.module.css'
 import {
   stepModalToSelectTime,
   setSelectTimeForClassesHandler,
   modeDatepickerHandler,
   setCounterHandler,
   selectTotalCount,
-} from "../../../../app/store/Teacher store/Teacher";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-function TotalResult() {
-  const totalResult = useSelector(selectTotalCount);
-  const dispatch = useDispatch();
-  const navigator = useNavigate();
+  addToClassListStudent,
+  selectTimeClasessSelect,
+} from '../../../../app/store/Teacher store/Teacher'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+function TotalResult({ findTeacherSelected }) {
+  const totalResult = useSelector(selectTotalCount)
+  const selectTimeArray = useSelector(selectTimeClasessSelect)
+  const dispatch = useDispatch()
+  const navigator = useNavigate()
+  const mode = 'POST'
   const payClassHandler = () => {
-    dispatch(stepModalToSelectTime(0));
-    dispatch(setSelectTimeForClassesHandler(false));
-    dispatch(modeDatepickerHandler(false));
-    dispatch(setCounterHandler(0));
-    navigator("/profile");
-  };
+    const { photoTeacher, id, nameTeacher } = findTeacherSelected
+    const finalDataPushToUserProfile = {
+      idTeacher: id,
+      nameTeacher,
+      photoTeacher,
+      selectTimeArray,
+    }
+    dispatch(addToClassListStudent({ mode, finalDataPushToUserProfile }))
+    dispatch(stepModalToSelectTime(0))
+    dispatch(setSelectTimeForClassesHandler(false))
+    dispatch(modeDatepickerHandler(false))
+    dispatch(setCounterHandler(0))
+    setTimeout(() => {
+      navigator('/profile')
+    }, 2000)
+  }
   return (
     <div className={`mt-4 ${style.teacherInfo}`}>
       <div className="border-top mb-2">
@@ -43,7 +57,7 @@ function TotalResult() {
         </button>
       </div>
     </div>
-  );
+  )
 }
 
-export default TotalResult;
+export default TotalResult

@@ -4,6 +4,7 @@ import {
   getUserError,
   getUserStatus,
   fetchUser,
+  fetchClassList,
 } from '../../../app/store/User store/user'
 import { useDispatch, useSelector } from 'react-redux'
 import LoadingCom from '../../../utils/Loading'
@@ -13,10 +14,9 @@ function ProfileUser() {
   const status = useSelector(getUserStatus)
   const error = useSelector(getUserError)
   useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchUser())
-    }
-  }, [status, dispatch])
+    dispatch(fetchUser())
+    dispatch(fetchClassList())
+  }, [])
   if (status === 'loading') {
     content = <LoadingCom />
   } else if (status === 'succeeded') {

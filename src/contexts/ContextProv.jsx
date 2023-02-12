@@ -79,6 +79,7 @@ function ContextProv(props) {
       theme: 'light',
     })
   }
+
   return (
     <contextapp.Provider
       value={{
@@ -97,6 +98,7 @@ function ContextProv(props) {
         splitSidebarHandler,
         setGradienCircletHandler,
         showAlertHandler,
+
         showSetting,
         closedSiderbar,
         isTwocloumn,

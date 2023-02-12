@@ -19,6 +19,7 @@ function ContainerDatepicker({ findteacher }) {
     setNextWekkCount(6)
     setCureentWeekDay(0)
   }
+
   return (
     <>
       <HeaderCalendar
@@ -31,6 +32,7 @@ function ContainerDatepicker({ findteacher }) {
         times={times}
         currentWeekDay={currentWeekDay}
         nextWekkCount={nextWekkCount}
+        findteacher={findteacher}
       />
     </>
   )

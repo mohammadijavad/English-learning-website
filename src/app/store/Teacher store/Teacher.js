@@ -1,13 +1,19 @@
-import { createSlice, nanoid, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-const TEACHER_URL = " http://localhost:3100/Teachers";
-const USER_URL = " http://localhost:3100/user";
+import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+import {
+  showAlertHandlerSuccess,
+  showAlertHandlerError,
+} from '../../../utils/alerts';
+const TEACHER_URL = ' http://localhost:3100/Teachers';
+const USER_URL = ' http://localhost:3100/user';
+const USERCLASSLIST_URL = ' http://localhost:3100/userClassesList';
 const initialState = {
   teachers: [],
+  classListSelectedOnProfile: [],
   showModal: false,
   stateShowModalSetTime: false,
   user: [],
-  status: "idle", // 'idle' | 'loading' | 'sucess' | 'faild'
+  status: 'idle', // 'idle' | 'loading' | 'sucess' | 'faild'
   error: null,
   selectTime: [],
   step: 0,
@@ -17,7 +23,7 @@ const initialState = {
   totalCount: 0,
 };
 export const fetchTeachers = createAsyncThunk(
-  "teachers/fetchTeachers",
+  'teachers/fetchTeachers',
   async () => {
     const response = await axios.get(TEACHER_URL);
     return response.data;
@@ -25,7 +31,7 @@ export const fetchTeachers = createAsyncThunk(
 );
 
 export const addTofavoriteTeacher = createAsyncThunk(
-  "teacher/addTofavoriteTeacher",
+  'teacher/addTofavoriteTeacher',
   async (intial) => {
     const { id, isFavorite } = intial;
     const response = await axios.patch(`${TEACHER_URL}/${id}`, {
@@ -34,9 +40,25 @@ export const addTofavoriteTeacher = createAsyncThunk(
     return response.data;
   }
 );
+export const addToClassListStudent = createAsyncThunk(
+  'teacher/addToClassListStudent',
+  async (intial) => {
+    const { mode, finalDataPushToUserProfile } = intial;
+    const { idTeacher, nameTeacher, photoTeacher, selectTimeArray } =
+      finalDataPushToUserProfile;
+    const response = await axios.post(`${USERCLASSLIST_URL}`, {
+      idTeacher,
+      nameTeacher,
+      photoTeacher,
+      selectTimeArray,
+    });
+    return response;
+    // return response.data;
+  }
+);
 
 const teachersSlice = createSlice({
-  name: "teacher",
+  name: 'teacher',
   initialState,
   reducers: {
     favoriteTeacher(state, action) {
@@ -92,20 +114,20 @@ const teachersSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(fetchTeachers.pending, (state, action) => {
-        state.status = "loading";
+        state.status = 'loading';
       })
 
       .addCase(fetchTeachers.fulfilled, (state, action) => {
-        state.status = "succeeded";
+        state.status = 'succeeded';
         state.teachers = action.payload;
       })
       .addCase(fetchTeachers.rejected, (state, action) => {
-        state.status = "failed";
+        state.status = 'failed';
         state.error = action.error.message;
       })
       .addCase(addTofavoriteTeacher.fulfilled, (state, action) => {
         if (!action.payload?.id) {
-          console.log("Update could not complete");
+          console.log('Update could not complete');
 
           return;
         }
@@ -113,6 +135,22 @@ const teachersSlice = createSlice({
         const teachers = state.teachers;
         const findTeacher = teachers.findIndex((teacher) => teacher.id === id);
         state.teachers[findTeacher].isFavorite = !action.payload.isFavorite;
+      })
+      .addCase(addToClassListStudent.pending, (state, action) => {
+        state.status = 'loading';
+      })
+
+      .addCase(addToClassListStudent.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        const { nameTeacher } = action.payload.data;
+        console.log(action.payload);
+        let textMessage = `کلاس شما با استاد ${nameTeacher} رزرو شد`;
+        showAlertHandlerSuccess(textMessage);
+      })
+      .addCase(addToClassListStudent.rejected, (state, action) => {
+        state.status = 'failed';
+        let textMessage = 'مشکلی پیش آمده ';
+        showAlertHandlerError(textMessage);
       });
   },
 });

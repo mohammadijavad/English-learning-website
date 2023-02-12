@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import HeaderModal from "../components/components/Teacher/TeacherDetail/components/reserved-modal/components/HeaderModal";
-import styled from "styled-components";
-import Payment from "../components/components/paymentOfClasses-Reserved/Payment";
-import OptionPayment from "../components/components/paymentOfClasses-Reserved/OptionPayment";
-import { modeDatepickerHandler } from "../app/store/Teacher store/Teacher";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from 'react'
+import HeaderModal from '../components/components/Teacher/TeacherDetail/components/reserved-modal/components/HeaderModal'
+import styled from 'styled-components'
+import Payment from '../components/components/paymentOfClasses-Reserved/Payment'
+import OptionPayment from '../components/components/paymentOfClasses-Reserved/OptionPayment'
+import { modeDatepickerHandler } from '../app/store/Teacher store/Teacher'
+import { useDispatch } from 'react-redux'
 function SaveClass() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(modeDatepickerHandler(false));
-  }, []);
+    dispatch(modeDatepickerHandler(false))
+  }, [])
 
   return (
     <Container className="container mt-4 ">
@@ -23,12 +23,12 @@ function SaveClass() {
         </ContainerPayment>
       </div>
     </Container>
-  );
+  )
 }
 const Container = styled.div`
   height: 100vh;
-`;
+`
 const ContainerPayment = styled.div`
   min-height: 440px;
-`;
-export default SaveClass;
+`
+export default SaveClass

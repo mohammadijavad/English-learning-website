@@ -17,7 +17,7 @@ function Payment() {
     <div>
       <CardTeacher findTeacherSelected={findTeacherSelected} />
       <TimeList />
-      <TotalResult />
+      <TotalResult findTeacherSelected={findTeacherSelected} />
     </div>
   )
 }

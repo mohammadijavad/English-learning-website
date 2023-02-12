@@ -8,12 +8,14 @@ import {
   selectTotalCount,
   addToClassListStudent,
   selectTimeClasessSelect,
+  selectmodeDatepicker,
 } from '../../../../app/store/Teacher store/Teacher'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 function TotalResult({ findTeacherSelected }) {
   const totalResult = useSelector(selectTotalCount)
   const selectTimeArray = useSelector(selectTimeClasessSelect)
+  const modeClass = useSelector(selectmodeDatepicker)
   const dispatch = useDispatch()
   const navigator = useNavigate()
   const mode = 'POST'
@@ -24,6 +26,7 @@ function TotalResult({ findTeacherSelected }) {
       nameTeacher,
       photoTeacher,
       selectTimeArray,
+      modeClass,
     }
     dispatch(addToClassListStudent({ mode, finalDataPushToUserProfile }))
     dispatch(stepModalToSelectTime(0))

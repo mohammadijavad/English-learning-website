@@ -44,13 +44,14 @@ export const addToClassListStudent = createAsyncThunk(
   'teacher/addToClassListStudent',
   async (intial) => {
     const { mode, finalDataPushToUserProfile } = intial;
-    const { idTeacher, nameTeacher, photoTeacher, selectTimeArray } =
+    const { idTeacher, nameTeacher, photoTeacher, selectTimeArray, modeClass } =
       finalDataPushToUserProfile;
     const response = await axios.post(`${USERCLASSLIST_URL}`, {
       idTeacher,
       nameTeacher,
       photoTeacher,
       selectTimeArray,
+      modeClass,
     });
     return response;
     // return response.data;

@@ -458,6 +458,23 @@
       "selectTimeArray": [
         {
           "id": "g2",
+          "time": "۱۰:۳۰-۱۱:۰۰دوشنبه ۲۴  بهمن",
+          "indexDate": 1,
+          "timeHourSelected": "۱۰:۳۰-۱۱:۰۰",
+          "dateSelected": "دوشنبه ۲۴  بهمن",
+          "teacher": []
+        }
+      ],
+      "modeClass": false,
+      "id": 1
+    },
+    {
+      "idTeacher": "T1",
+      "nameTeacher": "  پریسا میرزایی ",
+      "photoTeacher": "https://cdn.oteacher.org/images/202204/dPaw1CTr8IK66CeSZmgp0GZpskywnkNGb0mF_thumb.jpeg",
+      "selectTimeArray": [
+        {
+          "id": "g2",
           "time": "۱۰:۳۰-۱۱:۳۰دوشنبه ۲۴  بهمن",
           "indexDate": 1,
           "timeHourSelected": "۱۰:۳۰-۱۱:۳۰",
@@ -465,7 +482,8 @@
           "teacher": []
         }
       ],
-      "id": 1
+      "modeClass": true,
+      "id": 2
     }
   ]
 }

@@ -24,6 +24,7 @@ function ProfileUser() {
   const user = useSelector(selectUser)
   const classList = useSelector(getUserClassList)
   const userProfileData = user[0]
+  console.log(classList)
   return (
     <div className={`${style.ContainerProfileUser} `}>
       <Headerprofile />

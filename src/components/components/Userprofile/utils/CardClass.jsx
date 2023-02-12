@@ -28,8 +28,18 @@ function CardClass({ titleClass, listClass, keyAccordion, classList }) {
                       {' '}
                       {'  '} {list.nameTeacher}{' '}
                     </span>
-                    <span className={`${style.flagClass} mx-2`}>
-                      کلاس خصوصی
+                    <span
+                      className={`${style.flagClass} ${
+                        list.modeClass
+                          ? style.flagPrivateClass
+                          : style.flagTestClass
+                      } mx-2`}
+                    >
+                      {list.modeClass ? (
+                        <span>کلاس خصوصی </span>
+                      ) : (
+                        <span>کلاس آزمایشی</span>
+                      )}
                     </span>
                   </div>
                   <div className={`${style.containerClassInfo} my-2`}>

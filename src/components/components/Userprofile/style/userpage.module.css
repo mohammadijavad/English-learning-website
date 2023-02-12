@@ -22,11 +22,17 @@
   color: var(--text-colorCardClass);
 }
 .flagClass {
-  background-color: rgb(232, 249, 244);
-  color: rgb(0, 184, 126);
   font-size: 12px;
   padding: 0.3rem;
-  border-radius: 3px;
+  border-radius: 5px;
+}
+.flagTestClass {
+  background-color: #ff475634;
+  color: #ff4757;
+}
+.flagPrivateClass {
+  background-color: rgba(232, 249, 244, 0.836);
+  color: rgb(0, 184, 126);
 }
 .btnActionCardClass button {
   background-color: transparent;

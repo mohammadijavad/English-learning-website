@@ -1,10 +1,15 @@
 import React from 'react'
 import style from '../../styles/ReservedModal.module.css'
+import { useParams } from 'react-router-dom'
 import {
   modeDatepickerHandler,
   typeClassedSelectedCountSelectTime,
+  findTeacherHandler,
+  getTeacher,
 } from '../../../../../../../../app/store/Teacher store/Teacher'
-import { useDispatch } from 'react-redux'
+import { getUserClassList } from '../../../../../../../../app/store/User store/user'
+import { useDispatch, useSelector } from 'react-redux'
+import { showAlertWarning } from '../../../../../../../../utils/alerts'
 function ClassType({
   id,
   typeClass,
@@ -15,12 +20,45 @@ function ClassType({
   count,
   test,
 }) {
+  const params = useParams()
+  const { id: idteacher } = params
   const dispatch = useDispatch()
+  dispatch(findTeacherHandler(idteacher))
+  const AllclassListSelected = useSelector(getUserClassList)
+  const getCurrentTeacher = useSelector(getTeacher)
   const setClassInfoHandler = () => {
-    setClassType(id)
-    dispatch(typeClassedSelectedCountSelectTime({ count, price }))
-    dispatch(modeDatepickerHandler(test))
-    console.log(test)
+    const isExsitTeacher = AllclassListSelected.find(
+      (teacher) => teacher.idTeacher === getCurrentTeacher.id,
+    )
+    console.log(isExsitTeacher)
+    if (isExsitTeacher) {
+      console.log(test)
+      if (!test) {
+        //if its false means user select teacher for testing knowlage english
+        const { modeClass, nameTeacher } = isExsitTeacher
+        if (modeClass === 'testing') {
+          let textMessage = `  شما با استاد   ${nameTeacher}  قبلا کلاس آزمایشی رزررو کرده اید `
+          showAlertWarning(textMessage)
+          console.log(1)
+          setClassType(0)
+        } else {
+          setClassType(id)
+          dispatch(typeClassedSelectedCountSelectTime({ count, price }))
+          dispatch(modeDatepickerHandler(test))
+        }
+      } else {
+        // patch info teacher class before selected but change count private class with
+        console.log(2)
+        setClassType(id)
+        dispatch(typeClassedSelectedCountSelectTime({ count, price }))
+        dispatch(modeDatepickerHandler(test))
+        console.log('for private')
+      }
+    } else {
+      setClassType(id)
+      dispatch(typeClassedSelectedCountSelectTime({ count, price }))
+      dispatch(modeDatepickerHandler(test))
+    }
   }
   return (
     <div

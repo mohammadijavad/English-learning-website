@@ -9,6 +9,7 @@ const USER_URL = ' http://localhost:3100/user';
 const USERCLASSLIST_URL = ' http://localhost:3100/userClassesList';
 const initialState = {
   teachers: [],
+  teacher: {},
   classListSelectedOnProfile: [],
   showModal: false,
   stateShowModalSetTime: false,
@@ -44,8 +45,9 @@ export const addToClassListStudent = createAsyncThunk(
   'teacher/addToClassListStudent',
   async (intial) => {
     const { mode, finalDataPushToUserProfile } = intial;
-    const { idTeacher, nameTeacher, photoTeacher, selectTimeArray, modeClass } =
+    let { idTeacher, nameTeacher, photoTeacher, selectTimeArray, modeClass } =
       finalDataPushToUserProfile;
+    !modeClass ? (modeClass = 'testing') : (modeClass = 'private');
     const response = await axios.post(`${USERCLASSLIST_URL}`, {
       idTeacher,
       nameTeacher,
@@ -111,6 +113,13 @@ const teachersSlice = createSlice({
     setDiscountHandler(state, action) {
       state.totalCount = action.payload;
     },
+    findTeacherHandler(state, action) {
+      const findTeacher = state.teachers.find(
+        (teacher) => teacher.id === action.payload
+      );
+      state.teacher = findTeacher;
+      console.log(state.teacher);
+    },
   },
   extraReducers(builder) {
     builder
@@ -137,10 +146,6 @@ const teachersSlice = createSlice({
         const findTeacher = teachers.findIndex((teacher) => teacher.id === id);
         state.teachers[findTeacher].isFavorite = !action.payload.isFavorite;
       })
-      .addCase(addToClassListStudent.pending, (state, action) => {
-        state.status = 'loading';
-      })
-
       .addCase(addToClassListStudent.fulfilled, (state, action) => {
         state.status = 'succeeded';
         const { nameTeacher } = action.payload.data;
@@ -163,6 +168,7 @@ export const getTeacherError = (state) => state.teacher.error;
 export const getModalShow = (state) => state.teacher.showModal;
 export const selectTimeClasessSelect = (state) => state.teacher.selectTime;
 export const selectTotalCount = (state) => state.teacher.totalCount;
+export const getTeacher = (state) => state.teacher.teacher;
 export const countSelectedClassType = (state) =>
   state.teacher.countSelectUserAllow;
 export const counterSelectTime = (state) => state.teacher.counter;
@@ -180,5 +186,6 @@ export const {
   typeClassedSelectedCountSelectTime,
   setCounterHandler,
   setDiscountHandler,
+  findTeacherHandler,
 } = teachersSlice.actions;
 export default teachersSlice.reducer;

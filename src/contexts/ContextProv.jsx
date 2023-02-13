@@ -67,19 +67,6 @@ function ContextProv(props) {
     console.log(gradientBgCircle)
   }
 
-  const showAlertHandler = (text, mode) => {
-    toast.warn(text, {
-      position: 'top-right',
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: 'light',
-    })
-  }
-
   return (
     <contextapp.Provider
       value={{
@@ -97,8 +84,6 @@ function ContextProv(props) {
         setCoverSidrbarHandler,
         splitSidebarHandler,
         setGradienCircletHandler,
-        showAlertHandler,
-
         showSetting,
         closedSiderbar,
         isTwocloumn,

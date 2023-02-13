@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from 'react'
+import React, { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import persianDate from 'persian-date'
 import TriggerExample from '../../../../../../../../utils/Tooltip'
@@ -12,14 +12,13 @@ import {
   selectSteps,
   selectmodeDatepicker,
 } from '../../../../../../../../app/store/Teacher store/Teacher'
-import { contextapp } from '../../../../../../../../contexts/ContextProv'
+import { showAlertWarning } from '../../../../../../../../utils/alerts'
 function NotReservedTime({
   time,
   timeCovert,
   changeTimeSelectHandler,
   indexDate,
 }) {
-  const { showAlertHandler } = useContext(contextapp)
   const dispatch = useDispatch()
   const reff = useRef()
   const stepSlectClass = useSelector(selectSteps)
@@ -63,7 +62,7 @@ function NotReservedTime({
       teacher: [],
     }
     if (counterSelectTimeUser === allCountUserAllowToSelect) {
-      showAlertHandler('بیشتر از تعداد جلسات نمی توانید انتخاب کنید')
+      showAlertWarning('بیشتر از تعداد جلسات نمی توانید انتخاب کنید')
     } else {
       changeTimeSelectHandler(timeSelect, indexDate, true)
       dispatch(setSelectTimeForClassesHandler(timeSelected))

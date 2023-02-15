@@ -30,12 +30,12 @@ function CardClass({ titleClass, listClass, keyAccordion, classList }) {
                     </span>
                     <span
                       className={`${style.flagClass} ${
-                        list.modeClass
+                        list.modeClass !== 'testing'
                           ? style.flagPrivateClass
                           : style.flagTestClass
                       } mx-2`}
                     >
-                      {list.modeClass ? (
+                      {list.modeClass !== 'testing' ? (
                         <span>کلاس خصوصی </span>
                       ) : (
                         <span>کلاس آزمایشی</span>

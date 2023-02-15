@@ -28,18 +28,15 @@ function ClassType({
   const getCurrentTeacher = useSelector(getTeacher)
   const setClassInfoHandler = () => {
     const isExsitTeacher = AllclassListSelected.find(
-      (teacher) => teacher.idTeacher === getCurrentTeacher.id,
+      (teacher) => teacher.id === getCurrentTeacher.id,
     )
-    console.log(isExsitTeacher)
     if (isExsitTeacher) {
-      console.log(test)
       if (!test) {
         //if its false means user select teacher for testing knowlage english
         const { modeClass, nameTeacher } = isExsitTeacher
         if (modeClass === 'testing') {
           let textMessage = `  شما با استاد   ${nameTeacher}  قبلا کلاس آزمایشی رزررو کرده اید `
           showAlertWarning(textMessage)
-          console.log(1)
           setClassType(0)
         } else {
           setClassType(id)
@@ -48,16 +45,17 @@ function ClassType({
         }
       } else {
         // patch info teacher class before selected but change count private class with
-        console.log(2)
-        setClassType(id)
+
         dispatch(typeClassedSelectedCountSelectTime({ count, price }))
         dispatch(modeDatepickerHandler(test))
-        console.log('for private')
+        setClassType(id)
+        console.log('for private before reserved')
       }
     } else {
       setClassType(id)
       dispatch(typeClassedSelectedCountSelectTime({ count, price }))
       dispatch(modeDatepickerHandler(test))
+      console.log('for private not reserved')
     }
   }
   return (

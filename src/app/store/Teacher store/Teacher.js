@@ -45,17 +45,29 @@ export const addToClassListStudent = createAsyncThunk(
   'teacher/addToClassListStudent',
   async (intial) => {
     const { mode, finalDataPushToUserProfile } = intial;
-    let { idTeacher, nameTeacher, photoTeacher, selectTimeArray, modeClass } =
+    let { id, nameTeacher, photoTeacher, selectTimeArray, modeClass } =
       finalDataPushToUserProfile;
     !modeClass ? (modeClass = 'testing') : (modeClass = 'private');
-    const response = await axios.post(`${USERCLASSLIST_URL}`, {
-      idTeacher,
-      nameTeacher,
-      photoTeacher,
-      selectTimeArray,
-      modeClass,
-    });
-    return response;
+    if (mode === 'post') {
+      const response = await axios.post(`${USERCLASSLIST_URL}`, {
+        id,
+        nameTeacher,
+        photoTeacher,
+        selectTimeArray,
+        modeClass,
+      });
+      return response;
+    } else {
+      const response = await axios.patch(`${USERCLASSLIST_URL}/${id}`, {
+        id,
+        nameTeacher,
+        photoTeacher,
+        selectTimeArray,
+        modeClass,
+      });
+      return response;
+    }
+
     // return response.data;
   }
 );

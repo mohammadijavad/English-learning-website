@@ -17,12 +17,14 @@ import {
 import {
   selectUser,
   getUserClassList,
+  getUserTestClass,
 } from '../../../app/store/User store/user'
 import style from './style/Header.module.css'
 import { useSelector } from 'react-redux'
 function ProfileUser() {
   const user = useSelector(selectUser)
   const classList = useSelector(getUserClassList)
+  const classListTesing = useSelector(getUserTestClass)
   const userProfileData = user[0]
   console.log(classList)
   return (
@@ -38,7 +40,7 @@ function ProfileUser() {
             <Usercups userInformation={userProfileData} />
           </div>
           <div className="col-12 mt-2">
-            <UserClassList classList={classList} />
+            <UserClassList classList={[...classList, ...classListTesing]} />
           </div>
           <div className="col-12 ">
             <Userclassdone />

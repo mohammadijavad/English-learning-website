@@ -6,11 +6,12 @@ import {
 } from '../../../utils/alerts';
 const TEACHER_URL = ' http://localhost:3100/Teachers';
 const USER_URL = ' http://localhost:3100/user';
-const USERCLASSLIST_URL = ' http://localhost:3100/userClassesList';
+const BaseURL = ' http://localhost:3100/userClassesList';
 const initialState = {
   teachers: [],
   teacher: {},
   classListSelectedOnProfile: [],
+  classListTestingSelected: [],
   showModal: false,
   stateShowModalSetTime: false,
   user: [],
@@ -48,22 +49,32 @@ export const addToClassListStudent = createAsyncThunk(
     let { id, nameTeacher, photoTeacher, selectTimeArray, modeClass } =
       finalDataPushToUserProfile;
     !modeClass ? (modeClass = 'testing') : (modeClass = 'private');
-    if (mode === 'post') {
-      const response = await axios.post(`${USERCLASSLIST_URL}`, {
-        id,
-        nameTeacher,
-        photoTeacher,
-        selectTimeArray,
-        modeClass,
+    if (modeClass === 'testing') {
+      const response = await axios({
+        baseURL: 'http://localhost:3100/',
+        method: 'post',
+        url: 'userClassesListTesting',
+        data: {
+          id,
+          nameTeacher,
+          photoTeacher,
+          selectTimeArray,
+          modeClass,
+        },
       });
       return response;
     } else {
-      const response = await axios.patch(`${USERCLASSLIST_URL}/${id}`, {
-        id,
-        nameTeacher,
-        photoTeacher,
-        selectTimeArray,
-        modeClass,
+      const response = await axios({
+        method: 'post',
+        baseURL: 'http://localhost:3100/',
+        url: 'userClassesList',
+        data: {
+          id,
+          nameTeacher,
+          photoTeacher,
+          selectTimeArray,
+          modeClass,
+        },
       });
       return response;
     }
@@ -158,6 +169,10 @@ const teachersSlice = createSlice({
         const findTeacher = teachers.findIndex((teacher) => teacher.id === id);
         state.teachers[findTeacher].isFavorite = !action.payload.isFavorite;
       })
+      .addCase(addToClassListStudent.pending, (state, action) => {
+        state.status = 'loading';
+      })
+
       .addCase(addToClassListStudent.fulfilled, (state, action) => {
         state.status = 'succeeded';
         const { nameTeacher } = action.payload.data;

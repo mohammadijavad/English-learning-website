@@ -7,7 +7,10 @@ import {
   findTeacherHandler,
   getTeacher,
 } from '../../../../../../../../app/store/Teacher store/Teacher'
-import { getUserClassList } from '../../../../../../../../app/store/User store/user'
+import {
+  getUserClassList,
+  getUserTestClass,
+} from '../../../../../../../../app/store/User store/user'
 import { useDispatch, useSelector } from 'react-redux'
 import { showAlertWarning } from '../../../../../../../../utils/alerts'
 function ClassType({
@@ -24,12 +27,13 @@ function ClassType({
   const { id: idteacher } = params
   const dispatch = useDispatch()
   dispatch(findTeacherHandler(idteacher))
-  const AllclassListSelected = useSelector(getUserClassList)
+  const AllclassListSelectedTestting = useSelector(getUserTestClass)
   const getCurrentTeacher = useSelector(getTeacher)
   const setClassInfoHandler = () => {
-    const isExsitTeacher = AllclassListSelected.find(
+    const isExsitTeacher = AllclassListSelectedTestting.find(
       (teacher) => teacher.id === getCurrentTeacher.id,
     )
+    console.log(isExsitTeacher, 2525)
     if (isExsitTeacher) {
       if (!test) {
         //if its false means user select teacher for testing knowlage english

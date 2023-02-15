@@ -4,6 +4,7 @@ import {
   getUserError,
   getUserStatus,
   fetchUser,
+  fetchClassListTesting,
   fetchClassList,
 } from '../../../app/store/User store/user'
 import { useDispatch, useSelector } from 'react-redux'
@@ -15,6 +16,7 @@ function ProfileUser() {
   const error = useSelector(getUserError)
   useEffect(() => {
     dispatch(fetchUser())
+    dispatch(fetchClassListTesting())
     dispatch(fetchClassList())
   }, [])
   if (status === 'loading') {

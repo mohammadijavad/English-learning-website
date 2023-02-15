@@ -452,21 +452,38 @@
   "userCanceledClasses": [],
   "userClassesList": [
     {
-      "idTeacher": "T1",
+      "id": "T1",
       "nameTeacher": "  پریسا میرزایی ",
       "photoTeacher": "https://cdn.oteacher.org/images/202204/dPaw1CTr8IK66CeSZmgp0GZpskywnkNGb0mF_thumb.jpeg",
       "selectTimeArray": [
         {
           "id": "g2",
-          "time": "۱۱:۰۰ - ۱۰:۳۰  دوشنبه ۲۴  بهمن",
+          "time": "۱۱:۳۰- ۱۰:۳۰  پنج‌شنبه ۲۷  بهمن",
           "indexDate": 1,
-          "timeHourSelected": "۱۰:۳۰ - ۱۱:۰۰",
-          "dateSelected": "دوشنبه ۲۴  بهمن",
+          "timeHourSelected": "۱۰:۳۰- ۱۱:۳۰",
+          "dateSelected": "پنج‌شنبه ۲۷  بهمن",
           "teacher": []
         }
       ],
-      "modeClass": false,
-      "id": 1
+      "modeClass": "private"
+    }
+  ],
+  "userClassesListTesting": [
+    {
+      "id": "T1",
+      "nameTeacher": "  پریسا میرزایی ",
+      "photoTeacher": "https://cdn.oteacher.org/images/202204/dPaw1CTr8IK66CeSZmgp0GZpskywnkNGb0mF_thumb.jpeg",
+      "selectTimeArray": [
+        {
+          "id": "g2",
+          "time": "۱۱:۰۰- ۱۰:۳۰  پنج‌شنبه ۲۷  بهمن",
+          "indexDate": 1,
+          "timeHourSelected": "۱۰:۳۰- ۱۱:۰۰",
+          "dateSelected": "پنج‌شنبه ۲۷  بهمن",
+          "teacher": []
+        }
+      ],
+      "modeClass": "testing"
     }
   ]
 }

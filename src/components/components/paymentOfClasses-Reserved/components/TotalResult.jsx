@@ -38,24 +38,22 @@ function TotalResult({ findTeacherSelected }) {
   const isExsitTeacher = AllclassListSelected.find(
     (teacher) => teacher.id === getCurrentTeacher.id,
   )
+  console.log(finalDataPushToUserProfile, 'ofile')
+  // console.log(finalDataPushToUserProfile.modeClass, 1)
+  // if (isExsitTeacher && isExsitTeacher.modeClass === 'private') {
+  //   mode = 'patch'
+  // } else {
+  //   mode = 'post'
+  // }
+  // console.log(mode)
   const setClassInfoHandler = () => {
-    if (!isExsitTeacher) {
-      mode = 'post'
-      dispatch(addToClassListStudent({ mode, finalDataPushToUserProfile }))
-      dispatch(stepModalToSelectTime(0))
-      dispatch(setSelectTimeForClassesHandler(false))
-      dispatch(modeDatepickerHandler(false))
-      dispatch(setCounterHandler(0))
-    } else {
-      mode = 'patch'
-      dispatch(addToClassListStudent({ mode, finalDataPushToUserProfile }))
-      dispatch(stepModalToSelectTime(0))
-      dispatch(setSelectTimeForClassesHandler(false))
-      dispatch(modeDatepickerHandler(false))
-      dispatch(setCounterHandler(0))
-    }
+    dispatch(addToClassListStudent({ mode, finalDataPushToUserProfile }))
+    // dispatch(stepModalToSelectTime(0))
+    // dispatch(setSelectTimeForClassesHandler(false))
+    // dispatch(modeDatepickerHandler(false))
+    // dispatch(setCounterHandler(0))
   }
-
+  console.log(mode, 111111)
   // const navigator = useNavigate()
 
   const payClassHandler = () => {

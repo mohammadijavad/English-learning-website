@@ -54,6 +54,7 @@ export const addToClassListStudent = createAsyncThunk(
         baseURL: 'http://localhost:3100/',
         method: 'post',
         url: 'userClassesListTesting',
+        headers: { 'content-type': 'text/json' },
         data: {
           id,
           nameTeacher,
@@ -64,19 +65,45 @@ export const addToClassListStudent = createAsyncThunk(
       });
       return response;
     } else {
-      const response = await axios({
-        method: 'post',
-        baseURL: 'http://localhost:3100/',
-        url: 'userClassesList',
-        data: {
-          id,
-          nameTeacher,
-          photoTeacher,
-          selectTimeArray,
-          modeClass,
-        },
-      });
-      return response;
+      if (mode === 'post') {
+        const response = await axios({
+          method: 'post',
+          baseURL: 'http://localhost:3100/',
+          url: 'userClassesList',
+          AxiosHeaders: {
+            'cache-control': 'no-cache',
+            'content-length': '479',
+            'content-type': 'application/json; charset=utf-8',
+            expires: '-1',
+            pragma: 'no-cache',
+          },
+          data: {
+            id,
+            nameTeacher,
+            photoTeacher,
+            selectTimeArray,
+            modeClass,
+          },
+        });
+        return response;
+      } else {
+        const response = await axios({
+          method: 'patch',
+          baseURL: 'http://localhost:3100/',
+          url: `userClassesList/${id}`,
+          AxiosHeaders: {
+            'cache-control': 'no-cache',
+            'content-length': '479',
+            'content-type': 'application/json; charset=utf-8',
+            expires: '-1',
+            pragma: 'no-cache',
+          },
+          data: {
+            selectTimeArray,
+          },
+        });
+        return response;
+      }
     }
 
     // return response.data;
@@ -141,7 +168,6 @@ const teachersSlice = createSlice({
         (teacher) => teacher.id === action.payload
       );
       state.teacher = findTeacher;
-      console.log(state.teacher);
     },
   },
   extraReducers(builder) {
@@ -176,7 +202,7 @@ const teachersSlice = createSlice({
       .addCase(addToClassListStudent.fulfilled, (state, action) => {
         state.status = 'succeeded';
         const { nameTeacher } = action.payload.data;
-        console.log(action.payload);
+
         let textMessage = `کلاس شما با استاد ${nameTeacher} رزرو شد`;
         showAlertHandlerSuccess(textMessage);
       })

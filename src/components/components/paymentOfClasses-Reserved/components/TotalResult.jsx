@@ -39,12 +39,12 @@ function TotalResult({ findTeacherSelected }) {
     (teacher) => teacher.id === getCurrentTeacher.id,
   )
   console.log(finalDataPushToUserProfile, 'ofile')
-  // console.log(finalDataPushToUserProfile.modeClass, 1)
-  // if (isExsitTeacher && isExsitTeacher.modeClass === 'private') {
-  //   mode = 'patch'
-  // } else {
-  //   mode = 'post'
-  // }
+  console.log(finalDataPushToUserProfile.modeClass, 1)
+  if (isExsitTeacher && isExsitTeacher.modeClass === 'private') {
+    mode = 'patch'
+  } else {
+    mode = 'post'
+  }
   // console.log(mode)
   const setClassInfoHandler = () => {
     dispatch(addToClassListStudent({ mode, finalDataPushToUserProfile }))

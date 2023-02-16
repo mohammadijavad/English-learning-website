@@ -71,7 +71,7 @@ function TotalResult({ findTeacherSelected }) {
   }
 
   return (
-    <div className={`mt-4 ${style.teacherInfo}`}>
+    <div className={`mt-4 ${style.teacherInfo} text-dark`}>
       <div className="border-top mb-2">
         <div className="d-flex align-items-center justify-content-between mt-4">
           <h4>مبلغ صورت حساب:</h4>

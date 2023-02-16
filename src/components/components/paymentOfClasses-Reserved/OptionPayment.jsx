@@ -7,13 +7,13 @@ import style from './style/payment.module.css'
 function OptionPayment() {
   return (
     <>
-      <div className="border rounded p-2">
+      <div className="border rounded p-2 bg-white">
         <TypePayment />
       </div>
-      <div className="border rounded p-2 mt-2">
+      <div className="border rounded p-2 mt-2 bg-white">
         <DiscountCode />
       </div>
-      <div className="border rounded p-2 mt-2">
+      <div className="border rounded p-2 mt-2 bg-white">
         <Rule />
       </div>
       <div className={`p-2 mt-2 ${style.teacherInfo}`}>

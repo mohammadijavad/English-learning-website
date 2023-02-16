@@ -8,7 +8,9 @@ function TitleClass({ title, mode }) {
       className={`${style.titleClass} d-flex justify-content-between align-items-center ${border} border-gray w-100`}
     >
       <div
-        className={mode ? 'w-100 d-flex justify-content-between mb-3' : 'mb-3'}
+        className={
+          mode ? 'w-100 d-flex justify-content-between mb-3 text-dark' : 'mb-3'
+        }
       >
         <b> {title}</b>
         <b className={`mx-3`}>

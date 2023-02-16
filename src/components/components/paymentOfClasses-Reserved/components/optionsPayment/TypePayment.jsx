@@ -5,7 +5,7 @@ import wallet from '../../../../../assets/Teacher/payment/wallet.svg'
 import cart from '../../../../../assets/Teacher/payment/payment-carts.svg'
 function TypePayment() {
   return (
-    <div className={`${style.teacherInfo}  p-2`}>
+    <div className={`${style.teacherInfo}  p-2 text-dark`}>
       <p>لطفعا نحوه پرداخت را انتخاب کنید</p>
       <div>
         <Form>

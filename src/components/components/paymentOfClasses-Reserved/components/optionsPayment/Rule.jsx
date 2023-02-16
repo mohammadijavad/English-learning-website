@@ -2,7 +2,7 @@ import React from 'react'
 import style from '../../style/payment.module.css'
 function Rule() {
   return (
-    <div className={`${style.teacherInfo} p-3`}>
+    <div className={`${style.teacherInfo} p-3 text-dark`}>
       <h6>قوانین حضور در کلاس</h6>
       <div className="d-flex align-items-center justify-content-start mt-3">
         <div className={`${style.bollet} mx-2 me-0`}></div>

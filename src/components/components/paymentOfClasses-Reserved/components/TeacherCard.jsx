@@ -11,7 +11,7 @@ function CardTeacher({ findTeacherSelected }) {
           width={80}
         />
       </div>
-      <div className={`${style.teacherInfo} d-flex flex-column mx-3`}>
+      <div className={`${style.teacherInfo} d-flex flex-column mx-3 text-dark`}>
         <span className="mt-1">{nameTeacher}</span>
         <span className="mt-1"> استاد زبان انگلیسی</span>
         <span className="mt-1 fontSize">5 جلسه</span>

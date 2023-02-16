@@ -11,7 +11,7 @@ function SaveClass() {
         <div className=" rounded col-12  col-lg-7 text-white h-100 mt-1">
           <OptionPayment />
         </div>
-        <ContainerPayment className=" col-12 col-lg-4 text-white  shadow rounded p-3">
+        <ContainerPayment className=" col-12 col-lg-4 text-white  shadow rounded p-3 bg-white ">
           <Payment />
         </ContainerPayment>
       </div>

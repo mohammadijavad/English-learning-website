@@ -1,4 +1,4 @@
-@import url("./assets/fonts/css/fontiran.css");
+@import url('./assets/fonts/css/fontiran.css');
 * {
   padding: 0;
   margin: 0;
@@ -30,10 +30,10 @@ li {
 .fontSizesm {
   font-size: var(--size-font-sm);
 }
-.fontsize14{
+.fontsize14 {
   font-size: var(--size-font-sm2);
 }
-.fontsize13{
+.fontsize13 {
   font-size: var(--size-font-sm1);
 }
 
@@ -51,17 +51,17 @@ body {
   font-family: IRANSans !important;
   overflow-x: hidden;
 }
-.Toastify__toast-body div{
+.Toastify__toast-body div {
   font-family: IRANSans !important;
 }
-a{
+a {
   text-decoration: none !important;
   color: inherit !important;
 }
-a:hover{
+a:hover {
   text-decoration: none !important;
 }
-.blackWhiteImage{
+.blackWhiteImage {
   filter: grayscale(100%);
 }
 :root {
@@ -101,24 +101,28 @@ a:hover{
   --active-bg-btn-changeHeader: #299ddb50;
   --active-text-btn-changeHeader: #299cdb;
   --bg-project-setting: #fff;
-  --color-showRoute:#299cdb
+  --color-showRoute: #299cdb;
+  --bg-werapAllContentApp: #f1f6f75b;
   /* -------------tacher card--------------------- */
   --card-text: #717f94;
   --bg-btnActive: #4bcffa;
   /* user profile page */
   --text-color-userInfo: #212529;
   --text-colorCardClass: rgb(113, 127, 148);
-  --favorite-products-bg:#fc4fbf60;
-  --favorite-products-color:#8b085b;
-  --favorite-teachers-bg:#32ff7d50;
-  --favorite-teachers-color:#00ff5e;
-  --favorite-words-bg:#ff181821;
-  --favorite-words-color:#ff6b6b;
+  --favorite-products-bg: #fc4fbf60;
+  --favorite-products-color: #8b085b;
+  --favorite-teachers-bg: #32ff7d50;
+  --favorite-teachers-color: #00ff5e;
+  --favorite-words-bg: #ff181821;
+  --favorite-words-color: #ff6b6b;
   /* teacher Deteails */
-  --text-color-day:#4bcffa;
-  --text-color-day-disable:rgb(207, 207, 207);
-  --bg-currentDate:#f0f5ff;
-  --active-Select-time:rgb(255, 123, 24);
+  --text-color-day: #4bcffa;
+  --text-color-day-disable: rgb(207, 207, 207);
+  --bg-currentDate: #f0f5ff;
+  --active-Select-time: rgb(255, 123, 24);
+  --text-color-descript: rgb(16, 20, 31);
+  --active-star: #ffba04;
+  --icon-teacherClass: #18dcff;
 }
 [data-layout-mode='dark'] {
   --bg-siderbar-vertical: #212529;
@@ -278,7 +282,7 @@ a:hover{
 .sidebarWrapper {
   position: fixed;
   height: 100vh;
-  height: 100vh;
+
   overflow: hidden;
   z-index: 100;
   right: 0;
@@ -389,6 +393,9 @@ a:hover{
 }
 
 /* containerContent */
+.wrapAllContent {
+  background-color: var(--bg-werapAllContentApp);
+}
 .containerContent {
   flex: 1;
   padding-right: 220px;
@@ -814,32 +821,32 @@ a:hover{
   transition: var(--time);
 }
 /* time in teacher details */
-.activeTime{
-background-color: var(--active-Select-time);
-color: var(--text-white);
-border-radius: 5px;
-/* pointer-events: none; */
-cursor:not-allowed;
-pointer-events: none;
-}
-.activeTimeTest{
-background-color: var(--active-Select-time);
-color: var(--text-white);
-border-radius: 5px;
-/* pointer-events: none; */
-cursor:not-allowed;
-pointer-events: none;
-}
-.activeTime + div{
+.activeTime {
   background-color: var(--active-Select-time);
-color: var(--text-white);
-border-radius: 5px;
-/* pointer-events: none; */
-cursor:not-allowed;
-pointer-events: none;
+  color: var(--text-white);
+  border-radius: 5px;
+  /* pointer-events: none; */
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.activeTimeTest {
+  background-color: var(--active-Select-time);
+  color: var(--text-white);
+  border-radius: 5px;
+  /* pointer-events: none; */
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.activeTime + div {
+  background-color: var(--active-Select-time);
+  color: var(--text-white);
+  border-radius: 5px;
+  /* pointer-events: none; */
+  cursor: not-allowed;
+  pointer-events: none;
 }
 /* payment page */
-.form-check-input{
- box-shadow: rgba(29, 27, 27, 0.13);
- padding: 0.3rem;
+.form-check-input {
+  box-shadow: rgba(29, 27, 27, 0.13);
+  padding: 0.3rem;
 }

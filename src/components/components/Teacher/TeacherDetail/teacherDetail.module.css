@@ -39,10 +39,17 @@
   height: 200px;
   overflow: hidden;
   position: relative;
+  color: var(--text-color-descript);
 }
 .showAllcontent {
   overflow: visible;
   height: auto;
+}
+.activeStar {
+  color: var(--active-star);
+}
+.iconTeacherInfoClasses {
+  color: var(--icon-teacherClass);
 }
 .arrowShow {
   width: 100%;

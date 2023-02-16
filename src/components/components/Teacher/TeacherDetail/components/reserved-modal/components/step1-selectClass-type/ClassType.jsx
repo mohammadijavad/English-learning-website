@@ -30,6 +30,7 @@ function ClassType({
   const AllclassListSelectedTestting = useSelector(getUserTestClass)
   const getCurrentTeacher = useSelector(getTeacher)
   const setClassInfoHandler = () => {
+    console.log(count)
     const isExsitTeacher = AllclassListSelectedTestting.find(
       (teacher) => teacher.id === getCurrentTeacher.id,
     )

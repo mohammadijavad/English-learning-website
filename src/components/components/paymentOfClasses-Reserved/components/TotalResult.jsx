@@ -11,6 +11,8 @@ import {
   selectmodeDatepicker,
   findTeacherHandler,
   getTeacher,
+  counterSelectTime,
+  countSelectedClassType,
 } from '../../../../app/store/Teacher store/Teacher'
 import { getUserClassList } from '../../../../app/store/User store/user'
 import { useDispatch, useSelector } from 'react-redux'
@@ -26,20 +28,21 @@ function TotalResult({ findTeacherSelected }) {
   const totalResult = useSelector(selectTotalCount)
   const selectTimeArray = useSelector(selectTimeClasessSelect)
   const modeClass = useSelector(selectmodeDatepicker)
+  const selectedClassUserChoice = useSelector(counterSelectTime)
+  const selectAnotherTime = useSelector(countSelectedClassType)
   const { photoTeacher, id, nameTeacher } = findTeacherSelected
-
+  const calcClassCounter = selectAnotherTime - selectedClassUserChoice
   const finalDataPushToUserProfile = {
     id: id,
     nameTeacher,
     photoTeacher,
     selectTimeArray,
     modeClass,
+    selectedAnotherTime: calcClassCounter,
   }
   const isExsitTeacher = AllclassListSelected.find(
     (teacher) => teacher.id === getCurrentTeacher.id,
   )
-  console.log(finalDataPushToUserProfile, 'ofile')
-  console.log(finalDataPushToUserProfile.modeClass, 1)
   if (isExsitTeacher && isExsitTeacher.modeClass === 'private') {
     mode = 'patch'
   } else {

@@ -52,7 +52,9 @@ function CardClass({ titleClass, listClass, keyAccordion, classList }) {
                     </span>
                     <span className={`mx-3`}>
                       تعداد جلسات زمانبندی نشده :
-                      <b className={style.numberClass}>0 </b>
+                      <b className={style.numberClass}>
+                        {list.selectedAnotherTime}{' '}
+                      </b>
                     </span>
                     <span className={`mx-3`}>
                       <b className={style.numberClass}>

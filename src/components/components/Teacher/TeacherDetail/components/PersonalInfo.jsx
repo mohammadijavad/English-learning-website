@@ -1,7 +1,16 @@
 import React from 'react'
-import { AiFillStar, AiFillEuroCircle } from 'react-icons/ai'
+import { AiFillStar, AiFillPlayCircle } from 'react-icons/ai'
+import { GiGraduateCap } from 'react-icons/gi'
+import { FaUser } from 'react-icons/fa'
 import style from '../teacherDetail.module.css'
-function PersonalInfo({ photoTeacher, nameTeacher, us }) {
+import useFlag from '../../../../../assets/images/flags/us.svg'
+function PersonalInfo({
+  photoTeacher,
+  nameTeacher,
+  languageExperts,
+  studentsTeacher,
+  completedClass,
+}) {
   return (
     <div className="d-flex">
       {/* teacher picture */}
@@ -12,15 +21,15 @@ function PersonalInfo({ photoTeacher, nameTeacher, us }) {
       <div className={`m-2`}>
         <div className="d-flex align-items-center my-2 mt-0">
           <p className="m-0 mx-2"> {nameTeacher} </p>
-          <img width="22" className="rounded-1" src={us} alt="" />
+          <img width="22" className="rounded-1" src={useFlag} alt="EN" />
         </div>
         <div className={`d-flex`}>
           <div className={`mx-1 d-flex`}>
-            <AiFillStar size={19} className={``} />
-            <AiFillStar size={19} className={`mx-1`} />
-            <AiFillStar size={19} className={`mx-1`} />
-            <AiFillStar size={19} className={`mx-1`} />
-            <AiFillStar size={19} className={`mx-1`} />
+            <AiFillStar size={19} className={` ${style.activeStar}`} />
+            <AiFillStar size={19} className={`mx-1 ${style.activeStar}`} />
+            <AiFillStar size={19} className={`mx-1 ${style.activeStar}`} />
+            <AiFillStar size={19} className={`mx-1 ${style.activeStar}`} />
+            <AiFillStar size={19} className={`mx-1 ${style.activeStar}`} />
           </div>
           <span>
             <span className="mx-1">4.9</span>
@@ -32,16 +41,19 @@ function PersonalInfo({ photoTeacher, nameTeacher, us }) {
           </span>
         </div>
         <div className="mt-2">
-          <AiFillEuroCircle size={20} />
-          <span className="mx-2">زبان انگلیسی استاد</span>
+          <GiGraduateCap size={23} className={style.iconTeacherInfoClasses} />
+          <span className="mx-2"> استاد زبان {languageExperts}</span>
         </div>
         <div className="mt-2">
-          <AiFillEuroCircle size={20} />
-          <span className="mx-2">زبان انگلیسی استاد</span>
+          <FaUser size={20} className={style.iconTeacherInfoClasses} />
+          <span className="mx-2"> {studentsTeacher} زبان آموز</span>
         </div>
         <div className="mt-2">
-          <AiFillEuroCircle size={20} />
-          <span className="mx-2">زبان انگلیسی استاد</span>
+          <AiFillPlayCircle
+            size={20}
+            className={style.iconTeacherInfoClasses}
+          />
+          <span className="mx-2">{completedClass} کلاس برگزار شده</span>
         </div>
       </div>
     </div>

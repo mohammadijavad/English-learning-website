@@ -135,6 +135,7 @@ a:hover {
   --bg-header-default-dark: #1a20289c;
   --text-color-userInfo: rgba(255, 255, 255, 0.788);
   --bg-header-darkmode: #292e32;
+  --text-colorCardClass: #fff;
 }
 
 .containerDashboard {
@@ -395,6 +396,7 @@ a:hover {
 /* containerContent */
 .wrapAllContent {
   background-color: var(--bg-werapAllContentApp);
+  min-height: 100vh;
 }
 .containerContent {
   flex: 1;

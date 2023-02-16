@@ -8,7 +8,7 @@ import PersonalInfo from './components/PersonalInfo'
 import Description from './components/Description'
 import VedioIntro from './components/VedioIntro'
 import ContainerDatepicker from './components/DateTime/ContainerDatepicker'
-
+import { Helmet } from 'react-helmet'
 import {
   getModalShow,
   showModalSetClassTime,
@@ -51,6 +51,10 @@ function TeacherDetailInfo() {
   }, [])
   return (
     <div className="container">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title> استاد {nameTeacher} | بستاک</title>
+      </Helmet>
       <Cover />
       {isShowModal && <ModalReserved />}
       {stateShowModalSetTime && (

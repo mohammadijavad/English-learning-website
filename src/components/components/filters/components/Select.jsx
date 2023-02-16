@@ -28,7 +28,7 @@ function Select(props) {
   return (
     <>
       <div
-        className={`p-0 select-menu mx-2 mt-2 ${
+        className={`text-dark p-0 select-menu mx-2 mt-2 ${
           activeKey === activeSelectEl ? 'activeSelect' : ''
         }`}
       >

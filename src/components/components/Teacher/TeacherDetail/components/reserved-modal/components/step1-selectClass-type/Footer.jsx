@@ -106,18 +106,17 @@ function Footer({ findteacher, classType, changeTimeSelectHandler }) {
             ادامه
           </button>
         ) : (
-          <Link to={`/profile/checkout/${id}`}>
-            <button
-              className={`${
-                classType > 0
-                  ? 'btn mx-2 shadow shadow-info bg-info text-white'
-                  : `btn mx-2 shadow shadow-info  text-white ${style.disabledBtn}`
-              }`}
-              onClick={() => closeModalHandler()}
-            >
-              ادامه
-            </button>
-          </Link>
+          <button
+            className={`
+              ${
+                selectAllTimeSelectTime?.length >= 1
+                  ? 'bg-info'
+                  : style.disabledBtn
+              } btn mx-2 shadow shadow-info bg-gray  text-white `}
+            onClick={() => closeModalHandler()}
+          >
+            <Link to={`/profile/checkout/${id}`}>ادامه</Link>
+          </button>
         )}
         {step > 1 ? (
           <button

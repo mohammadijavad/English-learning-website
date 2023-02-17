@@ -27,7 +27,8 @@
       "nameTeacher": "  پریسا میرزایی ",
       "photoTeacher": "https://cdn.oteacher.org/images/202204/dPaw1CTr8IK66CeSZmgp0GZpskywnkNGb0mF_thumb.jpeg",
       "introVedio": "https://cdn.oteacher.org/videos/202203/rbIVxdVCJP9GYHAL6et2MDQHz9KK6DFtBWQXsVwq.mp4#t=0.1",
-      "Experts": "EN",
+      "Experts": "https://oteacher.org/svg/flags/english.svg",
+      "lang": "EN",
       "languageExperts": "انگلیسی",
       "level": [" مبتدی ", "پیشرفته"],
       "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
@@ -84,7 +85,7 @@
         "The class basis and focus is a progress in conversation as well as a simultaneous accuracy and fluency in the shortest time through inductive grammar teaching, using textbooks, audio files and even songs and movies sessions"
       ],
       "studentsTeacher": "369",
-      "isFavorite": true,
+      "isFavorite": false,
       "timeClassForBook": [
         {
           "id": 0,
@@ -96,10 +97,27 @@
                   "time": "10:30",
                   "isBooked": true,
                   "type": "half",
-                  "id": "g1"
+                  "id": "D1-1"
+                },
+                {
+                  "time": "11:00",
+                  "isBooked": false,
+                  "type": "half",
+                  "id": "D1-2"
+                },
+                {
+                  "time": "11:30",
+                  "isBooked": false,
+                  "type": "half",
+                  "id": "D1-3"
+                },
+                {
+                  "time": "12:00",
+                  "isBooked": false,
+                  "type": "half",
+                  "id": "D1-4"
                 }
-              ],
-              "bookedTime": []
+              ]
             },
             {
               "id": "f1n",

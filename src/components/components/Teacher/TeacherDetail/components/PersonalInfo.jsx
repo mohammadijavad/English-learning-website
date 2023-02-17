@@ -10,6 +10,7 @@ function PersonalInfo({
   languageExperts,
   studentsTeacher,
   completedClass,
+  Experts,
 }) {
   return (
     <div className="d-flex">
@@ -21,7 +22,7 @@ function PersonalInfo({
       <div className={`m-2`}>
         <div className="d-flex align-items-center my-2 mt-0">
           <p className="m-0 mx-2"> {nameTeacher} </p>
-          <img width="22" className="rounded-1" src={useFlag} alt="EN" />
+          <img width="22" className="rounded-1" src={Experts} alt="EN" />
         </div>
         <div className={`d-flex`}>
           <div className={`mx-1 d-flex`}>

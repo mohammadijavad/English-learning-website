@@ -6,11 +6,12 @@
   overflow: hidden;
   transition: 0.4s ease-in;
   border: 2px solid #eee;
-  background-color: #fff;
+  background-color: transparent;
   box-shadow: 0 16px 40px rgb(112 144 176 / 10%);
 }
 .gridContainer {
   height: 100%;
+  background-color: transparent;
 }
 .animation {
   width: 35px;

@@ -21,14 +21,18 @@ import {
 } from '../../../app/store/User store/user'
 import style from './style/Header.module.css'
 import { useSelector } from 'react-redux'
+import { Helmet } from 'react-helmet'
 function ProfileUser() {
   const user = useSelector(selectUser)
   const classList = useSelector(getUserClassList)
   const classListTesing = useSelector(getUserTestClass)
   const userProfileData = user[0]
-  console.log(classList)
   return (
     <div className={`${style.ContainerProfileUser} `}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title> پروفایل {userProfileData.name} | بستاک</title>
+      </Helmet>
       <Headerprofile />
       <Useravatr />
       <div className="container">

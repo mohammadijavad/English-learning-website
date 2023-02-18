@@ -123,9 +123,12 @@ a:hover {
   --text-color-descript: rgb(16, 20, 31);
   --active-star: #ffba04;
   --icon-teacherClass: #18dcff;
+  /* profilesetting */
+  --bg-profileSettings: #fff;
 }
 [data-layout-mode='dark'] {
   --bg-siderbar-vertical: #212529;
+  --bg-werapAllContentApp: #212529;
   --defaultColor: #7c7f90;
   --sidebar-bg-two: #30363a;
   --rgbSetting: #666b7018;
@@ -136,6 +139,7 @@ a:hover {
   --text-color-userInfo: rgba(255, 255, 255, 0.788);
   --bg-header-darkmode: #292e32;
   --text-colorCardClass: #fff;
+  --bg-profileSettings: transparent;
 }
 
 .containerDashboard {

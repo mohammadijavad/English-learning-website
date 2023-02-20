@@ -18,6 +18,7 @@ import { getUserClassList } from '../../../../app/store/User store/user'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 function TotalResult({ findTeacherSelected }) {
+  const navigator = useNavigate()
   const params = useParams()
   let mode = 'POST'
   const { id: idteacher } = params
@@ -30,16 +31,9 @@ function TotalResult({ findTeacherSelected }) {
   const modeClass = useSelector(selectmodeDatepicker)
   const selectedClassUserChoice = useSelector(counterSelectTime)
   const selectAnotherTime = useSelector(countSelectedClassType)
-  const { photoTeacher, id, nameTeacher } = findTeacherSelected
+  const { photoTeacher, id: idTeacher, nameTeacher } = findTeacherSelected
   const calcClassCounter = selectAnotherTime - selectedClassUserChoice
-  const finalDataPushToUserProfile = {
-    id: id,
-    nameTeacher,
-    photoTeacher,
-    selectTimeArray,
-    modeClass,
-    selectedAnotherTime: calcClassCounter,
-  }
+
   const isExsitTeacher = AllclassListSelected.find(
     (teacher) => teacher.id === getCurrentTeacher.id,
   )
@@ -48,26 +42,39 @@ function TotalResult({ findTeacherSelected }) {
   } else {
     mode = 'post'
   }
-  // console.log(mode)
-  const setClassInfoHandler = () => {
-    dispatch(addToClassListStudent({ mode, finalDataPushToUserProfile }))
-    // dispatch(stepModalToSelectTime(0))
-    // dispatch(setSelectTimeForClassesHandler(false))
-    // dispatch(modeDatepickerHandler(false))
-    // dispatch(setCounterHandler(0))
-  }
-  console.log(mode, 111111)
-  // const navigator = useNavigate()
 
-  const payClassHandler = () => {
-    // dispatch(addToClassListStudent({ mode, finalDataPushToUserProfile }))
-    // dispatch(stepModalToSelectTime(0))
-    // dispatch(setSelectTimeForClassesHandler(false))
-    // dispatch(modeDatepickerHandler(false))
-    // dispatch(setCounterHandler(0))
-    // setTimeout(() => {
-    //   navigator('/profile')
-    // }, 2000)
+  const setClassInfoHandler = () => {
+    const { id, indexDate } = selectTimeArray[0]
+    const findTimeSelectedTeacherTimeList = findTeacherSelected.timeClassForBook[0].times[
+      indexDate
+    ].alltime.findIndex((time) => time.id === id)
+
+    const { timeClassForBook } = findTeacherSelected
+    const { times } = timeClassForBook[findTimeSelectedTeacherTimeList]
+
+    const selectedTime = JSON.stringify(times)
+    let cloneTime = JSON.parse(selectedTime)
+    let { alltime } = cloneTime[indexDate]
+    alltime[findTimeSelectedTeacherTimeList].isBooked = true
+    alltime[findTimeSelectedTeacherTimeList + 1].isBooked = true
+    let finalTimes = [{ id: 0, times: cloneTime }]
+    const finalDataPushToUserProfile = {
+      id: idTeacher,
+      nameTeacher,
+      photoTeacher,
+      selectTimeArray,
+      modeClass,
+      selectedAnotherTime: calcClassCounter,
+      timeChanged: finalTimes,
+    }
+    dispatch(addToClassListStudent({ mode, finalDataPushToUserProfile }))
+    dispatch(stepModalToSelectTime(0))
+    dispatch(setSelectTimeForClassesHandler(false))
+    dispatch(modeDatepickerHandler(false))
+    dispatch(setCounterHandler(0))
+    setTimeout(() => {
+      navigator('/profile')
+    }, 2000)
   }
 
   return (

@@ -31,7 +31,7 @@ function ProfileUser() {
     <div className={`${style.ContainerProfileUser} `}>
       <Helmet>
         <meta charSet="utf-8" />
-        <title> پروفایل {userProfileData.name} | بستاک</title>
+        <title> پروفایل {userProfileData?.name} | بستاک</title>
       </Helmet>
       <Headerprofile />
       <Useravatr />

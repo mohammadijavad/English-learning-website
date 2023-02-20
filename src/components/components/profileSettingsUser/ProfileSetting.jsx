@@ -1,6 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectUser } from '../../../app/store/User store/user'
 function ProfileSetting() {
+  const getUser = useSelector(selectUser)
+  const { name } = getUser[0]
+  console.log(getUser)
   return (
     <Container className="container mt-4">
       <div className="row gutters">
@@ -15,7 +20,7 @@ function ProfileSetting() {
                       alt="Maxwell Admin"
                     />
                   </div>
-                  <h5 className="user-name">Yuki Hayashi</h5>
+                  <h5 className="user-name">{name}</h5>
                   <h6 className="user-email">yuki@Maxwell.com</h6>
                 </div>
                 <div className="about">

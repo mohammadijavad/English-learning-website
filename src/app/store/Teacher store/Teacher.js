@@ -53,6 +53,7 @@ export const addToClassListStudent = createAsyncThunk(
       selectTimeArray,
       modeClass,
       selectedAnotherTime,
+      timeChanged,
     } = finalDataPushToUserProfile;
     !modeClass ? (modeClass = 'testing') : (modeClass = 'private');
     if (modeClass === 'testing') {
@@ -91,6 +92,25 @@ export const addToClassListStudent = createAsyncThunk(
             modeClass,
             selectedAnotherTime,
           },
+        }).then((res) => {
+          console.log(JSON.stringify(timeChanged));
+          axios({
+            method: 'patch',
+            baseURL: 'http://localhost:3100/',
+            url: `Teachers/${id}`,
+            AxiosHeaders: {
+              'cache-control': 'no-cache',
+              'content-length': '479',
+              'content-type': 'application/json; charset=utf-8',
+              expires: '-1',
+              pragma: 'no-cache',
+            },
+            data: {
+              timeClassForBook: timeChanged,
+            },
+          }).then((res) => {
+            console.log(res.data);
+          });
         });
         return response;
       } else {
@@ -108,12 +128,28 @@ export const addToClassListStudent = createAsyncThunk(
           data: {
             selectTimeArray,
           },
+        }).then((res) => {
+          axios({
+            method: 'patch',
+            baseURL: 'http://localhost:3100/',
+            url: `Teachers/${id}`,
+            AxiosHeaders: {
+              'cache-control': 'no-cache',
+              'content-length': '479',
+              'content-type': 'application/json; charset=utf-8',
+              expires: '-1',
+              pragma: 'no-cache',
+            },
+            data: {
+              timeClassForBook: timeChanged,
+            },
+          }).then((res) => {
+            console.log(111111111111);
+          });
         });
         return response;
       }
     }
-
-    // return response.data;
   }
 );
 
@@ -208,9 +244,10 @@ const teachersSlice = createSlice({
 
       .addCase(addToClassListStudent.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        const { nameTeacher } = action.payload.data;
+        const { nameTeacher } = action.payload.finalDataPushToUserProfile;
 
         let textMessage = `کلاس شما با استاد ${nameTeacher} رزرو شد`;
+        console.log(action.payload);
         showAlertHandlerSuccess(textMessage);
       })
       .addCase(addToClassListStudent.rejected, (state, action) => {

@@ -45,6 +45,7 @@ function NotReservedTime({
   mode2Modal = currentTime
 
   const selectDateFirstDatePicker = (timeSelect, date) => {
+    console.log(timeSelect, 12)
     if (stepSlectClass === 0) {
       dispatch(showReservedModal(true))
     }

@@ -30,11 +30,9 @@ function ClassType({
   const AllclassListSelectedTestting = useSelector(getUserTestClass)
   const getCurrentTeacher = useSelector(getTeacher)
   const setClassInfoHandler = () => {
-    console.log(count)
     const isExsitTeacher = AllclassListSelectedTestting.find(
       (teacher) => teacher.id === getCurrentTeacher.id,
     )
-    console.log(isExsitTeacher, 2525)
     if (isExsitTeacher) {
       if (!test) {
         //if its false means user select teacher for testing knowlage english

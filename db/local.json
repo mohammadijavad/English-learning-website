@@ -124,6 +124,82 @@
               "index": "1",
               "alltime": [
                 {
+                  "time": "10:36",
+                  "isBooked": false,
+                  "type": "half",
+                  "id": "sd1",
+                  "selectedUser": false
+                },
+                {
+                  "time": "11:00",
+                  "isBooked": false,
+                  "id": "sd2"
+                },
+                {
+                  "time": "11:30",
+                  "isBooked": false,
+                  "type": "half",
+                  "id": "g4"
+                },
+                {
+                  "time": "12:00",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:30",
+                  "isBooked": false,
+                  "type": "half"
+                },
+                {
+                  "time": "13:00",
+                  "isBooked": false
+                }
+              ],
+              "bookedTime": []
+            },
+            {
+              "id": "f1n",
+              "index": "1",
+              "alltime": [
+                {
+                  "time": "10:10",
+                  "isBooked": false,
+                  "type": "half",
+                  "id": "g2",
+                  "selectedUser": false
+                },
+                {
+                  "time": "11:00",
+                  "isBooked": false,
+                  "id": "g3"
+                },
+                {
+                  "time": "11:30",
+                  "isBooked": false,
+                  "type": "half",
+                  "id": "g4"
+                },
+                {
+                  "time": "12:00",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:30",
+                  "isBooked": false,
+                  "type": "half"
+                },
+                {
+                  "time": "13:00",
+                  "isBooked": false
+                }
+              ],
+              "bookedTime": []
+            },
+            {
+              "id": "f1n",
+              "index": "1",
+              "alltime": [
+                {
                   "time": "10:30",
                   "isBooked": false,
                   "type": "half",
@@ -159,19 +235,25 @@
             },
             {
               "id": "f1n",
+              "index": "1",
               "alltime": [
                 {
                   "time": "10:30",
-                  "isBooked": false
+                  "isBooked": false,
+                  "type": "half",
+                  "id": "g2",
+                  "selectedUser": false
                 },
                 {
                   "time": "11:00",
-                  "isBooked": false
+                  "isBooked": false,
+                  "id": "g3"
                 },
                 {
                   "time": "11:30",
                   "isBooked": false,
-                  "type": "half"
+                  "type": "half",
+                  "id": "g4"
                 },
                 {
                   "time": "12:00",
@@ -185,37 +267,40 @@
                 {
                   "time": "13:00",
                   "isBooked": false
+                }
+              ],
+              "bookedTime": []
+            },
+            {
+              "id": "f1n",
+              "index": "1",
+              "alltime": [
+                {
+                  "time": "10:30",
+                  "isBooked": false,
+                  "type": "half",
+                  "id": "g2",
+                  "selectedUser": false
                 },
                 {
-                  "time": "13:30",
+                  "time": "11:00",
+                  "isBooked": false,
+                  "id": "g3"
+                },
+                {
+                  "time": "11:30",
+                  "isBooked": false,
+                  "type": "half",
+                  "id": "g4"
+                },
+                {
+                  "time": "12:00",
+                  "isBooked": false
+                },
+                {
+                  "time": "12:30",
                   "isBooked": false,
                   "type": "half"
-                }
-              ],
-              "bookedTime": []
-            },
-            {
-              "id": "f1n",
-              "alltime": [
-                {
-                  "time": "10:30",
-                  "isBooked": false
-                },
-                {
-                  "time": "11:00",
-                  "isBooked": false
-                },
-                {
-                  "time": "11:30",
-                  "isBooked": false
-                },
-                {
-                  "time": "12:00",
-                  "isBooked": false
-                },
-                {
-                  "time": "12:30",
-                  "isBooked": false
                 },
                 {
                   "time": "13:00",
@@ -226,18 +311,25 @@
             },
             {
               "id": "f1n",
+              "index": "1",
               "alltime": [
                 {
                   "time": "10:30",
-                  "isBooked": false
+                  "isBooked": false,
+                  "type": "half",
+                  "id": "g2",
+                  "selectedUser": false
                 },
                 {
                   "time": "11:00",
-                  "isBooked": false
+                  "isBooked": false,
+                  "id": "g3"
                 },
                 {
                   "time": "11:30",
-                  "isBooked": false
+                  "isBooked": false,
+                  "type": "half",
+                  "id": "g4"
                 },
                 {
                   "time": "12:00",
@@ -245,67 +337,8 @@
                 },
                 {
                   "time": "12:30",
-                  "isBooked": false
-                },
-                {
-                  "time": "13:00",
-                  "isBooked": false
-                }
-              ],
-              "bookedTime": []
-            },
-            {
-              "id": "f1n",
-              "alltime": [
-                {
-                  "time": "10:30",
-                  "isBooked": false
-                },
-                {
-                  "time": "11:00",
-                  "isBooked": false
-                },
-                {
-                  "time": "11:30",
-                  "isBooked": false
-                },
-                {
-                  "time": "12:00",
-                  "isBooked": false
-                },
-                {
-                  "time": "12:30",
-                  "isBooked": false
-                },
-                {
-                  "time": "13:00",
-                  "isBooked": false
-                }
-              ],
-              "bookedTime": []
-            },
-            {
-              "id": "f1n",
-              "alltime": [
-                {
-                  "time": "10:30",
-                  "isBooked": false
-                },
-                {
-                  "time": "11:00",
-                  "isBooked": false
-                },
-                {
-                  "time": "11:30",
-                  "isBooked": false
-                },
-                {
-                  "time": "12:00",
-                  "isBooked": false
-                },
-                {
-                  "time": "12:30",
-                  "isBooked": false
+                  "isBooked": false,
+                  "type": "half"
                 },
                 {
                   "time": "13:00",
@@ -319,48 +352,52 @@
       ],
       "comments": [
         {
-          "sudentPicture": "https://cdn.oteacher.org/images/202209/BDRA6DgNyBBXvHG8Z9A6lPVkwDzXsgnDtD2S_original.jpeg",
+          "sudentPicture": "https://img.freepik.com/free-photo/portrait-beautiful-mature-blonde-bearded-guy-with-trendy-hairdo-casual-grey-shirt-smiling_176420-15741.jpg?size=626&ext=jpg&ga=GA1.2.332109917.1668614583&semt=sph",
           "rateStudent": "4",
-          "commentBody": "استاد خوبی هستن من از اینکه ایشون حین حرف زدن شما ایرادتونم سریع میگه بسیار خوشحالم",
-          "commentTime": "چهارشنبه 17 فروردین 1401",
+          "commentBody": "کلاسی کاملا حرفه ای و عالی 💪 ",
+          "commentTime": "چهارشنبه 18 فروردین 1401",
           "commentID": "1",
-          "commentCreatorName": "مهسا امینی"
+          "commentCreatorName": "آرمین نوروزی"
         },
         {
-          "sudentPicture": "https://cdn.oteacher.org/images/202209/BDRA6DgNyBBXvHG8Z9A6lPVkwDzXsgnDtD2S_original.jpeg",
+          "sudentPicture": "https://img.freepik.com/free-photo/studio-portrait-successful-young-businesswoman_1262-5844.jpg?size=626&ext=jpg&ga=GA1.2.332109917.1668614583&semt=sph",
           "rateStudent": "4",
-          "commentBody": "استاد خوبی هستن من از اینکه ایشون حین حرف زدن شما ایرادتونم سریع میگه بسیار خوشحالم",
-          "commentTime": "چهارشنبه 17 فروردین 1401",
+          "commentBody": "she is one of the best teacher in Bestak",
+          "commentTime": "چهارشنبه 18 فروردین 1401",
           "commentID": "1",
-          "commentCreatorName": "مهسا امینی"
+          "commentCreatorName": "Elham Amiri"
         },
         {
-          "sudentPicture": "https://cdn.oteacher.org/images/202209/BDRA6DgNyBBXvHG8Z9A6lPVkwDzXsgnDtD2S_original.jpeg",
+          "sudentPicture": "https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?size=626&ext=jpg&ga=GA1.2.332109917.1668614583&semt=sph",
           "rateStudent": "4",
-          "commentBody": "استاد خوبی هستن من از اینکه ایشون حین حرف زدن شما ایرادتونم سریع میگه بسیار خوشحالم",
-          "commentTime": "چهارشنبه 17 فروردین 1401",
+          "commentBody": "in my way of thinking she is teach very well🌻",
+          "commentTime": "چهارشنبه 17 اردیبهشت 1401",
           "commentID": "1",
-          "commentCreatorName": "مهسا امینی"
+          "commentCreatorName": "Arezo Karimi"
         },
         {
-          "sudentPicture": "https://cdn.oteacher.org/images/202209/BDRA6DgNyBBXvHG8Z9A6lPVkwDzXsgnDtD2S_original.jpeg",
+          "sudentPicture": "https://img.freepik.com/free-photo/portrait-positive-male-with-brunette-hair-bristle-has-piercing-wearing-black-sweater-holding-mobile-phone-copy-space-right-isolated-yellow-wall_295783-14551.jpg?size=626&ext=jpg&ga=GA1.1.332109917.1668614583&semt=sph",
           "rateStudent": "4",
-          "commentBody": "استاد خوبی هستن من از اینکه ایشون حین حرف زدن شما ایرادتونم سریع میگه بسیار خوشحالم",
+          "commentBody": "Thanks",
           "commentTime": "چهارشنبه 17 فروردین 1401",
           "commentID": "1",
-          "commentCreatorName": "مهسا امینی"
+          "commentCreatorName": "آرمان عظیمی"
         }
       ]
     }
   ],
   "user": [
     {
-      "name": "آرزو امیری",
       "idCode": "123456",
-      "userPhoto": "",
-      "languages": "US",
+      "name": "آرزو امیری",
+      "userPhoto": "https://img.freepik.com/free-photo/portrait-dark-skinned-cheerful-woman-with-curly-hair-touches-chin-gently-laughs-happily-enjoys-day-off-feels-happy-enthusiastic-hears-something-positive-wears-casual-blue-turtleneck_273609-43443.jpg?size=626&ext=jpg&ga=GA1.2.332109917.1668614583&semt=sph",
+      "languages": "انگلیسی",
       "userGol": "مهاجرت و IELTS",
       "siningTime": "10 فروردین 1401",
+      "email": "arezoAmiri@gmail.com",
+      "phoneNumber": "09197069504",
+      "about": "من در حال یادگیری زبان هستم",
+      "level": "A1 مبتدی",
       "userProgress": [
         {
           "month1": "20"
@@ -384,41 +421,6 @@
   ],
   "userDidClasses": [],
   "userCanceledClasses": [],
-  "userClassesList": [
-    {
-      "id": "T1",
-      "nameTeacher": "  پریسا میرزایی ",
-      "photoTeacher": "https://cdn.oteacher.org/images/202204/dPaw1CTr8IK66CeSZmgp0GZpskywnkNGb0mF_thumb.jpeg",
-      "selectTimeArray": [
-        {
-          "id": "g2",
-          "time": "۱۱:۳۰- ۱۰:۳۰  جمعه ۲۸  بهمن",
-          "indexDate": 1,
-          "timeHourSelected": "۱۰:۳۰- ۱۱:۳۰",
-          "dateSelected": "جمعه ۲۸  بهمن",
-          "teacher": []
-        }
-      ],
-      "modeClass": "private",
-      "selectedAnotherTime": 4
-    }
-  ],
-  "userClassesListTesting": [
-    {
-      "id": "T1",
-      "nameTeacher": "  پریسا میرزایی ",
-      "photoTeacher": "https://cdn.oteacher.org/images/202204/dPaw1CTr8IK66CeSZmgp0GZpskywnkNGb0mF_thumb.jpeg",
-      "selectTimeArray": [
-        {
-          "id": "g2",
-          "time": "۱۱:۰۰- ۱۰:۳۰  پنج‌شنبه ۲۷  بهمن",
-          "indexDate": 1,
-          "timeHourSelected": "۱۰:۳۰- ۱۱:۰۰",
-          "dateSelected": "پنج‌شنبه ۲۷  بهمن",
-          "teacher": []
-        }
-      ],
-      "modeClass": "testing"
-    }
-  ]
+  "userClassesList": [],
+  "userClassesListTesting": []
 }

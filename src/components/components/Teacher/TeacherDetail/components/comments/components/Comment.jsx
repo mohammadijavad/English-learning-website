@@ -17,7 +17,8 @@ function Comment({
           <div className="d-flex">
             <div>
               <img
-                width={40}
+                width={39}
+                height={40}
                 className="rounded-circle"
                 src={sudentPicture}
                 alt="comment creattor"

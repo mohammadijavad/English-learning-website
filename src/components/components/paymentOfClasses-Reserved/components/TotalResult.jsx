@@ -56,7 +56,10 @@ function TotalResult({ findTeacherSelected }) {
     let cloneTime = JSON.parse(selectedTime)
     let { alltime } = cloneTime[indexDate]
     alltime[findTimeSelectedTeacherTimeList].isBooked = true
-    alltime[findTimeSelectedTeacherTimeList + 1].isBooked = true
+    if(modeClass==="private"){
+
+      alltime[findTimeSelectedTeacherTimeList + 1].isBooked = true
+    }
     let finalTimes = [{ id: 0, times: cloneTime }]
     const finalDataPushToUserProfile = {
       id: idTeacher,

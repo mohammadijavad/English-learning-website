@@ -10,13 +10,13 @@ function LoadingCom() {
 }
 
 const ContainerData = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;

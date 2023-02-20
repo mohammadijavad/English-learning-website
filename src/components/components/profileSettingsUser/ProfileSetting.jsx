@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectUser, fetchUser } from '../../../app/store/User store/user'
+import {
+  selectUser,
+  fetchUser,
+  getUserStatus,
+} from '../../../app/store/User store/user'
+
+import LoadingCom from '../../../utils/Loading'
 function ProfileSetting() {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchUser())
   }, [])
   const getUser = useSelector(selectUser)
+  const status = useSelector(getUserStatus)
+  if (status === 'loading') {
+    return <LoadingCom />
+  }
   const {
     name,
     about,
@@ -109,6 +119,7 @@ function ProfileSetting() {
                         className="form-control"
                         id="Street"
                         defaultValue={siningTime}
+                        disabled
                       />
                     </div>
                   </div>
@@ -120,6 +131,7 @@ function ProfileSetting() {
                         className="form-control"
                         id="ciTy"
                         defaultValue={level}
+                        disabled
                       />
                     </div>
                   </div>

@@ -30,15 +30,8 @@
       "Experts": "https://oteacher.org/svg/flags/english.svg",
       "lang": "EN",
       "languageExperts": "انگلیسی",
-      "level": [
-        " مبتدی ",
-        "پیشرفته"
-      ],
-      "skils": [
-        " مهاجرت و اپلای ",
-        " زبان عمومی ,",
-        " آیلتس "
-      ],
+      "level": [" مبتدی ", "پیشرفته"],
+      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
       "mainSkils": "IELTS",
       "priceTest": "0",
       "priceClass": "1500000",
@@ -132,34 +125,39 @@
               "alltime": [
                 {
                   "time": "10:36",
-                  "isBooked": true,
+                  "isBooked": false,
                   "type": "half",
-                  "id": "sd1",
+                  "id": "D1-1",
                   "selectedUser": false
                 },
                 {
                   "time": "11:00",
                   "isBooked": false,
-                  "id": "sd2"
+                  "id": "D2-1"
                 },
                 {
                   "time": "11:30",
                   "isBooked": false,
                   "type": "half",
-                  "id": "g4"
+                  "id": "D3-1"
                 },
                 {
                   "time": "12:00",
-                  "isBooked": false
+                  "isBooked": false,
+                  "type": "half",
+                  "id": "D4-1"
                 },
                 {
                   "time": "12:30",
                   "isBooked": false,
-                  "type": "half"
+                  "type": "half",
+                  "id": "D5-1"
                 },
                 {
                   "time": "13:00",
-                  "isBooked": false
+                  "isBooked": false,
+                  "type": "half",
+                  "id": "D6-1"
                 }
               ],
               "bookedTime": []
@@ -400,15 +398,8 @@
       "Experts": "https://oteacher.org/svg/flags/english.svg",
       "lang": "EN",
       "languageExperts": "انگلیسی",
-      "level": [
-        " مبتدی ",
-        "پیشرفته"
-      ],
-      "skils": [
-        " مهاجرت و اپلای ",
-        " زبان عمومی ,",
-        " آیلتس "
-      ],
+      "level": [" مبتدی ", "پیشرفته"],
+      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
       "mainSkils": "IELTS",
       "priceTest": "0",
       "priceClass": "200000",
@@ -770,15 +761,8 @@
       "Experts": "https://oteacher.org/svg/flags/english.svg",
       "lang": "EN",
       "languageExperts": "انگلیسی",
-      "level": [
-        " مبتدی ",
-        "پیشرفته"
-      ],
-      "skils": [
-        " مهاجرت و اپلای ",
-        " زبان عمومی ,",
-        " آیلتس "
-      ],
+      "level": [" مبتدی ", "پیشرفته"],
+      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
       "mainSkils": "IELTS",
       "priceTest": "0",
       "priceClass": "1500000",
@@ -1140,15 +1124,8 @@
       "Experts": "https://oteacher.org/svg/flags/english.svg",
       "lang": "EN",
       "languageExperts": "انگلیسی",
-      "level": [
-        " مبتدی ",
-        "پیشرفته"
-      ],
-      "skils": [
-        " مهاجرت و اپلای ",
-        " زبان عمومی ,",
-        " آیلتس "
-      ],
+      "level": [" مبتدی ", "پیشرفته"],
+      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
       "mainSkils": "IELTS",
       "priceTest": "0",
       "priceClass": "1500000",
@@ -1510,15 +1487,8 @@
       "Experts": "https://oteacher.org/svg/flags/english.svg",
       "lang": "EN",
       "languageExperts": "انگلیسی",
-      "level": [
-        " مبتدی ",
-        "پیشرفته"
-      ],
-      "skils": [
-        " مهاجرت و اپلای ",
-        " زبان عمومی ,",
-        " آیلتس "
-      ],
+      "level": [" مبتدی ", "پیشرفته"],
+      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
       "mainSkils": "IELTS",
       "priceTest": "0",
       "priceClass": "1500000",

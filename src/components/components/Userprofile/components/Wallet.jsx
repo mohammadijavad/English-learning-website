@@ -1,5 +1,5 @@
-import React from "react";
-import style from "../style/userpage.module.css";
+import React from 'react'
+import style from '../style/userpage.module.css'
 function Wallet() {
   return (
     <div
@@ -13,14 +13,14 @@ function Wallet() {
         <div className="mx-3 position-absolute top-50 mt-3">
           <p>موجودی کیف پول</p>
           <span>
-            {" "}
-            <b> 0 </b>
+            {' '}
+            <b> 600,000 </b>
             تومان
           </span>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Wallet;
+export default Wallet

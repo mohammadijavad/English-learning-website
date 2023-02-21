@@ -14,28 +14,10 @@ import {
 
 const data = [
   {
-    name: 'فروردین',
-    uv: 590,
-    pv: 800,
-    amt: 1,
-  },
-  {
-    name: 'اردیبهشت',
+    name: 'شهریور',
     uv: 2,
     pv: 2,
     amt: 2,
-  },
-  {
-    name: 'خرداد',
-    uv: 3,
-    pv: 3,
-    amt: 3,
-  },
-  {
-    name: 'تیر',
-    uv: 4,
-    pv: 4,
-    amt: 4,
   },
   {
     name: 'مرداد',
@@ -44,10 +26,34 @@ const data = [
     amt: 5,
   },
   {
-    name: 'شهریور',
+    name: 'آبان',
+    uv: 3,
+    pv: 3,
+    amt: 3,
+  },
+  {
+    name: 'آذر',
     uv: 6,
     pv: 6,
     amt: 6,
+  },
+  {
+    name: 'دی',
+    uv: 9,
+    pv: 9,
+    amt: 9,
+  },
+  {
+    name: 'بهمن',
+    uv: 6,
+    pv: 6,
+    amt: 6,
+  },
+  {
+    name: 'اسفند',
+    uv: 12,
+    pv: 12,
+    amt: 12,
   },
 ]
 

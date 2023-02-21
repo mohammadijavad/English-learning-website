@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import logoCompany from "../../assets/images/fanavaran-header-logo-color.png";
-import logoCompanysm from "../../assets/images/logo-sm.png";
-import { BsCircle, BsRecordCircle } from "react-icons/bs";
-import { contextapp } from "../../contexts/ContextProv";
+import React, { useContext } from 'react'
+import logoCompany from '../../assets/images/logo-dark.png'
+import logoCompanysm from '../../assets/images/logo-sm-1.png'
+import { BsCircle, BsRecordCircle } from 'react-icons/bs'
+import { contextapp } from '../../contexts/ContextProv'
 
-import Accordions from "./sidebarLists/accoridions/Accordion";
+import Accordions from './sidebarLists/accoridions/Accordion'
 function SidebarVertical() {
   const {
     closedSiderbar,
@@ -14,16 +14,16 @@ function SidebarVertical() {
     sidebarColor,
     sidebarSplit,
     gradientBgCircle,
-  } = useContext(contextapp);
+  } = useContext(contextapp)
   return (
     <div
       className={`sidebarWrapper position-fixed top-0 ${coverSidebar}  ${sidebarColor} ${
-        closedSiderbar ? "siderbarclosedMode" : ""
-      } ${sidebarSplit + "splitModeSidebar"} `}
+        closedSiderbar ? 'siderbarclosedMode' : ''
+      } ${sidebarSplit + 'splitModeSidebar'} `}
     >
       <div
         className={` containerSidebar ${
-          closedSiderbar ? "siderbarclosedMode" : ""
+          closedSiderbar ? 'siderbarclosedMode' : ''
         } ${coverSidebar}   ${sidebarColor} ${gradientBgCircle}`}
       >
         <div className=" d-none d-lg-block sidebarlogoContainer d-flex justify-content-center align-items-center">
@@ -46,7 +46,7 @@ function SidebarVertical() {
           )}
           <div
             className={` arrowclosed curoser ${
-              closedSiderbar ? "closedSiderbar" : ""
+              closedSiderbar ? 'closedSiderbar' : ''
             }`}
             onClick={toggleSiderbarHandler}
           >
@@ -80,7 +80,7 @@ function SidebarVertical() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default SidebarVertical;
+export default SidebarVertical

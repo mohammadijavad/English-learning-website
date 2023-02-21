@@ -29,9 +29,10 @@ function TypePayment() {
               name="group1"
               type={'radio'}
               id={`wallet-radio`}
+              checked
             />
             <div className="mx-3">
-              <h5 className="m-0 mt-2 ">پرداخت ازطریق درگاه پرداخت</h5>
+              <h5 className="m-0 mt-2 "> کیف پول</h5>
               <p className="m-0 mt-2 fontsize14"> </p>
             </div>
           </div>

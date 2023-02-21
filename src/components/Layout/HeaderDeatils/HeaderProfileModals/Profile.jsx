@@ -13,6 +13,7 @@ import { AiOutlineSetting } from 'react-icons/ai'
 import { selectUser } from '../../../../app/store/User store/user'
 import { useAuth } from '../../../../contexts/AuthContext'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 function Profile({ index }) {
   const { showmodal, showModalHandler } = useContext(contextapp)
   const userInformation = useSelector(selectUser)
@@ -49,7 +50,7 @@ function Profile({ index }) {
           <div className="px-2">
             <span className="fontSize text-gray fontSizesm">
               {' '}
-              خوش آمدید <b>javad</b>
+              خوش آمدید <b>{userInformation.name}</b>
             </span>
           </div>
           <div className="mt-2 ">
@@ -62,7 +63,9 @@ function Profile({ index }) {
               <span>
                 <BsPersonCircle size={15} />
               </span>
-              <span className="fontSizesm mx-2">پروفایل</span>
+              <span className="fontSizesm mx-2">
+                <Link to="/profile/setting">تنظیمات پروفایل</Link>
+              </span>
             </div>
             <div
               className="mt-2 d-flex align-items-center p-1 px-2 flagName curoser"

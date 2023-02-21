@@ -439,7 +439,8 @@ a:hover {
 }
 /* arrowUp */
 .arrowUp {
-  top: 75%;
+  position: fixed;
+  bottom: 8%;
   left: 5.3%;
   background-color: #ff5252;
   width: 33px;

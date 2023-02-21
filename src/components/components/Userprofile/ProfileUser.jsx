@@ -19,11 +19,14 @@ function ProfileUser() {
     dispatch(fetchClassListTesting())
     dispatch(fetchClassList())
   }, [])
+
   if (status === 'loading') {
     content = <LoadingCom />
-  } else if (status === 'succeeded') {
+  }
+  if (status === 'succeeded') {
     content = <ProfileDetal />
-  } else if (status === 'failed') {
+  }
+  if (status === 'failed') {
     content = <p>{error}</p>
   }
   return <>{content}</>

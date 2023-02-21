@@ -3,15 +3,16 @@ import style from '../style/userpage.module.css'
 import TitleClass from './TitleClass'
 import { FiMoreVertical } from 'react-icons/fi'
 import Accordion from 'react-bootstrap/Accordion'
-function CardClass({ titleClass, listClass, keyAccordion, classList }) {
+function CardClass({ titleClass, keyAccordion, classList }) {
   let content
-  if (classList?.length === 0) {
+  if (classList.length === 0) {
     content = (
       <Accordion.Body key={0}>
         <p className="text-danger">کلاسی پیش رو ندارید</p>
       </Accordion.Body>
     )
-  } else {
+  }
+  if (classList.length > 0) {
     content = classList?.map((list, index) => {
       return (
         <Accordion.Body key={index}>
@@ -47,7 +48,7 @@ function CardClass({ titleClass, listClass, keyAccordion, classList }) {
                       تعدا کل جلسات :
                       <b className={style.numberClass}>
                         {' '}
-                        {list.selectTimeArray.length}{' '}
+                        {list.selectTimeArray?.length}{' '}
                       </b>
                     </span>
                     <span className={`mx-3`}>
@@ -58,7 +59,9 @@ function CardClass({ titleClass, listClass, keyAccordion, classList }) {
                     </span>
                     <span className={`mx-3`}>
                       <b className={style.numberClass}>
-                        {list.selectTimeArray[0].time}{' '}
+                        {list.selectTimeArray[0]?.time
+                          ? list.selectTimeArray[0]?.time
+                          : 0}{' '}
                       </b>
                     </span>
                   </div>
@@ -96,5 +99,8 @@ function CardClass({ titleClass, listClass, keyAccordion, classList }) {
     </Accordion>
   )
 }
-
+CardClass.defaultProps = {
+  classList: [],
+  // label: "Button Text"
+}
 export default CardClass

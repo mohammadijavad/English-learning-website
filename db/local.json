@@ -30,8 +30,15 @@
       "Experts": "https://oteacher.org/svg/flags/english.svg",
       "lang": "EN",
       "languageExperts": "انگلیسی",
-      "level": [" مبتدی ", "پیشرفته"],
-      "skils": [" مهاجرت و اپلای ", " زبان عمومی ,", " آیلتس "],
+      "level": [
+        " مبتدی ",
+        "پیشرفته"
+      ],
+      "skils": [
+        " مهاجرت و اپلای ",
+        " زبان عمومی ,",
+        " آیلتس "
+      ],
       "mainSkils": "IELTS",
       "priceTest": "0",
       "priceClass": "1500000",
@@ -85,7 +92,7 @@
         "The class basis and focus is a progress in conversation as well as a simultaneous accuracy and fluency in the shortest time through inductive grammar teaching, using textbooks, audio files and even songs and movies sessions"
       ],
       "studentsTeacher": "369",
-      "isFavorite": false,
+      "isFavorite": true,
       "timeClassForBook": [
         {
           "id": 0,
@@ -125,7 +132,7 @@
               "alltime": [
                 {
                   "time": "10:36",
-                  "isBooked": false,
+                  "isBooked": true,
                   "type": "half",
                   "id": "sd1",
                   "selectedUser": false
@@ -388,7 +395,7 @@
   ],
   "user": {
     "idCode": "123456",
-    "name": "آرزو امیریd",
+    "name": "آرزو امیری",
     "userPhoto": "https://img.freepik.com/free-photo/portrait-dark-skinned-cheerful-woman-with-curly-hair-touches-chin-gently-laughs-happily-enjoys-day-off-feels-happy-enthusiastic-hears-something-positive-wears-casual-blue-turtleneck_273609-43443.jpg?size=626&ext=jpg&uid=R26837199&ga=GA1.2.332109917.1668614583&semt=sph",
     "languages": "انگلیسی",
     "selectedLangLearning": "US",
@@ -417,16 +424,46 @@
       {
         "takeExamSite": false
       }
-    ],
-    "intial": {
-      "name": "آرزو امیری123",
-      "email": "arezoAmiri@gmail.com",
-      "userGol": "مهاجرت و IELTS",
-      "about": "من در حال یادگیری زبان هستم"
-    }
+    ]
   },
   "userDidClasses": [],
   "userCanceledClasses": [],
-  "userClassesList": [],
-  "userClassesListTesting": []
+  "userClassesList": [
+    {
+      "id": "T1",
+      "nameTeacher": "  پریسا میرزایی ",
+      "photoTeacher": "https://cdn.oteacher.org/images/202204/dPaw1CTr8IK66CeSZmgp0GZpskywnkNGb0mF_thumb.jpeg",
+      "selectTimeArray": [
+        {
+          "id": "sd1",
+          "time": "۱۱:۳۶- ۱۰:۳۶  چهار شنبه ۳  اسفند",
+          "indexDate": 1,
+          "timeHourSelected": "۱۰:۳۶- ۱۱:۳۶",
+          "dateSelected": "چهار شنبه ۳  اسفند",
+          "teacher": []
+        }
+      ],
+      "modeClass": "private",
+      "selectedAnotherTime": 0
+    }
+  ],
+  "userClassesListTesting": [
+    {
+      "id": "T1",
+      "nameTeacher": "  پریسا میرزایی ",
+      "photoTeacher": "https://cdn.oteacher.org/images/202204/dPaw1CTr8IK66CeSZmgp0GZpskywnkNGb0mF_thumb.jpeg",
+      "selectTimeArray": [
+        {
+          "id": "sd1",
+          "time": "۱۱:۰۶- ۱۰:۳۶  چهار شنبه ۳  اسفند",
+          "indexDate": 1,
+          "timeHourSelected": "۱۰:۳۶- ۱۱:۰۶",
+          "dateSelected": "چهار شنبه ۳  اسفند",
+          "teacher": []
+        }
+      ],
+      "modeClass": "testing",
+      "selectedAnotherTime": 0
+    }
+  ]
 }

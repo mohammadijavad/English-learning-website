@@ -8,7 +8,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 import Button from 'react-bootstrap/Button'
 function Usercups({ userInformation }) {
-  const [firstCup, secondCup, thirdCup, fourthCup] = userInformation.userAchive
+  const [firstCup, secondCup, thirdCup, fourthCup] = userInformation?.userAchive
   const { onHourClass } = firstCup
   const { activityMoreThan50 } = secondCup
   const { completeClassTweny } = thirdCup

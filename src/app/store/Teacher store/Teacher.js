@@ -61,13 +61,13 @@ export const addToClassListStudent = createAsyncThunk(
         baseURL: 'http://localhost:3100/',
         method: 'post',
         url: 'userClassesListTesting',
-        headers: { 'content-type': 'text/json' },
         data: {
           id,
           nameTeacher,
           photoTeacher,
           selectTimeArray,
           modeClass,
+          selectedAnotherTime,
         },
       });
       return response;
@@ -243,10 +243,10 @@ const teachersSlice = createSlice({
 
       .addCase(addToClassListStudent.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        const { nameTeacher } = action.payload.finalDataPushToUserProfile;
+        const { nameTeacher } = action.payload.data;
 
         let textMessage = `کلاس شما با استاد ${nameTeacher} رزرو شد`;
-        console.log(action.payload);
+
         showAlertHandlerSuccess(textMessage);
       })
       .addCase(addToClassListStudent.rejected, (state, action) => {

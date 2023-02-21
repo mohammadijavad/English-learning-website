@@ -56,8 +56,7 @@ function TotalResult({ findTeacherSelected }) {
     let cloneTime = JSON.parse(selectedTime)
     let { alltime } = cloneTime[indexDate]
     alltime[findTimeSelectedTeacherTimeList].isBooked = true
-    if(modeClass==="private"){
-
+    if (modeClass === 'private') {
       alltime[findTimeSelectedTeacherTimeList + 1].isBooked = true
     }
     let finalTimes = [{ id: 0, times: cloneTime }]
@@ -70,6 +69,7 @@ function TotalResult({ findTeacherSelected }) {
       selectedAnotherTime: calcClassCounter,
       timeChanged: finalTimes,
     }
+    console.log(calcClassCounter)
     dispatch(addToClassListStudent({ mode, finalDataPushToUserProfile }))
     dispatch(stepModalToSelectTime(0))
     dispatch(setSelectTimeForClassesHandler(false))

@@ -29,9 +29,9 @@ function ProfileUser() {
   const userProfileData = user
   return (
     <div className={`${style.ContainerProfileUser} `}>
-      {/* <Helmet>
-        <title> پروفایل {userProfileData?.name} | بستاک</title>
-      </Helmet> */}
+      <Helmet>
+        {/* <title> پروفایل {userProfileData?.name} | بستاک</title> */}
+      </Helmet>
       <Headerprofile />
       <Useravatr userProfileData={userProfileData} />
       <div className="container">

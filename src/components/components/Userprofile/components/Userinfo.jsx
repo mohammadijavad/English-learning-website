@@ -5,10 +5,16 @@ import US from '../../../../assets/images/flags/us.svg'
 import Germany from '../../../../assets/images/flags/germany.svg'
 
 function Userinfo({ userInformation }) {
-  const { name, userGol, languages, siningTime } = userInformation
+  const {
+    name,
+    userGol,
+    languages,
+    siningTime,
+    selectedLangLearning,
+  } = userInformation
   let flag = ''
   let lang = ''
-  if (languages === 'US') {
+  if (selectedLangLearning === 'US') {
     flag = US
     lang = 'زبان انگلیسی'
   } else {

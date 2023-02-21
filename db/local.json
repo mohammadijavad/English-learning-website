@@ -386,39 +386,45 @@
       ]
     }
   ],
-  "user": [
-    {
-      "idCode": "123456",
-      "name": "آرزو امیری",
-      "userPhoto": "https://img.freepik.com/free-photo/portrait-dark-skinned-cheerful-woman-with-curly-hair-touches-chin-gently-laughs-happily-enjoys-day-off-feels-happy-enthusiastic-hears-something-positive-wears-casual-blue-turtleneck_273609-43443.jpg?size=626&ext=jpg&ga=GA1.2.332109917.1668614583&semt=sph",
-      "languages": "انگلیسی",
-      "userGol": "مهاجرت و IELTS",
-      "siningTime": "10 فروردین 1401",
+  "user": {
+    "idCode": "123456",
+    "name": "آرزو امیریd",
+    "userPhoto": "https://img.freepik.com/free-photo/portrait-dark-skinned-cheerful-woman-with-curly-hair-touches-chin-gently-laughs-happily-enjoys-day-off-feels-happy-enthusiastic-hears-something-positive-wears-casual-blue-turtleneck_273609-43443.jpg?size=626&ext=jpg&uid=R26837199&ga=GA1.2.332109917.1668614583&semt=sph",
+    "languages": "انگلیسی",
+    "selectedLangLearning": "US",
+    "userGol": "مهاجرت و IELTS",
+    "siningTime": "10 فروردین 1401",
+    "email": "arezoAmiri@gmail.com",
+    "phoneNumber": "09197069504",
+    "about": "من در حال یادگیری زبان هستم",
+    "level": "A1 مبتدی",
+    "position": "دانشجو",
+    "userProgress": [
+      {
+        "month1": "20"
+      }
+    ],
+    "userAchive": [
+      {
+        "onHourClass": true
+      },
+      {
+        "activityMoreThan50": false
+      },
+      {
+        "completeClassTweny": false
+      },
+      {
+        "takeExamSite": false
+      }
+    ],
+    "intial": {
+      "name": "آرزو امیری123",
       "email": "arezoAmiri@gmail.com",
-      "phoneNumber": "09197069504",
-      "about": "من در حال یادگیری زبان هستم",
-      "level": "A1 مبتدی",
-      "userProgress": [
-        {
-          "month1": "20"
-        }
-      ],
-      "userAchive": [
-        {
-          "onHourClass": true
-        },
-        {
-          "activityMoreThan50": false
-        },
-        {
-          "completeClassTweny": false
-        },
-        {
-          "takeExamSite": false
-        }
-      ]
+      "userGol": "مهاجرت و IELTS",
+      "about": "من در حال یادگیری زبان هستم"
     }
-  ],
+  },
   "userDidClasses": [],
   "userCanceledClasses": [],
   "userClassesList": [],

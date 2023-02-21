@@ -93,7 +93,6 @@ export const addToClassListStudent = createAsyncThunk(
             selectedAnotherTime,
           },
         }).then((res) => {
-          console.log(JSON.stringify(timeChanged));
           axios({
             method: 'patch',
             baseURL: 'http://localhost:3100/',

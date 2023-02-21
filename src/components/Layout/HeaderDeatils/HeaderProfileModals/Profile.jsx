@@ -10,10 +10,12 @@ import {
   BsBoxArrowRight,
 } from 'react-icons/bs'
 import { AiOutlineSetting } from 'react-icons/ai'
-import flag from '../../../../assets/images/users/avatar-5.jpg'
+import { selectUser } from '../../../../app/store/User store/user'
 import { useAuth } from '../../../../contexts/AuthContext'
+import { useSelector } from 'react-redux'
 function Profile({ index }) {
   const { showmodal, showModalHandler } = useContext(contextapp)
+  const userInformation = useSelector(selectUser)
   const value = useAuth()
   const logout = () => {
     value.logout()
@@ -28,15 +30,15 @@ function Profile({ index }) {
         onClick={() => showModalHandler(index === showmodal ? false : index)}
       >
         <img
-          src={flag}
+          src={userInformation.userPhoto}
           width="30px"
           height="30px"
           className="rounded-circle curoser mx-2"
-          alt="USA"
+          alt={userInformation.nmae}
         />
         <div className="d-lg-flex justify-content-between flex-column align-items-center px-2 d-none">
-          <p className="m-0">Javad mohammadi</p>
-          <span>Front end</span>
+          <p className="m-0">{userInformation.name}</p>
+          <span>{userInformation.position}</span>
         </div>
       </div>
 

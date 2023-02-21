@@ -26,15 +26,14 @@ function ProfileUser() {
   const user = useSelector(selectUser)
   const classList = useSelector(getUserClassList)
   const classListTesing = useSelector(getUserTestClass)
-  const userProfileData = user[0]
+  const userProfileData = user
   return (
     <div className={`${style.ContainerProfileUser} `}>
-      <Helmet>
-        <meta charSet="utf-8" />
+      {/* <Helmet>
         <title> پروفایل {userProfileData?.name} | بستاک</title>
-      </Helmet>
+      </Helmet> */}
       <Headerprofile />
-      <Useravatr />
+      <Useravatr userProfileData={userProfileData} />
       <div className="container">
         <div className="row">
           <div className="col-12 col-lg-6">

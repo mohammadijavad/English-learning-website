@@ -25,6 +25,23 @@ export const fetchClassListTesting = createAsyncThunk(
     return response.data;
   }
 );
+export const updateProfile = createAsyncThunk(
+  'user/profileUpdate',
+  (intial) => {
+    const { name, email, userGol, about, userPhoto } = intial;
+    axios({
+      url: USER_URL,
+      method: 'patch',
+      data: {
+        name,
+        email,
+        userGol,
+        about,
+        userPhoto,
+      },
+    }).then((res) => console.log(res));
+  }
+);
 const userSlice = createSlice({
   name: 'user',
   initialState,

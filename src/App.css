@@ -856,3 +856,12 @@ a:hover {
   box-shadow: rgba(29, 27, 27, 0.13);
   padding: 0.3rem;
 }
+/* valdition */
+p.errorValidtion {
+  color: #bf1650;
+  font-size: 13px;
+}
+p.errorValidtion::before {
+  display: inline;
+  content: '⚠ ';
+}

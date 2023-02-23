@@ -10,6 +10,7 @@ import Wallet from './components/Wallet';
 import ChartUser from './components/ChartUser';
 import UserClassList from './components/UserClassList';
 import FavoriteWord from './components/FavoriteWords';
+import Dictionary from './components/Dictionary';
 
 export {
   Headerprofile,
@@ -24,4 +25,5 @@ export {
   ChartUser,
   UserClassList,
   FavoriteWord,
+  Dictionary,
 };

@@ -13,6 +13,7 @@ import {
   ChartUser,
   UserClassList,
   FavoriteWord,
+  Dictionary,
 } from './index'
 import {
   selectUser,
@@ -22,6 +23,7 @@ import {
 import style from './style/Header.module.css'
 import { useSelector } from 'react-redux'
 import { Helmet } from 'react-helmet'
+
 function ProfileUser() {
   const user = useSelector(selectUser)
   const classList = useSelector(getUserClassList)
@@ -51,14 +53,17 @@ function ProfileUser() {
           <div className="col-12 ">
             <Userclasscancled classList={[]} />
           </div>
-          <div className="col-12 col-lg-4">
+          <div className="col-12 col-lg-3">
             <FavoriteProduct />
           </div>
-          <div className="col-12 col-lg-4">
+          <div className="col-12 col-lg-3">
             <FavoriteTeacher />
           </div>
-          <div className="col-12 col-lg-4">
+          <div className="col-12 col-lg-3">
             <FavoriteWord />
+          </div>
+          <div className="col-12 col-lg-3">
+            <Dictionary />
           </div>
           <div className="col-12 col-lg-6">
             <Wallet />

@@ -115,6 +115,8 @@ a:hover {
   --favorite-teachers-color: #00ff5e;
   --favorite-words-bg: #ff181821;
   --favorite-words-color: #ff6b6b;
+  --dictionary-bg: #4934d431;
+  --dictionary-text: #4834d4;
   /* teacher Deteails */
   --text-color-day: #4bcffa;
   --text-color-day-disable: rgb(207, 207, 207);

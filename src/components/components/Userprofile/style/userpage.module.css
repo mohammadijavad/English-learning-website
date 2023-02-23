@@ -70,6 +70,10 @@
   background-color: var(--favorite-words-bg);
   color: var(--favorite-words-color);
 }
+.iconDictionary {
+  background-color: var(--dictionary-bg);
+  color: var(--dictionary-text);
+}
 /* user wallet */
 .walletContainer {
   width: 100%;

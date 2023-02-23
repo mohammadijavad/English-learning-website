@@ -52,12 +52,12 @@ export const lists = [
       {
         id: uuidv4(),
         title: 'فیلم ها ',
-        to: 'profile/movies',
+        to: '/profile/movies',
       },
       {
         id: uuidv4(),
         title: 'فروشگاه',
-        to: 'profile/e-commer',
+        to: '/profile/e-commer',
       },
       {
         id: uuidv4(),

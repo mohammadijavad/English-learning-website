@@ -40,16 +40,16 @@ function ProfileUser() {
             <Userinfo userInformation={userProfileData} />
           </div>
           <div className="col-12 col-lg-6">
-            <Usercups userInformation={userProfileData} />
+            <Usercups userAchive={userProfileData.userAchive} />
           </div>
           <div className="col-12 mt-2">
             <UserClassList classList={[...classList, ...classListTesing]} />
           </div>
           <div className="col-12 ">
-            <Userclassdone />
+            <Userclassdone classList={[]} />
           </div>
           <div className="col-12 ">
-            <Userclasscancled />
+            <Userclasscancled classList={[]} />
           </div>
           <div className="col-12 col-lg-4">
             <FavoriteProduct />

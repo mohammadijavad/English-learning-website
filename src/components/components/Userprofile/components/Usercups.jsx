@@ -7,12 +7,7 @@ import testCup4 from '../../../../assets/images/just static data/4.png'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 import Button from 'react-bootstrap/Button'
-function Usercups({ userInformation }) {
-  const [firstCup, secondCup, thirdCup, fourthCup] = userInformation?.userAchive
-  const { onHourClass } = firstCup
-  const { activityMoreThan50 } = secondCup
-  const { completeClassTweny } = thirdCup
-  const { takeExamSite } = fourthCup
+function Usercups({ userAchive }) {
   return (
     <div
       className={`d-flex align-items-center justify-content-evenly flex-column mb-4`}
@@ -29,7 +24,7 @@ function Usercups({ userInformation }) {
               <img
                 src={testCup1}
                 className={` ${
-                  onHourClass ? style.cupimg : 'blackWhiteImage'
+                  userAchive.onHourClass ? style.cupimg : 'blackWhiteImage'
                 } `}
                 alt="sing ing cup"
               />
@@ -50,7 +45,9 @@ function Usercups({ userInformation }) {
                 src={testCup2}
                 alt="sing ing cup"
                 className={` ${
-                  activityMoreThan50 ? style.cupimg : 'blackWhiteImage'
+                  userAchive.activityMoreThan50
+                    ? style.cupimg
+                    : 'blackWhiteImage'
                 } `}
               />
             </Button>
@@ -70,7 +67,9 @@ function Usercups({ userInformation }) {
                 src={testCup3}
                 alt="sing ing cup"
                 className={` ${
-                  completeClassTweny ? style.cupimg : 'blackWhiteImage'
+                  userAchive.completeClassTweny
+                    ? style.cupimg
+                    : 'blackWhiteImage'
                 } `}
               />
             </Button>
@@ -90,7 +89,7 @@ function Usercups({ userInformation }) {
                 src={testCup4}
                 alt="sing ing cup"
                 className={` ${
-                  takeExamSite ? style.cupimg : 'blackWhiteImage'
+                  userAchive.takeExamSite ? style.cupimg : 'blackWhiteImage'
                 } `}
               />
             </Button>

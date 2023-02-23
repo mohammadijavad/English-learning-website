@@ -15,6 +15,7 @@ import TeacherInfo from '../screens/TeacherInfo';
 import SettingProfile from '../screens/SettingProfile';
 import Notfind from '../screens/404';
 import SaveClass from '../screens/SaveClass';
+import Linter from '../screens/Linter';
 export {
   Header,
   SidebarVertical,
@@ -33,5 +34,6 @@ export {
   SettingProfile,
   Notfind,
   SaveClass,
+  Linter,
 };
 // export {  };

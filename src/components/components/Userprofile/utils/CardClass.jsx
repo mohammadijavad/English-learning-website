@@ -8,7 +8,7 @@ function CardClass({ titleClass, keyAccordion, classList }) {
   if (classList.length === 0) {
     content = (
       <Accordion.Body key={0}>
-        <p className="text-danger">کلاسی پیش رو ندارید</p>
+        <p className="text-danger">کلاسی یافت نشد</p>
       </Accordion.Body>
     )
   }

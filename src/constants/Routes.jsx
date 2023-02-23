@@ -13,6 +13,7 @@ import {
   SettingProfile,
   Notfind,
   SaveClass,
+  Linter,
 } from '../screens/index'
 
 export const Routers = [
@@ -81,5 +82,11 @@ export const Routers = [
     id: uuidv4(),
     componet: <SettingProfile />,
     breadcrumb: ' /  تنظیمات پروفایل',
+  },
+  {
+    path: '/profile/linter',
+    id: uuidv4(),
+    componet: <Linter />,
+    breadcrumb: ' /   جعبه لاینتر',
   },
 ]

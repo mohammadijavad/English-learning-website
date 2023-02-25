@@ -4,9 +4,20 @@ import {
   getWord,
   getWordStatus,
 } from '../../../../app/store/Dictionary/dictionaryStore'
+import LoadingCom from '../../../../utils/Loading'
+import Nodata from '../../../../utils/Nodata'
+import WordTemplate from './WordTemplate'
 function Word() {
-  const getWordMeanings = useSelector()
-  return <div>Word</div>
+  const getWordMeanings = useSelector(getWord)
+  const stausFetchWordMeaning = useSelector(getWordStatus)
+  console.log(getWordMeanings)
+  if (stausFetchWordMeaning === 'loading') {
+    return <LoadingCom />
+  }
+  if (getWordMeanings.length === 0) {
+    return <Nodata />
+  }
+  return <WordTemplate WordTemplate={getWordMeanings} />
 }
 
 export default Word

@@ -6,7 +6,7 @@ export const store = configureStore({
   reducer: {
     teacher: Teacher,
     user: User,
-    word: word,
+    dictionary: word,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -12,7 +12,9 @@ function SearchWord() {
     if (!isopen) {
       setIsopen(true)
     }
-    dispatch(getWordMeaning(refInp.current.value))
+    const val = refInp.current.value
+    dispatch(getWordMeaning(val))
+    console.log(val)
   }
   return (
     <Contaienr className="containerSearch">

@@ -5,7 +5,7 @@ import { VscBook } from 'react-icons/vsc'
 function Dictionary() {
   return (
     <div className={` mt-3`}>
-      <Link to="/profile/linter">
+      <Link to="/profile/dictionary">
         <div className="d-flex align-items-center justify-content-start ">
           <div className={`p-2 rounded ${style.iconDictionary}`}>
             <VscBook size={24} />
@@ -16,7 +16,6 @@ function Dictionary() {
             </div>
             <div className="mx-2">
               <b className={`mx-1 ${style.size3}`}>oxford</b>
-              {/* <span className={style.size1}>کلمه</span> */}
             </div>
           </div>
         </div>

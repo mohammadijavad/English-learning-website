@@ -14,6 +14,7 @@ import {
   Notfind,
   SaveClass,
   Linter,
+  Dictionary,
 } from '../screens/index'
 
 export const Routers = [
@@ -88,5 +89,11 @@ export const Routers = [
     id: uuidv4(),
     componet: <Linter />,
     breadcrumb: ' /   جعبه لاینتر',
+  },
+  {
+    path: '/profile/dictionary',
+    id: uuidv4(),
+    componet: <Dictionary />,
+    breadcrumb: ' / دیکشنری',
   },
 ]

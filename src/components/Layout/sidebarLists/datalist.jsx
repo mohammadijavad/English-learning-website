@@ -64,6 +64,11 @@ export const lists = [
         title: 'جعبه لاینتر',
         to: '/profile/linter',
       },
+      {
+        id: uuidv4(),
+        title: 'دیکشنری',
+        to: '/profile/dictionary',
+      },
     ],
   },
   {

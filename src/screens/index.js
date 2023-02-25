@@ -16,6 +16,7 @@ import SettingProfile from '../screens/SettingProfile';
 import Notfind from '../screens/404';
 import SaveClass from '../screens/SaveClass';
 import Linter from '../screens/Linter';
+import Dictionary from '../screens/Dictionary';
 export {
   Header,
   SidebarVertical,
@@ -35,5 +36,6 @@ export {
   Notfind,
   SaveClass,
   Linter,
+  Dictionary,
 };
 // export {  };

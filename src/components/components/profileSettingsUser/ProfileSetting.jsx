@@ -116,11 +116,21 @@ function ProfileSetting() {
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
                       <label for="fullName">نام و نام خانوادگی </label>
-                      <input
+                      {/* <input
                         type="text"
                         className="form-control"
                         id="fullName"
+                        autoComplete={false}
                         defaultValue={name}
+                        {...register('name', {
+                          required: true,
+                          pattern: /[^-\s]/i,
+                        })}
+                      /> */}
+                      <input
+                        className="form-control"
+                        defaultValue={name}
+                        autoFocus
                         {...register('name', {
                           required: true,
                           pattern: /[^-\s]/i,

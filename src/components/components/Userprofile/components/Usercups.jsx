@@ -23,9 +23,7 @@ function Usercups({ userAchive }) {
             <Button variant="" className={`m-0 p-0 bg-none `}>
               <img
                 src={testCup1}
-                className={` ${
-                  userAchive.onHourClass ? style.cupimg : 'blackWhiteImage'
-                } `}
+                className={` ${true ? style.cupimg : 'blackWhiteImage'} `}
                 alt="sing ing cup"
               />
             </Button>

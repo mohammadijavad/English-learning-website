@@ -11,7 +11,6 @@ import {
   Movies,
   TeacherInfo,
   SettingProfile,
-  Notfind,
   SaveClass,
   Linter,
   Dictionary,

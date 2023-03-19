@@ -50,9 +50,10 @@ function TotalResult({ findTeacherSelected }) {
     ].alltime.findIndex((time) => time.id === id)
 
     const { timeClassForBook } = findTeacherSelected
-    const { times } = timeClassForBook[findTimeSelectedTeacherTimeList]
 
-    const selectedTime = JSON.stringify(times)
+    const selectedTime = JSON.stringify(
+      timeClassForBook[findTimeSelectedTeacherTimeList].times,
+    )
     let cloneTime = JSON.parse(selectedTime)
     let { alltime } = cloneTime[indexDate]
     alltime[findTimeSelectedTeacherTimeList].isBooked = true

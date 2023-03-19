@@ -10,7 +10,6 @@ import WordTemplate from './WordTemplate'
 function Word() {
   const getWordMeanings = useSelector(getWord)
   const stausFetchWordMeaning = useSelector(getWordStatus)
-  console.log(getWordMeanings)
   if (stausFetchWordMeaning === 'loading') {
     return <LoadingCom />
   }

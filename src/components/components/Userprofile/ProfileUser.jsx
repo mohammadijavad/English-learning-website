@@ -24,16 +24,17 @@ function ProfileUser() {
   const getUser = () => {
     return axios.get('http://localhost:3100/user')
   }
-  const { data, isLoading, isError, refetch, error } = useQuery([
-    'user-data',
-    getUser,
-  ])
+  const { data, isLoading, isError, error } = useQuery(['user-data'], getUser, {
+    onSuccess() {
+      console.log(data.data)
+    },
+  })
 
-  if (status === 'loading') {
+  if (isLoading) {
     content = <LoadingCom />
   }
-  if (status === 'succeeded') {
-    content = <ProfileDetal />
+  if (data && !isLoading) {
+    content = <ProfileDetal userINfo={data.data} />
   }
   if (isError) {
     content = <p>{error.message}</p>

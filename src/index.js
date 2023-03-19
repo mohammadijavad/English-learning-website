@@ -8,6 +8,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import { Provider } from 'react-redux';
 import { store } from './app/store/store';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 const client = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,10 @@ root.render(
           <ContextProv>
             <Provider store={store}>
               <App />
+              <ReactQueryDevtools
+                initialIsOpen={false}
+                position="bottom-right"
+              />
             </Provider>
           </ContextProv>
         </AuthProvider>

@@ -24,15 +24,11 @@ import style from './style/Header.module.css'
 import { useSelector } from 'react-redux'
 import { Helmet } from 'react-helmet'
 
-function ProfileUser({ userINfo }) {
-  // const user = useSelector(selectUser)
-  const classList = useSelector(getUserClassList)
-  const classListTesing = useSelector(getUserTestClass)
-
+function ProfileUser({ userINfo, userClassList, userClassListTest }) {
   return (
     <div className={`${style.ContainerProfileUser} `}>
       <Helmet>
-        {/* <title> پروفایل {userProfileData?.name} | بستاک</title> */}
+        <title> پروفایل {userINfo?.name} | بستاک</title>
       </Helmet>
       <Headerprofile />
       <Useravatr userProfileData={userINfo} />
@@ -45,7 +41,9 @@ function ProfileUser({ userINfo }) {
             <Usercups userAchive={userINfo.userAchive} />
           </div>
           <div className="col-12 mt-2">
-            <UserClassList classList={[...classList, ...classListTesing]} />
+            <UserClassList
+              classList={[...userClassList, ...userClassListTest]}
+            />
           </div>
           <div className="col-12 ">
             <Userclassdone classList={[]} />

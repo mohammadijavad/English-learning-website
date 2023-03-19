@@ -2,22 +2,19 @@ import React, { useEffect } from 'react'
 import ProfileDetal from './ProfileDetal'
 import axios from 'axios'
 import {
-  getUserError,
   getUserStatus,
-  fetchUser,
   fetchClassListTesting,
   fetchClassList,
 } from '../../../app/store/User store/user'
 import { useDispatch, useSelector } from 'react-redux'
 import LoadingCom from '../../../utils/Loading'
-import { useQuery } from 'react-query'
+import { useQuery, useQueries } from 'react-query'
 function ProfileUser() {
   let content
   const dispatch = useDispatch()
   const status = useSelector(getUserStatus)
   // const error = useSelector(getUserError)
   useEffect(() => {
-    dispatch(fetchUser())
     dispatch(fetchClassListTesting())
     dispatch(fetchClassList())
   }, [])
@@ -29,12 +26,32 @@ function ProfileUser() {
       console.log(data.data)
     },
   })
+  const [getUserData, getUserClassList, getUserTestClass] = useQueries([
+    {
+      queryKey: 'userInfo',
+      queryFn: () => axios.get('http://localhost:3100/user'),
+    },
+    {
+      queryKey: 'userClassList',
+      queryFn: () => axios.get('http://localhost:3100/userClassesList'),
+    },
+    {
+      queryKey: 'userClassListTest',
+      queryFn: () => axios.get(' http://localhost:3100/userClassesListTesting'),
+    },
+  ])
 
-  if (isLoading) {
+  if (getUserData.isLoading || getUserClassList.isLoading) {
     content = <LoadingCom />
   }
   if (data && !isLoading) {
-    content = <ProfileDetal userINfo={data.data} />
+    content = (
+      <ProfileDetal
+        userINfo={getUserData.data.data}
+        userClassList={getUserClassList.data.data}
+        userClassListTest={getUserTestClass.data.data}
+      />
+    )
   }
   if (isError) {
     content = <p>{error.message}</p>

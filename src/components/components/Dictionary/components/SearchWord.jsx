@@ -2,20 +2,18 @@ import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import { BsSearch } from 'react-icons/bs'
 import { GrClose } from 'react-icons/gr'
-import { useDispatch } from 'react-redux'
-import { getWordMeaning } from '../../../../app/store/Dictionary/dictionaryStore'
-function SearchWord() {
+function SearchWord({ setVocab, fetchVocab }) {
   const [isopen, setIsopen] = useState(true)
-  const dispatch = useDispatch()
   const refInp = useRef()
   const searchHandler = () => {
     if (!isopen) {
       setIsopen(true)
     }
     const val = refInp.current.value
-    dispatch(getWordMeaning(val))
-    console.log(val)
+    setVocab(val)
+    fetchVocab()
   }
+
   return (
     <Contaienr className="containerSearch">
       <div className="w-100 d-flex justify-content-center">

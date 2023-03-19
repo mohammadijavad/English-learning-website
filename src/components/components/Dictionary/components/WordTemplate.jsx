@@ -2,7 +2,6 @@ import React, { useRef } from 'react'
 import { RxSpeakerLoud } from 'react-icons/rx'
 function WordTemplate({ WordTemplate }) {
   const audioref = useRef()
-  if (!WordTemplate) return <p>...</p>
   const { meanings, phonetics, word } = WordTemplate[0]
   const { synonyms, definitions, partOfSpeech } = meanings[0]
   console.log(WordTemplate[0])

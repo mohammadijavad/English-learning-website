@@ -15,13 +15,7 @@ import {
   FavoriteWord,
   Dictionary,
 } from './index'
-import {
-  selectUser,
-  getUserClassList,
-  getUserTestClass,
-} from '../../../app/store/User store/user'
 import style from './style/Header.module.css'
-import { useSelector } from 'react-redux'
 import { Helmet } from 'react-helmet'
 
 function ProfileUser({ userINfo, userClassList, userClassListTest }) {

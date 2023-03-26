@@ -1,44 +1,54 @@
 import React, { useEffect } from 'react'
+import { useQuery } from 'react-query'
 import TeacherCard from './components/TeacherCard'
 import LoadingCom from '../../../../utils/Loading'
-import { useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { Teachers } from '../../../../constants/Teachers' // clear after
 import noData from '../../../../assets/No data.svg'
-import { useDispatch } from 'react-redux'
-import {
-  selectAllTeacher,
-  getTeacherStatus,
-  getTeacherError,
-  fetchTeachers,
-} from '../../../../app/store/Teacher store/Teacher'
+// import { useSelector } from 'react-redux'
+// import { Teachers } from '../../../../constants/Teachers' // clear after
+// import { useDispatch } from 'react-redux'
+// import {
+//   selectAllTeacher,
+//   getTeacherStatus,
+//   getTeacherError,
+//   fetchTeachers,
+// } from '../../../../app/store/Teacher store/Teacher'
+import axios from 'axios'
 
 function ContainerCardTeacher() {
-  const dispatch = useDispatch()
-  const teachers = useSelector(selectAllTeacher)
-  const teacherStatus = useSelector(getTeacherStatus)
-  const error = useSelector(getTeacherError)
-  let content
-  useEffect(() => {
-    if (teacherStatus === 'idle') {
-      dispatch(fetchTeachers())
-    }
-  }, [teacherStatus, dispatch])
+  // const dispatch = useDispatch()
+  // const teachers = useSelector(selectAllTeacher)
+  // const teacherStatus = useSelector(getTeacherStatus)
 
-  if (teacherStatus === 'loading') {
+  let content
+  // useEffect(() => {
+  //   if (teacherStatus === 'idle') {
+  //     dispatch(fetchTeachers())
+  //   }
+  // }, [teacherStatus, dispatch])
+  const getTeachers = () => {
+    return axios.get('http://localhost:3100/Teachers')
+  }
+  const { data, isLoading, refetch, isError, error } = useQuery(
+    ['teachers'],
+    getTeachers,
+    { refetchOnWindowFocus: true },
+  )
+
+  if (isLoading) {
     content = <LoadingCom />
-  } else if (teacherStatus === 'succeeded') {
+  } else if (data.data.length > 0) {
     content = (
       <div className="mt-3 ">
-        {teachers?.map((teacher, index) => {
+        {data?.data?.map((teacher, index) => {
           return <TeacherCard key={index} {...teacher} />
         })}
       </div>
     )
-  } else if (teacherStatus === 'failed') {
-    content = <p>{error}</p>
+  } else if (isError) {
+    content = <p>{error.message}</p>
   }
-  if (teachers?.length === 0) {
+  if (!data) {
     content = (
       <Container>
         <img src={noData} alt="no data" />

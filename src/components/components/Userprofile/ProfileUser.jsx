@@ -21,11 +21,11 @@ function ProfileUser() {
   const getUser = () => {
     return axios.get('http://localhost:3100/user')
   }
-  const { data, isLoading, isError, error } = useQuery(['user-data'], getUser, {
-    onSuccess() {
-      console.log(data.data)
-    },
-  })
+  const { data, isLoading, isError, error } = useQuery(
+    ['user-data'],
+    getUser,
+    {},
+  )
   const [getUserData, getUserClassList, getUserTestClass] = useQueries([
     {
       queryKey: 'userInfo',

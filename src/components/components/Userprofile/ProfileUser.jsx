@@ -47,9 +47,9 @@ function ProfileUser() {
   if (data && !isLoading) {
     content = (
       <ProfileDetal
-        userINfo={getUserData.data.data}
-        userClassList={getUserClassList.data.data}
-        userClassListTest={getUserTestClass.data.data}
+        userINfo={getUserData?.data?.data}
+        userClassList={getUserClassList?.data?.data}
+        userClassListTest={getUserTestClass?.data?.data}
       />
     )
   }
